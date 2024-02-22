@@ -37,9 +37,11 @@ class ZODBs:
 
 
     def findOne(self, obj_id):
+        print("test")
         try:
             obj = self.root[obj_id]
-            return obj, 200
+            print(obj_id)
+            return obj
         except KeyError:
             return {"error": "Object not found"}, 404
         except Exception as e:
@@ -47,21 +49,30 @@ class ZODBs:
 
     def findAll(self):
         try:
-            objects = list(self.root.values())
-            return objects, 200
+            root = []
+            for key in self.root.keys():
+                root.append(self.root[key])
+            return root
         except Exception as e:
             return {"error": str(e)}, 500
 
     def findOneAndUpdate(self, obj_id, obj):
         try:
-            self.root[obj_id] = obj
-            transaction.commit()
-            return {"message": "Object updated successfully"}, 200
-        except KeyError:
-            return {"error": "Object not found"}, 404
+            if obj_id not in self.root:
+                raise KeyError("Object not found")
+            
+            # Update the object attributes with the provided data
+            for key, value in obj.items():
+                self.root[obj_id].__setattr__(key, value)
+            
+            transaction.commit()  # Commit changes
+            return self.root[obj_id]
+        except KeyError as e:
+            transaction.abort()  # Abort transaction if object not found
+            raise e
         except Exception as e:
-            transaction.abort()
-            return {"error": str(e)}, 500
+            transaction.abort()  # Abort transaction in case of any error
+            raise e
 
     def findOneAndDelete(self, obj_id):
         try:
