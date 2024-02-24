@@ -76,9 +76,10 @@ class ZODBs:
 
     def findOneAndDelete(self, obj_id):
         try:
+            delObj = self.root[obj_id]
             del self.root[obj_id]
             transaction.commit()
-            return {"message": "Object deleted successfully"}, 200
+            return delObj , {"message": "Object deleted successfully"}
         except KeyError:
             return {"error": "Object not found"}, 404
         except Exception as e:

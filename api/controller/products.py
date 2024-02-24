@@ -1,9 +1,11 @@
 from fastapi import HTTPException
 from model.product import Product
 from db.ZODBs import ZODBs
+import sys
 
 
-product_db = ZODBs("api/db/Storage/products.fs")
+path = "../db/Storage/products.fs"
+product_db = ZODBs(path)
 product_db.connect()
 
 async def createProduct(request, body):
@@ -48,6 +50,15 @@ async def updateProduct(request, product_id, body):
         return updateProduct
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
+
+async def deleteProduct(request, product_id):
+    try:
+        """
+        delete the product by product_id
+        """
+        deleteProduct = product_db.findOneAndDelete(product_id)
+        return deleteProduct
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
     
