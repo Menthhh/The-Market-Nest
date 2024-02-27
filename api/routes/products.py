@@ -1,20 +1,27 @@
-from fastapi import APIRouter,Request, Body
-from controller import products
+from fastapi import APIRouter, Request, Body
+
+from controller.products import ProductController
 
 router = APIRouter()
 
+productController = ProductController()
+
 @router.post("/")
-async def createProduct(request: Request, body: dict = Body(...) ):
-    return await products.createProduct(request, body)
+async def create_product(request: Request, body: dict = Body(...)):
+    return await productController.create_product(request, body)
 
 @router.get("/")
-async def getProducts(request: Request):
-    return await products.getProducts(request)
+async def get_products(request: Request):
+    return await productController.get_products(request)
 
 @router.get("/find/{product_id}")
-async def getProduct(request: Request, product_id: str):
-    return await products.getProduct(request, product_id)
+async def get_product(request: Request, product_id: str):
+    return await productController.get_product(request, product_id)
 
 @router.put("/{product_id}")
-async def updateProduct(request: Request, product_id: str, body: dict = Body(...)):
-    return await products.updateProduct(request, product_id, body)
+async def update_product(request: Request, product_id: str, body: dict = Body(...)):
+    return await productController.update_product(request, product_id, body)
+
+@router.delete("/{product_id}")
+async def delete_product(request: Request, product_id: str):
+    return await productController.delete_product(request, product_id)

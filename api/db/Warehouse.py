@@ -4,7 +4,7 @@ from fastapi import HTTPException
 import transaction
 import uuid
 
-class ZODBs:
+class Warehouse:
     def __init__(self, path):
         self.path = path
         self.db = None
@@ -37,10 +37,8 @@ class ZODBs:
 
 
     def findOne(self, obj_id):
-        print("test")
         try:
             obj = self.root[obj_id]
-            print(obj_id)
             return obj
         except KeyError:
             return {"error": "Object not found"}, 404
@@ -76,9 +74,10 @@ class ZODBs:
 
     def findOneAndDelete(self, obj_id):
         try:
+            deleted_obj = self.root[obj_id]
             del self.root[obj_id]
             transaction.commit()
-            return {"message": "Object deleted successfully"}, 200
+            return {"message": "Object deleted successfully", "obj":deleted_obj}, 200
         except KeyError:
             return {"error": "Object not found"}, 404
         except Exception as e:

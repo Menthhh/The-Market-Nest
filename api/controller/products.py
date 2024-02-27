@@ -1,53 +1,64 @@
 from fastapi import HTTPException
 from model.product import Product
-from db.ZODBs import ZODBs
+from db.Warehouse import Warehouse
 
-
-product_db = ZODBs("api/db/Storage/products.fs")
-product_db.connect()
-
-async def createProduct(request, body):
-    try:
-        newProduct = Product(body["title"], body["category"], body["description"], body["price"], body["amount"])
-        saveProduct = product_db.create(newProduct)
-        return saveProduct
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-async def getProducts(request):
-    try:
-        """
-        products means all the products, 
-        loop through throgh root database and append to products list
-        """
-        products = []
-        for item in product_db.findAll():
-            products.append(item)
-        return products
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+class ProductController:
+    def __init__(self):
+        self.__products_db = Warehouse("c:/Users/Tonkla/Desktop/The-Market-Nest/api/db/Storage/products/products.fs")
+        self.__products_db.connect()
+    
+    async def create_product(self,request, body):
+        try:
+            """
+            create new Object lifeline
+            """
+            new_product = Product(body["title"], body["category"], body["description"], body["price"], body["amount"])
+            saved_product = self.__products_db.create(new_product)
+            return saved_product
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
 
     
-async def getProduct(request, product_id):
-    try:
-        """
-        find the product by product_id
-        """
-        getProduct = product_db.findOne(product_id)
-        return getProduct
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    
-async def updateProduct(request, product_id, body):
-    try:
-        """
-        update the product by product_id
-        """
-        updateProduct = product_db.findOneAndUpdate(product_id, body)
-        return updateProduct
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    
+    async def get_products(self,request):
+        try:
+            """
+            products means all the products, 
+            loop through throgh root database and append to products list
+            """
+            products = self.__products_db.findAll()
+            return products
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
 
     
+    async def get_product(self,request, product_id):
+        try:
+            """
+            find the product by product_id
+            """
+            product = self.__products_db.findOne(product_id)
+            return product
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+
+    
+    async def update_product(self,request, product_id, body):
+        try:
+            """
+            update the product by product_id
+            """
+            updated_product = self.__products_db.findOneAndUpdate(product_id, body)
+            return updated_product
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+
+    
+    async def delete_product(self,request, product_id):
+        try:
+            """
+            delete the product by product_id
+            """
+            deleted_product = self.__products_db.findOneAndDelete(product_id)
+            return deleted_product
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
