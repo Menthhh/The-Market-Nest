@@ -2,9 +2,9 @@ from fastapi import HTTPException
 from model.product import Product
 from db.Warehouse import Warehouse
 
-class ProductController:
+class OrderController:
     def __init__(self):
-        self.__products_db = Warehouse("c:/Users/Tonkla/Desktop/The-Market-Nest/api/db/Storage/products/products.fs")
+        self.__products_db = Warehouse("c:/Users/Tonkla/Desktop/The-Market-Nest/api/db/Storage/orders/products.fs")
         self.__products_db.connect()
     
     async def create_product(self, request, body):
