@@ -34,8 +34,8 @@
 	text-align:left;
 }
 
-#full_menu_widget #exitBtn_2{
-	text-align:center;
+* {
+	color: #51526C;
 }
 
 </string>
@@ -379,7 +379,7 @@
 }</string>
          </property>
          <property name="currentIndex">
-          <number>4</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="home">
           <property name="styleSheet">
@@ -461,8 +461,8 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>98</width>
-                      <height>28</height>
+                      <width>663</width>
+                      <height>723</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">
@@ -483,48 +483,94 @@
                      </property>
                      <item row="0" column="0">
                       <widget class="QWidget" name="widget_3" native="true">
-                       <widget class="QWidget" name="Banner" native="true">
-                        <property name="geometry">
-                         <rect>
-                          <x>0</x>
-                          <y>0</y>
-                          <width>641</width>
-                          <height>201</height>
-                         </rect>
-                        </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_6">
-                         <item>
-                          <widget class="QWidget" name="widget_2" native="true"/>
-                         </item>
-                        </layout>
-                       </widget>
-                       <widget class="QWidget" name="categoryWrap" native="true">
-                        <property name="geometry">
-                         <rect>
-                          <x>0</x>
-                          <y>200</y>
-                          <width>641</width>
-                          <height>161</height>
-                         </rect>
-                        </property>
-                        <layout class="QGridLayout" name="gridLayout_10">
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="spacing">
-                          <number>0</number>
-                         </property>
-                        </layout>
-                       </widget>
+                       <layout class="QGridLayout" name="gridLayout_14">
+                        <item row="0" column="0">
+                         <widget class="QWidget" name="Banner" native="true">
+                          <layout class="QGridLayout" name="gridLayout_11">
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item row="0" column="0">
+                            <widget class="QWidget" name="widget_2" native="true">
+                             <layout class="QGridLayout" name="gridLayout_12">
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <item row="0" column="0">
+                               <widget class="QLabel" name="label_2">
+                                <property name="font">
+                                 <font>
+                                  <family>Aksaramatee</family>
+                                  <pointsize>24</pointsize>
+                                  <bold>true</bold>
+                                 </font>
+                                </property>
+                                <property name="text">
+                                 <string>a banner</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="1" column="0">
+                         <widget class="QWidget" name="categoryWrap" native="true">
+                          <layout class="QGridLayout" name="gridLayout_10">
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item row="0" column="0">
+                            <widget class="QLabel" name="label_9">
+                             <property name="text">
+                              <string>Caregory</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="2" column="0">
+                         <widget class="QWidget" name="main_widget" native="true">
+                          <layout class="QGridLayout" name="gridLayout_13"/>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -797,7 +843,7 @@
           </font>
          </property>
          <property name="text">
-          <string/>
+          <string>Log Out</string>
          </property>
          <property name="icon">
           <iconset resource="resource.qrc">
