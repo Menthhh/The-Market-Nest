@@ -51,6 +51,7 @@ if __name__ == "__main__":
     # else:
     #     print("Font not found")
 
+    #D:\pro\The-Market-Nest\fonts
     font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
     print(f"Font Path: {font_path}")
     if QFontDatabase.addApplicationFont(font_path) == -1:

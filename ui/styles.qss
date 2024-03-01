@@ -13,7 +13,7 @@
     font-family: "Josefin Sans";
 
     font-size: 12px;
-    font-weight: 400; /* Adjust the weight as needed */
+    font-weight: 700; /* Adjust the weight as needed */
     font-style: normal;
     color: #51526C;
 }
