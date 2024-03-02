@@ -61,7 +61,7 @@ class ProductWidget(QWidget):
         pixmap = pixmap.scaledToWidth(200, Qt.SmoothTransformation)
         pixmap = pixmap.scaledToHeight(200, Qt.SmoothTransformation)
         product_image.setPixmap(pixmap)
-        
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -85,7 +85,10 @@ class MainWindow(QMainWindow):
             {"name": "Product 7", "price": "$70.00", "image_path": "pics/spagetti.png"},
             {"name": "Product 8", "price": "$80.00", "image_path": "pics/spagetti.png"},
             {"name": "Product 9", "price": "$90.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 10", "price": "$100.00", "image_path": "pics/spagetti.png"}
+            {"name": "Product 10", "price": "$100.00", "image_path": "pics/spagetti.png"},
+            {"name": "Product 11", "price": "$110.00", "image_path": "pics/spagetti.png"},
+            {"name": "Product 12", "price": "$120.00", "image_path": "pics/spagetti.png"},
+            {"name": "Product 13", "price": "$130.00", "image_path": "pics/spagetti.png"},
             # Add more products as needed
         ]
         row = 0
@@ -104,6 +107,7 @@ class MainWindow(QMainWindow):
         self.ui.profileBtn_1.clicked.connect(self.on_user_btn_clicked)
         self.ui.homeBtn_1.clicked.connect(self.on_home_btn_clicked)
         self.ui.homeBtn_2.clicked.connect(self.on_home_btn_clicked)
+        self.ui.sellBtn_1.clicked.connect(self.sell_btn_clicked)
 
     #function for searching
     def on_search_btn_clicked(self):
@@ -118,6 +122,9 @@ class MainWindow(QMainWindow):
 
     def on_home_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(0)
+
+    def sell_btn_clicked(self):
+        self.ui.stackedWidget.setCurrentIndex(6)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -135,7 +142,7 @@ if __name__ == "__main__":
 
 
 
-        #     # Add label to the layout of self.ui.productlist
+        # Add label to the layout of self.ui.productlist
         # label = QLabel("Hello World")
         # label.setAlignment(Qt.AlignCenter)
         # productlist_layout.addWidget(label)
