@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'mainApp.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.6.0
+## Created by: Qt User Interface Compiler version 6.6.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -46,8 +46,8 @@ class Ui_MainWindow(object):
 "	text-align:left;\n"
 "}\n"
 "\n"
-"#full_menu_widget #exitBtn_2{\n"
-"	text-align:center;\n"
+"* {\n"
+"	color: #51526C;\n"
 "}\n"
 "\n"
 "")
@@ -125,7 +125,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addLayout(self.verticalLayout)
 
-        self.verticalSpacer = QSpacerItem(47, 509, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer = QSpacerItem(47, 509, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_3.addItem(self.verticalSpacer)
 
@@ -172,7 +172,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.changeBtn_1)
 
-        self.horizontalSpacer = QSpacerItem(233, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(233, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer)
 
@@ -195,7 +195,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addLayout(self.horizontalLayout)
 
-        self.horizontalSpacer_2 = QSpacerItem(233, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_2 = QSpacerItem(233, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
 
@@ -205,7 +205,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.pushButton_3)
 
-        self.horizontalSpacer_5 = QSpacerItem(5, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_5 = QSpacerItem(5, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_5)
 
@@ -229,7 +229,7 @@ class Ui_MainWindow(object):
         self.gridLayout_9.setContentsMargins(0, 0, 0, 0)
         self.home_container = QWidget(self.home)
         self.home_container.setObjectName(u"home_container")
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.home_container.sizePolicy().hasHeightForWidth())
@@ -253,30 +253,61 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 98, 28))
+        self.scrollHome.setGeometry(QRect(0, 0, 666, 723))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.widget_3 = QWidget(self.scrollHome)
         self.widget_3.setObjectName(u"widget_3")
+        self.gridLayout_14 = QGridLayout(self.widget_3)
+        self.gridLayout_14.setObjectName(u"gridLayout_14")
         self.Banner = QWidget(self.widget_3)
         self.Banner.setObjectName(u"Banner")
-        self.Banner.setGeometry(QRect(0, 0, 641, 201))
-        self.verticalLayout_6 = QVBoxLayout(self.Banner)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.gridLayout_11 = QGridLayout(self.Banner)
+        self.gridLayout_11.setObjectName(u"gridLayout_11")
+        self.gridLayout_11.setContentsMargins(0, 0, 0, 0)
         self.widget_2 = QWidget(self.Banner)
         self.widget_2.setObjectName(u"widget_2")
+        self.gridLayout_12 = QGridLayout(self.widget_2)
+        self.gridLayout_12.setSpacing(0)
+        self.gridLayout_12.setObjectName(u"gridLayout_12")
+        self.gridLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.label_2 = QLabel(self.widget_2)
+        self.label_2.setObjectName(u"label_2")
+        font = QFont()
+        font.setFamilies([u"Aksaramatee"])
+        font.setPointSize(24)
+        font.setBold(True)
+        self.label_2.setFont(font)
 
-        self.verticalLayout_6.addWidget(self.widget_2)
+        self.gridLayout_12.addWidget(self.label_2, 0, 0, 1, 1)
+
+
+        self.gridLayout_11.addWidget(self.widget_2, 0, 0, 1, 1)
+
+
+        self.gridLayout_14.addWidget(self.Banner, 0, 0, 1, 1)
 
         self.categoryWrap = QWidget(self.widget_3)
         self.categoryWrap.setObjectName(u"categoryWrap")
-        self.categoryWrap.setGeometry(QRect(0, 200, 641, 161))
         self.gridLayout_10 = QGridLayout(self.categoryWrap)
         self.gridLayout_10.setSpacing(0)
         self.gridLayout_10.setObjectName(u"gridLayout_10")
         self.gridLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.label_9 = QLabel(self.categoryWrap)
+        self.label_9.setObjectName(u"label_9")
+
+        self.gridLayout_10.addWidget(self.label_9, 0, 0, 1, 1)
+
+
+        self.gridLayout_14.addWidget(self.categoryWrap, 1, 0, 1, 1)
+
+        self.productlist = QWidget(self.widget_3)
+        self.productlist.setObjectName(u"productlist")
+
+        self.gridLayout_14.addWidget(self.productlist, 2, 0, 1, 1)
+
 
         self.gridLayout_2.addWidget(self.widget_3, 0, 0, 1, 1)
 
@@ -339,7 +370,7 @@ class Ui_MainWindow(object):
 
         self.full_menu_widget = QWidget(self.centralwidget)
         self.full_menu_widget.setObjectName(u"full_menu_widget")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.full_menu_widget.sizePolicy().hasHeightForWidth())
@@ -353,7 +384,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(-1, 5, -1, 20)
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer_4)
 
@@ -367,14 +398,14 @@ class Ui_MainWindow(object):
 
         self.label_3 = QLabel(self.full_menu_widget)
         self.label_3.setObjectName(u"label_3")
-        font = QFont()
-        font.setFamilies([u"Josefin Sans SemiBold"])
-        font.setBold(True)
-        self.label_3.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"Josefin Sans SemiBold"])
+        font1.setBold(True)
+        self.label_3.setFont(font1)
 
         self.horizontalLayout_3.addWidget(self.label_3)
 
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
 
@@ -423,15 +454,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addLayout(self.verticalLayout_2)
 
-        self.verticalSpacer_2 = QSpacerItem(117, 509, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_2 = QSpacerItem(117, 509, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_4.addItem(self.verticalSpacer_2)
 
         self.exitBtn_2 = QPushButton(self.full_menu_widget)
         self.exitBtn_2.setObjectName(u"exitBtn_2")
-        font1 = QFont()
-        font1.setFamilies([u"Josefin Sans Medium"])
-        self.exitBtn_2.setFont(font1)
+        font2 = QFont()
+        font2.setFamilies([u"Josefin Sans Medium"])
+        self.exitBtn_2.setFont(font2)
         self.exitBtn_2.setIcon(icon4)
         self.exitBtn_2.setFlat(True)
 
@@ -452,7 +483,7 @@ class Ui_MainWindow(object):
         self.cartBtn_1.toggled.connect(self.cartBtn_2.setChecked)
         self.cartBtn_2.toggled.connect(self.cartBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -469,6 +500,8 @@ class Ui_MainWindow(object):
         self.changeBtn_1.setText("")
         self.searchBtn_1.setText("")
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Sell", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"a banner", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Caregory", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Cart Page", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Order Page", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Search Page", None))
@@ -479,6 +512,6 @@ class Ui_MainWindow(object):
         self.cartBtn_2.setText(QCoreApplication.translate("MainWindow", u"Favorite", None))
         self.storeBtn_1.setText(QCoreApplication.translate("MainWindow", u"My Profile", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Edit Account", None))
-        self.exitBtn_2.setText("")
+        self.exitBtn_2.setText(QCoreApplication.translate("MainWindow", u"Log Out", None))
     # retranslateUi
 
