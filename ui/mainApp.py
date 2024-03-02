@@ -362,6 +362,132 @@ class Ui_MainWindow(object):
         self.gridLayout_6.addWidget(self.label_8, 0, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.user)
+        self.viewproduct = QWidget()
+        self.viewproduct.setObjectName(u"viewproduct")
+        self.gridLayout_13 = QGridLayout(self.viewproduct)
+        self.gridLayout_13.setSpacing(0)
+        self.gridLayout_13.setObjectName(u"gridLayout_13")
+        self.gridLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.widget_4 = QWidget(self.viewproduct)
+        self.widget_4.setObjectName(u"widget_4")
+        self.gridLayout_21 = QGridLayout(self.widget_4)
+        self.gridLayout_21.setObjectName(u"gridLayout_21")
+        self.widget_5 = QWidget(self.widget_4)
+        self.widget_5.setObjectName(u"widget_5")
+        self.gridLayout_15 = QGridLayout(self.widget_5)
+        self.gridLayout_15.setObjectName(u"gridLayout_15")
+        self.product_img = QLabel(self.widget_5)
+        self.product_img.setObjectName(u"product_img")
+
+        self.gridLayout_15.addWidget(self.product_img, 0, 0, 1, 1)
+
+
+        self.gridLayout_21.addWidget(self.widget_5, 0, 0, 1, 1)
+
+        self.widget_6 = QWidget(self.widget_4)
+        self.widget_6.setObjectName(u"widget_6")
+        self.gridLayout_16 = QGridLayout(self.widget_6)
+        self.gridLayout_16.setObjectName(u"gridLayout_16")
+        self.phone = QLabel(self.widget_6)
+        self.phone.setObjectName(u"phone")
+
+        self.gridLayout_16.addWidget(self.phone, 2, 0, 1, 1)
+
+        self.product_name = QLabel(self.widget_6)
+        self.product_name.setObjectName(u"product_name")
+
+        self.gridLayout_16.addWidget(self.product_name, 0, 0, 1, 1)
+
+        self.product_price = QLabel(self.widget_6)
+        self.product_price.setObjectName(u"product_price")
+
+        self.gridLayout_16.addWidget(self.product_price, 1, 0, 1, 1)
+
+        self.chat = QLabel(self.widget_6)
+        self.chat.setObjectName(u"chat")
+
+        self.gridLayout_16.addWidget(self.chat, 3, 0, 1, 1)
+
+
+        self.gridLayout_21.addWidget(self.widget_6, 0, 1, 1, 1)
+
+        self.widget_7 = QWidget(self.widget_4)
+        self.widget_7.setObjectName(u"widget_7")
+        self.gridLayout_20 = QGridLayout(self.widget_7)
+        self.gridLayout_20.setObjectName(u"gridLayout_20")
+        self.widget_8 = QWidget(self.widget_7)
+        self.widget_8.setObjectName(u"widget_8")
+        self.gridLayout_18 = QGridLayout(self.widget_8)
+        self.gridLayout_18.setObjectName(u"gridLayout_18")
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_18.addItem(self.horizontalSpacer_6, 0, 3, 1, 1)
+
+        self.label_10 = QLabel(self.widget_8)
+        self.label_10.setObjectName(u"label_10")
+
+        self.gridLayout_18.addWidget(self.label_10, 0, 2, 1, 1)
+
+        self.label_11 = QLabel(self.widget_8)
+        self.label_11.setObjectName(u"label_11")
+
+        self.gridLayout_18.addWidget(self.label_11, 0, 0, 1, 1)
+
+        self.horizontalSpacer_7 = QSpacerItem(20, 20, QSizePolicy.Policy.Maximum, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_18.addItem(self.horizontalSpacer_7, 0, 1, 1, 1)
+
+
+        self.gridLayout_20.addWidget(self.widget_8, 0, 0, 1, 1)
+
+        self.widget_9 = QWidget(self.widget_7)
+        self.widget_9.setObjectName(u"widget_9")
+        self.gridLayout_17 = QGridLayout(self.widget_9)
+        self.gridLayout_17.setObjectName(u"gridLayout_17")
+        self.label_12 = QLabel(self.widget_9)
+        self.label_12.setObjectName(u"label_12")
+
+        self.gridLayout_17.addWidget(self.label_12, 0, 0, 1, 1)
+
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_17.addItem(self.horizontalSpacer_8, 0, 1, 1, 1)
+
+
+        self.gridLayout_20.addWidget(self.widget_9, 1, 0, 1, 1)
+
+        self.widget_10 = QWidget(self.widget_7)
+        self.widget_10.setObjectName(u"widget_10")
+        self.gridLayout_19 = QGridLayout(self.widget_10)
+        self.gridLayout_19.setObjectName(u"gridLayout_19")
+        self.label_13 = QLabel(self.widget_10)
+        self.label_13.setObjectName(u"label_13")
+        self.label_13.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.gridLayout_19.addWidget(self.label_13, 0, 0, 1, 1)
+
+        self.label_14 = QLabel(self.widget_10)
+        self.label_14.setObjectName(u"label_14")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.label_14.sizePolicy().hasHeightForWidth())
+        self.label_14.setSizePolicy(sizePolicy1)
+        self.label_14.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.label_14.setWordWrap(True)
+
+        self.gridLayout_19.addWidget(self.label_14, 0, 1, 2, 1)
+
+
+        self.gridLayout_20.addWidget(self.widget_10, 2, 0, 1, 1)
+
+
+        self.gridLayout_21.addWidget(self.widget_7, 1, 0, 1, 2)
+
+
+        self.gridLayout_13.addWidget(self.widget_4, 0, 0, 1, 1)
+
+        self.stackedWidget.addWidget(self.viewproduct)
 
         self.verticalLayout_5.addWidget(self.stackedWidget)
 
@@ -370,11 +496,11 @@ class Ui_MainWindow(object):
 
         self.full_menu_widget = QWidget(self.centralwidget)
         self.full_menu_widget.setObjectName(u"full_menu_widget")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.full_menu_widget.sizePolicy().hasHeightForWidth())
-        self.full_menu_widget.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.full_menu_widget.sizePolicy().hasHeightForWidth())
+        self.full_menu_widget.setSizePolicy(sizePolicy2)
         self.full_menu_widget.setMaximumSize(QSize(120, 16777215))
         self.verticalLayout_4 = QVBoxLayout(self.full_menu_widget)
         self.verticalLayout_4.setSpacing(0)
@@ -483,7 +609,7 @@ class Ui_MainWindow(object):
         self.cartBtn_1.toggled.connect(self.cartBtn_2.setChecked)
         self.cartBtn_2.toggled.connect(self.cartBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -506,6 +632,17 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Order Page", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Search Page", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"User Page", None))
+        self.product_img.setText(QCoreApplication.translate("MainWindow", u"img", None))
+        self.phone.setText(QCoreApplication.translate("MainWindow", u"Tel: 000-000-0000", None))
+        self.product_name.setText(QCoreApplication.translate("MainWindow", u"product name", None))
+        self.product_price.setText(QCoreApplication.translate("MainWindow", u"price", None))
+        self.chat.setText(QCoreApplication.translate("MainWindow", u"Chat", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"Seller", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Product Specification", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"Category", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa"
+                        "[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;", None))
         self.label_4.setText("")
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"MarketNest", None))
         self.homeBtn_2.setText(QCoreApplication.translate("MainWindow", u"Home", None))
