@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(570, 765)
+        MainWindow.resize(529, 659)
         MainWindow.setStyleSheet(u"#centralwidget{\n"
 "	background-color: rgb(255, 255, 255);\n"
 "}\n"
@@ -351,7 +351,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 573, 702))
+        self.scrollHome.setGeometry(QRect(0, 0, 288, 596))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -478,11 +478,15 @@ class Ui_MainWindow(object):
         self.widget_4 = QWidget(self.viewproduct)
         self.widget_4.setObjectName(u"widget_4")
         self.gridLayout_21 = QGridLayout(self.widget_4)
+        self.gridLayout_21.setSpacing(0)
         self.gridLayout_21.setObjectName(u"gridLayout_21")
+        self.gridLayout_21.setContentsMargins(0, 0, 0, 0)
         self.widget_5 = QWidget(self.widget_4)
         self.widget_5.setObjectName(u"widget_5")
         self.gridLayout_15 = QGridLayout(self.widget_5)
+        self.gridLayout_15.setSpacing(0)
         self.gridLayout_15.setObjectName(u"gridLayout_15")
+        self.gridLayout_15.setContentsMargins(0, 0, 0, 0)
         self.product_img = QLabel(self.widget_5)
         self.product_img.setObjectName(u"product_img")
 
@@ -494,11 +498,15 @@ class Ui_MainWindow(object):
         self.widget_6 = QWidget(self.widget_4)
         self.widget_6.setObjectName(u"widget_6")
         self.gridLayout_16 = QGridLayout(self.widget_6)
+        self.gridLayout_16.setSpacing(0)
         self.gridLayout_16.setObjectName(u"gridLayout_16")
+        self.gridLayout_16.setContentsMargins(0, 0, 0, 0)
         self.widget_35 = QWidget(self.widget_6)
         self.widget_35.setObjectName(u"widget_35")
         self.gridLayout_47 = QGridLayout(self.widget_35)
+        self.gridLayout_47.setSpacing(0)
         self.gridLayout_47.setObjectName(u"gridLayout_47")
+        self.gridLayout_47.setContentsMargins(0, 0, 0, 0)
         self.chat = QLabel(self.widget_35)
         self.chat.setObjectName(u"chat")
 
@@ -515,7 +523,9 @@ class Ui_MainWindow(object):
         self.widget_34 = QWidget(self.widget_6)
         self.widget_34.setObjectName(u"widget_34")
         self.gridLayout_46 = QGridLayout(self.widget_34)
+        self.gridLayout_46.setSpacing(0)
         self.gridLayout_46.setObjectName(u"gridLayout_46")
+        self.gridLayout_46.setContentsMargins(0, 0, 0, 0)
         self.product_price = QLabel(self.widget_34)
         self.product_price.setObjectName(u"product_price")
 
@@ -527,16 +537,47 @@ class Ui_MainWindow(object):
         self.widget_33 = QWidget(self.widget_6)
         self.widget_33.setObjectName(u"widget_33")
         self.gridLayout_45 = QGridLayout(self.widget_33)
+        self.gridLayout_45.setSpacing(0)
         self.gridLayout_45.setObjectName(u"gridLayout_45")
-        self.product_name = QLabel(self.widget_33)
+        self.gridLayout_45.setContentsMargins(0, 0, 0, 0)
+        self.widget_36 = QWidget(self.widget_33)
+        self.widget_36.setObjectName(u"widget_36")
+        self.gridLayout_51 = QGridLayout(self.widget_36)
+        self.gridLayout_51.setSpacing(0)
+        self.gridLayout_51.setObjectName(u"gridLayout_51")
+        self.gridLayout_51.setContentsMargins(0, 0, 0, 0)
+        self.product_name = QLabel(self.widget_36)
         self.product_name.setObjectName(u"product_name")
 
-        self.gridLayout_45.addWidget(self.product_name, 0, 0, 1, 1)
+        self.gridLayout_51.addWidget(self.product_name, 0, 0, 1, 1)
 
-        self.pushButton_3 = QPushButton(self.widget_33)
+
+        self.gridLayout_45.addWidget(self.widget_36, 0, 0, 1, 1)
+
+        self.widget_38 = QWidget(self.widget_33)
+        self.widget_38.setObjectName(u"widget_38")
+        self.widget_38.setMaximumSize(QSize(30, 16777215))
+        self.gridLayout_50 = QGridLayout(self.widget_38)
+        self.gridLayout_50.setSpacing(0)
+        self.gridLayout_50.setObjectName(u"gridLayout_50")
+        self.gridLayout_50.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_3 = QPushButton(self.widget_38)
         self.pushButton_3.setObjectName(u"pushButton_3")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
+        self.pushButton_3.setSizePolicy(sizePolicy2)
+        self.pushButton_3.setMaximumSize(QSize(30, 16777215))
+        icon7 = QIcon()
+        icon7.addFile(u":/icon/icon/heart2.ico", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_3.setIcon(icon7)
+        self.pushButton_3.setFlat(True)
 
-        self.gridLayout_45.addWidget(self.pushButton_3, 0, 1, 1, 1)
+        self.gridLayout_50.addWidget(self.pushButton_3, 0, 0, 1, 1)
+
+
+        self.gridLayout_45.addWidget(self.widget_38, 0, 1, 1, 1)
 
 
         self.gridLayout_16.addWidget(self.widget_33, 0, 0, 1, 1)
@@ -547,7 +588,9 @@ class Ui_MainWindow(object):
         self.widget_7 = QWidget(self.widget_4)
         self.widget_7.setObjectName(u"widget_7")
         self.gridLayout_20 = QGridLayout(self.widget_7)
+        self.gridLayout_20.setSpacing(0)
         self.gridLayout_20.setObjectName(u"gridLayout_20")
+        self.gridLayout_20.setContentsMargins(0, 0, 0, 0)
         self.widget_8 = QWidget(self.widget_7)
         self.widget_8.setObjectName(u"widget_8")
         self.gridLayout_18 = QGridLayout(self.widget_8)
@@ -601,9 +644,6 @@ class Ui_MainWindow(object):
 
         self.label_14 = QLabel(self.widget_10)
         self.label_14.setObjectName(u"label_14")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.label_14.sizePolicy().hasHeightForWidth())
         self.label_14.setSizePolicy(sizePolicy2)
         self.label_14.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
@@ -958,7 +998,7 @@ class Ui_MainWindow(object):
         self.cartBtn_1.toggled.connect(self.cartBtn_2.setChecked)
         self.cartBtn_2.toggled.connect(self.cartBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -993,7 +1033,7 @@ class Ui_MainWindow(object):
         self.phone.setText(QCoreApplication.translate("MainWindow", u"Tel: 000-000-0000", None))
         self.product_price.setText(QCoreApplication.translate("MainWindow", u"price", None))
         self.product_name.setText(QCoreApplication.translate("MainWindow", u"product name", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"favourite heart()", None))
+        self.pushButton_3.setText("")
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Seller", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Product Specification", None))
