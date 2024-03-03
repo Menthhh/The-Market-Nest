@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>777</width>
-    <height>659</height>
+    <width>739</width>
+    <height>549</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -952,6 +952,21 @@
            <item row="0" column="0">
             <widget class="QWidget" name="widget_38" native="true">
              <layout class="QGridLayout" name="gridLayout_53">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>0</number>
+              </property>
               <item row="0" column="0">
                <widget class="QWidget" name="widget_39" native="true">
                 <property name="maximumSize">
@@ -961,6 +976,21 @@
                  </size>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_52">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="horizontalSpacing">
+                  <number>0</number>
+                 </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="label_22">
                    <property name="text">
