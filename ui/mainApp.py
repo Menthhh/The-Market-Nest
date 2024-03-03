@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(742, 765)
+        MainWindow.resize(570, 765)
         MainWindow.setStyleSheet(u"#centralwidget{\n"
 "	background-color: rgb(255, 255, 255);\n"
 "}\n"
@@ -322,8 +322,8 @@ class Ui_MainWindow(object):
 "	background-color: rgb(255, 255, 255);\n"
 "}")
         self.gridLayout_9 = QGridLayout(self.home)
+        self.gridLayout_9.setSpacing(0)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
-        self.gridLayout_9.setHorizontalSpacing(0)
         self.gridLayout_9.setContentsMargins(0, 0, 0, 0)
         self.home_container = QWidget(self.home)
         self.home_container.setObjectName(u"home_container")
@@ -359,10 +359,13 @@ class Ui_MainWindow(object):
         self.widget_3 = QWidget(self.scrollHome)
         self.widget_3.setObjectName(u"widget_3")
         self.gridLayout_14 = QGridLayout(self.widget_3)
+        self.gridLayout_14.setSpacing(0)
         self.gridLayout_14.setObjectName(u"gridLayout_14")
+        self.gridLayout_14.setContentsMargins(0, 0, 0, 0)
         self.Banner = QWidget(self.widget_3)
         self.Banner.setObjectName(u"Banner")
         self.gridLayout_11 = QGridLayout(self.Banner)
+        self.gridLayout_11.setSpacing(0)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
         self.gridLayout_11.setContentsMargins(0, 0, 0, 0)
         self.widget_2 = QWidget(self.Banner)
@@ -423,7 +426,9 @@ class Ui_MainWindow(object):
         self.cart = QWidget()
         self.cart.setObjectName(u"cart")
         self.gridLayout_3 = QGridLayout(self.cart)
+        self.gridLayout_3.setSpacing(0)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
         self.label_5 = QLabel(self.cart)
         self.label_5.setObjectName(u"label_5")
 
@@ -433,7 +438,9 @@ class Ui_MainWindow(object):
         self.order = QWidget()
         self.order.setObjectName(u"order")
         self.gridLayout_4 = QGridLayout(self.order)
+        self.gridLayout_4.setSpacing(0)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
         self.label_6 = QLabel(self.order)
         self.label_6.setObjectName(u"label_6")
 
@@ -443,7 +450,9 @@ class Ui_MainWindow(object):
         self.search = QWidget()
         self.search.setObjectName(u"search")
         self.gridLayout_5 = QGridLayout(self.search)
+        self.gridLayout_5.setSpacing(0)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
         self.label_7 = QLabel(self.search)
         self.label_7.setObjectName(u"label_7")
 
@@ -615,49 +624,15 @@ class Ui_MainWindow(object):
         self.sell = QWidget()
         self.sell.setObjectName(u"sell")
         self.gridLayout_22 = QGridLayout(self.sell)
+        self.gridLayout_22.setSpacing(0)
         self.gridLayout_22.setObjectName(u"gridLayout_22")
+        self.gridLayout_22.setContentsMargins(0, 0, 0, 0)
         self.widget_11 = QWidget(self.sell)
         self.widget_11.setObjectName(u"widget_11")
         self.gridLayout_44 = QGridLayout(self.widget_11)
+        self.gridLayout_44.setSpacing(0)
         self.gridLayout_44.setObjectName(u"gridLayout_44")
-        self.widget_18 = QWidget(self.widget_11)
-        self.widget_18.setObjectName(u"widget_18")
-        self.gridLayout_31 = QGridLayout(self.widget_18)
-        self.gridLayout_31.setObjectName(u"gridLayout_31")
-        self.gridLayout_31.setHorizontalSpacing(91)
-        self.gridLayout_31.setVerticalSpacing(0)
-        self.gridLayout_31.setContentsMargins(0, 0, 0, 0)
-        self.widget_19 = QWidget(self.widget_18)
-        self.widget_19.setObjectName(u"widget_19")
-        self.gridLayout_29 = QGridLayout(self.widget_19)
-        self.gridLayout_29.setSpacing(0)
-        self.gridLayout_29.setObjectName(u"gridLayout_29")
-        self.gridLayout_29.setContentsMargins(0, 0, 0, 0)
-        self.label_17 = QLabel(self.widget_19)
-        self.label_17.setObjectName(u"label_17")
-
-        self.gridLayout_29.addWidget(self.label_17, 0, 0, 1, 1)
-
-
-        self.gridLayout_31.addWidget(self.widget_19, 0, 0, 1, 1)
-
-        self.widget_20 = QWidget(self.widget_18)
-        self.widget_20.setObjectName(u"widget_20")
-        self.gridLayout_30 = QGridLayout(self.widget_20)
-        self.gridLayout_30.setSpacing(0)
-        self.gridLayout_30.setObjectName(u"gridLayout_30")
-        self.gridLayout_30.setContentsMargins(0, 0, 0, 0)
-        self.lineEdit_2 = QLineEdit(self.widget_20)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-
-        self.gridLayout_30.addWidget(self.lineEdit_2, 0, 0, 1, 1)
-
-
-        self.gridLayout_31.addWidget(self.widget_20, 0, 1, 1, 1)
-
-
-        self.gridLayout_44.addWidget(self.widget_18, 2, 0, 1, 1)
-
+        self.gridLayout_44.setContentsMargins(0, 0, 0, 0)
         self.widget_24 = QWidget(self.widget_11)
         self.widget_24.setObjectName(u"widget_24")
         self.widget_24.setMaximumSize(QSize(16777215, 100))
@@ -701,43 +676,43 @@ class Ui_MainWindow(object):
 
         self.gridLayout_44.addWidget(self.widget_24, 4, 0, 1, 1)
 
-        self.widget_27 = QWidget(self.widget_11)
-        self.widget_27.setObjectName(u"widget_27")
-        self.gridLayout_40 = QGridLayout(self.widget_27)
-        self.gridLayout_40.setObjectName(u"gridLayout_40")
-        self.gridLayout_40.setHorizontalSpacing(70)
-        self.gridLayout_40.setVerticalSpacing(0)
-        self.gridLayout_40.setContentsMargins(0, 0, 0, 0)
-        self.widget_28 = QWidget(self.widget_27)
-        self.widget_28.setObjectName(u"widget_28")
-        self.gridLayout_35 = QGridLayout(self.widget_28)
-        self.gridLayout_35.setSpacing(0)
-        self.gridLayout_35.setObjectName(u"gridLayout_35")
-        self.gridLayout_35.setContentsMargins(0, 0, 0, 0)
-        self.label_20 = QLabel(self.widget_28)
-        self.label_20.setObjectName(u"label_20")
+        self.widget_30 = QWidget(self.widget_11)
+        self.widget_30.setObjectName(u"widget_30")
+        self.gridLayout_43 = QGridLayout(self.widget_30)
+        self.gridLayout_43.setObjectName(u"gridLayout_43")
+        self.gridLayout_43.setHorizontalSpacing(36)
+        self.gridLayout_43.setVerticalSpacing(0)
+        self.gridLayout_43.setContentsMargins(0, 0, 0, 0)
+        self.widget_32 = QWidget(self.widget_30)
+        self.widget_32.setObjectName(u"widget_32")
+        self.gridLayout_42 = QGridLayout(self.widget_32)
+        self.gridLayout_42.setSpacing(0)
+        self.gridLayout_42.setObjectName(u"gridLayout_42")
+        self.gridLayout_42.setContentsMargins(0, 0, 0, 0)
+        self.lineEdit_4 = QLineEdit(self.widget_32)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
 
-        self.gridLayout_35.addWidget(self.label_20, 0, 0, 1, 1)
-
-
-        self.gridLayout_40.addWidget(self.widget_28, 0, 0, 1, 1)
-
-        self.widget_29 = QWidget(self.widget_27)
-        self.widget_29.setObjectName(u"widget_29")
-        self.gridLayout_36 = QGridLayout(self.widget_29)
-        self.gridLayout_36.setSpacing(0)
-        self.gridLayout_36.setObjectName(u"gridLayout_36")
-        self.gridLayout_36.setContentsMargins(0, 0, 0, 0)
-        self.lineEdit_3 = QLineEdit(self.widget_29)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-
-        self.gridLayout_36.addWidget(self.lineEdit_3, 0, 0, 1, 1)
+        self.gridLayout_42.addWidget(self.lineEdit_4, 0, 0, 1, 1)
 
 
-        self.gridLayout_40.addWidget(self.widget_29, 0, 1, 1, 1)
+        self.gridLayout_43.addWidget(self.widget_32, 0, 1, 1, 1)
+
+        self.widget_31 = QWidget(self.widget_30)
+        self.widget_31.setObjectName(u"widget_31")
+        self.gridLayout_41 = QGridLayout(self.widget_31)
+        self.gridLayout_41.setSpacing(0)
+        self.gridLayout_41.setObjectName(u"gridLayout_41")
+        self.gridLayout_41.setContentsMargins(0, 0, 0, 0)
+        self.label_21 = QLabel(self.widget_31)
+        self.label_21.setObjectName(u"label_21")
+
+        self.gridLayout_41.addWidget(self.label_21, 0, 0, 1, 1)
 
 
-        self.gridLayout_44.addWidget(self.widget_27, 5, 0, 1, 1)
+        self.gridLayout_43.addWidget(self.widget_31, 0, 0, 1, 1)
+
+
+        self.gridLayout_44.addWidget(self.widget_30, 6, 0, 1, 1)
 
         self.widget_15 = QWidget(self.widget_11)
         self.widget_15.setObjectName(u"widget_15")
@@ -863,43 +838,100 @@ class Ui_MainWindow(object):
 
         self.gridLayout_44.addWidget(self.widget_21, 3, 0, 1, 1)
 
-        self.widget_30 = QWidget(self.widget_11)
-        self.widget_30.setObjectName(u"widget_30")
-        self.gridLayout_43 = QGridLayout(self.widget_30)
-        self.gridLayout_43.setObjectName(u"gridLayout_43")
-        self.gridLayout_43.setHorizontalSpacing(36)
-        self.gridLayout_43.setVerticalSpacing(0)
-        self.gridLayout_43.setContentsMargins(0, 0, 0, 0)
-        self.widget_31 = QWidget(self.widget_30)
-        self.widget_31.setObjectName(u"widget_31")
-        self.gridLayout_41 = QGridLayout(self.widget_31)
-        self.gridLayout_41.setSpacing(0)
-        self.gridLayout_41.setObjectName(u"gridLayout_41")
-        self.gridLayout_41.setContentsMargins(0, 0, 0, 0)
-        self.label_21 = QLabel(self.widget_31)
-        self.label_21.setObjectName(u"label_21")
+        self.widget_18 = QWidget(self.widget_11)
+        self.widget_18.setObjectName(u"widget_18")
+        self.gridLayout_31 = QGridLayout(self.widget_18)
+        self.gridLayout_31.setObjectName(u"gridLayout_31")
+        self.gridLayout_31.setHorizontalSpacing(91)
+        self.gridLayout_31.setVerticalSpacing(0)
+        self.gridLayout_31.setContentsMargins(0, 0, 0, 0)
+        self.widget_19 = QWidget(self.widget_18)
+        self.widget_19.setObjectName(u"widget_19")
+        self.gridLayout_29 = QGridLayout(self.widget_19)
+        self.gridLayout_29.setSpacing(0)
+        self.gridLayout_29.setObjectName(u"gridLayout_29")
+        self.gridLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.label_17 = QLabel(self.widget_19)
+        self.label_17.setObjectName(u"label_17")
 
-        self.gridLayout_41.addWidget(self.label_21, 0, 0, 1, 1)
-
-
-        self.gridLayout_43.addWidget(self.widget_31, 0, 0, 1, 1)
-
-        self.widget_32 = QWidget(self.widget_30)
-        self.widget_32.setObjectName(u"widget_32")
-        self.gridLayout_42 = QGridLayout(self.widget_32)
-        self.gridLayout_42.setSpacing(0)
-        self.gridLayout_42.setObjectName(u"gridLayout_42")
-        self.gridLayout_42.setContentsMargins(0, 0, 0, 0)
-        self.lineEdit_4 = QLineEdit(self.widget_32)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-
-        self.gridLayout_42.addWidget(self.lineEdit_4, 0, 0, 1, 1)
+        self.gridLayout_29.addWidget(self.label_17, 0, 0, 1, 1)
 
 
-        self.gridLayout_43.addWidget(self.widget_32, 0, 1, 1, 1)
+        self.gridLayout_31.addWidget(self.widget_19, 0, 0, 1, 1)
+
+        self.widget_20 = QWidget(self.widget_18)
+        self.widget_20.setObjectName(u"widget_20")
+        self.gridLayout_30 = QGridLayout(self.widget_20)
+        self.gridLayout_30.setSpacing(0)
+        self.gridLayout_30.setObjectName(u"gridLayout_30")
+        self.gridLayout_30.setContentsMargins(0, 0, 0, 0)
+        self.lineEdit_2 = QLineEdit(self.widget_20)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.gridLayout_30.addWidget(self.lineEdit_2, 0, 0, 1, 1)
 
 
-        self.gridLayout_44.addWidget(self.widget_30, 6, 0, 1, 1)
+        self.gridLayout_31.addWidget(self.widget_20, 0, 1, 1, 1)
+
+
+        self.gridLayout_44.addWidget(self.widget_18, 2, 0, 1, 1)
+
+        self.widget_27 = QWidget(self.widget_11)
+        self.widget_27.setObjectName(u"widget_27")
+        self.gridLayout_40 = QGridLayout(self.widget_27)
+        self.gridLayout_40.setObjectName(u"gridLayout_40")
+        self.gridLayout_40.setHorizontalSpacing(70)
+        self.gridLayout_40.setVerticalSpacing(0)
+        self.gridLayout_40.setContentsMargins(0, 0, 0, 0)
+        self.widget_28 = QWidget(self.widget_27)
+        self.widget_28.setObjectName(u"widget_28")
+        self.gridLayout_35 = QGridLayout(self.widget_28)
+        self.gridLayout_35.setSpacing(0)
+        self.gridLayout_35.setObjectName(u"gridLayout_35")
+        self.gridLayout_35.setContentsMargins(0, 0, 0, 0)
+        self.label_20 = QLabel(self.widget_28)
+        self.label_20.setObjectName(u"label_20")
+
+        self.gridLayout_35.addWidget(self.label_20, 0, 0, 1, 1)
+
+
+        self.gridLayout_40.addWidget(self.widget_28, 0, 0, 1, 1)
+
+        self.widget_29 = QWidget(self.widget_27)
+        self.widget_29.setObjectName(u"widget_29")
+        self.gridLayout_36 = QGridLayout(self.widget_29)
+        self.gridLayout_36.setSpacing(0)
+        self.gridLayout_36.setObjectName(u"gridLayout_36")
+        self.gridLayout_36.setContentsMargins(0, 0, 0, 0)
+        self.lineEdit_3 = QLineEdit(self.widget_29)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+
+        self.gridLayout_36.addWidget(self.lineEdit_3, 0, 0, 1, 1)
+
+
+        self.gridLayout_40.addWidget(self.widget_29, 0, 1, 1, 1)
+
+
+        self.gridLayout_44.addWidget(self.widget_27, 5, 0, 1, 1)
+
+        self.BtnContainer = QWidget(self.widget_11)
+        self.BtnContainer.setObjectName(u"BtnContainer")
+        self.gridLayout_49 = QGridLayout(self.BtnContainer)
+        self.gridLayout_49.setObjectName(u"gridLayout_49")
+        self.widget_37 = QWidget(self.BtnContainer)
+        self.widget_37.setObjectName(u"widget_37")
+        self.gridLayout_48 = QGridLayout(self.widget_37)
+        self.gridLayout_48.setObjectName(u"gridLayout_48")
+        self.doneAddBtn_1 = QPushButton(self.widget_37)
+        self.doneAddBtn_1.setObjectName(u"doneAddBtn_1")
+
+        self.gridLayout_48.addWidget(self.doneAddBtn_1, 0, 0, 1, 1)
+
+
+        self.gridLayout_49.addWidget(self.widget_37, 0, 0, 1, 1)
+
+
+        self.gridLayout_44.addWidget(self.BtnContainer, 7, 0, 1, 1)
 
 
         self.gridLayout_22.addWidget(self.widget_11, 0, 0, 1, 1)
@@ -926,7 +958,7 @@ class Ui_MainWindow(object):
         self.cartBtn_1.toggled.connect(self.cartBtn_2.setChecked)
         self.cartBtn_2.toggled.connect(self.cartBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -968,13 +1000,14 @@ class Ui_MainWindow(object):
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"Category", None))
         self.label_14.setText(QCoreApplication.translate("MainWindow", u"[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa"
                         "[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;", None))
-        self.label_17.setText(QCoreApplication.translate("MainWindow", u"Price", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Product Description", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Location", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"Category", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Product Title", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Product Photo", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"+ Upload Photo", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"Price", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Location", None))
+        self.doneAddBtn_1.setText(QCoreApplication.translate("MainWindow", u"Done", None))
     # retranslateUi
 

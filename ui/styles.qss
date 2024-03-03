@@ -16,7 +16,7 @@
     font-style: normal;
 }
 
-#sellBtn_1{
+#sellBtn_1, #doneAddBtn_1{
     font-family: "Josefin Sans";
     font-size: 12px;
     background-color: #0d1c63;
