@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>529</width>
+    <width>777</width>
     <height>659</height>
    </rect>
   </property>
@@ -219,6 +219,12 @@
             <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/store.ico</normaloff>:/icon/icon/store.ico</iconset>
            </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
            <property name="flat">
             <bool>true</bool>
            </property>
@@ -232,6 +238,12 @@
            <property name="icon">
             <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/profile.ico</normaloff>:/icon/icon/profile.ico</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
            </property>
            <property name="flat">
             <bool>true</bool>
@@ -385,6 +397,12 @@
             <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/store.ico</normaloff>:/icon/icon/store.ico</iconset>
            </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
            <property name="flat">
             <bool>true</bool>
            </property>
@@ -398,6 +416,12 @@
            <property name="icon">
             <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/profile.ico</normaloff>:/icon/icon/profile.ico</iconset>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
            </property>
            <property name="flat">
             <bool>true</bool>
@@ -679,7 +703,7 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>288</width>
+                      <width>453</width>
                       <height>596</height>
                      </rect>
                     </property>
@@ -908,6 +932,53 @@
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="favourite">
+          <layout class="QGridLayout" name="gridLayout_51">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QWidget" name="widget_38" native="true">
+             <layout class="QGridLayout" name="gridLayout_53">
+              <item row="0" column="0">
+               <widget class="QWidget" name="widget_39" native="true">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_52">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_22">
+                   <property name="text">
+                    <string>Favorites</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QWidget" name="favoriteList" native="true"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="viewproduct">
           <layout class="QGridLayout" name="gridLayout_13">
            <property name="leftMargin">
@@ -1072,39 +1143,11 @@
                     </property>
                     <item row="0" column="0">
                      <widget class="QWidget" name="widget_36" native="true">
-                      <layout class="QGridLayout" name="gridLayout_51">
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <item row="0" column="0">
-                        <widget class="QLabel" name="product_name">
-                         <property name="text">
-                          <string>product name</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QWidget" name="widget_38" native="true">
-                      <property name="maximumSize">
-                       <size>
-                        <width>30</width>
-                        <height>16777215</height>
-                       </size>
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_50">
                        <property name="leftMargin">
@@ -1122,7 +1165,7 @@
                        <property name="spacing">
                         <number>0</number>
                        </property>
-                       <item row="0" column="0">
+                       <item row="0" column="1">
                         <widget class="QPushButton" name="pushButton_3">
                          <property name="sizePolicy">
                           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1132,9 +1175,12 @@
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>30</width>
+                           <width>16777215</width>
                            <height>16777215</height>
                           </size>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
                          </property>
                          <property name="text">
                           <string/>
@@ -1143,8 +1189,21 @@
                           <iconset resource="resource.qrc">
                            <normaloff>:/icon/icon/heart2.ico</normaloff>:/icon/icon/heart2.ico</iconset>
                          </property>
+                         <property name="autoDefault">
+                          <bool>false</bool>
+                         </property>
+                         <property name="default">
+                          <bool>false</bool>
+                         </property>
                          <property name="flat">
                           <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="product_name">
+                         <property name="text">
+                          <string>product name</string>
                          </property>
                         </widget>
                        </item>
@@ -1989,8 +2048,8 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>30</x>
-     <y>49</y>
+     <x>31</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
      <x>111</x>
@@ -2005,12 +2064,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>72</x>
-     <y>52</y>
+     <x>120</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
-     <x>25</x>
-     <y>49</y>
+     <x>26</x>
+     <y>84</y>
     </hint>
    </hints>
   </connection>
@@ -2021,8 +2080,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>131</x>
-     <y>640</y>
+     <x>166</x>
+     <y>637</y>
     </hint>
     <hint type="destinationlabel">
      <x>124</x>
@@ -2038,7 +2097,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>33</x>
-     <y>639</y>
+     <y>637</y>
     </hint>
     <hint type="destinationlabel">
      <x>32</x>
@@ -2053,12 +2112,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>37</x>
-     <y>76</y>
+     <x>38</x>
+     <y>123</y>
     </hint>
     <hint type="destinationlabel">
-     <x>95</x>
-     <y>77</y>
+     <x>143</x>
+     <y>123</y>
     </hint>
    </hints>
   </connection>
@@ -2069,12 +2128,76 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>158</x>
-     <y>71</y>
+     <x>165</x>
+     <y>123</y>
     </hint>
     <hint type="destinationlabel">
-     <x>16</x>
-     <y>70</y>
+     <x>17</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>storeBtn_1</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>18</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>60</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>profileBtn_1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>33</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>71</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>storeBtn_1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>81</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>18</x>
+     <y>153</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>profileBtn_1</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>67</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>19</x>
+     <y>189</y>
     </hint>
    </hints>
   </connection>

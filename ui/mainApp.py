@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(529, 659)
+        MainWindow.resize(622, 659)
         MainWindow.setStyleSheet(u"#centralwidget{\n"
 "	background-color: rgb(255, 255, 255);\n"
 "}\n"
@@ -130,6 +130,8 @@ class Ui_MainWindow(object):
         icon2 = QIcon()
         icon2.addFile(u":/icon/icon/store.ico", QSize(), QIcon.Normal, QIcon.Off)
         self.storeBtn_1.setIcon(icon2)
+        self.storeBtn_1.setCheckable(True)
+        self.storeBtn_1.setAutoExclusive(True)
         self.storeBtn_1.setFlat(True)
 
         self.verticalLayout_2.addWidget(self.storeBtn_1)
@@ -139,6 +141,8 @@ class Ui_MainWindow(object):
         icon3 = QIcon()
         icon3.addFile(u":/icon/icon/profile.ico", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_2.setIcon(icon3)
+        self.pushButton_2.setCheckable(True)
+        self.pushButton_2.setAutoExclusive(True)
         self.pushButton_2.setFlat(True)
 
         self.verticalLayout_2.addWidget(self.pushButton_2)
@@ -211,6 +215,8 @@ class Ui_MainWindow(object):
         self.pushButton = QPushButton(self.icon_only_widget)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setIcon(icon2)
+        self.pushButton.setCheckable(True)
+        self.pushButton.setAutoExclusive(True)
         self.pushButton.setFlat(True)
 
         self.verticalLayout.addWidget(self.pushButton)
@@ -218,6 +224,8 @@ class Ui_MainWindow(object):
         self.profileBtn_1 = QPushButton(self.icon_only_widget)
         self.profileBtn_1.setObjectName(u"profileBtn_1")
         self.profileBtn_1.setIcon(icon3)
+        self.profileBtn_1.setCheckable(True)
+        self.profileBtn_1.setAutoExclusive(True)
         self.profileBtn_1.setFlat(True)
 
         self.verticalLayout.addWidget(self.profileBtn_1)
@@ -351,7 +359,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 288, 596))
+        self.scrollHome.setGeometry(QRect(0, 0, 453, 596))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -542,42 +550,36 @@ class Ui_MainWindow(object):
         self.gridLayout_45.setContentsMargins(0, 0, 0, 0)
         self.widget_36 = QWidget(self.widget_33)
         self.widget_36.setObjectName(u"widget_36")
-        self.gridLayout_51 = QGridLayout(self.widget_36)
-        self.gridLayout_51.setSpacing(0)
-        self.gridLayout_51.setObjectName(u"gridLayout_51")
-        self.gridLayout_51.setContentsMargins(0, 0, 0, 0)
-        self.product_name = QLabel(self.widget_36)
-        self.product_name.setObjectName(u"product_name")
-
-        self.gridLayout_51.addWidget(self.product_name, 0, 0, 1, 1)
-
-
-        self.gridLayout_45.addWidget(self.widget_36, 0, 0, 1, 1)
-
-        self.widget_38 = QWidget(self.widget_33)
-        self.widget_38.setObjectName(u"widget_38")
-        self.widget_38.setMaximumSize(QSize(30, 16777215))
-        self.gridLayout_50 = QGridLayout(self.widget_38)
-        self.gridLayout_50.setSpacing(0)
-        self.gridLayout_50.setObjectName(u"gridLayout_50")
-        self.gridLayout_50.setContentsMargins(0, 0, 0, 0)
-        self.pushButton_3 = QPushButton(self.widget_38)
-        self.pushButton_3.setObjectName(u"pushButton_3")
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy2.setHorizontalStretch(0)
         sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.widget_36.sizePolicy().hasHeightForWidth())
+        self.widget_36.setSizePolicy(sizePolicy2)
+        self.gridLayout_50 = QGridLayout(self.widget_36)
+        self.gridLayout_50.setSpacing(0)
+        self.gridLayout_50.setObjectName(u"gridLayout_50")
+        self.gridLayout_50.setContentsMargins(0, 0, 0, 0)
+        self.pushButton_3 = QPushButton(self.widget_36)
+        self.pushButton_3.setObjectName(u"pushButton_3")
         sizePolicy2.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
         self.pushButton_3.setSizePolicy(sizePolicy2)
-        self.pushButton_3.setMaximumSize(QSize(30, 16777215))
+        self.pushButton_3.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton_3.setLayoutDirection(Qt.LeftToRight)
         icon7 = QIcon()
         icon7.addFile(u":/icon/icon/heart2.ico", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton_3.setIcon(icon7)
+        self.pushButton_3.setAutoDefault(False)
         self.pushButton_3.setFlat(True)
 
-        self.gridLayout_50.addWidget(self.pushButton_3, 0, 0, 1, 1)
+        self.gridLayout_50.addWidget(self.pushButton_3, 0, 1, 1, 1)
+
+        self.product_name = QLabel(self.widget_36)
+        self.product_name.setObjectName(u"product_name")
+
+        self.gridLayout_50.addWidget(self.product_name, 0, 0, 1, 1)
 
 
-        self.gridLayout_45.addWidget(self.widget_38, 0, 1, 1, 1)
+        self.gridLayout_45.addWidget(self.widget_36, 0, 0, 1, 1)
 
 
         self.gridLayout_16.addWidget(self.widget_33, 0, 0, 1, 1)
@@ -997,8 +999,13 @@ class Ui_MainWindow(object):
         self.exitBtn_1.clicked.connect(MainWindow.close)
         self.cartBtn_1.toggled.connect(self.cartBtn_2.setChecked)
         self.cartBtn_2.toggled.connect(self.cartBtn_1.setChecked)
+        self.pushButton.toggled.connect(self.storeBtn_1.setChecked)
+        self.profileBtn_1.toggled.connect(self.pushButton_2.setChecked)
+        self.storeBtn_1.toggled.connect(self.pushButton.setChecked)
+        self.pushButton_2.toggled.connect(self.profileBtn_1.setChecked)
 
         self.stackedWidget.setCurrentIndex(5)
+        self.pushButton_3.setDefault(False)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1032,8 +1039,8 @@ class Ui_MainWindow(object):
         self.chat.setText(QCoreApplication.translate("MainWindow", u"Chat", None))
         self.phone.setText(QCoreApplication.translate("MainWindow", u"Tel: 000-000-0000", None))
         self.product_price.setText(QCoreApplication.translate("MainWindow", u"price", None))
-        self.product_name.setText(QCoreApplication.translate("MainWindow", u"product name", None))
         self.pushButton_3.setText("")
+        self.product_name.setText(QCoreApplication.translate("MainWindow", u"product name", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Seller", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Product Specification", None))
