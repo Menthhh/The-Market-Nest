@@ -11,9 +11,7 @@
 
 * {
     font-family: "Josefin Sans";
-    font-size: 12px;
-    font-weight: 700; /* Adjust the weight as needed */
-    font-style: normal;
+    color: #51526C;
 }
 
 #sellBtn_1, #doneAddBtn_1{
@@ -21,4 +19,9 @@
     font-size: 12px;
     background-color: #0d1c63;
     color: #ffffff;
+}
+
+#favBtn_2, #homeBtn_2, #accountBtn_2, #profileBtn_2, #label_3, #exitBtn_2{
+    color: #51526C;
+    font-weight: regular;
 }

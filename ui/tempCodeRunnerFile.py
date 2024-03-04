@@ -1,0 +1,1 @@
+    def __init__(self, name, price, image_path, index_to_show, main_window):
