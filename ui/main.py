@@ -202,7 +202,10 @@ class MainWindow(QMainWindow):
         self.ui.favBtn_2.clicked.connect(self.on_fav_btn_clicked)
         self.ui.profileBtn_1.clicked.connect(self.on_profile_btn_clicked)
         self.ui.profileBtn_2.clicked.connect(self.on_profile_btn_clicked)
-
+        self.ui.accountBtn_1.clicked.connect(self.on_editAccount_btn_clicked)
+        self.ui.accountBtn_2.clicked.connect(self.on_editAccount_btn_clicked)
+        self.ui.manageAccBtn_1.clicked.connect(self.on_manageAcc_btn_clicked)
+        self.ui.myProfileBtn_1.clicked.connect(self.on_myProfile_btn_clicked)
     #function for searching
     def on_search_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(2)
@@ -244,7 +247,15 @@ class MainWindow(QMainWindow):
             product_widget = FavouriteWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
             self.favourite_list_layout.addWidget(product_widget)
 
+    def on_editAccount_btn_clicked(self):
+        self.ui.stackedWidget.setCurrentIndex(6)
+        self.ui.stackedWidget_2.setCurrentIndex(0)
 
+    def on_myProfile_btn_clicked(self):
+        self.ui.stackedWidget_2.setCurrentIndex(0)
+
+    def on_manageAcc_btn_clicked(self):
+        self.ui.stackedWidget_2.setCurrentIndex(1)
                 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

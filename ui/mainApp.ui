@@ -1746,8 +1746,8 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>570</width>
-                      <height>486</height>
+                      <width>140</width>
+                      <height>65</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">
@@ -1947,8 +1947,8 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>565</width>
-                      <height>429</height>
+                      <width>98</width>
+                      <height>28</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_55">
@@ -2410,7 +2410,7 @@
                      </spacer>
                     </item>
                     <item row="0" column="0" colspan="2">
-                     <widget class="QPushButton" name="pushButton">
+                     <widget class="QPushButton" name="myProfileBtn_1">
                       <property name="tabletTracking">
                        <bool>false</bool>
                       </property>
@@ -2420,12 +2420,24 @@
                       <property name="text">
                        <string>My profile</string>
                       </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="autoExclusive">
+                       <bool>true</bool>
+                      </property>
                      </widget>
                     </item>
                     <item row="1" column="0" colspan="2">
-                     <widget class="QPushButton" name="pushButton_2">
+                     <widget class="QPushButton" name="manageAccBtn_1">
                       <property name="text">
                        <string>Manage account</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="autoExclusive">
+                       <bool>true</bool>
                       </property>
                      </widget>
                     </item>
@@ -2934,8 +2946,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>169</x>
-     <y>521</y>
+     <x>166</x>
+     <y>527</y>
     </hint>
     <hint type="destinationlabel">
      <x>124</x>
@@ -3002,8 +3014,8 @@
      <y>158</y>
     </hint>
     <hint type="destinationlabel">
-     <x>111</x>
-     <y>186</y>
+     <x>159</x>
+     <y>162</y>
     </hint>
    </hints>
   </connection>
@@ -3014,12 +3026,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>34</x>
-     <y>233</y>
+     <x>35</x>
+     <y>201</y>
     </hint>
     <hint type="destinationlabel">
-     <x>122</x>
-     <y>233</y>
+     <x>165</x>
+     <y>201</y>
     </hint>
    </hints>
   </connection>
@@ -3030,12 +3042,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>132</x>
-     <y>186</y>
+     <x>165</x>
+     <y>162</y>
     </hint>
     <hint type="destinationlabel">
-     <x>19</x>
-     <y>186</y>
+     <x>20</x>
+     <y>162</y>
     </hint>
    </hints>
   </connection>
@@ -3046,12 +3058,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>118</x>
-     <y>233</y>
+     <x>165</x>
+     <y>201</y>
     </hint>
     <hint type="destinationlabel">
-     <x>20</x>
-     <y>233</y>
+     <x>21</x>
+     <y>201</y>
     </hint>
    </hints>
   </connection>
