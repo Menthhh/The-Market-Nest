@@ -621,690 +621,8 @@
 }</string>
          </property>
          <property name="currentIndex">
-          <number>7</number>
+          <number>4</number>
          </property>
-         <widget class="QWidget" name="home">
-          <property name="styleSheet">
-           <string notr="true">#widget_2{
-	background-color: rgb(255, 255, 255);
-}</string>
-          </property>
-          <layout class="QGridLayout" name="gridLayout_9">
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QWidget" name="home_container" native="true">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">#widget_3, #widget_5, #widget_6{
-	
-	background-color: rgb(255, 255, 255);
-}</string>
-             </property>
-             <layout class="QGridLayout" name="gridLayout_8">
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item row="0" column="0">
-               <widget class="QWidget" name="home_wrapper" native="true">
-                <layout class="QGridLayout" name="gridLayout_7">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QScrollArea" name="scrollArea">
-                   <property name="widgetResizable">
-                    <bool>true</bool>
-                   </property>
-                   <widget class="QWidget" name="scrollHome">
-                    <property name="geometry">
-                     <rect>
-                      <x>0</x>
-                      <y>0</y>
-                      <width>98</width>
-                      <height>50</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_2">
-                     <property name="leftMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="spacing">
-                      <number>0</number>
-                     </property>
-                     <item row="0" column="0">
-                      <widget class="QWidget" name="widget_3" native="true">
-                       <layout class="QGridLayout" name="gridLayout_14">
-                        <property name="leftMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="topMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="rightMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="bottomMargin">
-                         <number>0</number>
-                        </property>
-                        <property name="spacing">
-                         <number>0</number>
-                        </property>
-                        <item row="0" column="0">
-                         <widget class="QWidget" name="Banner" native="true">
-                          <layout class="QGridLayout" name="gridLayout_11">
-                           <property name="leftMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="topMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="rightMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="bottomMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="spacing">
-                            <number>0</number>
-                           </property>
-                           <item row="0" column="0">
-                            <widget class="QWidget" name="widget_2" native="true">
-                             <layout class="QGridLayout" name="gridLayout_12">
-                              <property name="leftMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="topMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="rightMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="bottomMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="spacing">
-                               <number>0</number>
-                              </property>
-                              <item row="0" column="0">
-                               <widget class="QLabel" name="label_2">
-                                <property name="font">
-                                 <font>
-                                  <family>Aksaramatee</family>
-                                  <pointsize>24</pointsize>
-                                  <bold>true</bold>
-                                 </font>
-                                </property>
-                                <property name="text">
-                                 <string>a banner</string>
-                                </property>
-                               </widget>
-                              </item>
-                             </layout>
-                            </widget>
-                           </item>
-                          </layout>
-                         </widget>
-                        </item>
-                        <item row="1" column="0">
-                         <widget class="QWidget" name="categoryWrap" native="true">
-                          <layout class="QGridLayout" name="gridLayout_10">
-                           <property name="leftMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="topMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="rightMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="bottomMargin">
-                            <number>0</number>
-                           </property>
-                           <property name="spacing">
-                            <number>0</number>
-                           </property>
-                           <item row="0" column="0">
-                            <widget class="QLabel" name="label_9">
-                             <property name="text">
-                              <string>Caregory</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </widget>
-                        </item>
-                        <item row="2" column="0">
-                         <widget class="QWidget" name="productlist" native="true"/>
-                        </item>
-                       </layout>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="cart">
-          <layout class="QGridLayout" name="gridLayout_3">
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_5">
-             <property name="text">
-              <string>Cart Page</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="order">
-          <layout class="QGridLayout" name="gridLayout_4">
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_6">
-             <property name="text">
-              <string>Order Page</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="search">
-          <layout class="QGridLayout" name="gridLayout_5">
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_7">
-             <property name="text">
-              <string>Search Page</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="user">
-          <layout class="QGridLayout" name="gridLayout_6">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_8">
-             <property name="text">
-              <string>User Page</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="viewproduct">
-          <layout class="QGridLayout" name="gridLayout_13">
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QWidget" name="widget_4" native="true">
-             <layout class="QGridLayout" name="gridLayout_21">
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>0</number>
-              </property>
-              <property name="rightMargin">
-               <number>0</number>
-              </property>
-              <property name="bottomMargin">
-               <number>0</number>
-              </property>
-              <property name="spacing">
-               <number>0</number>
-              </property>
-              <item row="0" column="0">
-               <widget class="QWidget" name="widget_5" native="true">
-                <layout class="QGridLayout" name="gridLayout_15">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="product_img">
-                   <property name="text">
-                    <string>img</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QWidget" name="widget_6" native="true">
-                <layout class="QGridLayout" name="gridLayout_16">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="2" column="0">
-                  <widget class="QWidget" name="widget_35" native="true">
-                   <layout class="QGridLayout" name="gridLayout_47">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="chat">
-                      <property name="text">
-                       <string>Chat</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <widget class="QLabel" name="phone">
-                      <property name="text">
-                       <string>Tel: 000-000-0000</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QWidget" name="widget_34" native="true">
-                   <layout class="QGridLayout" name="gridLayout_46">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="product_price">
-                      <property name="text">
-                       <string>price</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QWidget" name="widget_33" native="true">
-                   <layout class="QGridLayout" name="gridLayout_45">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QWidget" name="widget_36" native="true">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <layout class="QGridLayout" name="gridLayout_50">
-                       <property name="leftMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="topMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="rightMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <property name="spacing">
-                        <number>0</number>
-                       </property>
-                       <item row="0" column="1">
-                        <widget class="QPushButton" name="pushButton_3">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>16777215</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <property name="layoutDirection">
-                          <enum>Qt::LeftToRight</enum>
-                         </property>
-                         <property name="text">
-                          <string/>
-                         </property>
-                         <property name="icon">
-                          <iconset resource="resource.qrc">
-                           <normaloff>:/icon/icon/heart2.ico</normaloff>:/icon/icon/heart2.ico</iconset>
-                         </property>
-                         <property name="autoDefault">
-                          <bool>false</bool>
-                         </property>
-                         <property name="default">
-                          <bool>false</bool>
-                         </property>
-                         <property name="flat">
-                          <bool>true</bool>
-                         </property>
-                        </widget>
-                       </item>
-                       <item row="0" column="0">
-                        <widget class="QLabel" name="product_name">
-                         <property name="text">
-                          <string>product name</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="1" column="0" colspan="2">
-               <widget class="QWidget" name="widget_7" native="true">
-                <layout class="QGridLayout" name="gridLayout_20">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QWidget" name="widget_8" native="true">
-                   <layout class="QGridLayout" name="gridLayout_18">
-                    <item row="0" column="3">
-                     <spacer name="horizontalSpacer_6">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>40</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                    <item row="0" column="2">
-                     <widget class="QLabel" name="label_10">
-                      <property name="text">
-                       <string>Seller</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_11">
-                      <property name="text">
-                       <string>Profile</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <spacer name="horizontalSpacer_7">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="sizeType">
-                       <enum>QSizePolicy::Maximum</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>20</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QWidget" name="widget_9" native="true">
-                   <layout class="QGridLayout" name="gridLayout_17">
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_12">
-                      <property name="text">
-                       <string>Product Specification</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1">
-                     <spacer name="horizontalSpacer_8">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>40</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QWidget" name="widget_10" native="true">
-                   <layout class="QGridLayout" name="gridLayout_19">
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_13">
-                      <property name="text">
-                       <string>Category</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="1" rowspan="2">
-                     <widget class="QLabel" name="label_14">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="text">
-                       <string>[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                      </property>
-                      <property name="wordWrap">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-          </layout>
-         </widget>
          <widget class="QWidget" name="sell">
           <layout class="QGridLayout" name="gridLayout_22">
            <property name="leftMargin">
@@ -1949,6 +1267,625 @@
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="viewproduct">
+          <layout class="QGridLayout" name="gridLayout_13">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QWidget" name="widget_4" native="true">
+             <layout class="QGridLayout" name="gridLayout_21">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QWidget" name="widget_5" native="true">
+                <layout class="QGridLayout" name="gridLayout_15">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="product_img">
+                   <property name="text">
+                    <string>img</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QWidget" name="widget_6" native="true">
+                <layout class="QGridLayout" name="gridLayout_16">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item row="2" column="0">
+                  <widget class="QWidget" name="widget_35" native="true">
+                   <layout class="QGridLayout" name="gridLayout_47">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="chat">
+                      <property name="text">
+                       <string>Chat</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <widget class="QLabel" name="phone">
+                      <property name="text">
+                       <string>Tel: 000-000-0000</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QWidget" name="widget_34" native="true">
+                   <layout class="QGridLayout" name="gridLayout_46">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="product_price">
+                      <property name="text">
+                       <string>price</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QWidget" name="widget_33" native="true">
+                   <layout class="QGridLayout" name="gridLayout_45">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QWidget" name="widget_36" native="true">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <layout class="QGridLayout" name="gridLayout_50">
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <item row="0" column="1">
+                        <widget class="QPushButton" name="pushButton_3">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="resource.qrc">
+                           <normaloff>:/icon/icon/heart2.ico</normaloff>:/icon/icon/heart2.ico</iconset>
+                         </property>
+                         <property name="autoDefault">
+                          <bool>false</bool>
+                         </property>
+                         <property name="default">
+                          <bool>false</bool>
+                         </property>
+                         <property name="flat">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QLabel" name="product_name">
+                         <property name="text">
+                          <string>product name</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="1" column="0" colspan="2">
+               <widget class="QWidget" name="widget_7" native="true">
+                <layout class="QGridLayout" name="gridLayout_20">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QWidget" name="widget_8" native="true">
+                   <layout class="QGridLayout" name="gridLayout_18">
+                    <item row="0" column="3">
+                     <spacer name="horizontalSpacer_6">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="0" column="2">
+                     <widget class="QLabel" name="label_10">
+                      <property name="text">
+                       <string>Seller</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_11">
+                      <property name="text">
+                       <string>Profile</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <spacer name="horizontalSpacer_7">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Maximum</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QWidget" name="widget_9" native="true">
+                   <layout class="QGridLayout" name="gridLayout_17">
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_12">
+                      <property name="text">
+                       <string>Product Specification</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1">
+                     <spacer name="horizontalSpacer_8">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QWidget" name="widget_10" native="true">
+                   <layout class="QGridLayout" name="gridLayout_19">
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_13">
+                      <property name="text">
+                       <string>Category</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="0" column="1" rowspan="2">
+                     <widget class="QLabel" name="label_14">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="text">
+                       <string>[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;[;]fa[];fe[;</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                      </property>
+                      <property name="wordWrap">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="search">
+          <layout class="QGridLayout" name="gridLayout_5">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Search Page</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="home">
+          <property name="styleSheet">
+           <string notr="true">#widget_2{
+	background-color: rgb(255, 255, 255);
+}</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_9">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QWidget" name="home_container" native="true">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#widget_3, #widget_5, #widget_6{
+	
+	background-color: rgb(255, 255, 255);
+}</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_8">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QWidget" name="home_wrapper" native="true">
+                <layout class="QGridLayout" name="gridLayout_7">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QScrollArea" name="scrollArea">
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="scrollHome">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>570</width>
+                      <height>486</height>
+                     </rect>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout_2">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <item row="0" column="0">
+                      <widget class="QWidget" name="widget_3" native="true">
+                       <layout class="QGridLayout" name="gridLayout_14">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <item row="0" column="0">
+                         <widget class="QWidget" name="Banner" native="true">
+                          <layout class="QGridLayout" name="gridLayout_11">
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item row="0" column="0">
+                            <widget class="QWidget" name="widget_2" native="true">
+                             <layout class="QGridLayout" name="gridLayout_12">
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <item row="0" column="0">
+                               <widget class="QLabel" name="label_2">
+                                <property name="font">
+                                 <font>
+                                  <family>Aksaramatee</family>
+                                  <pointsize>24</pointsize>
+                                  <bold>true</bold>
+                                 </font>
+                                </property>
+                                <property name="text">
+                                 <string>a banner</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="1" column="0">
+                         <widget class="QWidget" name="categoryWrap" native="true">
+                          <layout class="QGridLayout" name="gridLayout_10">
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <item row="0" column="0">
+                            <widget class="QLabel" name="label_9">
+                             <property name="text">
+                              <string>Caregory</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item row="2" column="0">
+                         <widget class="QWidget" name="productlist" native="true"/>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="favourite">
           <layout class="QGridLayout" name="gridLayout_51">
            <property name="leftMargin">
@@ -2010,8 +1947,8 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>543</width>
-                      <height>405</height>
+                      <width>552</width>
+                      <height>429</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_55">
@@ -2026,6 +1963,69 @@
                </widget>
               </item>
              </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="profile">
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>profile</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="acc">
+          <layout class="QGridLayout" name="gridLayout_3">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>acc</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="order">
+          <layout class="QGridLayout" name="gridLayout_4">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Order Page</string>
+             </property>
             </widget>
            </item>
           </layout>

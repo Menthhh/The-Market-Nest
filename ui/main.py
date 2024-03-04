@@ -141,7 +141,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.icon_only_widget.hide()
-        self.ui.stackedWidget.setCurrentIndex(0)
+        self.ui.stackedWidget.setCurrentIndex(3)
 
         self.productlist_layout = QGridLayout(self.ui.productlist)
         self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
@@ -167,7 +167,7 @@ class MainWindow(QMainWindow):
         row = 0
         col = 0
         for i, product_data in enumerate(self.products):
-            product_widget = ProductWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=5, main_window=self)
+            product_widget = ProductWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
             self.productlist_layout.addWidget(product_widget, row, col)
             col += 1
             if col == 4:
@@ -204,7 +204,7 @@ class MainWindow(QMainWindow):
 
     #function for searching
     def on_search_btn_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(3)
+        self.ui.stackedWidget.setCurrentIndex(2)
         search_text = self.ui.searchInput_1.text().strip()
         if search_text:
             self.ui.label_7.setText(search_text)
@@ -214,7 +214,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(4)
 
     def on_home_btn_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(0)
+        self.ui.stackedWidget.setCurrentIndex(3)
         # clear all the widgets in the productlist layout without deleting the layout
         for i in reversed(range(self.productlist_layout.count())):
             self.productlist_layout.itemAt(i).widget().setParent(None)
@@ -222,7 +222,7 @@ class MainWindow(QMainWindow):
         row = 0
         col = 0
         for i, product_data in enumerate(self.products):
-            product_widget = ProductWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=5, main_window=self)
+            product_widget = ProductWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
             self.productlist_layout.addWidget(product_widget, row, col)
             col += 1
             if col == 4:
@@ -231,10 +231,10 @@ class MainWindow(QMainWindow):
 
 
     def sell_btn_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(6)
+        self.ui.stackedWidget.setCurrentIndex(0)
 
     def on_fav_btn_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(7)
+        self.ui.stackedWidget.setCurrentIndex(4)
         # clear all the widgets in the favouriteList layout without deleting the layout
         for i in reversed(range(self.favourite_list_layout.count())):
             self.favourite_list_layout.itemAt(i).widget().setParent(None)
