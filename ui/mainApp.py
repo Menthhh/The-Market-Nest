@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(739, 549)
+        MainWindow.resize(718, 549)
         MainWindow.setStyleSheet(u"#centralwidget{\n"
 "	background-color: rgb(255, 255, 255);\n"
 "}\n"
@@ -978,7 +978,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 552, 429))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 531, 429))
         self.gridLayout_55 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_55.setObjectName(u"gridLayout_55")
         self.favoriteList = QWidget(self.scrollAreaWidgetContents)
@@ -1000,11 +1000,98 @@ class Ui_MainWindow(object):
         self.profile = QWidget()
         self.profile.setObjectName(u"profile")
         self.gridLayout_6 = QGridLayout(self.profile)
+        self.gridLayout_6.setSpacing(0)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.label_8 = QLabel(self.profile)
+        self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.widget_41 = QWidget(self.profile)
+        self.widget_41.setObjectName(u"widget_41")
+        self.gridLayout_62 = QGridLayout(self.widget_41)
+        self.gridLayout_62.setSpacing(0)
+        self.gridLayout_62.setObjectName(u"gridLayout_62")
+        self.gridLayout_62.setContentsMargins(0, 0, 0, 0)
+        self.widget_42 = QWidget(self.widget_41)
+        self.widget_42.setObjectName(u"widget_42")
+        self.widget_42.setMaximumSize(QSize(16777215, 100))
+        self.gridLayout_58 = QGridLayout(self.widget_42)
+        self.gridLayout_58.setSpacing(0)
+        self.gridLayout_58.setObjectName(u"gridLayout_58")
+        self.gridLayout_58.setContentsMargins(0, 0, 0, 0)
+        self.widget_43 = QWidget(self.widget_42)
+        self.widget_43.setObjectName(u"widget_43")
+        self.gridLayout_56 = QGridLayout(self.widget_43)
+        self.gridLayout_56.setSpacing(0)
+        self.gridLayout_56.setObjectName(u"gridLayout_56")
+        self.gridLayout_56.setContentsMargins(0, 0, 0, 0)
+        self.label_8 = QLabel(self.widget_43)
         self.label_8.setObjectName(u"label_8")
 
-        self.gridLayout_6.addWidget(self.label_8, 0, 0, 1, 1)
+        self.gridLayout_56.addWidget(self.label_8, 0, 0, 1, 1)
+
+
+        self.gridLayout_58.addWidget(self.widget_43, 0, 0, 1, 1)
+
+        self.widget_44 = QWidget(self.widget_42)
+        self.widget_44.setObjectName(u"widget_44")
+        self.gridLayout_57 = QGridLayout(self.widget_44)
+        self.gridLayout_57.setSpacing(0)
+        self.gridLayout_57.setObjectName(u"gridLayout_57")
+        self.gridLayout_57.setContentsMargins(0, 0, 0, 0)
+        self.label_23 = QLabel(self.widget_44)
+        self.label_23.setObjectName(u"label_23")
+
+        self.gridLayout_57.addWidget(self.label_23, 0, 0, 1, 1)
+
+        self.label_24 = QLabel(self.widget_44)
+        self.label_24.setObjectName(u"label_24")
+
+        self.gridLayout_57.addWidget(self.label_24, 1, 0, 1, 1)
+
+
+        self.gridLayout_58.addWidget(self.widget_44, 0, 1, 1, 1)
+
+
+        self.gridLayout_62.addWidget(self.widget_42, 0, 0, 1, 1)
+
+        self.widget_45 = QWidget(self.widget_41)
+        self.widget_45.setObjectName(u"widget_45")
+        self.gridLayout_61 = QGridLayout(self.widget_45)
+        self.gridLayout_61.setSpacing(0)
+        self.gridLayout_61.setObjectName(u"gridLayout_61")
+        self.gridLayout_61.setContentsMargins(0, 0, 0, 0)
+        self.widget_46 = QWidget(self.widget_45)
+        self.widget_46.setObjectName(u"widget_46")
+        self.widget_46.setMaximumSize(QSize(16777215, 40))
+        self.gridLayout_59 = QGridLayout(self.widget_46)
+        self.gridLayout_59.setSpacing(0)
+        self.gridLayout_59.setObjectName(u"gridLayout_59")
+        self.gridLayout_59.setContentsMargins(0, 0, 0, 0)
+        self.label_25 = QLabel(self.widget_46)
+        self.label_25.setObjectName(u"label_25")
+
+        self.gridLayout_59.addWidget(self.label_25, 0, 0, 1, 1)
+
+
+        self.gridLayout_61.addWidget(self.widget_46, 0, 0, 1, 1)
+
+        self.widget_47 = QWidget(self.widget_45)
+        self.widget_47.setObjectName(u"widget_47")
+        self.gridLayout_60 = QGridLayout(self.widget_47)
+        self.gridLayout_60.setSpacing(0)
+        self.gridLayout_60.setObjectName(u"gridLayout_60")
+        self.gridLayout_60.setContentsMargins(0, 0, 0, 0)
+        self.sellingList = QWidget(self.widget_47)
+        self.sellingList.setObjectName(u"sellingList")
+
+        self.gridLayout_60.addWidget(self.sellingList, 0, 0, 1, 1)
+
+
+        self.gridLayout_61.addWidget(self.widget_47, 1, 0, 1, 1)
+
+
+        self.gridLayout_62.addWidget(self.widget_45, 1, 0, 1, 1)
+
+
+        self.gridLayout_6.addWidget(self.widget_41, 0, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.profile)
         self.acc = QWidget()
@@ -1056,7 +1143,7 @@ class Ui_MainWindow(object):
         self.profileBtn_2.toggled.connect(self.profileBtn_1.setChecked)
         self.accountBtn_2.toggled.connect(self.accountBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(7)
         self.pushButton_3.setDefault(False)
 
 
@@ -1106,7 +1193,10 @@ class Ui_MainWindow(object):
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"a banner", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Caregory", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"My Favorites", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"profile", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Profile pic", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Account Name", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Account ID", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"Marketplace", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"acc", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Order Page", None))
     # retranslateUi

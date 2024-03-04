@@ -195,12 +195,13 @@ class MainWindow(QMainWindow):
         self.ui.homeBtn_1.setChecked(True)
 
         self.ui.searchBtn_1.clicked.connect(self.on_search_btn_clicked)
-        self.ui.profileBtn_1.clicked.connect(self.on_user_btn_clicked)
         self.ui.homeBtn_1.clicked.connect(self.on_home_btn_clicked)
         self.ui.homeBtn_2.clicked.connect(self.on_home_btn_clicked)
         self.ui.sellBtn_1.clicked.connect(self.sell_btn_clicked)
         self.ui.favBtn_1.clicked.connect(self.on_fav_btn_clicked)
         self.ui.favBtn_2.clicked.connect(self.on_fav_btn_clicked)
+        self.ui.profileBtn_1.clicked.connect(self.on_profile_btn_clicked)
+        self.ui.profileBtn_2.clicked.connect(self.on_profile_btn_clicked)
 
     #function for searching
     def on_search_btn_clicked(self):
@@ -210,8 +211,8 @@ class MainWindow(QMainWindow):
             self.ui.label_7.setText(search_text)
 
     #function for changing page to user page
-    def on_user_btn_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(4)
+    def on_profile_btn_clicked(self):
+        self.ui.stackedWidget.setCurrentIndex(5)
 
     def on_home_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(3)
@@ -240,7 +241,7 @@ class MainWindow(QMainWindow):
             self.favourite_list_layout.itemAt(i).widget().setParent(None)
         # Add products to the favourite list vertically
         for i, product_data in enumerate(self.favourites):
-            product_widget = FavouriteWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=5, main_window=self)
+            product_widget = FavouriteWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
             self.favourite_list_layout.addWidget(product_widget)
 
 
