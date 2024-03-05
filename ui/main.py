@@ -6,45 +6,93 @@ from PySide6.QtGui import *
 from PySide6 import *
 from pathlib import *
 from PySide6.QtQuick import *
-
-#import file lib
-
 # import file in ui folder
 from mainApp import Ui_MainWindow
 
 class ProductWidget(QWidget):
-    clicked = Signal()
 
+    clicked = Signal()
     def __init__(self, name, price, image_path, index_to_show, main_window):
         super(ProductWidget, self).__init__()
 
         self.main_window = main_window
 
-        layout = QVBoxLayout()
+        # Container widget
+        container_widget = QWidget(self)
+        container_widget.setStyleSheet(
+            "border-radius: 5px;"
+            "padding-top: 1px;"
+        )
+        container_widget.setObjectName("ContainerWidget")
+        container_widget.setContentsMargins(0, 0, 0, 0)
 
-        # Add QLabel for product image
+        # Container layout
+        container_layout = QVBoxLayout(container_widget)
+        container_layout.setContentsMargins(0, 0, 0, 0)
+
+        # Image container
+        image_container = QWidget()
+        image_container.setObjectName("ImageContainer")
+        image_container_layout = QVBoxLayout(image_container)
+        image_container_layout.setContentsMargins(0, 0, 0, 0)
+        image_container.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
+        image_container.setMinimumSize(QSize(0, 200))
+
+        # QLabel for product image
         image_label = QLabel()
         pixmap = QPixmap(image_path)
-        pixmap = pixmap.scaledToWidth(80, Qt.SmoothTransformation)
-        pixmap = pixmap.scaledToHeight(80, Qt.SmoothTransformation)
+        pixmap = pixmap.scaledToWidth(200, Qt.SmoothTransformation)
+        pixmap = pixmap.scaledToHeight(200, Qt.SmoothTransformation)
         image_label.setPixmap(pixmap)
-        layout.addWidget(image_label)
+        image_container_layout.addWidget(image_label)
         self.image_label = image_label
-        # print(f"Image Label: {self.image_label}")            
+        container_layout.addWidget(image_container)
 
-        # Add QLabel for product name
+        # Name and price container
+        name_price_container = QWidget()
+        name_price_container_layout = QVBoxLayout(name_price_container)
+        name_price_container_layout.setContentsMargins(0, 0, 0, 0)
+        name_price_container.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
+        name_price_container.setMinimumSize(QSize(0, 100))
+
+        # QLabel for product name
         self.name_label = QLabel(f"{name}")
-        layout.addWidget(self.name_label)
+        self.name_label.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
+        self.name_label.setContentsMargins(7, 0, 7, 0)
+        name_price_container_layout.addWidget(self.name_label)
 
-        # Add QLabel for product price
+        # QLabel for product price
         self.price_label = QLabel(f"{price}")
-        layout.addWidget(self.price_label)
+        self.price_label.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
+        self.price_label.setContentsMargins(7, 0, 7, 0)
+        name_price_container_layout.addWidget(self.price_label)
+
+        container_layout.addWidget(name_price_container)
+
+        # Main layout
+        layout = QVBoxLayout()
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.addWidget(container_widget)
+
+        container_widget.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred))
 
         # Connect the click event to the function that changes the stackedWidget index
         self.index_to_show = index_to_show
         self.clicked.connect(self.on_clicked)
 
         self.setLayout(layout)
+
+        # Set stylesheet for ProductWidget and ContainerWidget
+        self.setStyleSheet("""
+            #ContainerWidget {
+                background-color: #ffffff;
+                border: 1px solid #d4d4d4;
+                border-radius: 5px;
+                padding: 0px;
+                margin: 0px;
+            }              
+        """)
+
 
     def mousePressEvent(self, event):
         self.clicked.emit()
@@ -77,6 +125,8 @@ class FavouriteWidget(QWidget):
 
         left_layout = QVBoxLayout()
         right_layout = QVBoxLayout()
+
+
 
         # Add QLabel for product image
         image_label = QLabel()
@@ -148,11 +198,9 @@ class MainWindow(QMainWindow):
         self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
         self.ui.stackedWidget.resizeEvent = self.resizeEvent
 
-
-
         # Example product data (replace with your actual product data)
         self.products = [
-            {"name": "Product 1", "price": "$10.00", "image_path": "pics/product1.png"},
+            {"name": "Product 1", "price": "$10.00", "image_path": "pics/spagetti.png"},
             {"name": "Product 2", "price": "$20.00", "image_path": "pics/spagetti.png"},
             {"name": "Product 3", "price": "$30.00", "image_path": "pics/spagetti.png"},
             {"name": "Product 4", "price": "$40.00", "image_path": "pics/spagetti.png"},
