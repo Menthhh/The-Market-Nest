@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>752</width>
-    <height>549</height>
+    <width>736</width>
+    <height>571</height>
    </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -161,7 +164,7 @@
          <item>
           <widget class="QPushButton" name="homeBtn_2">
            <property name="focusPolicy">
-            <enum>Qt::WheelFocus</enum>
+            <enum>Qt::TabFocus</enum>
            </property>
            <property name="layoutDirection">
             <enum>Qt::LeftToRight</enum>
@@ -192,6 +195,9 @@
          </item>
          <item>
           <widget class="QPushButton" name="favBtn_2">
+           <property name="focusPolicy">
+            <enum>Qt::TabFocus</enum>
+           </property>
            <property name="text">
             <string>Favorite</string>
            </property>
@@ -621,7 +627,7 @@
 }</string>
          </property>
          <property name="currentIndex">
-          <number>6</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="sell">
           <layout class="QGridLayout" name="gridLayout_22">
@@ -1746,8 +1752,8 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>140</width>
-                      <height>65</height>
+                      <width>564</width>
+                      <height>496</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">
@@ -1947,8 +1953,8 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>98</width>
-                      <height>28</height>
+                      <width>556</width>
+                      <height>405</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_55">
@@ -2194,7 +2200,7 @@
             <number>0</number>
            </property>
            <item row="0" column="0">
-            <widget class="QWidget" name="widget" native="true">
+            <widget class="QWidget" name="widget_68" native="true">
              <layout class="QGridLayout" name="gridLayout_84">
               <property name="leftMargin">
                <number>0</number>
@@ -2426,6 +2432,9 @@
                       <property name="autoExclusive">
                        <bool>true</bool>
                       </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
                      </widget>
                     </item>
                     <item row="1" column="0" colspan="2">
@@ -2439,6 +2448,9 @@
                       <property name="autoExclusive">
                        <bool>true</bool>
                       </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
                      </widget>
                     </item>
                    </layout>
@@ -2447,7 +2459,7 @@
                  <item row="0" column="1">
                   <widget class="QStackedWidget" name="stackedWidget_2">
                    <property name="currentIndex">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="myProfile">
                     <layout class="QGridLayout" name="gridLayout_83">
@@ -2946,8 +2958,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>166</x>
-     <y>527</y>
+     <x>169</x>
+     <y>521</y>
     </hint>
     <hint type="destinationlabel">
      <x>124</x>
@@ -3026,12 +3038,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>35</x>
-     <y>201</y>
+     <x>36</x>
+     <y>233</y>
     </hint>
     <hint type="destinationlabel">
-     <x>165</x>
-     <y>201</y>
+     <x>168</x>
+     <y>233</y>
     </hint>
    </hints>
   </connection>
@@ -3058,12 +3070,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>165</x>
-     <y>201</y>
+     <x>168</x>
+     <y>233</y>
     </hint>
     <hint type="destinationlabel">
-     <x>21</x>
-     <y>201</y>
+     <x>22</x>
+     <y>233</y>
     </hint>
    </hints>
   </connection>

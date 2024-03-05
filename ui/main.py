@@ -6,6 +6,7 @@ from PySide6.QtGui import *
 from PySide6 import *
 from pathlib import *
 from PySide6.QtQuick import *
+
 #import file lib
 
 # import file in ui folder
@@ -145,6 +146,9 @@ class MainWindow(QMainWindow):
 
         self.productlist_layout = QGridLayout(self.ui.productlist)
         self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
+        self.ui.stackedWidget.resizeEvent = self.resizeEvent
+
+
 
         # Example product data (replace with your actual product data)
         self.products = [
@@ -163,6 +167,10 @@ class MainWindow(QMainWindow):
             {"name": "Product 13", "price": "$130.00", "image_path": "pics/spagetti.png"},
             # Add more products as needed
         ]
+
+        # Initial setup
+        self.last_column_count = self.calculate_columns()
+        self.adjust_columns()
 
         row = 0
         col = 0
@@ -193,7 +201,6 @@ class MainWindow(QMainWindow):
         ]
 
         self.ui.homeBtn_1.setChecked(True)
-
         self.ui.searchBtn_1.clicked.connect(self.on_search_btn_clicked)
         self.ui.homeBtn_1.clicked.connect(self.on_home_btn_clicked)
         self.ui.homeBtn_2.clicked.connect(self.on_home_btn_clicked)
@@ -216,6 +223,7 @@ class MainWindow(QMainWindow):
     #function for changing page to user page
     def on_profile_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(5)
+        
 
     def on_home_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(3)
@@ -229,9 +237,64 @@ class MainWindow(QMainWindow):
             product_widget = ProductWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
             self.productlist_layout.addWidget(product_widget, row, col)
             col += 1
-            if col == 4:
+            # set col based on the window size
+            window_width = self.ui.stackedWidget.width()
+            if window_width > 1000 and window_width < 1500:
+                if col == 5:
+                    col = 0
+                    row += 1
+
+            elif window_width > 1500:
+                if col == 6:
+                    col = 0
+                    row += 1
+
+            else:
+                if col == 4:
+                    col = 0
+                    row += 1
+
+    def resizeEvent(self, event):
+        current_column_count = self.calculate_columns()
+
+        # Check if the number of columns has changed
+        if current_column_count != self.last_column_count:
+            self.adjust_columns()
+            self.last_column_count = current_column_count
+
+        event.accept()
+
+    def calculate_columns(self):
+        window_width = self.ui.stackedWidget.width()
+
+        # Define the number of columns based on window size
+        if window_width > 1500:
+            return 6
+        elif 1000 < window_width <= 1500:
+            return 5
+        else:
+            return 4
+
+    def adjust_columns(self):
+        current_column_count = self.calculate_columns()
+
+        # Clear existing widgets in the layout
+        for i in reversed(range(self.productlist_layout.count())):
+            self.productlist_layout.itemAt(i).widget().setParent(None)
+
+        # Add products to the product list grid with the updated number of columns
+        row = col = 0
+        for i, product_data in enumerate(self.products):
+            product_widget = ProductWidget(product_data["name"], product_data["price"],
+                                           product_data["image_path"], index_to_show=1, main_window=self)
+            self.productlist_layout.addWidget(product_widget, row, col)
+
+            col += 1
+            if col == current_column_count:
                 col = 0
                 row += 1
+
+
 
 
     def sell_btn_clicked(self):
