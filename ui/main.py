@@ -10,6 +10,7 @@ from PySide6.QtQuick import *
 from mainApp import Ui_MainWindow
 from login import Ui_Dialog  # Import the login UI
 
+password_array = []
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
         super(LoginDialog, self).__init__(parent)
@@ -19,23 +20,48 @@ class LoginDialog(QDialog):
         self.ui.pushButton.clicked.connect(self.handle_login)  # Connect the login button
         self.ui.signupLabel.mousePressEvent = self.signup_clicked  # Connect the signup label
         self.ui.cancelBtn.clicked.connect(self.setLogin)  # Connect the cancel button
-        # self.ui.signupConfirmBtn.clicked.connect(self.signup_clicked)  # Connect the signup confirm button
+        self.ui.signupConfirmBtn.clicked.connect(self.signupConfirm_clicked)  # Connect the signup confirm button
 
     def signup_clicked(self, event):
         self.ui.stackedWidget.setCurrentIndex(1)
 
+        # Clear the input fields
+        self.ui.usernameInput.clear()
+        self.ui.emailInput.clear()
+        self.ui.passInput.clear()
+        self.ui.confirmPassInput.clear()
+
     def setLogin(self):
         self.ui.stackedWidget.setCurrentIndex(0)
+
+        # Clear the input fields
+        self.ui.lineEdit.clear()
+        self.ui.lineEdit_2.clear()
 
     def handle_login(self):
         # Placeholder for actual login logic
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
-        if username == "user" and password == "pass":  # Replace with actual check
+        if password in password_array:
             self.accept()
         else:
             # Show some error message
             print("Login Failed")  # Replace with actual error handling
+
+    def signupConfirm_clicked(self):
+        # Placeholder for actual signup logic
+        username = self.ui.usernameInput.text()
+        email = self.ui.emailInput.text()
+        password = self.ui.passInput.text()
+        confirm_password = self.ui.confirmPassInput.text()
+
+        if password == confirm_password:
+            password_array.append(password)
+            print(password_array)
+            self.ui.stackedWidget.setCurrentIndex(0)
+        else:
+            # Show some error message
+            print("Signup Failed")  # Replace with actual error handling
 
 
 class ProductWidget(QWidget):
@@ -122,7 +148,6 @@ class ProductWidget(QWidget):
             }              
         """)
 
-
     def mousePressEvent(self, event):
         self.clicked.emit()
 
@@ -154,8 +179,6 @@ class FavouriteWidget(QWidget):
 
         left_layout = QVBoxLayout()
         right_layout = QVBoxLayout()
-
-
 
         # Add QLabel for product image
         image_label = QLabel()
@@ -290,6 +313,19 @@ class MainWindow(QMainWindow):
         self.ui.accountBtn_2.clicked.connect(self.on_editAccount_btn_clicked)
         self.ui.manageAccBtn_1.clicked.connect(self.on_manageAcc_btn_clicked)
         self.ui.myProfileBtn_1.clicked.connect(self.on_myProfile_btn_clicked)
+        self.ui.exitBtn_1.clicked.connect(self.logout)
+        self.ui.exitBtn_2.clicked.connect(self.logout)
+
+    #logout and open login dialog
+    def logout(self):
+        self.hide()  # Hide the main window
+        login_dialog = LoginDialog()
+        if login_dialog.exec() == QDialog.Accepted:
+            self.show()  # Show the main window again if login is successful
+        else:
+            QApplication.instance().quit()  # Exit the application if login is not successful
+
+    
     #function for searching
     def on_search_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(2)
@@ -300,7 +336,6 @@ class MainWindow(QMainWindow):
     #function for changing page to user page
     def on_profile_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(5)
-        
 
     def on_home_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(3)
@@ -406,14 +441,12 @@ if __name__ == "__main__":
     stylesheet = open("styles.qss").read()
     app.setStyleSheet(stylesheet)
 
-    if login_dialog.exec_() == QDialog.Accepted:
+    if login_dialog.exec() == QDialog.Accepted:
         window = MainWindow()
         window.show()
         sys.exit(app.exec())
     else:
-        sys.exit()  # Exit the application if the login is not successful
-
-
+        sys.exit(app.exec())
     # window = MainWindow()
     # window.show()
     # sys.exit(app.exec())

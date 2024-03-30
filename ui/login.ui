@@ -970,7 +970,7 @@ color: rgb(255, 255, 255);</string>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLineEdit" name="lineEdit_3">
+                    <widget class="QLineEdit" name="usernameInput">
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(63, 70, 170);
 border-radius: 5px;
@@ -988,7 +988,7 @@ color: rgb(255, 255, 255);</string>
                  <widget class="QWidget" name="widget_23" native="true">
                   <layout class="QGridLayout" name="gridLayout_25">
                    <item row="1" column="0">
-                    <widget class="QLineEdit" name="lineEdit_4">
+                    <widget class="QLineEdit" name="emailInput">
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(63, 70, 170);
 border-radius: 5px;
@@ -1028,7 +1028,7 @@ color: rgb(255, 255, 255);</string>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLineEdit" name="lineEdit_5">
+                    <widget class="QLineEdit" name="phoneInput">
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(63, 70, 170);
 border-radius: 5px;
@@ -1057,7 +1057,7 @@ color: rgb(255, 255, 255);</string>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLineEdit" name="lineEdit_7">
+                    <widget class="QLineEdit" name="passInput">
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(63, 70, 170);
 border-radius: 5px;
@@ -1086,7 +1086,7 @@ color: rgb(255, 255, 255);</string>
                     </widget>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLineEdit" name="lineEdit_6">
+                    <widget class="QLineEdit" name="confirmPassInput">
                      <property name="styleSheet">
                       <string notr="true">background-color: rgb(63, 70, 170);
 border-radius: 5px;

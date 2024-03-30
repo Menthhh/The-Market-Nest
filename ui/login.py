@@ -444,14 +444,14 @@ class Ui_Dialog(object):
 
         self.gridLayout_24.addWidget(self.label_11, 0, 0, 1, 1)
 
-        self.lineEdit_3 = QLineEdit(self.widget_22)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-        self.lineEdit_3.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
+        self.usernameInput = QLineEdit(self.widget_22)
+        self.usernameInput.setObjectName(u"usernameInput")
+        self.usernameInput.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
 "border-radius: 5px;\n"
 "color: rgb(255, 255, 255);")
-        self.lineEdit_3.setFrame(False)
+        self.usernameInput.setFrame(False)
 
-        self.gridLayout_24.addWidget(self.lineEdit_3, 1, 0, 1, 1)
+        self.gridLayout_24.addWidget(self.usernameInput, 1, 0, 1, 1)
 
 
         self.gridLayout_29.addWidget(self.widget_22, 0, 0, 1, 1)
@@ -460,14 +460,14 @@ class Ui_Dialog(object):
         self.widget_23.setObjectName(u"widget_23")
         self.gridLayout_25 = QGridLayout(self.widget_23)
         self.gridLayout_25.setObjectName(u"gridLayout_25")
-        self.lineEdit_4 = QLineEdit(self.widget_23)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-        self.lineEdit_4.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
+        self.emailInput = QLineEdit(self.widget_23)
+        self.emailInput.setObjectName(u"emailInput")
+        self.emailInput.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
 "border-radius: 5px;\n"
 "color: rgb(255, 255, 255);")
-        self.lineEdit_4.setFrame(False)
+        self.emailInput.setFrame(False)
 
-        self.gridLayout_25.addWidget(self.lineEdit_4, 1, 0, 1, 1)
+        self.gridLayout_25.addWidget(self.emailInput, 1, 0, 1, 1)
 
         self.label_12 = QLabel(self.widget_23)
         self.label_12.setObjectName(u"label_12")
@@ -490,14 +490,14 @@ class Ui_Dialog(object):
 
         self.gridLayout_26.addWidget(self.label_13, 0, 0, 1, 1)
 
-        self.lineEdit_5 = QLineEdit(self.widget_24)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-        self.lineEdit_5.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
+        self.phoneInput = QLineEdit(self.widget_24)
+        self.phoneInput.setObjectName(u"phoneInput")
+        self.phoneInput.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
 "border-radius: 5px;\n"
 "color: rgb(255, 255, 255);")
-        self.lineEdit_5.setFrame(False)
+        self.phoneInput.setFrame(False)
 
-        self.gridLayout_26.addWidget(self.lineEdit_5, 1, 0, 1, 1)
+        self.gridLayout_26.addWidget(self.phoneInput, 1, 0, 1, 1)
 
 
         self.gridLayout_29.addWidget(self.widget_24, 2, 0, 1, 1)
@@ -513,14 +513,14 @@ class Ui_Dialog(object):
 
         self.gridLayout_27.addWidget(self.label_14, 0, 0, 1, 1)
 
-        self.lineEdit_7 = QLineEdit(self.widget_25)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
-        self.lineEdit_7.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
+        self.passInput = QLineEdit(self.widget_25)
+        self.passInput.setObjectName(u"passInput")
+        self.passInput.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
 "border-radius: 5px;\n"
 "color: rgb(255, 255, 255);")
-        self.lineEdit_7.setFrame(False)
+        self.passInput.setFrame(False)
 
-        self.gridLayout_27.addWidget(self.lineEdit_7, 1, 0, 1, 1)
+        self.gridLayout_27.addWidget(self.passInput, 1, 0, 1, 1)
 
 
         self.gridLayout_29.addWidget(self.widget_25, 3, 0, 1, 1)
@@ -536,14 +536,14 @@ class Ui_Dialog(object):
 
         self.gridLayout_28.addWidget(self.label_15, 0, 0, 1, 1)
 
-        self.lineEdit_6 = QLineEdit(self.widget_27)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
+        self.confirmPassInput = QLineEdit(self.widget_27)
+        self.confirmPassInput.setObjectName(u"confirmPassInput")
+        self.confirmPassInput.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
 "border-radius: 5px;\n"
 "color: rgb(255, 255, 255);")
-        self.lineEdit_6.setFrame(False)
+        self.confirmPassInput.setFrame(False)
 
-        self.gridLayout_28.addWidget(self.lineEdit_6, 1, 0, 1, 1)
+        self.gridLayout_28.addWidget(self.confirmPassInput, 1, 0, 1, 1)
 
 
         self.gridLayout_29.addWidget(self.widget_27, 4, 0, 1, 1)

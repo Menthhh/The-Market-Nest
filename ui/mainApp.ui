@@ -2952,38 +2952,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>exitBtn_2</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>169</x>
-     <y>521</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>124</x>
-     <y>657</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>exitBtn_1</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>33</x>
-     <y>521</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>32</x>
-     <y>655</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>favBtn_1</sender>
    <signal>toggled(bool)</signal>
    <receiver>favBtn_2</receiver>
@@ -3038,12 +3006,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>36</x>
-     <y>233</y>
+     <x>37</x>
+     <y>201</y>
     </hint>
     <hint type="destinationlabel">
-     <x>168</x>
-     <y>233</y>
+     <x>165</x>
+     <y>201</y>
     </hint>
    </hints>
   </connection>
@@ -3070,12 +3038,12 @@
    <slot>setChecked(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>168</x>
-     <y>233</y>
+     <x>165</x>
+     <y>201</y>
     </hint>
     <hint type="destinationlabel">
-     <x>22</x>
-     <y>233</y>
+     <x>23</x>
+     <y>201</y>
     </hint>
    </hints>
   </connection>
