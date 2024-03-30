@@ -8,6 +8,35 @@ from pathlib import *
 from PySide6.QtQuick import *
 # import file in ui folder
 from mainApp import Ui_MainWindow
+from login import Ui_Dialog  # Import the login UI
+
+class LoginDialog(QDialog):
+    def __init__(self, parent=None):
+        super(LoginDialog, self).__init__(parent)
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self)
+        self.ui.stackedWidget.setCurrentIndex(0)
+        self.ui.pushButton.clicked.connect(self.handle_login)  # Connect the login button
+        self.ui.signupLabel.mousePressEvent = self.signup_clicked  # Connect the signup label
+        self.ui.cancelBtn.clicked.connect(self.setLogin)  # Connect the cancel button
+        # self.ui.signupConfirmBtn.clicked.connect(self.signup_clicked)  # Connect the signup confirm button
+
+    def signup_clicked(self, event):
+        self.ui.stackedWidget.setCurrentIndex(1)
+
+    def setLogin(self):
+        self.ui.stackedWidget.setCurrentIndex(0)
+
+    def handle_login(self):
+        # Placeholder for actual login logic
+        username = self.ui.lineEdit.text()
+        password = self.ui.lineEdit_2.text()
+        if username == "user" and password == "pass":  # Replace with actual check
+            self.accept()
+        else:
+            # Show some error message
+            print("Login Failed")  # Replace with actual error handling
+
 
 class ProductWidget(QWidget):
 
@@ -367,6 +396,7 @@ class MainWindow(QMainWindow):
                 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    login_dialog = LoginDialog()
     font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
     print(f"Font Path: {font_path}")
     if QFontDatabase.addApplicationFont(font_path) == -1:
@@ -375,9 +405,18 @@ if __name__ == "__main__":
         print("Font found")
     stylesheet = open("styles.qss").read()
     app.setStyleSheet(stylesheet)
-    window = MainWindow()
-    window.show()
-    sys.exit(app.exec())
+
+    if login_dialog.exec_() == QDialog.Accepted:
+        window = MainWindow()
+        window.show()
+        sys.exit(app.exec())
+    else:
+        sys.exit()  # Exit the application if the login is not successful
+
+
+    # window = MainWindow()
+    # window.show()
+    # sys.exit(app.exec())
 
 
 
