@@ -342,9 +342,6 @@ class MainWindow(QMainWindow):
                 col = 0
                 row += 1
 
-
-
-
     def sell_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(0)
 
