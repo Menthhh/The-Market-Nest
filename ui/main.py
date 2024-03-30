@@ -10,7 +10,7 @@ from PySide6.QtQuick import *
 from mainApp import Ui_MainWindow
 from login import Ui_Dialog  # Import the login UI
 
-password_array = []
+account = {}
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
         super(LoginDialog, self).__init__(parent)
@@ -28,6 +28,7 @@ class LoginDialog(QDialog):
         # Clear the input fields
         self.ui.usernameInput.clear()
         self.ui.emailInput.clear()
+        self.ui.phoneInput.clear()
         self.ui.passInput.clear()
         self.ui.confirmPassInput.clear()
 
@@ -42,26 +43,55 @@ class LoginDialog(QDialog):
         # Placeholder for actual login logic
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
-        if password in password_array:
-            self.accept()
+
+        # prevent empty fields
+        if username and password:
+            # check if username exists
+            if username in account:
+                user_data = account[username]
+                # check if password is correct
+                if password == user_data["password"]:
+                    print("Login successful")
+                    self.accept()
+                else:
+                    print("Incorrect password")
+            else:
+                print("Username does not exist")
+
         else:
-            # Show some error message
-            print("Login Failed")  # Replace with actual error handling
+            print("Please fill in all fields")
 
     def signupConfirm_clicked(self):
         # Placeholder for actual signup logic
         username = self.ui.usernameInput.text()
         email = self.ui.emailInput.text()
+        phone = self.ui.phoneInput.text()
         password = self.ui.passInput.text()
         confirm_password = self.ui.confirmPassInput.text()
 
-        if password == confirm_password:
-            password_array.append(password)
-            print(password_array)
-            self.ui.stackedWidget.setCurrentIndex(0)
-        else:
-            # Show some error message
-            print("Signup Failed")  # Replace with actual error handling
+        # prevent empty fields
+        if not username or not email or not password or not confirm_password:
+            print("Please fill in all fields")
+            return
+        
+        # check if password and confirm password match
+        if password != confirm_password:
+            print("Passwords do not match")
+            return
+        
+        # check if username already exists
+        if username in account:
+            print("Username already exists")
+            return
+        
+        # add user to account
+        account[username] = {
+            "email": email,
+            "phone": phone,
+            "password": password
+        }
+        print("Account created successfully")
+        self.setLogin()
 
 
 class ProductWidget(QWidget):
@@ -444,14 +474,9 @@ if __name__ == "__main__":
     if login_dialog.exec() == QDialog.Accepted:
         window = MainWindow()
         window.show()
-        sys.exit(app.exec())
+        sys.exit(app.exec_())
     else:
-        sys.exit(app.exec())
-    # window = MainWindow()
-    # window.show()
-    # sys.exit(app.exec())
-
-
+        sys.exit(app.exec_())
 
         # Add label to the layout of self.ui.productlist
         # label = QLabel("Hello World")
