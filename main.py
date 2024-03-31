@@ -10,165 +10,9 @@ from PySide6.QtQuick import *
 from mainAppUi import Ui_MainWindow
 from loginUi import Ui_Dialog  # Import the login UI
 from obj.LoginDialog import LoginDialog
-from config import account
-class ProductWidget(QWidget):
-    clicked = Signal()
-    def __init__(self, name, price, image_path, index_to_show, main_window):
-        super(ProductWidget, self).__init__()
-
-        self.main_window = main_window
-
-        # Container widget
-        container_widget = QWidget(self)
-
-        container_widget.setObjectName("ContainerWidget")
-        container_widget.setContentsMargins(0, 0, 0, 0)
-
-        # Container layout
-        container_layout = QVBoxLayout(container_widget)
-        container_layout.setContentsMargins(0, 0, 0, 0)
-
-        # Image container
-        image_container = QWidget()
-        image_container.setObjectName("ImageContainer")
-        image_container_layout = QVBoxLayout(image_container)
-        image_container_layout.setContentsMargins(0, 0, 0, 0)
-        image_container.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
-        image_container.setMinimumSize(QSize(0, 200))
-
-        # QLabel for product image
-        image_label = QLabel()
-        pixmap = QPixmap(image_path)
-        pixmap = pixmap.scaledToWidth(200, Qt.SmoothTransformation)
-        pixmap = pixmap.scaledToHeight(200, Qt.SmoothTransformation)
-        image_label.setPixmap(pixmap)
-        image_container_layout.addWidget(image_label)
-        self.image_label = image_label
-        container_layout.addWidget(image_container)
-
-        # Name and price container
-        name_price_container = QWidget()
-        name_price_container_layout = QVBoxLayout(name_price_container)
-        name_price_container_layout.setContentsMargins(0, 0, 0, 0)
-        name_price_container.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
-        name_price_container.setMinimumSize(QSize(0, 100))
-
-        # QLabel for product name
-        self.name_label = QLabel(f"{name}")
-        self.name_label.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
-        self.name_label.setContentsMargins(7, 0, 7, 0)
-        name_price_container_layout.addWidget(self.name_label)
-
-        # QLabel for product price
-        self.price_label = QLabel(f"{price}")
-        self.price_label.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
-        self.price_label.setContentsMargins(7, 0, 7, 0)
-        name_price_container_layout.addWidget(self.price_label)
-
-        container_layout.addWidget(name_price_container)
-
-        # Main layout
-        layout = QVBoxLayout()
-        layout.setContentsMargins(0, 0, 0, 0)
-        layout.addWidget(container_widget)
-
-        container_widget.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred))
-
-        # Connect the click event to the function that changes the stackedWidget index
-        self.index_to_show = index_to_show
-        self.clicked.connect(self.on_clicked)
-
-        self.setLayout(layout)
-
-    def mousePressEvent(self, event):
-        self.clicked.emit()
-
-    def on_clicked(self):
-        self.main_window.ui.stackedWidget.setCurrentIndex(self.index_to_show)
-
-        # Update the label in index 5 based on the clicked product
-        name = self.main_window.ui.product_name
-        name.setText(self.name_label.text())
-        price = self.main_window.ui.product_price
-        price.setText(self.price_label.text())
-        product_image = self.main_window.ui.product_img
-        # add image to the label with adjust size
-        pixmap = QPixmap(self.image_label.pixmap())
-        pixmap = pixmap.scaledToWidth(200, Qt.SmoothTransformation)
-        pixmap = pixmap.scaledToHeight(200, Qt.SmoothTransformation)
-        product_image.setPixmap(pixmap)
-
-class FavouriteWidget(QWidget):
-    clicked = Signal()
-
-    def __init__(self, name, price, image_path, index_to_show, main_window):
-        
-        super(FavouriteWidget, self).__init__()
-
-        self.main_window = main_window
-
-        layout = QHBoxLayout()
-
-        left_layout = QVBoxLayout()
-        right_layout = QVBoxLayout()
-
-        # Add QLabel for product image
-        image_label = QLabel()
-        pixmap = QPixmap(image_path)
-        pixmap = pixmap.scaledToWidth(80, Qt.SmoothTransformation)
-        pixmap = pixmap.scaledToHeight(80, Qt.SmoothTransformation)
-        image_label.setPixmap(pixmap)
-        left_layout.addWidget(image_label)
-        self.image_label = image_label
-        # print(f"Image Label: {self.image_label}")            
-
-        # Add QLabel for product name
-        self.name_label = QLabel(f"{name}")
-        right_layout.addWidget(self.name_label)
-
-        # Add QLabel for product price
-        self.price_label = QLabel(f"{price}")
-        right_layout.addWidget(self.price_label)
-
-        # add left and right layout to main layout
-        layout.addLayout(left_layout)
-        layout.addLayout(right_layout)
-
-        # Connect the click event to the function that changes the stackedWidget index
-        self.index_to_show = index_to_show
-        self.clicked.connect(self.on_clicked)
-
-        # Check if the widget already has a layout
-        if self.layout() is not None:
-            # Remove the existing layout
-            old_layout = self.layout()
-            while old_layout.count():
-                item = old_layout.takeAt(0)
-                widget = item.widget()
-                if widget is not None:
-                    widget.deleteLater()
-
-        self.setLayout(layout)
-
-    def mousePressEvent(self, event):
-        self.clicked.emit()
-
-    def on_clicked(self):
-        self.main_window.ui.stackedWidget.setCurrentIndex(self.index_to_show)
-
-        # Update the label in index 5 based on the clicked product
-        name = self.main_window.ui.product_name
-        name.setText(self.name_label.text())
-        price = self.main_window.ui.product_price
-        price.setText(self.price_label.text())
-        product_image = self.main_window.ui.product_img
-        # add image to the label with adjust size
-        pixmap = QPixmap(self.image_label.pixmap())
-        pixmap = pixmap.scaledToWidth(200, Qt.SmoothTransformation)
-        pixmap = pixmap.scaledToHeight(200, Qt.SmoothTransformation)
-        product_image.setPixmap(pixmap)
-
-
+from obj.ProductWidget import ProductWidget
+from obj.FavouriteWidget import FavouriteWidget
+from config import account, products, favourites
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -182,48 +26,15 @@ class MainWindow(QMainWindow):
         self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
         self.ui.stackedWidget.resizeEvent = self.resizeEvent
 
-
-
         # Example product data (replace with your actual product data)
-        self.products = [
-            {"name": "Product 1", "price": "$10.00", "image_path": "pics/product1.png"},
-            {"name": "Product 2", "price": "$20.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 3", "price": "$30.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 4", "price": "$40.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 5", "price": "$50.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 6", "price": "$60.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 7", "price": "$70.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 8", "price": "$80.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 9", "price": "$90.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 10", "price": "$100.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 11", "price": "$110.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 12", "price": "$120.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 13", "price": "$130.00", "image_path": "pics/spagetti.png"},
-            # Add more products as needed
-        ]
+        self.products = products
 
         # Initial setup
         self.last_column_count = self.calculate_columns()
         self.adjust_columns()
 
-
                 # Favourite list sample
-        self.favourites = [
-            {"name": "Product 1", "price": "$10.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 2", "price": "$20.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 3", "price": "$30.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 4", "price": "$40.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 5", "price": "$50.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 6", "price": "$60.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 7", "price": "$70.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 8", "price": "$80.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 9", "price": "$90.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 10", "price": "$100.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 11", "price": "$110.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 12", "price": "$120.00", "image_path": "pics/spagetti.png"},
-            {"name": "Product 13", "price": "$130.00", "image_path": "pics/spagetti.png"},
-            # Add more products as needed
-        ]
+        self.favourites = favourites
 
         self.ui.homeBtn_1.setChecked(True)
         self.ui.searchBtn_1.clicked.connect(self.on_search_btn_clicked)
@@ -268,6 +79,11 @@ class MainWindow(QMainWindow):
                 if col == 4:
                     col = 0
                     row += 1
+
+    def add_favourites(self, favourites):
+        for i, product_data in enumerate(favourites):
+            product_widget = FavouriteWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
+            self.favourite_list_layout.addWidget(product_widget)
 
     def logout(self):
         # Perform necessary cleanup
@@ -330,8 +146,7 @@ class MainWindow(QMainWindow):
         current_column_count = self.calculate_columns()
 
         # Clear existing widgets in the layout
-        for i in reversed(range(self.productlist_layout.count())):
-            self.productlist_layout.itemAt(i).widget().setParent(None)
+        self.clear_layout(self.productlist_layout)
 
         # Add products to the product list grid with the updated number of columns
         row = col = 0
@@ -348,15 +163,13 @@ class MainWindow(QMainWindow):
     def sell_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(0)
 
+
     def on_fav_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(4)
         # clear all the widgets in the favouriteList layout without deleting the layout
-        for i in reversed(range(self.favourite_list_layout.count())):
-            self.favourite_list_layout.itemAt(i).widget().setParent(None)
+        self.clear_layout(self.favourite_list_layout)
         # Add products to the favourite list vertically
-        for i, product_data in enumerate(self.favourites):
-            product_widget = FavouriteWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
-            self.favourite_list_layout.addWidget(product_widget)
+        self.add_favourites(self.favourites)
 
     def on_editAccount_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(6)
@@ -367,22 +180,6 @@ class MainWindow(QMainWindow):
 
     def on_manageAcc_btn_clicked(self):
         self.ui.stackedWidget_2.setCurrentIndex(1)
-
-
-                
-# if __name__ == "__main__":
-#     app = QApplication(sys.argv)
-#     font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
-#     print(f"Font Path: {font_path}")
-#     if QFontDatabase.addApplicationFont(font_path) == -1:
-#         print("Font not found")
-#     else:
-#         print("Font found")
-#     stylesheet = open("styles.qss").read()
-#     app.setStyleSheet(stylesheet)
-#     window = MainWindow()
-#     window.show()
-#     sys.exit(app.exec())
 
 # with login dialog
 if __name__ == "__main__":
