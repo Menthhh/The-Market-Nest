@@ -163,7 +163,6 @@ class MainWindow(QMainWindow):
     def sell_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(0)
 
-
     def on_fav_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(4)
         # clear all the widgets in the favouriteList layout without deleting the layout
@@ -187,10 +186,11 @@ if __name__ == "__main__":
     login_dialog = LoginDialog()
     font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
     # print(f"Font Path: {font_path}")
-    if QFontDatabase.addApplicationFont(font_path) == -1:
-        print("Font not found")
-    else:
-        print("Font found")
+    # if QFontDatabase.addApplicationFont(font_path) == -1:
+    #     print("Font not found")
+    # else:
+    #     print("Font found")
+    QFontDatabase.addApplicationFont(font_path)
     stylesheet = open("styles.qss").read()
     app.setStyleSheet(stylesheet)
 

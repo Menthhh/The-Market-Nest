@@ -627,7 +627,7 @@
 }</string>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="sell">
           <layout class="QGridLayout" name="gridLayout_22">
@@ -1953,7 +1953,7 @@
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>98</width>
+                      <width>80</width>
                       <height>28</height>
                      </rect>
                     </property>
@@ -2517,21 +2517,6 @@
                            <item row="0" column="0">
                             <widget class="QWidget" name="widget_56" native="true">
                              <layout class="QGridLayout" name="gridLayout_68">
-                              <property name="leftMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="topMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="rightMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="bottomMargin">
-                               <number>0</number>
-                              </property>
-                              <property name="spacing">
-                               <number>0</number>
-                              </property>
                               <item row="0" column="0">
                                <widget class="QLabel" name="label_30">
                                 <property name="text">

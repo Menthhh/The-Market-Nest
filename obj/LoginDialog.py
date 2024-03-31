@@ -12,6 +12,13 @@ class LoginDialog(QDialog):
         self.ui.signupLabel.mousePressEvent = self.signup_clicked  # Connect the signup label
         self.ui.cancelBtn.clicked.connect(self.setLogin)  # Connect the cancel button
         self.ui.signupConfirmBtn.clicked.connect(self.signupConfirm_clicked)  # Connect the signup confirm button
+        self.ui.checkBoxOpt.clicked.connect(self.switchToPassport)
+
+    def switchToPassport(self):
+        if self.ui.checkBoxOpt.isChecked():
+            self.ui.IdentiLabel.setText("Passport Number")
+        else:
+            self.ui.IdentiLabel.setText("ID Number")
 
     def signup_clicked(self, event):
         self.ui.stackedWidget.setCurrentIndex(1)
@@ -20,6 +27,8 @@ class LoginDialog(QDialog):
         self.ui.usernameInput.clear()
         self.ui.emailInput.clear()
         self.ui.phoneInput.clear()
+        self.ui.birthInput.clear()
+        self.ui.IdentiInput.clear()
         self.ui.passInput.clear()
         self.ui.confirmPassInput.clear()
 
@@ -57,11 +66,14 @@ class LoginDialog(QDialog):
         username = self.ui.usernameInput.text()
         email = self.ui.emailInput.text()
         phone = self.ui.phoneInput.text()
+        birth = self.ui.birthInput.text()
+        identi = self.ui.IdentiInput.text()
         password = self.ui.passInput.text()
         confirm_password = self.ui.confirmPassInput.text()
 
+
         # prevent empty fields
-        if not username or not email or not password or not confirm_password:
+        if not username or not email or not password or not confirm_password or not phone or not birth or not identi:
             print("Please fill in all fields")
             return
         
@@ -75,12 +87,26 @@ class LoginDialog(QDialog):
             print("Username already exists")
             return
         
-        # add user to account
-        account[username] = {
-            "email": email,
-            "phone": phone,
-            "password": password
-        }
+        # if passport number
+        if self.ui.checkBoxOpt.isChecked():
+            account[username] = {
+                "email": email,
+                "phone": phone,
+                "birth": birth,
+                "nationalId": "N/A",
+                "passport": identi,
+                "password": password
+            }
+        else:
+            account[username] = {
+                "email": email,
+                "phone": phone,
+                "birth": birth,
+                "nationalId": identi,
+                "passport": "N/A",
+                "password": password
+            }
+
         print("Account created successfully")
         print(account)
         self.setLogin()

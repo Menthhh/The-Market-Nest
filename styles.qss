@@ -25,10 +25,7 @@
 #favBtn_2, #homeBtn_2, #accountBtn_2, #profileBtn_2, #label_3, #exitBtn_2{
     color: #51526C;
     font-size: 15px;
-    
 }
-
-
 
 #ContainerWidget {
     background-color: #ffffff;

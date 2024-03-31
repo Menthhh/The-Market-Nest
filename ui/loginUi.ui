@@ -32,7 +32,7 @@
    <item row="0" column="0">
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="loginPage">
       <layout class="QGridLayout" name="gridLayout_16">
@@ -966,7 +966,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="1" column="0">
               <widget class="QWidget" name="widget_21" native="true">
-               <layout class="QGridLayout" name="gridLayout_29">
+               <layout class="QGridLayout" name="gridLayout_37">
                 <property name="leftMargin">
                  <number>0</number>
                 </property>
@@ -1070,6 +1070,81 @@ color: rgb(255, 255, 255);</string>
                  </widget>
                 </item>
                 <item row="3" column="0">
+                 <widget class="QWidget" name="widget_32" native="true">
+                  <layout class="QGridLayout" name="gridLayout_36">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_7">
+                     <property name="styleSheet">
+                      <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(255, 255, 255);</string>
+                     </property>
+                     <property name="text">
+                      <string>Birthday</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QDateEdit" name="birthInput">
+                     <property name="autoFillBackground">
+                      <bool>false</bool>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(63, 70, 170);
+border-radius: 5px;
+color: rgb(255, 255, 255);</string>
+                     </property>
+                     <property name="wrapping">
+                      <bool>false</bool>
+                     </property>
+                     <property name="frame">
+                      <bool>false</bool>
+                     </property>
+                     <property name="calendarPopup">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QWidget" name="widget_33" native="true">
+                  <layout class="QGridLayout" name="gridLayout_29">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="IdentiLabel">
+                     <property name="styleSheet">
+                      <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(255, 255, 255);</string>
+                     </property>
+                     <property name="text">
+                      <string>ID Card</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLineEdit" name="IdentiInput">
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(63, 70, 170);
+border-radius: 5px;
+color: rgb(255, 255, 255);</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QCheckBox" name="checkBoxOpt">
+                     <property name="styleSheet">
+                      <string notr="true">font: 500 8pt &quot;Josefin Sans Medium&quot;;
+color: rgb(255, 255, 255);</string>
+                     </property>
+                     <property name="text">
+                      <string>I'm not a Thai citizen</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="5" column="0">
                  <widget class="QWidget" name="widget_25" native="true">
                   <layout class="QGridLayout" name="gridLayout_27">
                    <item row="0" column="0">
@@ -1098,7 +1173,7 @@ color: rgb(255, 255, 255);</string>
                   </layout>
                  </widget>
                 </item>
-                <item row="4" column="0">
+                <item row="6" column="0">
                  <widget class="QWidget" name="widget_27" native="true">
                   <layout class="QGridLayout" name="gridLayout_28">
                    <item row="0" column="0">
