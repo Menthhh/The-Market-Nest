@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QGridLayout, QLabel,
-    QLineEdit, QPushButton, QSizePolicy, QSpacerItem,
-    QStackedWidget, QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QDateEdit, QDialog,
+    QGridLayout, QLabel, QLineEdit, QPushButton,
+    QSizePolicy, QSpacerItem, QStackedWidget, QWidget)
 import resource_rc
 
 class Ui_Dialog(object):
@@ -442,10 +442,10 @@ class Ui_Dialog(object):
 
         self.widget_21 = QWidget(self.widget_16)
         self.widget_21.setObjectName(u"widget_21")
-        self.gridLayout_29 = QGridLayout(self.widget_21)
-        self.gridLayout_29.setSpacing(0)
-        self.gridLayout_29.setObjectName(u"gridLayout_29")
-        self.gridLayout_29.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_37 = QGridLayout(self.widget_21)
+        self.gridLayout_37.setSpacing(0)
+        self.gridLayout_37.setObjectName(u"gridLayout_37")
+        self.gridLayout_37.setContentsMargins(0, 0, 0, 0)
         self.widget_22 = QWidget(self.widget_21)
         self.widget_22.setObjectName(u"widget_22")
         self.gridLayout_24 = QGridLayout(self.widget_22)
@@ -467,7 +467,7 @@ class Ui_Dialog(object):
         self.gridLayout_24.addWidget(self.usernameInput, 1, 0, 1, 1)
 
 
-        self.gridLayout_29.addWidget(self.widget_22, 0, 0, 1, 1)
+        self.gridLayout_37.addWidget(self.widget_22, 0, 0, 1, 1)
 
         self.widget_23 = QWidget(self.widget_21)
         self.widget_23.setObjectName(u"widget_23")
@@ -490,7 +490,7 @@ class Ui_Dialog(object):
         self.gridLayout_25.addWidget(self.label_12, 0, 0, 1, 1)
 
 
-        self.gridLayout_29.addWidget(self.widget_23, 1, 0, 1, 1)
+        self.gridLayout_37.addWidget(self.widget_23, 1, 0, 1, 1)
 
         self.widget_24 = QWidget(self.widget_21)
         self.widget_24.setObjectName(u"widget_24")
@@ -513,7 +513,62 @@ class Ui_Dialog(object):
         self.gridLayout_26.addWidget(self.phoneInput, 1, 0, 1, 1)
 
 
-        self.gridLayout_29.addWidget(self.widget_24, 2, 0, 1, 1)
+        self.gridLayout_37.addWidget(self.widget_24, 2, 0, 1, 1)
+
+        self.widget_32 = QWidget(self.widget_21)
+        self.widget_32.setObjectName(u"widget_32")
+        self.gridLayout_36 = QGridLayout(self.widget_32)
+        self.gridLayout_36.setObjectName(u"gridLayout_36")
+        self.label_7 = QLabel(self.widget_32)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(255, 255, 255);")
+
+        self.gridLayout_36.addWidget(self.label_7, 0, 0, 1, 1)
+
+        self.birthInput = QDateEdit(self.widget_32)
+        self.birthInput.setObjectName(u"birthInput")
+        self.birthInput.setAutoFillBackground(False)
+        self.birthInput.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
+"border-radius: 5px;\n"
+"color: rgb(255, 255, 255);")
+        self.birthInput.setWrapping(False)
+        self.birthInput.setFrame(False)
+        self.birthInput.setCalendarPopup(True)
+
+        self.gridLayout_36.addWidget(self.birthInput, 1, 0, 1, 1)
+
+
+        self.gridLayout_37.addWidget(self.widget_32, 3, 0, 1, 1)
+
+        self.widget_33 = QWidget(self.widget_21)
+        self.widget_33.setObjectName(u"widget_33")
+        self.gridLayout_29 = QGridLayout(self.widget_33)
+        self.gridLayout_29.setObjectName(u"gridLayout_29")
+        self.IdentiLabel = QLabel(self.widget_33)
+        self.IdentiLabel.setObjectName(u"IdentiLabel")
+        self.IdentiLabel.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(255, 255, 255);")
+
+        self.gridLayout_29.addWidget(self.IdentiLabel, 0, 0, 1, 1)
+
+        self.IdentiInput = QLineEdit(self.widget_33)
+        self.IdentiInput.setObjectName(u"IdentiInput")
+        self.IdentiInput.setStyleSheet(u"background-color: rgb(63, 70, 170);\n"
+"border-radius: 5px;\n"
+"color: rgb(255, 255, 255);")
+
+        self.gridLayout_29.addWidget(self.IdentiInput, 1, 0, 1, 1)
+
+        self.checkBoxOpt = QCheckBox(self.widget_33)
+        self.checkBoxOpt.setObjectName(u"checkBoxOpt")
+        self.checkBoxOpt.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(255, 255, 255);")
+
+        self.gridLayout_29.addWidget(self.checkBoxOpt, 1, 1, 1, 1)
+
+
+        self.gridLayout_37.addWidget(self.widget_33, 4, 0, 1, 1)
 
         self.widget_25 = QWidget(self.widget_21)
         self.widget_25.setObjectName(u"widget_25")
@@ -536,7 +591,7 @@ class Ui_Dialog(object):
         self.gridLayout_27.addWidget(self.passInput, 1, 0, 1, 1)
 
 
-        self.gridLayout_29.addWidget(self.widget_25, 3, 0, 1, 1)
+        self.gridLayout_37.addWidget(self.widget_25, 5, 0, 1, 1)
 
         self.widget_27 = QWidget(self.widget_21)
         self.widget_27.setObjectName(u"widget_27")
@@ -559,7 +614,7 @@ class Ui_Dialog(object):
         self.gridLayout_28.addWidget(self.confirmPassInput, 1, 0, 1, 1)
 
 
-        self.gridLayout_29.addWidget(self.widget_27, 4, 0, 1, 1)
+        self.gridLayout_37.addWidget(self.widget_27, 6, 0, 1, 1)
 
 
         self.gridLayout_34.addWidget(self.widget_21, 1, 0, 1, 1)
@@ -626,7 +681,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -651,6 +706,9 @@ class Ui_Dialog(object):
         self.label_11.setText(QCoreApplication.translate("Dialog", u"Username", None))
         self.label_12.setText(QCoreApplication.translate("Dialog", u"Email", None))
         self.label_13.setText(QCoreApplication.translate("Dialog", u"Phone Number", None))
+        self.label_7.setText(QCoreApplication.translate("Dialog", u"Birthday", None))
+        self.IdentiLabel.setText(QCoreApplication.translate("Dialog", u"ID Card", None))
+        self.checkBoxOpt.setText(QCoreApplication.translate("Dialog", u"I'm not a Thai citizen", None))
         self.label_14.setText(QCoreApplication.translate("Dialog", u"Password", None))
         self.label_15.setText(QCoreApplication.translate("Dialog", u"Confirm Password", None))
         self.cancelBtn.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
