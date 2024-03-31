@@ -556,6 +556,7 @@ class Ui_Dialog(object):
 "color: rgb(255, 255, 255);")
         self.birthInput.setWrapping(False)
         self.birthInput.setFrame(False)
+        self.birthInput.setDateTime(QDateTime(QDate(2000, 1, 1), QTime(0, 0, 0)))
         self.birthInput.setCalendarPopup(True)
 
         self.gridLayout_36.addWidget(self.birthInput, 1, 0, 1, 1)
@@ -730,6 +731,7 @@ class Ui_Dialog(object):
         self.label_12.setText(QCoreApplication.translate("Dialog", u"Email", None))
         self.label_13.setText(QCoreApplication.translate("Dialog", u"Phone Number", None))
         self.label_7.setText(QCoreApplication.translate("Dialog", u"Birthday", None))
+        self.birthInput.setDisplayFormat(QCoreApplication.translate("Dialog", u"yyyy-MM-dd", None))
         self.IdentiLabel.setText(QCoreApplication.translate("Dialog", u"ID Card", None))
         self.checkBoxOpt.setText(QCoreApplication.translate("Dialog", u"I'm not a Thai citizen", None))
         self.label_14.setText(QCoreApplication.translate("Dialog", u"Password", None))
