@@ -1,21 +1,7 @@
 from fastapi import HTTPException
 from model.product import Product
-from db.ZODBs import ZODBs
-import sys
-
-
-path = "../db/Storage/products.fs"
-product_db = ZODBs(path)
-product_db.connect()
-
-async def createProduct(request, body):
-    try:
-        newProduct = Product(body["title"], body["category"], body["description"], body["price"], body["amount"])
-        saveProduct = product_db.create(newProduct)
-        return saveProduct
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 from db.Warehouse import Warehouse
+import sys
 
 class ProductController:
     def __init__(self):
@@ -45,36 +31,36 @@ class ProductController:
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
-    
-async def getProduct(request, product_id):
-    try:
-        """
-        find the product by product_id
-        """
-        getProduct = product_db.findOne(product_id)
-        return getProduct
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    
-async def updateProduct(request, product_id, body):
-    try:
-        """
-        update the product by product_id
-        """
-        updateProduct = product_db.findOneAndUpdate(product_id, body)
-        return updateProduct
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        
+    async def getProduct(request, product_id):
+        try:
+            """
+            find the product by product_id
+            """
+            getProduct = product_db.findOne(product_id)
+            return getProduct
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+        
+    async def updateProduct(request, product_id, body):
+        try:
+            """
+            update the product by product_id
+            """
+            updateProduct = product_db.findOneAndUpdate(product_id, body)
+            return updateProduct
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
 
-async def deleteProduct(request, product_id):
-    try:
-        """
-        delete the product by product_id
-        """
-        deleteProduct = product_db.findOneAndDelete(product_id)
-        return deleteProduct
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    async def deleteProduct(request, product_id):
+        try:
+            """
+            delete the product by product_id
+            """
+            deleteProduct = product_db.findOneAndDelete(product_id)
+            return deleteProduct
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
 
     
     async def get_product(self, request, product_id):
