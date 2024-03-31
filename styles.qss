@@ -1,0 +1,29 @@
+#changeBtn_1 {
+	padding: 5px;
+	border: none;
+	width: 30px;
+	height: 30px;
+}
+
+#search_input{
+	border: none;
+}
+
+* {
+    font-family: "Josefin Sans";
+    color: #51526C;
+    font-weight: bold;
+}
+
+#sellBtn_1, #doneAddBtn_1{
+    font-family: "Josefin Sans";
+    font-size: 12px;
+    background-color: #0d1c63;
+    color: #ffffff;
+}
+
+#favBtn_2, #homeBtn_2, #accountBtn_2, #profileBtn_2, #label_3, #exitBtn_2{
+    color: #51526C;
+    font-size: 15px;
+    
+}
