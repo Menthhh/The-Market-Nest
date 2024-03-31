@@ -82,4 +82,5 @@ class LoginDialog(QDialog):
             "password": password
         }
         print("Account created successfully")
+        print(account)
         self.setLogin()

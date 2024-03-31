@@ -12,7 +12,6 @@ from loginUi import Ui_Dialog  # Import the login UI
 from obj.LoginDialog import LoginDialog
 from config import account
 class ProductWidget(QWidget):
-
     clicked = Signal()
     def __init__(self, name, price, image_path, index_to_show, main_window):
         super(ProductWidget, self).__init__()
@@ -21,10 +20,7 @@ class ProductWidget(QWidget):
 
         # Container widget
         container_widget = QWidget(self)
-        container_widget.setStyleSheet(
-            "border-radius: 5px;"
-            "padding-top: 1px;"
-        )
+
         container_widget.setObjectName("ContainerWidget")
         container_widget.setContentsMargins(0, 0, 0, 0)
 
@@ -83,17 +79,6 @@ class ProductWidget(QWidget):
         self.clicked.connect(self.on_clicked)
 
         self.setLayout(layout)
-
-        # Set stylesheet for ProductWidget and ContainerWidget
-        self.setStyleSheet("""
-            #ContainerWidget {
-                background-color: #ffffff;
-                border: 1px solid #d4d4d4;
-                border-radius: 5px;
-                padding: 0px;
-                margin: 0px;
-            }              
-        """)
 
     def mousePressEvent(self, event):
         self.clicked.emit()
@@ -197,9 +182,11 @@ class MainWindow(QMainWindow):
         self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
         self.ui.stackedWidget.resizeEvent = self.resizeEvent
 
+
+
         # Example product data (replace with your actual product data)
         self.products = [
-            {"name": "Product 1", "price": "$10.00", "image_path": "pics/spagetti.png"},
+            {"name": "Product 1", "price": "$10.00", "image_path": "pics/product1.png"},
             {"name": "Product 2", "price": "$20.00", "image_path": "pics/spagetti.png"},
             {"name": "Product 3", "price": "$30.00", "image_path": "pics/spagetti.png"},
             {"name": "Product 4", "price": "$40.00", "image_path": "pics/spagetti.png"},
@@ -219,15 +206,6 @@ class MainWindow(QMainWindow):
         self.last_column_count = self.calculate_columns()
         self.adjust_columns()
 
-        row = 0
-        col = 0
-        for i, product_data in enumerate(self.products):
-            product_widget = ProductWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
-            self.productlist_layout.addWidget(product_widget, row, col)
-            col += 1
-            if col == 4:
-                col = 0
-                row += 1
 
                 # Favourite list sample
         self.favourites = [
@@ -263,36 +241,14 @@ class MainWindow(QMainWindow):
         self.ui.exitBtn_1.clicked.connect(self.logout)
         self.ui.exitBtn_2.clicked.connect(self.logout)
 
-    #logout and open login dialog
-    def logout(self):
-        self.hide()  # Hide the main window
-        login_dialog = LoginDialog()
-        if login_dialog.exec() == QDialog.Accepted:
-            self.show()  # Show the main window again if login is successful
-        else:
-            QApplication.instance().quit()  # Exit the application if login is not successful
+    def clear_layout(self, layout):
+        for i in reversed(range(layout.count())):
+            layout.itemAt(i).widget().setParent(None)
 
-    
-    #function for searching
-    def on_search_btn_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(2)
-        search_text = self.ui.searchInput_1.text().strip()
-        if search_text:
-            self.ui.label_7.setText(search_text)
-
-    #function for changing page to user page
-    def on_profile_btn_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(5)
-
-    def on_home_btn_clicked(self):
-        self.ui.stackedWidget.setCurrentIndex(3)
-        # clear all the widgets in the productlist layout without deleting the layout
-        for i in reversed(range(self.productlist_layout.count())):
-            self.productlist_layout.itemAt(i).widget().setParent(None)
-        # Add products to the product list grid
+    def add_products(self, products):
         row = 0
         col = 0
-        for i, product_data in enumerate(self.products):
+        for i, product_data in enumerate(products):
             product_widget = ProductWidget(product_data["name"], product_data["price"], product_data["image_path"], index_to_show=1, main_window=self)
             self.productlist_layout.addWidget(product_widget, row, col)
             col += 1
@@ -312,6 +268,42 @@ class MainWindow(QMainWindow):
                 if col == 4:
                     col = 0
                     row += 1
+
+    def logout(self):
+        # Perform necessary cleanup
+        self.clear_layout(self.productlist_layout)
+        self.clear_layout(self.favourite_list_layout)
+        # Other cleanup operations...
+        self.hide()  # Hide the main window
+        login_dialog = LoginDialog()
+        if login_dialog.exec() == QDialog.Accepted:
+            # Reinitialize the product list
+            self.clear_layout(self.productlist_layout)
+            self.add_products(self.products)
+            self.show()  # Show the main window again
+        else:
+            sys.exit(0)  # Exit the application
+    
+    #function for searching
+    def on_search_btn_clicked(self):
+        self.ui.stackedWidget.setCurrentIndex(2)
+        search_text = self.ui.searchInput_1.text().strip()
+        if search_text:
+            self.ui.label_7.setText(search_text)
+
+    #function for changing page to user page
+    def on_profile_btn_clicked(self):
+        self.ui.stackedWidget.setCurrentIndex(5)
+        
+
+    def on_home_btn_clicked(self):
+        self.ui.stackedWidget.setCurrentIndex(3)
+        # clear all the widgets in the productlist layout without deleting the layout
+        for i in reversed(range(self.productlist_layout.count())):
+            self.productlist_layout.itemAt(i).widget().setParent(None)
+
+        # Add products to the product list grid with the updated number of columns
+        self.add_products(self.products)
 
     def resizeEvent(self, event):
         current_column_count = self.calculate_columns()
@@ -375,7 +367,24 @@ class MainWindow(QMainWindow):
 
     def on_manageAcc_btn_clicked(self):
         self.ui.stackedWidget_2.setCurrentIndex(1)
+
+
                 
+# if __name__ == "__main__":
+#     app = QApplication(sys.argv)
+#     font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
+#     print(f"Font Path: {font_path}")
+#     if QFontDatabase.addApplicationFont(font_path) == -1:
+#         print("Font not found")
+#     else:
+#         print("Font found")
+#     stylesheet = open("styles.qss").read()
+#     app.setStyleSheet(stylesheet)
+#     window = MainWindow()
+#     window.show()
+#     sys.exit(app.exec())
+
+# with login dialog
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     login_dialog = LoginDialog()
@@ -390,12 +399,8 @@ if __name__ == "__main__":
 
     if login_dialog.exec() == QDialog.Accepted:
         main_window = MainWindow()
+        # reinitialize the product list
+
         main_window.show()
         sys.exit(app.exec_())
-    else:
-        sys.exit(0)
 
-        # Add label to the layout of self.ui.productlist
-        # label = QLabel("Hello World")
-        # label.setAlignment(Qt.AlignCenter)
-        # productlist_layout.addWidget(label)

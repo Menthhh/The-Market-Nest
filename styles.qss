@@ -27,3 +27,18 @@
     font-size: 15px;
     
 }
+
+
+
+#ContainerWidget {
+    background-color: #ffffff;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0px;
+}              
+
+#container_widget{
+    border-radius: 5px;
+    padding-top: 1px;
+}

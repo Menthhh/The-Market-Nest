@@ -1,1 +1,1 @@
-account = {}
+account = {'p': {'email': 'p', 'phone': 'p', 'password': 'p'}}
