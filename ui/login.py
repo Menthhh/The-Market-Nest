@@ -55,14 +55,6 @@ class Ui_Dialog(object):
         self.gridLayout_4.setSpacing(0)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.gridLayout_4.addItem(self.verticalSpacer_2, 4, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 230, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.gridLayout_4.addItem(self.verticalSpacer, 0, 0, 1, 1)
-
         self.widget_26 = QWidget(self.widget)
         self.widget_26.setObjectName(u"widget_26")
         self.widget_26.setMinimumSize(QSize(0, 50))
@@ -73,22 +65,9 @@ class Ui_Dialog(object):
         self.widget_4 = QWidget(self.widget_26)
         self.widget_4.setObjectName(u"widget_4")
         self.gridLayout_3 = QGridLayout(self.widget_4)
+        self.gridLayout_3.setSpacing(0)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.gridLayout_3.setHorizontalSpacing(0)
-        self.gridLayout_3.setVerticalSpacing(10)
         self.gridLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.widget_4)
-        self.label.setObjectName(u"label")
-        self.label.setEnabled(True)
-        self.label.setLayoutDirection(Qt.LeftToRight)
-        self.label.setAutoFillBackground(False)
-        self.label.setPixmap(QPixmap(u":/icon/icon/logo.ico"))
-        self.label.setScaledContents(False)
-        self.label.setAlignment(Qt.AlignCenter)
-        self.label.setWordWrap(False)
-
-        self.gridLayout_3.addWidget(self.label, 0, 0, 1, 1)
-
         self.widget_5 = QWidget(self.widget_4)
         self.widget_5.setObjectName(u"widget_5")
         self.widget_5.setMinimumSize(QSize(0, 40))
@@ -106,18 +85,52 @@ class Ui_Dialog(object):
         self.label_2.setFont(font)
         self.label_2.setStyleSheet(u"color: rgb(81, 82, 108);\n"
 "font: 600 18pt \"Josefin Sans SemiBold\";")
-        self.label_2.setAlignment(Qt.AlignCenter)
+        self.label_2.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
 
         self.gridLayout_5.addWidget(self.label_2, 0, 0, 1, 1)
 
 
-        self.gridLayout_3.addWidget(self.widget_5, 1, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.widget_5, 2, 0, 1, 1)
+
+        self.widget_31 = QWidget(self.widget_4)
+        self.widget_31.setObjectName(u"widget_31")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.widget_31.sizePolicy().hasHeightForWidth())
+        self.widget_31.setSizePolicy(sizePolicy1)
+        self.gridLayout_35 = QGridLayout(self.widget_31)
+        self.gridLayout_35.setSpacing(0)
+        self.gridLayout_35.setObjectName(u"gridLayout_35")
+        self.gridLayout_35.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.widget_31)
+        self.label.setObjectName(u"label")
+        self.label.setEnabled(True)
+        self.label.setLayoutDirection(Qt.LeftToRight)
+        self.label.setAutoFillBackground(False)
+        self.label.setPixmap(QPixmap(u":/icon/icon/logo.ico"))
+        self.label.setScaledContents(False)
+        self.label.setAlignment(Qt.AlignCenter)
+        self.label.setWordWrap(False)
+
+        self.gridLayout_35.addWidget(self.label, 0, 0, 1, 1)
+
+
+        self.gridLayout_3.addWidget(self.widget_31, 0, 0, 1, 1)
 
 
         self.gridLayout_33.addWidget(self.widget_4, 0, 0, 1, 1)
 
 
-        self.gridLayout_4.addWidget(self.widget_26, 1, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.widget_26, 2, 0, 1, 1)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.gridLayout_4.addItem(self.verticalSpacer_2, 5, 0, 1, 1)
+
+        self.verticalSpacer = QSpacerItem(20, 230, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.gridLayout_4.addItem(self.verticalSpacer, 0, 0, 1, 1)
 
 
         self.gridLayout_2.addWidget(self.widget, 0, 0, 1, 1)
@@ -337,16 +350,16 @@ class Ui_Dialog(object):
         self.gridLayout_18.setContentsMargins(0, 0, 0, 0)
         self.widget_15 = QWidget(self.widget_14)
         self.widget_15.setObjectName(u"widget_15")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.widget_15.sizePolicy().hasHeightForWidth())
-        self.widget_15.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.widget_15.sizePolicy().hasHeightForWidth())
+        self.widget_15.setSizePolicy(sizePolicy2)
         self.widget_15.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.gridLayout_22 = QGridLayout(self.widget_15)
         self.gridLayout_22.setSpacing(0)
         self.gridLayout_22.setObjectName(u"gridLayout_22")
-        self.gridLayout_22.setContentsMargins(-1, 0, 0, 0)
+        self.gridLayout_22.setContentsMargins(0, 0, 0, 0)
         self.widget_19 = QWidget(self.widget_15)
         self.widget_19.setObjectName(u"widget_19")
         self.gridLayout_21 = QGridLayout(self.widget_19)
@@ -374,15 +387,15 @@ class Ui_Dialog(object):
         self.widget_18.setObjectName(u"widget_18")
         self.widget_18.setMinimumSize(QSize(0, 30))
         self.gridLayout_20 = QGridLayout(self.widget_18)
-        self.gridLayout_20.setSpacing(0)
         self.gridLayout_20.setObjectName(u"gridLayout_20")
+        self.gridLayout_20.setHorizontalSpacing(0)
         self.gridLayout_20.setContentsMargins(0, 0, 0, 0)
         self.label_9 = QLabel(self.widget_18)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setFont(font)
         self.label_9.setStyleSheet(u"color: rgb(81, 82, 108);\n"
 "font: 600 18pt \"Josefin Sans SemiBold\";")
-        self.label_9.setAlignment(Qt.AlignCenter)
+        self.label_9.setAlignment(Qt.AlignBottom|Qt.AlignHCenter)
 
         self.gridLayout_20.addWidget(self.label_9, 0, 0, 1, 1)
 
@@ -405,8 +418,8 @@ class Ui_Dialog(object):
 
         self.widget_16 = QWidget(self.widget_14)
         self.widget_16.setObjectName(u"widget_16")
-        sizePolicy1.setHeightForWidth(self.widget_16.sizePolicy().hasHeightForWidth())
-        self.widget_16.setSizePolicy(sizePolicy1)
+        sizePolicy2.setHeightForWidth(self.widget_16.sizePolicy().hasHeightForWidth())
+        self.widget_16.setSizePolicy(sizePolicy2)
         self.widget_16.setStyleSheet(u"background-color: rgb(75, 85, 189);")
         self.gridLayout_34 = QGridLayout(self.widget_16)
         self.gridLayout_34.setObjectName(u"gridLayout_34")
@@ -613,7 +626,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -621,8 +634,8 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText("")
         self.label_2.setText(QCoreApplication.translate("Dialog", u"MarketNest", None))
+        self.label.setText("")
         self.pushButton.setText(QCoreApplication.translate("Dialog", u"Login", None))
 #if QT_CONFIG(shortcut)
         self.pushButton.setShortcut("")

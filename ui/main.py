@@ -10,7 +10,7 @@ from PySide6.QtQuick import *
 from mainApp import Ui_MainWindow
 from login import Ui_Dialog  # Import the login UI
 
-account = {}
+account = {} # temporary // will be replaced with database
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
         super(LoginDialog, self).__init__(parent)
@@ -463,7 +463,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     login_dialog = LoginDialog()
     font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
-    print(f"Font Path: {font_path}")
+    # print(f"Font Path: {font_path}")
     if QFontDatabase.addApplicationFont(font_path) == -1:
         print("Font not found")
     else:
@@ -472,11 +472,11 @@ if __name__ == "__main__":
     app.setStyleSheet(stylesheet)
 
     if login_dialog.exec() == QDialog.Accepted:
-        window = MainWindow()
-        window.show()
+        main_window = MainWindow()
+        main_window.show()
         sys.exit(app.exec_())
     else:
-        sys.exit(app.exec_())
+        sys.exit(0)
 
         # Add label to the layout of self.ui.productlist
         # label = QLabel("Hello World")
