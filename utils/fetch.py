@@ -57,18 +57,18 @@ class APIClient:
 
 # Example usage:
 if __name__ == "__main__":
+    # test
     api_client = APIClient("http://localhost:9000/api")
 
-    
     body = {
-    "name": "Alex Smith",
-    "birthDate": "1988-12-09",
-    "citizenID": 9876523410002,
-    "phoneNumber": 9876543220,
-    "email": "alex.smith@example.com",
-    "username": "alexsmith",
-    "password": "securePassword2"
-  }
+        "name": "Alex Smith",
+        "birthDate": "1988-12-09",
+        "citizenID": 9876523410002,
+        "phoneNumber": 9876543220,
+        "email": "alex.smith@example.com",
+        "username": "alexsmith",
+        "password": "securePassword2"
+    }
 
 
     response = api_client.post_request("users", body)

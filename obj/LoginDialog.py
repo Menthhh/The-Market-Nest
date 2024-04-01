@@ -2,6 +2,7 @@ from PySide6.QtWidgets import QDialog
 from loginUi import Ui_Dialog
 from config import account
 from utils.fetch import APIClient
+from PySide6.QtCore import QSettings
 
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
@@ -88,18 +89,33 @@ class LoginDialog(QDialog):
         api_client = APIClient("http://localhost:9000/api")
         response = api_client.post_request("users", body)
 
-        print(response)
+        if response["message"] == "User created successfully":
+            self.ui.stackedWidget.setCurrentIndex(0)
+
+        else:
+            print(response)
+
+    def get_token(self):
+        settings = QSettings("se_project", "the_market_nest")
+        token = settings.value("auth/token", defaultValue=None)
+        return token
 
     def login(self, body):
         api_client = APIClient("http://localhost:9000/api")
         response = api_client.post_request("auth", body)
 
         if "token" in response:
-            account["token"] = response["token"]
+            settings = QSettings("se_project", "the_market_nest")  
+            settings.setValue("auth/token", response["token"])
+            settings.sync()  
+
+            print("Token from q setting",self.get_token())
             self.accept()
         
         else:
             print(response)
+
+
   
 
         

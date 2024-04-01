@@ -52,6 +52,7 @@ class MainWindow(QMainWindow):
         self.ui.exitBtn_1.clicked.connect(self.logout)
         self.ui.exitBtn_2.clicked.connect(self.logout)
 
+    
     def clear_layout(self, layout):
         for i in reversed(range(layout.count())):
             layout.itemAt(i).widget().setParent(None)
