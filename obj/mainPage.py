@@ -3,10 +3,11 @@ from PySide6.QtCore import Signal, QSize, Qt
 from PySide6.QtGui import QPixmap
 from obj.FavouriteWidget import FavouriteWidget
 from obj.ProductWidget import ProductWidget
-from config import products, favourites
+from config import products, favourites, item_categories
 from mainAppUi import Ui_MainWindow
 import tkinter as tk
 from tkinter import filedialog
+
 
 
 class MainWindow(QMainWindow):
@@ -50,6 +51,7 @@ class MainWindow(QMainWindow):
         self.ui.exitBtn_2.clicked.connect(self.logout)
         self.ui.doneAddBtn_1.clicked.connect(self.addItem)
         self.ui.uploadPhotoBtn.clicked.connect(self.uploadPhoto)
+        self.ui.productCategory.addItems(item_categories.keys())
 
 
     def clear_layout(self, layout):
