@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMainWindow, QGridLayout, QWidget, QVBoxLayout, QLabel, QSizePolicy, QHBoxLayout, QApplication, QDialog, QPushButton
+from PySide6.QtWidgets import QMainWindow, QGridLayout, QWidget, QVBoxLayout, QLabel, QSizePolicy, QHBoxLayout, QApplication, QDialog, QPushButton, QMessageBox
 from PySide6.QtCore import Signal, QSize, Qt
 from PySide6.QtGui import QPixmap
 from obj.FavouriteWidget import FavouriteWidget
@@ -7,8 +7,6 @@ from config import products, favourites, item_categories
 from mainAppUi import Ui_MainWindow
 import tkinter as tk
 from tkinter import filedialog
-
-
 
 class MainWindow(QMainWindow):
     logout_requested = Signal()  # Add a logout signal
@@ -193,7 +191,7 @@ class MainWindow(QMainWindow):
         product = {
             "name": self.productTitle,
             "price": self.productPrice,
-            "image_path": "images/placeholder.png",
+            "image_path": self.tempImage,
             "category": self.productCategory,
             "description": self.productDesc,
             "location": self.productLocation
@@ -208,7 +206,9 @@ class MainWindow(QMainWindow):
         self.ui.productDesc.clear()
         self.ui.productLocation.clear()
 
-        print("Item added successfully!")
+        print(product)
+        # pop up a message box added successfully
+        QMessageBox.information(self, "Success", "Product added successfully")
 
     def showRemoveButton(self, event):
         self.removeButton.move(self.imageLabel.width() - self.removeButton.width(), 0)  # Position button at the top-right
@@ -218,6 +218,24 @@ class MainWindow(QMainWindow):
         self.imageLabel.clear()  # Clear the image
         self.tempImage = None  # Clear the stored image path
         self.removeButton.hide()  # Hide the remove button
+
+    # clear all input fields when switching pages
+    def clearInputs(self):
+        # Clear the uploaded image
+        if hasattr(self, 'imageLabel') and isinstance(self.imageLabel, QLabel):
+            self.imageLabel.clear()
+            self.tempImage = None  # Clear the stored image path
+            if hasattr(self, 'removeButton') and isinstance(self.removeButton, QPushButton):
+                self.removeButton.hide()  # Hide the remove button
+
+        # Clear other input fields as needed
+        # Example: self.ui.someInputField.clear()
+
+    def switchPage(self):
+        # This method should be called when changing pages
+        self.clearInputs()
+        # Add your code here to switch pages
+
 
     def uploadPhoto(self):
         root = tk.Tk()

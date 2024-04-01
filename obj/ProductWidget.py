@@ -57,7 +57,6 @@ class ProductWidget(QWidget):
         self.price_label.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
         self.price_label.setContentsMargins(7, 0, 7, 0)
         name_price_container_layout.addWidget(self.price_label)
-
         container_layout.addWidget(name_price_container)
 
         # Main layout

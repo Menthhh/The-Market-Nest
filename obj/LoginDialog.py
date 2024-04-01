@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QDialog
+from PySide6.QtWidgets import QDialog, QMessageBox
 from loginUi import Ui_Dialog
 from config import account
 from utils.fetch import APIClient
@@ -90,9 +90,11 @@ class LoginDialog(QDialog):
         response = api_client.post_request("users", body)
 
         if response["message"] == "User created successfully":
+            QMessageBox.information(self, "Success", response["message"])
             self.ui.stackedWidget.setCurrentIndex(0)
 
         else:
+            QMessageBox.critical(self, "Error", response["message"])
             print(response)
 
     def get_token(self):
@@ -107,6 +109,9 @@ class LoginDialog(QDialog):
         if "token" in response:
             settings = QSettings("se_project", "the_market_nest")  
             settings.setValue("auth/token", response["token"])
+
+
+
             settings.sync()  
 
             print("Token from q setting",self.get_token())

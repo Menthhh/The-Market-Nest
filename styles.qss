@@ -28,7 +28,7 @@
     border-radius: 5px;
     padding: 0px;
     margin: 0px;
-}              
+}
 
 #container_widget{
     border-radius: 5px;
