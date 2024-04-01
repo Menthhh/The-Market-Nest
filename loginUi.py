@@ -739,4 +739,3 @@ class Ui_Dialog(object):
         self.cancelBtn.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.signupConfirmBtn.setText(QCoreApplication.translate("Dialog", u"Signup", None))
     # retranslateUi
-

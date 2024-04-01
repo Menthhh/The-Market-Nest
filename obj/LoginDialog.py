@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QDialog
 from loginUi import Ui_Dialog
 from config import account
+from utils.fetch import APIClient
 
 class LoginDialog(QDialog):
     def __init__(self, parent=None):
@@ -45,22 +46,17 @@ class LoginDialog(QDialog):
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
 
-        if username and password:
-            if username in account:
-                user_data = account[username]
-                if password == user_data["password"]:
-                    print("Login successful")
-                    self.user_role = user_data.get("role", "user")  # Default to 'user' if role is not specified
-                    self.accept()
-                else:
-                    print("Incorrect password")
-            else:
-                print("Username does not exist")
-        else:
-            print("Please fill in all fields")
+        body = {
+            "username": username,
+            "password": password
+        }
+
+        self.login(body)
+
+    
 
     def signupConfirm_clicked(self):
-        # Placeholder for actual signup logic
+        # Placeholder variables for the UI elements' text
         username = self.ui.usernameInput.text()
         name = self.ui.nameInput.text()
         email = self.ui.emailInput.text()
@@ -70,44 +66,40 @@ class LoginDialog(QDialog):
         password = self.ui.passInput.text()
         confirm_password = self.ui.confirmPassInput.text()
 
+        from datetime import datetime
+        original_date = datetime.strptime(birth, "%m/%d/%Y")
+        new_date_str = original_date.strftime("%Y-%m-%d")
 
-        # prevent empty fields
-        if not username or not email or not password or not confirm_password or not phone or not birth or not identi:
-            print("Please fill in all fields")
-            return
-        
-        # check if password and confirm password match
-        if password != confirm_password:
-            print("Passwords do not match")
-            return
-        
-        # check if username already exists
-        if username in account:
-            print("Username already exists")
-            return
-        
-        # if passport number
-        if self.ui.checkBoxOpt.isChecked():
-            account[username] = {
-                "name": name,
-                "email": email,
-                "phone": phone,
-                "birth": birth,
-                "nationalId": "N/A",
-                "passport": identi,
-                "password": password
-            }
-        else:
-            account[username] = {
-                "name": name,
-                "email": email,
-                "phone": phone,
-                "birth": birth,
-                "nationalId": identi,
-                "passport": "N/A",
-                "password": password
-            }
 
-        print("Account created successfully")
-        print(account)
-        self.setLogin()
+        body = {
+            "username": username,
+            "name": name,
+            "email": email,
+            "phoneNumber": int(phone),
+            "birthDate": new_date_str,
+            "citizenID": int(identi),
+            "password": password,
+        }
+
+        self.siginup(body)
+        
+
+    def siginup(self, body):
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.post_request("users", body)
+
+        print(response)
+
+    def login(self, body):
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.post_request("auth", body)
+
+        print(response)
+  
+
+        
+
+
+
+
+       
