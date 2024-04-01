@@ -14,9 +14,8 @@ class UserController:
     async def create_user(self,request, body):
         try:
             new_user = self.validate_user(body)
-            
             saved_user = self.__users_db.create(new_user)
-            return saved_user
+            return {"message": "User created successfully", "user": saved_user}
         except HTTPException as http_e:
             raise http_e
         except Exception as e:

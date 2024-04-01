@@ -94,7 +94,12 @@ class LoginDialog(QDialog):
         api_client = APIClient("http://localhost:9000/api")
         response = api_client.post_request("auth", body)
 
-        print(response)
+        if "token" in response:
+            account["token"] = response["token"]
+            self.accept()
+        
+        else:
+            print(response)
   
 
         
