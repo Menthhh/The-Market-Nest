@@ -15,6 +15,7 @@ class LoginDialog(QDialog):
         self.ui.cancelBtn.clicked.connect(self.setLogin)  # Connect the cancel button
         self.ui.signupConfirmBtn.clicked.connect(self.signupConfirm_clicked)  # Connect the signup confirm button
         self.ui.checkBoxOpt.clicked.connect(self.switchToPassport)
+        self.user_role = None  # This will hold the user's role
 
     def switchToPassport(self):
         if self.ui.checkBoxOpt.isChecked():
@@ -43,7 +44,6 @@ class LoginDialog(QDialog):
         self.ui.lineEdit_2.clear()
 
     def handle_login(self):
-        # Placeholder for actual login logic
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
 
@@ -67,9 +67,9 @@ class LoginDialog(QDialog):
         password = self.ui.passInput.text()
         confirm_password = self.ui.confirmPassInput.text()
 
-        from datetime import datetime
-        original_date = datetime.strptime(birth, "%m/%d/%Y")
-        new_date_str = original_date.strftime("%Y-%m-%d")
+        # from datetime import datetime
+        # original_date = datetime.strptime(birth, "%m/%d/%Y")
+        # new_date_str = original_date.strftime("%Y-%m-%d")
 
 
         body = {
@@ -77,7 +77,7 @@ class LoginDialog(QDialog):
             "name": name,
             "email": email,
             "phoneNumber": int(phone),
-            "birthDate": new_date_str,
+            "birthDate": birth,
             "citizenID": int(identi),
             "password": password,
         }

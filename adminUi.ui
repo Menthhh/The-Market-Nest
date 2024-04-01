@@ -31,7 +31,7 @@
      <number>0</number>
     </property>
     <item row="0" column="1" rowspan="2">
-     <widget class="QWidget" name="widget_2" native="true">
+     <widget class="QWidget" name="fullWid" native="true">
       <layout class="QGridLayout" name="gridLayout_4">
        <property name="leftMargin">
         <number>0</number>
@@ -987,7 +987,7 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
      </widget>
     </item>
     <item row="0" column="0" rowspan="2">
-     <widget class="QWidget" name="widget" native="true">
+     <widget class="QWidget" name="iconOnly" native="true">
       <layout class="QGridLayout" name="gridLayout">
        <property name="leftMargin">
         <number>0</number>
@@ -1159,7 +1159,7 @@ background-color: transparent;</string>
   <connection>
    <sender>toggleBtn</sender>
    <signal>toggled(bool)</signal>
-   <receiver>widget</receiver>
+   <receiver>iconOnly</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -1175,7 +1175,7 @@ background-color: transparent;</string>
   <connection>
    <sender>toggleBtn</sender>
    <signal>toggled(bool)</signal>
-   <receiver>widget_2</receiver>
+   <receiver>fullWid</receiver>
    <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">

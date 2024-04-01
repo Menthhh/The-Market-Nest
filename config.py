@@ -1,4 +1,4 @@
-account = {'p': {'email': 'p', 'phone': 'p', 'password': 'p'}}
+account = {'p': {'email': 'p', 'phone': 'p', 'password': 'p', 'role': 'admin'}}
 
 products = [
             {"name": "Product 1", "price": "$10.00", "image_path": "pics/spagetti.png"},
