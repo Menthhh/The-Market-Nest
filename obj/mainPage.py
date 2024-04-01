@@ -5,6 +5,8 @@ from obj.FavouriteWidget import FavouriteWidget
 from obj.ProductWidget import ProductWidget
 from config import products, favourites
 from mainAppUi import Ui_MainWindow
+import tkinter as tk
+from tkinter import filedialog
 
 
 class MainWindow(QMainWindow):
@@ -47,8 +49,7 @@ class MainWindow(QMainWindow):
         self.ui.exitBtn_1.clicked.connect(self.logout)
         self.ui.exitBtn_2.clicked.connect(self.logout)
         self.ui.doneAddBtn_1.clicked.connect(self.addItem)
-
-        self.ui.uploadPhotoBtn.clicked.connect(self.upload_photo)
+        self.ui.uploadPhotoBtn.clicked.connect(self.uploadPhoto)
 
 
     def clear_layout(self, layout):
@@ -173,33 +174,40 @@ class MainWindow(QMainWindow):
 
     def addItem(self):
         # get the text from the input field
-        self.productTitle = self.ui.productTitle.text()
-        self.productCategory = self.ui.productCategory.text()
-        self.productPrice = self.ui.productPrice.text()
-        self.productDesc = self.ui.productDesc.text()
-        # self.productImage = self.ui.productImage.text()
-        self.productLocation = self.ui.productLocation.text()
+        self.ui.productTitle = self.ui.productTitleInput.text()
+        self.ui.productCategory = self.ui.productCategoryInput.text()
+        self.ui.productPrice = self.ui.productPriceInput.text()
+        self.ui.productDesc = self.ui.productDescInput.text()
+        # self.ui.productImage = self.ui.productImageInput.text()
+        self.ui.productLocation = self.ui.productLocationInput.text()
 
         # create a dictionary of the input
         product = {
-            "name": self.productTitle,
-            "price": self.productPrice,
+            "name": self.ui.productTitle,
+            "price": self.ui.productPrice,
             "image_path": "images/placeholder.png",
-            "category": self.productCategory,
-            "description": self.productDesc,
-            "location": self.productLocation
+            "category": self.ui.productCategory,
+            "description": self.ui.product,
+            "location": self.ui.productLocation
         }
 
         # add to db
 
         #clear the input fields
-        self.ui.productTitle.clear()
-        self.ui.productCategory.clear()
-        self.ui.productPrice.clear()
-        self.ui.productDesc.clear()
-        self.ui.productLocation.clear()
+        self.ui.productTitleInput.clear()
+        self.ui.productCategoryInput.clear()
+        self.ui.productPriceInput.clear()
+        self.ui.productDescInput.clear()
+        self.ui.productLocationInput.clear()
 
         print("Item added successfully!")
 
-    def upload_photo(self):
-        print("Photo uploaded successfully!")
+
+    def uploadPhoto(self):
+        root = tk.Tk()
+        root.withdraw()  # Hide the main window
+
+        # Open a file dialog to select an image file
+        image_path = filedialog.askopenfilename(title="Select Image File", filetypes=[("Image files", "*.jpg;*.jpeg;*.png;*.gif")])
+
+        
