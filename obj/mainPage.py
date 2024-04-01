@@ -48,6 +48,8 @@ class MainWindow(QMainWindow):
         self.ui.exitBtn_2.clicked.connect(self.logout)
         self.ui.doneAddBtn_1.clicked.connect(self.addItem)
 
+        self.ui.uploadPhotoBtn.clicked.connect(self.upload_photo)
+
 
     def clear_layout(self, layout):
         for i in reversed(range(layout.count())):
@@ -198,3 +200,6 @@ class MainWindow(QMainWindow):
         self.ui.productLocation.clear()
 
         print("Item added successfully!")
+
+    def upload_photo(self):
+        print("Photo uploaded successfully!")
