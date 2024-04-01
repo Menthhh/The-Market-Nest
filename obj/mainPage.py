@@ -46,6 +46,8 @@ class MainWindow(QMainWindow):
         self.ui.myProfileBtn_1.clicked.connect(self.on_myProfile_btn_clicked)
         self.ui.exitBtn_1.clicked.connect(self.logout)
         self.ui.exitBtn_2.clicked.connect(self.logout)
+        self.ui.doneAddBtn_1.clicked.connect(self.addItem)
+
 
     def clear_layout(self, layout):
         for i in reversed(range(layout.count())):
@@ -167,3 +169,34 @@ class MainWindow(QMainWindow):
 
     def on_manageAcc_btn_clicked(self):
         self.ui.stackedWidget_2.setCurrentIndex(1)
+
+
+    def addItem(self):
+        # get the text from the input field
+        self.ui.productTitle = self.ui.productTitleInput.text()
+        self.ui.productCategory = self.ui.productCategoryInput.text()
+        self.ui.productPrice = self.ui.productPriceInput.text()
+        self.ui.productDesc = self.ui.productDescInput.text()
+        # self.ui.productImage = self.ui.productImageInput.text()
+        self.ui.productLocation = self.ui.productLocationInput.text()
+
+        # create a dictionary of the input
+        product = {
+            "name": self.ui.productTitle,
+            "price": self.ui.productPrice,
+            "image_path": "images/placeholder.png",
+            "category": self.ui.productCategory,
+            "description": self.ui.product,
+            "location": self.ui.productLocation
+        }
+
+        # add to db
+
+        #clear the input fields
+        self.ui.productTitleInput.clear()
+        self.ui.productCategoryInput.clear()
+        self.ui.productPriceInput.clear()
+        self.ui.productDescInput.clear()
+        self.ui.productLocationInput.clear()
+
+        print("Item added successfully!")
