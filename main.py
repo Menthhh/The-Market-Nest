@@ -13,8 +13,26 @@ from obj.LoginDialog import LoginDialog
 from obj.ProductWidget import ProductWidget
 from obj.FavouriteWidget import FavouriteWidget
 from config import account, products, favourites
+from obj.adminPage import AdminPage
+
+def show_login():
+    login_dialog = LoginDialog()
+    if login_dialog.exec() == QDialog.Accepted:
+        if login_dialog.user_role == "admin":
+            admin_page = AdminPage()
+            admin_page.logout_requested.connect(show_login)  # Connect signal to show login
+            admin_page.show()
+        else:
+            main_window = MainWindow()
+            main_window.logout_requested.connect(show_login)  # Connect signal to show login
+            main_window.show()
+    else:
+        app.quit()
+
 
 class MainWindow(QMainWindow):
+    logout_requested = Signal()  # Add a logout signal
+
     def __init__(self):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
@@ -91,14 +109,7 @@ class MainWindow(QMainWindow):
         self.clear_layout(self.favourite_list_layout)
         # Other cleanup operations...
         self.hide()  # Hide the main window
-        login_dialog = LoginDialog()
-        if login_dialog.exec() == QDialog.Accepted:
-            # Reinitialize the product list
-            self.clear_layout(self.productlist_layout)
-            self.add_products(self.products)
-            self.show()  # Show the main window again
-        else:
-            sys.exit(0)  # Exit the application
+        self.logout_requested.emit()  # Emit the logout signal
     
     #function for searching
     def on_search_btn_clicked(self):
@@ -180,24 +191,14 @@ class MainWindow(QMainWindow):
     def on_manageAcc_btn_clicked(self):
         self.ui.stackedWidget_2.setCurrentIndex(1)
 
-# with login dialog
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    login_dialog = LoginDialog()
+
+    # Font and stylesheet setup
     font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
-    # print(f"Font Path: {font_path}")
-    # if QFontDatabase.addApplicationFont(font_path) == -1:
-    #     print("Font not found")
-    # else:
-    #     print("Font found")
     QFontDatabase.addApplicationFont(font_path)
     stylesheet = open("styles.qss").read()
     app.setStyleSheet(stylesheet)
 
-    if login_dialog.exec() == QDialog.Accepted:
-        main_window = MainWindow()
-        # reinitialize the product list
-
-        main_window.show()
-        sys.exit(app.exec_())
-
+    show_login()  # This initiates the login process.
+    sys.exit(app.exec_())  # This starts the application's event loop.

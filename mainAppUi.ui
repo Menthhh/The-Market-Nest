@@ -1785,8 +1785,8 @@ border-radius: 5;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>740</width>
-                      <height>584</height>
+                      <width>140</width>
+                      <height>65</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">

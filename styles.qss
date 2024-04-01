@@ -9,11 +9,6 @@
 	border: none;
 }
 
-* {
-    font-family: "Josefin Sans";
-    color: #51526C;
-    font-weight: bold;
-}
 
 #sellBtn_1, #doneAddBtn_1{
     font-family: "Josefin Sans";

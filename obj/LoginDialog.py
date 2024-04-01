@@ -13,6 +13,7 @@ class LoginDialog(QDialog):
         self.ui.cancelBtn.clicked.connect(self.setLogin)  # Connect the cancel button
         self.ui.signupConfirmBtn.clicked.connect(self.signupConfirm_clicked)  # Connect the signup confirm button
         self.ui.checkBoxOpt.clicked.connect(self.switchToPassport)
+        self.user_role = None  # This will hold the user's role
 
     def switchToPassport(self):
         if self.ui.checkBoxOpt.isChecked():
@@ -25,6 +26,7 @@ class LoginDialog(QDialog):
 
         # Clear the input fields
         self.ui.usernameInput.clear()
+        self.ui.nameInput.clear()
         self.ui.emailInput.clear()
         self.ui.phoneInput.clear()
         self.ui.birthInput.clear()
@@ -40,30 +42,27 @@ class LoginDialog(QDialog):
         self.ui.lineEdit_2.clear()
 
     def handle_login(self):
-        # Placeholder for actual login logic
         username = self.ui.lineEdit.text()
         password = self.ui.lineEdit_2.text()
 
-        # prevent empty fields
         if username and password:
-            # check if username exists
             if username in account:
                 user_data = account[username]
-                # check if password is correct
                 if password == user_data["password"]:
                     print("Login successful")
+                    self.user_role = user_data.get("role", "user")  # Default to 'user' if role is not specified
                     self.accept()
                 else:
                     print("Incorrect password")
             else:
                 print("Username does not exist")
-
         else:
             print("Please fill in all fields")
 
     def signupConfirm_clicked(self):
         # Placeholder for actual signup logic
         username = self.ui.usernameInput.text()
+        name = self.ui.nameInput.text()
         email = self.ui.emailInput.text()
         phone = self.ui.phoneInput.text()
         birth = self.ui.birthInput.text()
@@ -90,6 +89,7 @@ class LoginDialog(QDialog):
         # if passport number
         if self.ui.checkBoxOpt.isChecked():
             account[username] = {
+                "name": name,
                 "email": email,
                 "phone": phone,
                 "birth": birth,
@@ -99,6 +99,7 @@ class LoginDialog(QDialog):
             }
         else:
             account[username] = {
+                "name": name,
                 "email": email,
                 "phone": phone,
                 "birth": birth,

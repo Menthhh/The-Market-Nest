@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(736, 571)
+        MainWindow.resize(909, 647)
         MainWindow.setFocusPolicy(Qt.TabFocus)
         MainWindow.setStyleSheet(u"#centralwidget{\n"
 "	background-color: rgb(255, 255, 255);\n"
@@ -105,6 +105,9 @@ class Ui_MainWindow(object):
         self.homeBtn_2.setObjectName(u"homeBtn_2")
         self.homeBtn_2.setFocusPolicy(Qt.TabFocus)
         self.homeBtn_2.setLayoutDirection(Qt.LeftToRight)
+        self.homeBtn_2.setStyleSheet(u"font-family: \"Josefin Sans Medium\";\n"
+"font-size: 13px;\n"
+"color: #51526C;")
         self.homeBtn_2.setInputMethodHints(Qt.ImhMultiLine)
         icon = QIcon()
         icon.addFile(u":/icon/icon/home.ico", QSize(), QIcon.Normal, QIcon.Off)
@@ -119,6 +122,9 @@ class Ui_MainWindow(object):
         self.favBtn_2 = QPushButton(self.full_menu_widget)
         self.favBtn_2.setObjectName(u"favBtn_2")
         self.favBtn_2.setFocusPolicy(Qt.TabFocus)
+        self.favBtn_2.setStyleSheet(u"font-family: \"Josefin Sans Medium\";\n"
+"font-size: 13px;\n"
+"color: #51526C;")
         icon1 = QIcon()
         icon1.addFile(u":/icon/icon/heart3.ico", QSize(), QIcon.Normal, QIcon.Off)
         self.favBtn_2.setIcon(icon1)
@@ -130,6 +136,9 @@ class Ui_MainWindow(object):
 
         self.profileBtn_2 = QPushButton(self.full_menu_widget)
         self.profileBtn_2.setObjectName(u"profileBtn_2")
+        self.profileBtn_2.setStyleSheet(u"font-family: \"Josefin Sans Medium\";\n"
+"font-size: 13px;\n"
+"color: #51526C;")
         icon2 = QIcon()
         icon2.addFile(u":/icon/icon/store.ico", QSize(), QIcon.Normal, QIcon.Off)
         self.profileBtn_2.setIcon(icon2)
@@ -141,6 +150,9 @@ class Ui_MainWindow(object):
 
         self.accountBtn_2 = QPushButton(self.full_menu_widget)
         self.accountBtn_2.setObjectName(u"accountBtn_2")
+        self.accountBtn_2.setStyleSheet(u"font-family: \"Josefin Sans Medium\";\n"
+"font-size: 13px;\n"
+"color: #51526C;")
         icon3 = QIcon()
         icon3.addFile(u":/icon/icon/profile.ico", QSize(), QIcon.Normal, QIcon.Off)
         self.accountBtn_2.setIcon(icon3)
@@ -162,6 +174,9 @@ class Ui_MainWindow(object):
         font1 = QFont()
         font1.setFamilies([u"Josefin Sans Medium"])
         self.exitBtn_2.setFont(font1)
+        self.exitBtn_2.setStyleSheet(u"font-family: \"Josefin Sans Medium\";\n"
+"font-size: 13px;\n"
+"color: #51526C;")
         icon4 = QIcon()
         icon4.addFile(u":/icon/icon/logout.ico", QSize(), QIcon.Normal, QIcon.Off)
         self.exitBtn_2.setIcon(icon4)
@@ -311,6 +326,11 @@ class Ui_MainWindow(object):
         self.sellBtn_1 = QPushButton(self.widget)
         self.sellBtn_1.setObjectName(u"sellBtn_1")
         self.sellBtn_1.setMinimumSize(QSize(50, 30))
+        self.sellBtn_1.setStyleSheet(u"font-family: \"Josefin Sans Medium\";\n"
+"font-size: 12px;\n"
+"background-color: #0d1c63;\n"
+"color: #ffffff;\n"
+"border-radius: 5;")
 
         self.horizontalLayout_4.addWidget(self.sellBtn_1)
 
@@ -876,7 +896,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 567, 508))
+        self.scrollHome.setGeometry(QRect(0, 0, 740, 584))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -981,7 +1001,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 98, 28))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 722, 527))
         self.gridLayout_55 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_55.setObjectName(u"gridLayout_55")
         self.favoriteList = QWidget(self.scrollAreaWidgetContents)
@@ -1241,9 +1261,7 @@ class Ui_MainWindow(object):
         self.widget_56 = QWidget(self.widget_55)
         self.widget_56.setObjectName(u"widget_56")
         self.gridLayout_68 = QGridLayout(self.widget_56)
-        self.gridLayout_68.setSpacing(0)
         self.gridLayout_68.setObjectName(u"gridLayout_68")
-        self.gridLayout_68.setContentsMargins(0, 0, 0, 0)
         self.label_30 = QLabel(self.widget_56)
         self.label_30.setObjectName(u"label_30")
 
@@ -1458,7 +1476,7 @@ class Ui_MainWindow(object):
         self.profileBtn_2.toggled.connect(self.profileBtn_1.setChecked)
         self.accountBtn_2.toggled.connect(self.accountBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
         self.pushButton_3.setDefault(False)
         self.stackedWidget_2.setCurrentIndex(0)
 
