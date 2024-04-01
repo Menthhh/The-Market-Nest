@@ -1,123 +1,113 @@
+import logging
 from ZODB import DB
-from ZODB.FileStorage import FileStorage
-from fastapi import HTTPException
+from ZEO import ClientStorage
 import transaction
 import uuid
+from fastapi import HTTPException
 
 class Warehouse:
-    def __init__(self, path):
-        self.path = path
+    def __init__(self, zeo_address):
+        self.zeo_address = zeo_address
         self.db = None
         self.connection = None
         self.root = None
+        self.logger = logging.getLogger(__name__)
 
     def connect(self):
-        storage = FileStorage(self.path)
-        self.db = DB(storage)
-        self.connection = self.db.open()
-        self.root = self.connection.root()
+        try:
+            storage = ClientStorage.ClientStorage(self.zeo_address)
+            self.db = DB(storage)
+            self.connection = self.db.open()
+            self.root = self.connection.root()
+        except Exception as e:
+            error_msg = f"Error connecting to ZODB: {str(e)}"
+            self.logger.error(error_msg)
+            raise HTTPException(status_code=500, detail=error_msg)
 
     def close(self):
-        self.connection.close()
-        self.db.close()
+        try:
+            if self.connection is not None:
+                self.connection.close()
+                self.db.close()
+        except Exception as e:
+            error_msg = f"Error closing ZODB connection: {str(e)}"
+            self.logger.error(error_msg)
+            raise HTTPException(status_code=500, detail=error_msg)
 
     def create(self, obj):
         try:
             obj_id = str(uuid.uuid4())
-            obj._id = obj_id
+            obj._id = obj_id  # Set the _id attribute of the object directly
             self.root[obj_id] = obj
             transaction.commit()
             return obj
-        except KeyError as e:
-            transaction.abort()
-            raise HTTPException(status_code=400, detail="KeyError occurred during object creation")
         except Exception as e:
+            error_msg = f"An error occurred: {str(e)}"
+            self.logger.error(error_msg)
             transaction.abort()
-            raise HTTPException(status_code=500, detail=str(e))
-
+            raise HTTPException(status_code=500, detail=error_msg)
 
     def findOne(self, obj_id):
         try:
-            obj = self.root[obj_id]
-            return obj
+            return self.root[obj_id]
         except KeyError:
-            return {"error": "Object not found"}, 404
+            error_msg = f"Object not found with id: {obj_id}"
+            self.logger.error(error_msg)
+            raise HTTPException(status_code=404, detail=error_msg)
         except Exception as e:
-            return {"error": str(e)}, 500
+            error_msg = f"An error occurred: {str(e)}"
+            self.logger.error(error_msg)
+            raise HTTPException(status_code=500, detail=error_msg)
 
     def findAll(self):
         try:
-            root = []
-            for key in self.root.keys():
-                root.append(self.root[key])
-            return root
+            return list(self.root.values())
         except Exception as e:
-            return {"error": str(e)}, 500
+            error_msg = f"An error occurred: {str(e)}"
+            self.logger.error(error_msg)
+            raise HTTPException(status_code=500, detail=error_msg)
 
     def findOneAndUpdate(self, obj_id, new_obj):
         try:
             if obj_id not in self.root:
+                error_msg = f"Object not found with id: {obj_id}"
+                self.logger.error(error_msg)
                 raise KeyError("Object not found")
-            
+
             existing_obj = self.root[obj_id]
-
-            # Update based on object instance
-            if hasattr(new_obj, '__dict__'):
-                for attr_name, attr_value in new_obj.__dict__.items():
-                    if hasattr(existing_obj, attr_name):
-                        setattr(existing_obj, attr_name, attr_value)
-                    else:
-                        raise ValueError(f"Attribute '{attr_name}' does not exist in the object")
-
-            # Update based on dictionary
-            elif isinstance(new_obj, dict):
-                for attr_name, attr_value in new_obj.items():
-                    if hasattr(existing_obj, attr_name):
-                        setattr(existing_obj, attr_name, attr_value)
-                    else:
-                        raise ValueError(f"Attribute '{attr_name}' does not exist in the object")
-            else:
-                raise ValueError("Unsupported type for new_obj")
-
-            transaction.commit()  # Commit changes
+            for attr_name, attr_value in new_obj.items():
+                setattr(existing_obj, attr_name, attr_value)
+            
+            transaction.commit()
             return existing_obj
         except KeyError as e:
-            transaction.abort()  # Abort transaction if object not found
-            raise e
-        except ValueError as e:
-            transaction.abort()  # Abort transaction if attribute does not exist
-            raise e
+            error_msg = f"Object not found with id: {obj_id}"
+            self.logger.error(error_msg)
+            transaction.abort()
+            raise HTTPException(status_code=404, detail=error_msg)
         except Exception as e:
-            transaction.abort()  # Abort transaction in case of any error
-            raise e
-
-
+            error_msg = f"An error occurred: {str(e)}"
+            self.logger.error(error_msg)
+            transaction.abort()
+            raise HTTPException(status_code=500, detail=error_msg)
 
     def findOneAndDelete(self, obj_id):
         try:
-            deleted_obj = self.root[obj_id]
-            del self.root[obj_id]
-            transaction.commit()
-            return {"message": "Object deleted successfully", "obj":deleted_obj}, 200
-        except KeyError:
-            return {"error": "Object not found"}, 404
-        except Exception as e:
-            transaction.abort()
-            return {"error": str(e)}, 500
-
-    def deleteAll(self):
-        try:
-            print("Are you sure you want to delete all records? y/n")
-            response = input()
-            if response == "y":
-                keys_to_delete = list(self.root.keys())
-                for key in keys_to_delete:
-                    del self.root[key]
+            if obj_id in self.root:
+                del_obj = self.root[obj_id]
+                del self.root[obj_id]
                 transaction.commit()
-                return {"message": "All records have been deleted"}, 200
+                return ("Deleted object successfully", del_obj)
             else:
-                return {"message": "Operation cancelled"}, 200
-        except Exception as e:
+                error_msg = f"Object not found with id: {obj_id}"
+                self.logger.error(error_msg)
+                raise KeyError("Object not found")
+        except KeyError as e:
+            self.logger.error(error_msg)
             transaction.abort()
-            return {"error": str(e)}, 500
-
+            raise HTTPException(status_code=404, detail=error_msg)
+        except Exception as e:
+            error_msg = f"An error occurred: {str(e)}"
+            self.logger.error(error_msg)
+            transaction.abort()
+            raise HTTPException(status_code=500, detail=error_msg)
