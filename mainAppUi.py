@@ -363,10 +363,16 @@ class Ui_MainWindow(object):
         self.gridLayout_49.setObjectName(u"gridLayout_49")
         self.widget_37 = QWidget(self.BtnContainer)
         self.widget_37.setObjectName(u"widget_37")
+        self.widget_37.setMaximumSize(QSize(150, 16777215))
         self.gridLayout_48 = QGridLayout(self.widget_37)
         self.gridLayout_48.setObjectName(u"gridLayout_48")
         self.doneAddBtn_1 = QPushButton(self.widget_37)
         self.doneAddBtn_1.setObjectName(u"doneAddBtn_1")
+        self.doneAddBtn_1.setMinimumSize(QSize(0, 30))
+        self.doneAddBtn_1.setStyleSheet(u"background-color: rgb(249, 97, 125);\n"
+"font: 500 9pt \"Josefin Sans Medium\";\n"
+"color: white;\n"
+"border-radius: 5px;")
 
         self.gridLayout_48.addWidget(self.doneAddBtn_1, 0, 0, 1, 1)
 
@@ -391,6 +397,8 @@ class Ui_MainWindow(object):
         self.gridLayout_35.setContentsMargins(0, 0, 0, 0)
         self.label_20 = QLabel(self.widget_28)
         self.label_20.setObjectName(u"label_20")
+        self.label_20.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_35.addWidget(self.label_20, 0, 0, 1, 1)
 
@@ -405,6 +413,10 @@ class Ui_MainWindow(object):
         self.gridLayout_36.setContentsMargins(0, 0, 0, 0)
         self.productLocation = QLineEdit(self.widget_29)
         self.productLocation.setObjectName(u"productLocation")
+        self.productLocation.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_36.addWidget(self.productLocation, 0, 0, 1, 1)
 
@@ -429,6 +441,8 @@ class Ui_MainWindow(object):
         self.gridLayout_29.setContentsMargins(0, 0, 0, 0)
         self.label_17 = QLabel(self.widget_19)
         self.label_17.setObjectName(u"label_17")
+        self.label_17.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_29.addWidget(self.label_17, 0, 0, 1, 1)
 
@@ -443,6 +457,10 @@ class Ui_MainWindow(object):
         self.gridLayout_30.setContentsMargins(0, 0, 0, 0)
         self.productPrice = QLineEdit(self.widget_20)
         self.productPrice.setObjectName(u"productPrice")
+        self.productPrice.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_30.addWidget(self.productPrice, 0, 0, 1, 1)
 
@@ -469,6 +487,8 @@ class Ui_MainWindow(object):
         self.gridLayout_32.setContentsMargins(0, 0, 0, 0)
         self.label_18 = QLabel(self.widget_22)
         self.label_18.setObjectName(u"label_18")
+        self.label_18.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_32.addWidget(self.label_18, 0, 0, 1, 1)
 
@@ -484,6 +504,13 @@ class Ui_MainWindow(object):
         self.gridLayout_33.setContentsMargins(0, 0, 0, 0)
         self.uploadPhotoBtn = QPushButton(self.widget_23)
         self.uploadPhotoBtn.setObjectName(u"uploadPhotoBtn")
+        self.uploadPhotoBtn.setMinimumSize(QSize(0, 30))
+        self.uploadPhotoBtn.setStyleSheet(u"background-color: #e8e8e8;\n"
+"border-radius: 5px;\n"
+"color: #51526C;\n"
+"font: 500 9pt \"Josefin Sans Medium\";\n"
+"\n"
+"")
 
         self.gridLayout_33.addWidget(self.uploadPhotoBtn, 0, 0, 1, 1)
 
@@ -513,6 +540,8 @@ class Ui_MainWindow(object):
         self.gridLayout_23.setContentsMargins(0, 0, 0, 0)
         self.label_15 = QLabel(self.widget_13)
         self.label_15.setObjectName(u"label_15")
+        self.label_15.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_23.addWidget(self.label_15, 0, 0, 1, 1)
 
@@ -527,6 +556,10 @@ class Ui_MainWindow(object):
         self.gridLayout_24.setContentsMargins(0, 0, 0, 0)
         self.productTitle = QLineEdit(self.widget_14)
         self.productTitle.setObjectName(u"productTitle")
+        self.productTitle.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_24.addWidget(self.productTitle, 0, 0, 1, 1)
 
@@ -559,6 +592,8 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.label_16.sizePolicy().hasHeightForWidth())
         self.label_16.setSizePolicy(sizePolicy1)
+        self.label_16.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_26.addWidget(self.label_16, 0, 0, 1, 1)
 
@@ -573,6 +608,10 @@ class Ui_MainWindow(object):
         self.gridLayout_27.setContentsMargins(0, 0, 0, 0)
         self.productCategory = QComboBox(self.widget_17)
         self.productCategory.setObjectName(u"productCategory")
+        self.productCategory.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_27.addWidget(self.productCategory, 0, 0, 1, 1)
 
@@ -598,6 +637,8 @@ class Ui_MainWindow(object):
         self.gridLayout_37.setContentsMargins(0, 0, 0, 0)
         self.label_19 = QLabel(self.widget_25)
         self.label_19.setObjectName(u"label_19")
+        self.label_19.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
         self.label_19.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
         self.gridLayout_37.addWidget(self.label_19, 0, 0, 1, 1)
@@ -616,6 +657,10 @@ class Ui_MainWindow(object):
         self.productDesc.setObjectName(u"productDesc")
         self.productDesc.setMaximumSize(QSize(16777215, 100))
         self.productDesc.setAutoFillBackground(False)
+        self.productDesc.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_38.addWidget(self.productDesc, 2, 0, 1, 1)
 
@@ -862,7 +907,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 777, 679))
+        self.scrollHome.setGeometry(QRect(0, 0, 140, 65))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -967,7 +1012,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 759, 622))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 98, 28))
         self.gridLayout_55 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_55.setObjectName(u"gridLayout_55")
         self.favoriteList = QWidget(self.scrollAreaWidgetContents)

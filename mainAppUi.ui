@@ -102,7 +102,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="resource.qrc">:/icon/icon/logo.ico</pixmap>
+            <pixmap resource="../../project/new/The-Market-Nest/resource.qrc">:/icon/icon/logo.ico</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -122,7 +122,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="resource.qrc">
+            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
              <normaloff>:/icon/icon/home.ico</normaloff>:/icon/icon/home.ico</iconset>
            </property>
            <property name="checkable">
@@ -142,7 +142,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="resource.qrc">
+            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
              <normaloff>:/icon/icon/heart3.ico</normaloff>:/icon/icon/heart3.ico</iconset>
            </property>
            <property name="checkable">
@@ -162,7 +162,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="resource.qrc">
+            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
              <normaloff>:/icon/icon/store.ico</normaloff>:/icon/icon/store.ico</iconset>
            </property>
            <property name="checkable">
@@ -182,7 +182,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="resource.qrc">
+            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
              <normaloff>:/icon/icon/profile.ico</normaloff>:/icon/icon/profile.ico</iconset>
            </property>
            <property name="checkable">
@@ -217,7 +217,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="resource.qrc">
+          <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
            <normaloff>:/icon/icon/logout.ico</normaloff>:/icon/icon/logout.ico</iconset>
          </property>
          <property name="flat">
@@ -294,7 +294,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="resource.qrc">:/icon/icon/logo.ico</pixmap>
+            <pixmap resource="../../project/new/The-Market-Nest/resource.qrc">:/icon/icon/logo.ico</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -354,7 +354,7 @@ color: #51526C;</string>
             <string>Home</string>
            </property>
            <property name="icon">
-            <iconset resource="resource.qrc">
+            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
              <normaloff>:/icon/icon/home.ico</normaloff>:/icon/icon/home.ico</iconset>
            </property>
            <property name="checkable">
@@ -385,7 +385,7 @@ color: #51526C;</string>
             <string>Favorite</string>
            </property>
            <property name="icon">
-            <iconset resource="resource.qrc">
+            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
              <normaloff>:/icon/icon/heart3.ico</normaloff>:/icon/icon/heart3.ico</iconset>
            </property>
            <property name="checkable">
@@ -410,7 +410,7 @@ color: #51526C;</string>
             <string>My Profile</string>
            </property>
            <property name="icon">
-            <iconset resource="resource.qrc">
+            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
              <normaloff>:/icon/icon/store.ico</normaloff>:/icon/icon/store.ico</iconset>
            </property>
            <property name="checkable">
@@ -435,7 +435,7 @@ color: #51526C;</string>
             <string>Edit Account</string>
            </property>
            <property name="icon">
-            <iconset resource="resource.qrc">
+            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
              <normaloff>:/icon/icon/profile.ico</normaloff>:/icon/icon/profile.ico</iconset>
            </property>
            <property name="checkable">
@@ -481,7 +481,7 @@ color: #51526C;</string>
           <string>Log Out</string>
          </property>
          <property name="icon">
-          <iconset resource="resource.qrc">
+          <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
            <normaloff>:/icon/icon/logout.ico</normaloff>:/icon/icon/logout.ico</iconset>
          </property>
          <property name="flat">
@@ -554,7 +554,7 @@ color: #51526C;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="resource.qrc">
+             <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
               <normaloff>:/icon/icon/menu.ico</normaloff>:/icon/icon/menu.ico</iconset>
             </property>
             <property name="checkable">
@@ -589,7 +589,7 @@ color: #51526C;</string>
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="resource.qrc">
+               <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
                 <normaloff>:/icon/icon/search.ico</normaloff>:/icon/icon/search.ico</iconset>
               </property>
               <property name="flat">
@@ -660,7 +660,7 @@ border-radius: 5;</string>
 }</string>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="sell">
           <layout class="QGridLayout" name="gridLayout_22">
@@ -693,9 +693,27 @@ border-radius: 5;</string>
                 <layout class="QGridLayout" name="gridLayout_49">
                  <item row="0" column="0">
                   <widget class="QWidget" name="widget_37" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_48">
                     <item row="0" column="0">
                      <widget class="QPushButton" name="doneAddBtn_1">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(249, 97, 125);
+font: 500 9pt &quot;Josefin Sans Medium&quot;;
+color: white;
+border-radius: 5px;</string>
+                      </property>
                       <property name="text">
                        <string>Done</string>
                       </property>
@@ -748,6 +766,10 @@ border-radius: 5;</string>
                     </property>
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_20">
+                      <property name="styleSheet">
+                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                      </property>
                       <property name="text">
                        <string>Location</string>
                       </property>
@@ -775,7 +797,20 @@ border-radius: 5;</string>
                      <number>0</number>
                     </property>
                     <item row="0" column="0">
-                     <widget class="QLineEdit" name="productLocation"/>
+                     <widget class="QLineEdit" name="productLocation">
+                      <property name="maximumSize">
+                       <size>
+                        <width>540</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: #e8e8e8;
+color: rgb(232, 232, 232);
+border-radius: 5px;
+color: rgb(0,0,0);</string>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </widget>
@@ -824,6 +859,10 @@ border-radius: 5;</string>
                     </property>
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_17">
+                      <property name="styleSheet">
+                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                      </property>
                       <property name="text">
                        <string>Price</string>
                       </property>
@@ -851,7 +890,20 @@ border-radius: 5;</string>
                      <number>0</number>
                     </property>
                     <item row="0" column="0">
-                     <widget class="QLineEdit" name="productPrice"/>
+                     <widget class="QLineEdit" name="productPrice">
+                      <property name="maximumSize">
+                       <size>
+                        <width>540</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: #e8e8e8;
+color: rgb(232, 232, 232);
+border-radius: 5px;
+color: rgb(0,0,0);</string>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </widget>
@@ -906,6 +958,10 @@ border-radius: 5;</string>
                     </property>
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_18">
+                      <property name="styleSheet">
+                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                      </property>
                       <property name="text">
                        <string>Product Photo</string>
                       </property>
@@ -940,6 +996,20 @@ border-radius: 5;</string>
                     </property>
                     <item row="0" column="0">
                      <widget class="QPushButton" name="uploadPhotoBtn">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: #e8e8e8;
+border-radius: 5px;
+color: #51526C;
+font: 500 9pt &quot;Josefin Sans Medium&quot;;
+
+</string>
+                      </property>
                       <property name="text">
                        <string>+ Upload Photo</string>
                       </property>
@@ -995,6 +1065,10 @@ border-radius: 5;</string>
                     </property>
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_15">
+                      <property name="styleSheet">
+                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                      </property>
                       <property name="text">
                        <string>Product Title</string>
                       </property>
@@ -1022,7 +1096,20 @@ border-radius: 5;</string>
                      <number>0</number>
                     </property>
                     <item row="0" column="0">
-                     <widget class="QLineEdit" name="productTitle"/>
+                     <widget class="QLineEdit" name="productTitle">
+                      <property name="maximumSize">
+                       <size>
+                        <width>540</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: #e8e8e8;
+color: rgb(232, 232, 232);
+border-radius: 5px;
+color: rgb(0,0,0);</string>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </widget>
@@ -1089,6 +1176,10 @@ border-radius: 5;</string>
                         <verstretch>0</verstretch>
                        </sizepolicy>
                       </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                      </property>
                       <property name="text">
                        <string>Category</string>
                       </property>
@@ -1116,7 +1207,20 @@ border-radius: 5;</string>
                      <number>0</number>
                     </property>
                     <item row="0" column="0">
-                     <widget class="QComboBox" name="productCategory"/>
+                     <widget class="QComboBox" name="productCategory">
+                      <property name="maximumSize">
+                       <size>
+                        <width>540</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: #e8e8e8;
+color: rgb(232, 232, 232);
+border-radius: 5px;
+color: rgb(0,0,0);</string>
+                      </property>
+                     </widget>
                     </item>
                    </layout>
                   </widget>
@@ -1171,6 +1275,10 @@ border-radius: 5;</string>
                     </property>
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_19">
+                      <property name="styleSheet">
+                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                      </property>
                       <property name="text">
                        <string>Product Description</string>
                       </property>
@@ -1210,12 +1318,18 @@ border-radius: 5;</string>
                      <widget class="QPlainTextEdit" name="productDesc">
                       <property name="maximumSize">
                        <size>
-                        <width>16777215</width>
+                        <width>540</width>
                         <height>100</height>
                        </size>
                       </property>
                       <property name="autoFillBackground">
                        <bool>false</bool>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: #e8e8e8;
+color: rgb(232, 232, 232);
+border-radius: 5px;
+color: rgb(0,0,0);</string>
                       </property>
                      </widget>
                     </item>
@@ -1437,7 +1551,7 @@ border-radius: 5;</string>
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="resource.qrc">
+                          <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
                            <normaloff>:/icon/icon/heart2.ico</normaloff>:/icon/icon/heart2.ico</iconset>
                          </property>
                          <property name="autoDefault">
@@ -1709,8 +1823,8 @@ border-radius: 5;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>777</width>
-                      <height>679</height>
+                      <width>960</width>
+                      <height>738</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">
@@ -1910,8 +2024,8 @@ border-radius: 5;</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>759</width>
-                      <height>622</height>
+                      <width>942</width>
+                      <height>681</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_55">
@@ -2229,7 +2343,7 @@ border-radius: 5;</string>
 font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                       </property>
                       <property name="text">
-                       <string>Edit Profile</string>
+                       <string>Edit Account</string>
                       </property>
                      </widget>
                     </item>
@@ -2364,97 +2478,6 @@ color: rgb(0,0,0);</string>
                  <property name="spacing">
                   <number>0</number>
                  </property>
-                 <item row="0" column="0">
-                  <widget class="QWidget" name="widget_54" native="true">
-                   <property name="minimumSize">
-                    <size>
-                     <width>140</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <layout class="QFormLayout" name="formLayout">
-                    <property name="horizontalSpacing">
-                     <number>0</number>
-                    </property>
-                    <property name="verticalSpacing">
-                     <number>10</number>
-                    </property>
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <item row="2" column="0" colspan="2">
-                     <spacer name="verticalSpacer_3">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>20</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                     </spacer>
-                    </item>
-                    <item row="0" column="0" colspan="2">
-                     <widget class="QPushButton" name="myProfileBtn_1">
-                      <property name="tabletTracking">
-                       <bool>false</bool>
-                      </property>
-                      <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">font-family: &quot;Josefin Sans Medium&quot;;
-font-size: 15px;
-color: #51526C;</string>
-                      </property>
-                      <property name="text">
-                       <string>My profile</string>
-                      </property>
-                      <property name="checkable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="autoExclusive">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="0" colspan="2">
-                     <widget class="QPushButton" name="manageAccBtn_1">
-                      <property name="styleSheet">
-                       <string notr="true">font-family: &quot;Josefin Sans Medium&quot;;
-font-size: 15px;
-color: #51526C;</string>
-                      </property>
-                      <property name="text">
-                       <string>Manage account</string>
-                      </property>
-                      <property name="checkable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="autoExclusive">
-                       <bool>true</bool>
-                      </property>
-                      <property name="flat">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
                  <item row="0" column="1">
                   <widget class="QStackedWidget" name="stackedWidget_2">
                    <property name="currentIndex">
@@ -2790,6 +2813,95 @@ color: rgb(0,0,0);</string>
                    </widget>
                   </widget>
                  </item>
+                 <item row="0" column="0">
+                  <widget class="QWidget" name="widget_54" native="true">
+                   <property name="minimumSize">
+                    <size>
+                     <width>140</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_41">
+                    <item row="0" column="0">
+                     <spacer name="verticalSpacer_4">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeType">
+                       <enum>QSizePolicy::Fixed</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QPushButton" name="myProfileBtn_1">
+                      <property name="tabletTracking">
+                       <bool>false</bool>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font-family: &quot;Josefin Sans Medium&quot;;
+font-size: 15px;
+color: #51526C;</string>
+                      </property>
+                      <property name="text">
+                       <string>My account</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="autoExclusive">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="2" column="0">
+                     <widget class="QPushButton" name="manageAccBtn_1">
+                      <property name="styleSheet">
+                       <string notr="true">font-family: &quot;Josefin Sans Medium&quot;;
+font-size: 15px;
+color: #51526C;</string>
+                      </property>
+                      <property name="text">
+                       <string>Change password</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="autoExclusive">
+                       <bool>true</bool>
+                      </property>
+                      <property name="flat">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="0">
+                     <spacer name="verticalSpacer_3">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
@@ -2833,7 +2945,7 @@ color: rgb(0,0,0);</string>
   </widget>
  </widget>
  <resources>
-  <include location="resource.qrc"/>
+  <include location="../../project/new/The-Market-Nest/resource.qrc"/>
  </resources>
  <connections>
   <connection>

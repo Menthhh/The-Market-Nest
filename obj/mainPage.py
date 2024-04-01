@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMainWindow, QGridLayout, QWidget, QVBoxLayout, QLabel, QSizePolicy, QHBoxLayout, QApplication, QDialog
+from PySide6.QtWidgets import QMainWindow, QGridLayout, QWidget, QVBoxLayout, QLabel, QSizePolicy, QHBoxLayout, QApplication, QDialog, QPushButton
 from PySide6.QtCore import Signal, QSize, Qt
 from PySide6.QtGui import QPixmap
 from obj.FavouriteWidget import FavouriteWidget
@@ -53,12 +53,11 @@ class MainWindow(QMainWindow):
         self.ui.uploadPhotoBtn.clicked.connect(self.uploadPhoto)
         self.ui.productCategory.addItems(item_categories.keys())
 
+        # set none
+        self.tempImage = None 
 
-    def clear_layout(self, layout):
-        for i in reversed(range(layout.count())):
-            layout.itemAt(i).widget().setParent(None)
-
-    def add_products(self, products):
+    # ------------------ Handle adding item in the db to the widget ------------------
+    def insert_product(self, products):
         row = 0
         col = 0
         for i, product_data in enumerate(products):
@@ -81,6 +80,11 @@ class MainWindow(QMainWindow):
                 if col == 4:
                     col = 0
                     row += 1
+
+    
+    def clear_layout(self, layout):
+        for i in reversed(range(layout.count())):
+            layout.itemAt(i).widget().setParent(None)
 
     def add_favourites(self, favourites):
         for i, product_data in enumerate(favourites):
@@ -114,7 +118,7 @@ class MainWindow(QMainWindow):
             self.productlist_layout.itemAt(i).widget().setParent(None)
 
         # Add products to the product list grid with the updated number of columns
-        self.add_products(self.products)
+        self.insert_product(self.products)
 
     def resizeEvent(self, event):
         current_column_count = self.calculate_columns()
@@ -173,37 +177,47 @@ class MainWindow(QMainWindow):
     def on_manageAcc_btn_clicked(self):
         self.ui.stackedWidget_2.setCurrentIndex(1)
 
+    # ------------------ Handle adding item for sell ------------------
 
     def addItem(self):
         # get the text from the input field
-        self.ui.productTitle = self.ui.productTitleInput.text()
-        self.ui.productCategory = self.ui.productCategoryInput.text()
-        self.ui.productPrice = self.ui.productPriceInput.text()
-        self.ui.productDesc = self.ui.productDescInput.text()
-        # self.ui.productImage = self.ui.productImageInput.text()
-        self.ui.productLocation = self.ui.productLocationInput.text()
+        self.productTitle = self.ui.productTitle.text()
+        self.productCategory = self.ui.productCategory.currentText()
+        self.productPrice = self.ui.productPrice.text()
+        # AttributeError: 'PySide6.QtWidgets.QPlainTextEdit' object has no attribute 'text'
+        self.productDesc = self.ui.productDesc.toPlainText()
+        # self.productImage = self.ui.productImage.text()
+        self.productLocation = self.ui.productLocation.text()
 
         # create a dictionary of the input
         product = {
-            "name": self.ui.productTitle,
-            "price": self.ui.productPrice,
+            "name": self.productTitle,
+            "price": self.productPrice,
             "image_path": "images/placeholder.png",
-            "category": self.ui.productCategory,
-            "description": self.ui.product,
-            "location": self.ui.productLocation
+            "category": self.productCategory,
+            "description": self.productDesc,
+            "location": self.productLocation
         }
 
         # add to db
 
         #clear the input fields
-        self.ui.productTitleInput.clear()
-        self.ui.productCategoryInput.clear()
-        self.ui.productPriceInput.clear()
-        self.ui.productDescInput.clear()
-        self.ui.productLocationInput.clear()
+        self.ui.productTitle.clear()
+        self.ui.productCategory.setCurrentIndex(0)
+        self.ui.productPrice.clear()
+        self.ui.productDesc.clear()
+        self.ui.productLocation.clear()
 
         print("Item added successfully!")
 
+    def showRemoveButton(self, event):
+        self.removeButton.move(self.imageLabel.width() - self.removeButton.width(), 0)  # Position button at the top-right
+        self.removeButton.show()  # Show the button when the image is clicked
+
+    def clearImage(self):
+        self.imageLabel.clear()  # Clear the image
+        self.tempImage = None  # Clear the stored image path
+        self.removeButton.hide()  # Hide the remove button
 
     def uploadPhoto(self):
         root = tk.Tk()
@@ -212,4 +226,31 @@ class MainWindow(QMainWindow):
         # Open a file dialog to select an image file
         image_path = filedialog.askopenfilename(title="Select Image File", filetypes=[("Image files", "*.jpg;*.jpeg;*.png;*.gif")])
 
-        
+        if image_path:  # Check if a file was selected
+            self.tempImage = image_path  # Store the image path if you need to use it later
+
+            # Initialize QLabel for image if it doesn't exist
+            if not hasattr(self, 'imageLabel') or not isinstance(self.imageLabel, QLabel):
+                self.imageLabel = QLabel(self.ui.uploadedPic)
+                self.imageLabel.setFixedSize(100, 100)
+
+            # Initialize the button to remove the image
+            if not hasattr(self, 'removeButton') or not isinstance(self.removeButton, QPushButton):
+                self.removeButton = QPushButton('X', self.imageLabel)
+                self.removeButton.clicked.connect(self.clearImage)
+                self.removeButton.setFixedSize(20, 20)  # Small button size
+                self.removeButton.hide()  # Hide the button initially
+
+            pixmap = QPixmap(image_path)
+            resized_pixmap = pixmap.scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            self.imageLabel.setPixmap(resized_pixmap)
+            self.imageLabel.setAlignment(Qt.AlignCenter)
+            
+            # Show the remove button when the label is clicked
+            self.imageLabel.mousePressEvent = self.showRemoveButton
+            self.imageLabel.show()
+ 
+
+
+
+            
