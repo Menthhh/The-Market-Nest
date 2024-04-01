@@ -66,9 +66,9 @@ class LoginDialog(QDialog):
         password = self.ui.passInput.text()
         confirm_password = self.ui.confirmPassInput.text()
 
-        from datetime import datetime
-        original_date = datetime.strptime(birth, "%m/%d/%Y")
-        new_date_str = original_date.strftime("%Y-%m-%d")
+        # from datetime import datetime
+        # original_date = datetime.strptime(birth, "%m/%d/%Y")
+        # new_date_str = original_date.strftime("%Y-%m-%d")
 
 
         body = {
@@ -76,7 +76,7 @@ class LoginDialog(QDialog):
             "name": name,
             "email": email,
             "phoneNumber": int(phone),
-            "birthDate": new_date_str,
+            "birthDate": birth,
             "citizenID": int(identi),
             "password": password,
         }
