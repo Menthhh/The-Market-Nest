@@ -173,30 +173,30 @@ class MainWindow(QMainWindow):
 
     def addItem(self):
         # get the text from the input field
-        self.ui.productTitle = self.ui.productTitleInput.text()
-        self.ui.productCategory = self.ui.productCategoryInput.text()
-        self.ui.productPrice = self.ui.productPriceInput.text()
-        self.ui.productDesc = self.ui.productDescInput.text()
-        # self.ui.productImage = self.ui.productImageInput.text()
-        self.ui.productLocation = self.ui.productLocationInput.text()
+        self.productTitle = self.ui.productTitle.text()
+        self.productCategory = self.ui.productCategory.text()
+        self.productPrice = self.ui.productPrice.text()
+        self.productDesc = self.ui.productDesc.text()
+        # self.productImage = self.ui.productImage.text()
+        self.productLocation = self.ui.productLocation.text()
 
         # create a dictionary of the input
         product = {
-            "name": self.ui.productTitle,
-            "price": self.ui.productPrice,
+            "name": self.productTitle,
+            "price": self.productPrice,
             "image_path": "images/placeholder.png",
-            "category": self.ui.productCategory,
-            "description": self.ui.product,
-            "location": self.ui.productLocation
+            "category": self.productCategory,
+            "description": self.productDesc,
+            "location": self.productLocation
         }
 
         # add to db
 
         #clear the input fields
-        self.ui.productTitleInput.clear()
-        self.ui.productCategoryInput.clear()
-        self.ui.productPriceInput.clear()
-        self.ui.productDescInput.clear()
-        self.ui.productLocationInput.clear()
+        self.ui.productTitle.clear()
+        self.ui.productCategory.clear()
+        self.ui.productPrice.clear()
+        self.ui.productDesc.clear()
+        self.ui.productLocation.clear()
 
         print("Item added successfully!")
