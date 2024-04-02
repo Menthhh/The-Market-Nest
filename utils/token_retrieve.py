@@ -5,4 +5,7 @@ def get_token():
     token = settings.value("auth/token", defaultValue=None)
     return token
 
-print(get_token())
+
+if __name__ == "__main__":
+    #test
+    print(get_token())
