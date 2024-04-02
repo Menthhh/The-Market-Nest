@@ -83,6 +83,7 @@ class LoginDialog(QDialog):
     def siginup(self, body):
         api_client = APIClient("http://localhost:9000/api")
         response = api_client.post_request("users", body)
+        print(response)
 
         if response["message"] == "User created successfully":
             QMessageBox.information(self, "Success", response["message"])
