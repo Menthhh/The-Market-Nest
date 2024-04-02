@@ -7,6 +7,9 @@ from config import products, favourites, item_categories
 from mainAppUi import Ui_MainWindow
 import tkinter as tk
 from tkinter import filedialog
+from utils.fetch import APIClient
+from utils.token_retrieve import *
+from PySide6.QtWidgets import QLineEdit
 
 class MainWindow(QMainWindow):
     logout_requested = Signal()  # Add a logout signal
@@ -43,16 +46,30 @@ class MainWindow(QMainWindow):
         self.ui.profileBtn_2.clicked.connect(self.on_profile_btn_clicked)
         self.ui.accountBtn_1.clicked.connect(self.on_editAccount_btn_clicked)
         self.ui.accountBtn_2.clicked.connect(self.on_editAccount_btn_clicked)
-        self.ui.manageAccBtn_1.clicked.connect(self.on_manageAcc_btn_clicked)
-        self.ui.myProfileBtn_1.clicked.connect(self.on_myProfile_btn_clicked)
+        # self.ui.manageAccBtn_1.clicked.connect(self.on_manageAcc_btn_clicked)
+        # self.ui.myProfileBtn_1.clicked.connect(self.on_myProfile_btn_clicked)
         self.ui.exitBtn_1.clicked.connect(self.logout)
         self.ui.exitBtn_2.clicked.connect(self.logout)
         self.ui.doneAddBtn_1.clicked.connect(self.addItem)
         self.ui.uploadPhotoBtn.clicked.connect(self.uploadPhoto)
         self.ui.productCategory.addItems(item_categories.keys())
 
+        self.ui.showUsername.setText(get_username())
+        self.ui.showID.setText(get_user_id())
+        self.ui.showName.setText(get_user_name())
+        self.ui.showEmail.setText(get_user_email())
+        self.ui.showBirth.setText(get_user_birthdate())
+        self.ui.showPhone.setText(str(get_user_phone()))
+   
+        self.ui.showPassword.setText(len(get_user_password()) * "*")
+
+
+
+
+
         # set none
         self.tempImage = None 
+
 
     # ------------------ Handle adding item in the db to the widget ------------------
     def insert_product(self, products):
