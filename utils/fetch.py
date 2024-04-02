@@ -53,26 +53,39 @@ class APIClient:
             return response.json()
         except requests.exceptions.RequestException as e:
             return self._handle_request_error(e, response=e.response)
+        
+    def create_product_with_image(self, endpoint, title, category, description, price, amount, user_id, address,image_path):
+        url = f"{self.base_url}/{endpoint}"
+        try:
+            # Remove any trailing whitespace or newline characters from the parameter values
+            title = title.strip()
+            category = category.strip()
+            description = description.strip()
+            price = int(price)
+            amount = int(amount)
 
-            
+            # Send the POST request with the corrected parameter values
+            response = requests.post(url, params={"title": title, "category": category, "description": description, "price": price, "amount": amount, "address": address, "user_id": user_id}, files={"image": open(image_path, "rb")})
+        
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            return self._handle_request_error(e, response=e.response)
 
-# Example usage:
+
 if __name__ == "__main__":
-    # test
-    api_client = APIClient("http://localhost:9000/api")
+    from pathlib import Path
+    module_dir = Path(r"c:/Users/Tonkla/Desktop/The-Market-Nest/utils/")
+    import sys
+    sys.path.append(str(module_dir))
 
-    body = {
-        "name": "Alex Smith",
-        "birthDate": "1988-12-09",
-        "citizenID": 9876523410002,
-        "phoneNumber": 9876543220,
-        "email": "alex.smith@example.com",
-        "username": "alexsmith",
-        "password": "securePassword2"
-    }
+    from token_retrieve import *
 
+    token = get_token()
+    print(token)
 
-    response = api_client.post_request("users", body)
-    print("POST Response:", response)
+    api = APIClient("http://localhost:9000/api")
+    response = api.create_product_with_image("products", "title", "category", "description", 12, 1, "address",token, r"C:\Users\Tonkla\Downloads/1.png")
 
+    print(response)
+            
  

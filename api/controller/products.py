@@ -1,22 +1,55 @@
 from fastapi import HTTPException
 from model.product import Product
 from db.Warehouse import Warehouse
-import sys
+from fastapi import FastAPI, UploadFile, HTTPException
+from fastapi.responses import FileResponse
+from model.user import User
+import os
+import uuid
 
+UPLOAD_DIRECTORY = r"C:\Users\Tonkla\Desktop\The-Market-Nest\api\db\images"
 class ProductController:
     def __init__(self):
-        # Specify the 'products' storage when creating the Warehouse instance
         self.__products_db = Warehouse(('127.0.0.1', 8100))
         self.__products_db.connect()
     
-    async def create_product(self, request, body):
+    async def create_product(self, request, title: str, category: str, description: str, price: int, amount: int, address : str, user_id, image):
+        if not os.path.exists(UPLOAD_DIRECTORY):
+            os.makedirs(UPLOAD_DIRECTORY)
+
         try:
-            """
-            create new Product object
-            """
-            new_product = Product(body["title"], body["category"], body["description"], body["price"], body["amount"])
+            image.filename = uuid.uuid4().hex + "_" + image.filename
+            image_path = os.path.join(UPLOAD_DIRECTORY, image.filename)
+            with open(image_path, "wb") as file_object:
+                file_object.write(await image.read())
+            new_product = Product(
+                title=title,
+                category=category,
+                description=description,
+                price=price,
+                amount=amount,
+                address=address
+            )
+            new_product.photos.append(image_path)
             saved_product = self.__products_db.create(new_product)
-            return saved_product
+
+            current_user = self.__products_db.findOne(user_id)
+
+            if isinstance(current_user, User):
+                updated_user = User(
+                    current_user.name,
+                    current_user.birthDate,
+                    current_user.citizenID,
+                    current_user.phoneNumber,
+                    current_user.email,
+                    current_user.username,
+                    current_user.password,
+
+                )
+                updated_user.products.append(saved_product._id)
+                updated_user = self.__products_db.findOneAndUpdate(user_id, updated_user)
+            
+            return {"message": "Product created successfully", "product": saved_product, "user": updated_user}
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
@@ -27,7 +60,6 @@ class ProductController:
             Get all products from the database
             """
             products = self.__products_db.findAll()
-            # Filter out non-Product instances
             products = [product for product in products if isinstance(product, Product)]
             return products
         except Exception as e:
@@ -80,3 +112,21 @@ class ProductController:
                 raise HTTPException(status_code=404, detail="Product not found")
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
+
+
+
+
+    async def get_product_photo(self,request, product_id: str):
+        try:
+            current_product = self.__products_db.findOne(product_id)
+            
+            if isinstance(current_product, Product):
+                for photo in current_product.photos:
+                    return FileResponse(photo)
+            else:
+                return {"message": "Product not found"}
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+            
+
+            
