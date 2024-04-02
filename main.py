@@ -6,9 +6,8 @@ from PySide6.QtGui import *
 from PySide6 import *
 from pathlib import *
 from PySide6.QtQuick import *
-# import file in ui folder
 from mainAppUi import Ui_MainWindow
-from loginUi import Ui_Dialog  # Import the login UI
+from loginUi import Ui_Dialog  
 from obj.LoginDialog import LoginDialog
 from obj.ProductWidget import ProductWidget
 from obj.FavouriteWidget import FavouriteWidget
@@ -21,11 +20,11 @@ def show_login():
     if login_dialog.exec() == QDialog.Accepted:
         if login_dialog.user_role == "admin":
             admin_page = AdminPage()
-            admin_page.logout_requested.connect(show_login)  # Connect signal to show login
+            admin_page.logout_requested.connect(show_login) 
             admin_page.show()
         else:
             main_window = MainWindow()
-            main_window.logout_requested.connect(show_login)  # Connect signal to show login
+            main_window.logout_requested.connect(show_login) 
             main_window.show()
     else:
         app.quit()

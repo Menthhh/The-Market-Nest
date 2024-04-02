@@ -20,6 +20,8 @@ from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QLabel,
     QSpacerItem, QStackedWidget, QWidget)
 import resource_rc
 
+
+
 class Ui_AdminWindow(object):
     def setupUi(self, AdminWindow):
         if not AdminWindow.objectName():

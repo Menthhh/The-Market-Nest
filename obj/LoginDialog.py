@@ -67,11 +67,6 @@ class LoginDialog(QDialog):
         password = self.ui.passInput.text()
         confirm_password = self.ui.confirmPassInput.text()
 
-        # from datetime import datetime
-        # original_date = datetime.strptime(birth, "%m/%d/%Y")
-        # new_date_str = original_date.strftime("%Y-%m-%d")
-
-
         body = {
             "username": username,
             "name": name,
@@ -109,9 +104,6 @@ class LoginDialog(QDialog):
         if "token" in response:
             settings = QSettings("se_project", "the_market_nest")  
             settings.setValue("auth/token", response["token"])
-
-
-
             settings.sync()  
 
             print("Token from q setting",self.get_token())
