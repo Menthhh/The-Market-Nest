@@ -7,6 +7,9 @@ from config import products, favourites, item_categories
 from mainAppUi import Ui_MainWindow
 import tkinter as tk
 from tkinter import filedialog
+from utils.fetch import APIClient
+from utils.token_retrieve import *
+from PySide6.QtWidgets import QLineEdit
 
 
 from pathlib import Path
@@ -53,16 +56,30 @@ class MainWindow(QMainWindow):
         self.ui.profileBtn_2.clicked.connect(self.on_profile_btn_clicked)
         self.ui.accountBtn_1.clicked.connect(self.on_editAccount_btn_clicked)
         self.ui.accountBtn_2.clicked.connect(self.on_editAccount_btn_clicked)
-        self.ui.manageAccBtn_1.clicked.connect(self.on_manageAcc_btn_clicked)
-        self.ui.myProfileBtn_1.clicked.connect(self.on_myProfile_btn_clicked)
+        # self.ui.manageAccBtn_1.clicked.connect(self.on_manageAcc_btn_clicked)
+        # self.ui.myProfileBtn_1.clicked.connect(self.on_myProfile_btn_clicked)
         self.ui.exitBtn_1.clicked.connect(self.logout)
         self.ui.exitBtn_2.clicked.connect(self.logout)
         self.ui.doneAddBtn_1.clicked.connect(self.addItem)
         self.ui.uploadPhotoBtn.clicked.connect(self.uploadPhoto)
         self.ui.productCategory.addItems(item_categories.keys())
 
+        self.ui.showUsername.setText(get_username())
+        self.ui.showID.setText(get_user_id())
+        self.ui.showName.setText(get_user_name())
+        self.ui.showEmail.setText(get_user_email())
+        self.ui.showBirth.setText(get_user_birthdate())
+        self.ui.showPhone.setText(str(get_user_phone()))
+   
+        self.ui.showPassword.setText(len(get_user_password()) * "*")
+
+
+
+
+
         # set none
         self.tempImage = None 
+
 
     # ------------------ Handle adding item in the db to the widget ------------------
     def insert_product(self, products):
@@ -196,18 +213,26 @@ class MainWindow(QMainWindow):
         self.productDesc = self.ui.productDesc.toPlainText()
         # self.productImage = self.ui.productImage.text()
         self.productLocation = self.ui.productLocation.text()
+        # prouductAmount is a spinbox
+        self.productAmount = self.ui.productAmount.value()
 
         # create a dictionary of the input
         product = {
             "title": self.productTitle,
             "category": self.productCategory,
             "description": self.productDesc,
+            "amount": self.productAmount,
+            "location": self.productLocation
+        }
             "price": int(self.productPrice),
             "amount": 1, 
             "address": self.productLocation,
             "user_id": TOKEN,
             "image_path": self.tempImage
         }
+
+        for value in product.values():
+            print(value)
 
         for value in product.values():
             print(value)
@@ -221,6 +246,7 @@ class MainWindow(QMainWindow):
         self.ui.productPrice.clear()
         self.ui.productDesc.clear()
         self.ui.productLocation.clear()
+        self.ui.productAmount.setValue(0)
 
         QMessageBox.information(self, "Success", "Product added successfully")
 

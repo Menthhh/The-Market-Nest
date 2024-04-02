@@ -33,6 +33,7 @@ class APIClient:
             response.raise_for_status()
             return response.json()
         except requests.exceptions.RequestException as e:
+            print(f'Error: {e}')
             return self._handle_request_error(e, response=e.response)
 
     def put_request(self, endpoint, data):
