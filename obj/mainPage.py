@@ -203,6 +203,8 @@ class MainWindow(QMainWindow):
         self.productDesc = self.ui.productDesc.toPlainText()
         # self.productImage = self.ui.productImage.text()
         self.productLocation = self.ui.productLocation.text()
+        # prouductAmount is a spinbox
+        self.productAmount = self.ui.productAmount.value()
 
         # create a dictionary of the input
         product = {
@@ -211,6 +213,7 @@ class MainWindow(QMainWindow):
             "image_path": self.tempImage,
             "category": self.productCategory,
             "description": self.productDesc,
+            "amount": self.productAmount,
             "location": self.productLocation
         }
 
@@ -222,6 +225,7 @@ class MainWindow(QMainWindow):
         self.ui.productPrice.clear()
         self.ui.productDesc.clear()
         self.ui.productLocation.clear()
+        self.ui.productAmount.setValue(0)
 
         print(product)
         # pop up a message box added successfully

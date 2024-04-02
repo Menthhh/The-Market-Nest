@@ -660,7 +660,7 @@ border-radius: 5;</string>
           <string notr="true">border: 0px</string>
          </property>
          <property name="currentIndex">
-          <number>6</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="sell">
           <layout class="QGridLayout" name="gridLayout_22">
@@ -687,47 +687,10 @@ border-radius: 5;</string>
                <height>16777215</height>
               </size>
              </property>
-             <layout class="QGridLayout" name="gridLayout_44">
-              <item row="6" column="0">
-               <widget class="QWidget" name="BtnContainer" native="true">
-                <layout class="QGridLayout" name="gridLayout_49">
-                 <item row="0" column="0">
-                  <widget class="QWidget" name="widget_37" native="true">
-                   <property name="maximumSize">
-                    <size>
-                     <width>150</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_48">
-                    <item row="0" column="0">
-                     <widget class="QPushButton" name="doneAddBtn_1">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>30</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color: rgb(249, 97, 125);
-font: 500 9pt &quot;Josefin Sans Medium&quot;;
-color: white;
-border-radius: 5px;</string>
-                      </property>
-                      <property name="text">
-                       <string>Done</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="5" column="0">
-               <widget class="QWidget" name="widget_27" native="true">
-                <layout class="QGridLayout" name="gridLayout_40">
+             <layout class="QGridLayout" name="gridLayout_73">
+              <item row="0" column="0">
+               <widget class="QWidget" name="widget_12" native="true">
+                <layout class="QGridLayout" name="gridLayout_25">
                  <property name="leftMargin">
                   <number>0</number>
                  </property>
@@ -741,14 +704,14 @@ border-radius: 5px;</string>
                   <number>0</number>
                  </property>
                  <property name="horizontalSpacing">
-                  <number>70</number>
+                  <number>50</number>
                  </property>
                  <property name="verticalSpacing">
                   <number>0</number>
                  </property>
                  <item row="0" column="0">
-                  <widget class="QWidget" name="widget_28" native="true">
-                   <layout class="QGridLayout" name="gridLayout_35">
+                  <widget class="QWidget" name="widget_13" native="true">
+                   <layout class="QGridLayout" name="gridLayout_23">
                     <property name="leftMargin">
                      <number>0</number>
                     </property>
@@ -765,13 +728,13 @@ border-radius: 5px;</string>
                      <number>0</number>
                     </property>
                     <item row="0" column="0">
-                     <widget class="QLabel" name="label_20">
+                     <widget class="QLabel" name="label_15">
                       <property name="styleSheet">
                        <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
 color: rgb(0,0,0);</string>
                       </property>
                       <property name="text">
-                       <string>Location</string>
+                       <string>Product Title</string>
                       </property>
                      </widget>
                     </item>
@@ -779,8 +742,8 @@ color: rgb(0,0,0);</string>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QWidget" name="widget_29" native="true">
-                   <layout class="QGridLayout" name="gridLayout_36">
+                  <widget class="QWidget" name="widget_14" native="true">
+                   <layout class="QGridLayout" name="gridLayout_24">
                     <property name="leftMargin">
                      <number>0</number>
                     </property>
@@ -797,7 +760,118 @@ color: rgb(0,0,0);</string>
                      <number>0</number>
                     </property>
                     <item row="0" column="0">
-                     <widget class="QLineEdit" name="productLocation">
+                     <widget class="QLineEdit" name="productTitle">
+                      <property name="maximumSize">
+                       <size>
+                        <width>540</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: #e8e8e8;
+color: rgb(232, 232, 232);
+border-radius: 5px;
+color: rgb(0,0,0);</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QWidget" name="widget_15" native="true">
+                <layout class="QGridLayout" name="gridLayout_28">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="horizontalSpacing">
+                  <number>69</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QWidget" name="widget_16" native="true">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_26">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_16">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                      </property>
+                      <property name="text">
+                       <string>Category</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QWidget" name="widget_17" native="true">
+                   <layout class="QGridLayout" name="gridLayout_27">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QComboBox" name="productCategory">
                       <property name="maximumSize">
                        <size>
                         <width>540</width>
@@ -1024,210 +1098,6 @@ font: 500 9pt &quot;Josefin Sans Medium&quot;;
                 </layout>
                </widget>
               </item>
-              <item row="0" column="0">
-               <widget class="QWidget" name="widget_12" native="true">
-                <layout class="QGridLayout" name="gridLayout_25">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="horizontalSpacing">
-                  <number>50</number>
-                 </property>
-                 <property name="verticalSpacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QWidget" name="widget_13" native="true">
-                   <layout class="QGridLayout" name="gridLayout_23">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_15">
-                      <property name="styleSheet">
-                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
-color: rgb(0,0,0);</string>
-                      </property>
-                      <property name="text">
-                       <string>Product Title</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QWidget" name="widget_14" native="true">
-                   <layout class="QGridLayout" name="gridLayout_24">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLineEdit" name="productTitle">
-                      <property name="maximumSize">
-                       <size>
-                        <width>540</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color: #e8e8e8;
-color: rgb(232, 232, 232);
-border-radius: 5px;
-color: rgb(0,0,0);</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QWidget" name="widget_15" native="true">
-                <layout class="QGridLayout" name="gridLayout_28">
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="horizontalSpacing">
-                  <number>69</number>
-                 </property>
-                 <property name="verticalSpacing">
-                  <number>0</number>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QWidget" name="widget_16" native="true">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="maximumSize">
-                    <size>
-                     <width>16777215</width>
-                     <height>16777215</height>
-                    </size>
-                   </property>
-                   <layout class="QGridLayout" name="gridLayout_26">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QLabel" name="label_16">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
-color: rgb(0,0,0);</string>
-                      </property>
-                      <property name="text">
-                       <string>Category</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QWidget" name="widget_17" native="true">
-                   <layout class="QGridLayout" name="gridLayout_27">
-                    <property name="leftMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="topMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="rightMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="bottomMargin">
-                     <number>0</number>
-                    </property>
-                    <property name="spacing">
-                     <number>0</number>
-                    </property>
-                    <item row="0" column="0">
-                     <widget class="QComboBox" name="productCategory">
-                      <property name="maximumSize">
-                       <size>
-                        <width>540</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">background-color: #e8e8e8;
-color: rgb(232, 232, 232);
-border-radius: 5px;
-color: rgb(0,0,0);</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
               <item row="4" column="0">
                <widget class="QWidget" name="widget_24" native="true">
                 <property name="maximumSize">
@@ -1330,6 +1200,178 @@ color: rgb(0,0,0);</string>
 color: rgb(232, 232, 232);
 border-radius: 5px;
 color: rgb(0,0,0);</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="5" column="0">
+               <widget class="QWidget" name="widget_27" native="true">
+                <layout class="QGridLayout" name="gridLayout_40">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="horizontalSpacing">
+                  <number>70</number>
+                 </property>
+                 <property name="verticalSpacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QWidget" name="widget_28" native="true">
+                   <layout class="QGridLayout" name="gridLayout_35">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="label_20">
+                      <property name="styleSheet">
+                       <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                      </property>
+                      <property name="text">
+                       <string>Location</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QWidget" name="widget_29" native="true">
+                   <layout class="QGridLayout" name="gridLayout_36">
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item row="0" column="0">
+                     <widget class="QLineEdit" name="productLocation">
+                      <property name="maximumSize">
+                       <size>
+                        <width>540</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: #e8e8e8;
+color: rgb(232, 232, 232);
+border-radius: 5px;
+color: rgb(0,0,0);</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QWidget" name="widget_54" native="true">
+                <layout class="QGridLayout" name="gridLayout_44">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_11">
+                   <property name="styleSheet">
+                    <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                   </property>
+                   <property name="text">
+                    <string>Amount</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QSpinBox" name="productAmount">
+                   <property name="styleSheet">
+                    <string notr="true">background-color: #e8e8e8;
+color: rgb(232, 232, 232);
+border-radius: 5px;
+color: rgb(0,0,0);</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="QWidget" name="BtnContainer" native="true">
+                <layout class="QGridLayout" name="gridLayout_49">
+                 <item row="0" column="0">
+                  <widget class="QWidget" name="widget_37" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>150</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <layout class="QGridLayout" name="gridLayout_48">
+                    <item row="0" column="0">
+                     <widget class="QPushButton" name="doneAddBtn_1">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(249, 97, 125);
+font: 500 9pt &quot;Josefin Sans Medium&quot;;
+color: white;
+border-radius: 5px;</string>
+                      </property>
+                      <property name="text">
+                       <string>Done</string>
                       </property>
                      </widget>
                     </item>
@@ -2011,8 +2053,8 @@ color: rgb(0,0,0);</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>140</width>
-                      <height>65</height>
+                      <width>904</width>
+                      <height>767</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">
@@ -2212,8 +2254,8 @@ color: rgb(0,0,0);</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>100</width>
-                      <height>30</height>
+                      <width>886</width>
+                      <height>710</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_55">
