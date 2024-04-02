@@ -8,6 +8,16 @@ from mainAppUi import Ui_MainWindow
 import tkinter as tk
 from tkinter import filedialog
 
+
+from pathlib import Path
+module_dir = Path(r"c:/Users/Tonkla/Desktop/The-Market-Nest/utils/")
+import sys
+sys.path.append(str(module_dir))
+from token_retrieve import *
+from fetch import APIClient
+
+TOKEN = get_token()
+
 class MainWindow(QMainWindow):
     logout_requested = Signal()  # Add a logout signal
 
@@ -189,15 +199,21 @@ class MainWindow(QMainWindow):
 
         # create a dictionary of the input
         product = {
-            "name": self.productTitle,
-            "price": self.productPrice,
-            "image_path": self.tempImage,
+            "title": self.productTitle,
             "category": self.productCategory,
             "description": self.productDesc,
-            "location": self.productLocation
+            "price": int(self.productPrice),
+            "amount": 1, 
+            "address": self.productLocation,
+            "user_id": TOKEN,
+            "image_path": self.tempImage
         }
 
+        for value in product.values():
+            print(value)
+
         # add to db
+        self.post_new_product(self, product)
 
         #clear the input fields
         self.ui.productTitle.clear()
@@ -206,9 +222,12 @@ class MainWindow(QMainWindow):
         self.ui.productDesc.clear()
         self.ui.productLocation.clear()
 
-        print(product)
-        # pop up a message box added successfully
         QMessageBox.information(self, "Success", "Product added successfully")
+
+    def post_new_product(self, product):
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.create_product_with_image("products", product["title"], product["category"], product["description"], product["price"], product["amount"], product["address"], product["user_id"], product["image_path"])
+        print(response)
 
     def showRemoveButton(self, event):
         self.removeButton.move(self.imageLabel.width() - self.removeButton.width(), 0)  # Position button at the top-right

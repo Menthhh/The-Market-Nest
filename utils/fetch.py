@@ -53,7 +53,7 @@ class APIClient:
         except requests.exceptions.RequestException as e:
             return self._handle_request_error(e, response=e.response)
         
-    def create_product_with_image(self, endpoint, title, category, description, price, amount, user_id, address,image_path):
+    def create_product_with_image(self, endpoint, title, category, description, price, amount, address,user_id, image_path):
         url = f"{self.base_url}/{endpoint}"
         try:
             # Remove any trailing whitespace or newline characters from the parameter values
@@ -63,7 +63,6 @@ class APIClient:
             price = int(price)
             amount = int(amount)
 
-            # Send the POST request with the corrected parameter values
             response = requests.post(url, params={"title": title, "category": category, "description": description, "price": price, "amount": amount, "address": address, "user_id": user_id}, files={"image": open(image_path, "rb")})
         
             return response.json()
@@ -83,7 +82,7 @@ if __name__ == "__main__":
     print(token)
 
     api = APIClient("http://localhost:9000/api")
-    response = api.create_product_with_image("products", "title", "category", "description", 12, 1, "address",token, r"C:\Users\Tonkla\Downloads/1.png")
+    response = api.create_product_with_image("products", "title", "category", "description", 12, 1, "address","0563d99e-bb8a-4117-a171-d6a57bf1d0ef", r"C:\Users\Tonkla\Downloads/1.png")
 
     print(response)
             
