@@ -34,6 +34,7 @@ class ProductController:
             saved_product = self.__products_db.create(new_product)
 
             current_user = self.__products_db.findOne(user_id)
+            current_user.products.append(saved_product._id)
 
             if isinstance(current_user, User):
                 updated_user = User(
@@ -46,7 +47,7 @@ class ProductController:
                     current_user.password,
 
                 )
-                updated_user.products.append(saved_product._id)
+                updated_user.products = current_user.products
                 updated_user = self.__products_db.findOneAndUpdate(user_id, updated_user)
             
             return {"message": "Product created successfully", "product": saved_product, "user": updated_user}

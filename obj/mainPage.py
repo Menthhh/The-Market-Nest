@@ -220,12 +220,9 @@ class MainWindow(QMainWindow):
         product = {
             "title": self.productTitle,
             "category": self.productCategory,
+            "price": self.productPrice,
             "description": self.productDesc,
             "amount": self.productAmount,
-            "location": self.productLocation
-        }
-            "price": int(self.productPrice),
-            "amount": 1, 
             "address": self.productLocation,
             "user_id": TOKEN,
             "image_path": self.tempImage
@@ -234,11 +231,8 @@ class MainWindow(QMainWindow):
         for value in product.values():
             print(value)
 
-        for value in product.values():
-            print(value)
-
         # add to db
-        self.post_new_product(self, product)
+        self.post_new_product(product)
 
         #clear the input fields
         self.ui.productTitle.clear()
