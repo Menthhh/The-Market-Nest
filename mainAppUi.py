@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1071, 807)
+        MainWindow.resize(1301, 807)
         MainWindow.setFocusPolicy(Qt.TabFocus)
         MainWindow.setStyleSheet(u"#centralwidget{\n"
 "	background-color: rgb(255, 255, 255);\n"
@@ -1003,18 +1003,23 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 904, 767))
+        self.scrollHome.setGeometry(QRect(0, 0, 1134, 767))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.widget_3 = QWidget(self.scrollHome)
         self.widget_3.setObjectName(u"widget_3")
-        self.widget_3.setMaximumSize(QSize(900, 16777215))
+        self.widget_3.setMaximumSize(QSize(1050, 16777215))
         self.gridLayout_14 = QGridLayout(self.widget_3)
         self.gridLayout_14.setSpacing(0)
         self.gridLayout_14.setObjectName(u"gridLayout_14")
         self.gridLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.productlist = QWidget(self.widget_3)
+        self.productlist.setObjectName(u"productlist")
+
+        self.gridLayout_14.addWidget(self.productlist, 2, 0, 1, 1)
+
         self.Banner = QWidget(self.widget_3)
         self.Banner.setObjectName(u"Banner")
         self.gridLayout_11 = QGridLayout(self.Banner)
@@ -1047,22 +1052,373 @@ class Ui_MainWindow(object):
 
         self.categoryWrap = QWidget(self.widget_3)
         self.categoryWrap.setObjectName(u"categoryWrap")
-        self.gridLayout_10 = QGridLayout(self.categoryWrap)
-        self.gridLayout_10.setSpacing(0)
-        self.gridLayout_10.setObjectName(u"gridLayout_10")
-        self.gridLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.label_9 = QLabel(self.categoryWrap)
-        self.label_9.setObjectName(u"label_9")
+        self.categoryWrap.setMaximumSize(QSize(16777215, 200))
+        self.gridLayout_96 = QGridLayout(self.categoryWrap)
+        self.gridLayout_96.setObjectName(u"gridLayout_96")
+        self.widget_78 = QWidget(self.categoryWrap)
+        self.widget_78.setObjectName(u"widget_78")
+        self.gridLayout_98 = QGridLayout(self.widget_78)
+        self.gridLayout_98.setObjectName(u"gridLayout_98")
+        self.label_54 = QLabel(self.widget_78)
+        self.label_54.setObjectName(u"label_54")
+        self.label_54.setPixmap(QPixmap(u":/icon/pics/groceries.png"))
+        self.label_54.setScaledContents(True)
 
-        self.gridLayout_10.addWidget(self.label_9, 0, 0, 1, 1)
+        self.gridLayout_98.addWidget(self.label_54, 0, 0, 1, 1)
+
+        self.label_53 = QLabel(self.widget_78)
+        self.label_53.setObjectName(u"label_53")
+        self.label_53.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_53.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_98.addWidget(self.label_53, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_78, 1, 2, 1, 1)
+
+        self.widget_74 = QWidget(self.categoryWrap)
+        self.widget_74.setObjectName(u"widget_74")
+        self.gridLayout_93 = QGridLayout(self.widget_74)
+        self.gridLayout_93.setObjectName(u"gridLayout_93")
+        self.horizontalSpacer_15 = QSpacerItem(8, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_93.addItem(self.horizontalSpacer_15, 0, 0, 1, 1)
+
+        self.label_45 = QLabel(self.widget_74)
+        self.label_45.setObjectName(u"label_45")
+        self.label_45.setMaximumSize(QSize(60, 16777215))
+        self.label_45.setPixmap(QPixmap(u":/icon/pics/entertainment.png"))
+        self.label_45.setScaledContents(True)
+
+        self.gridLayout_93.addWidget(self.label_45, 0, 1, 1, 1)
+
+        self.horizontalSpacer_16 = QSpacerItem(13, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_93.addItem(self.horizontalSpacer_16, 0, 2, 1, 1)
+
+        self.label_46 = QLabel(self.widget_74)
+        self.label_46.setObjectName(u"label_46")
+        self.label_46.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_46.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_93.addWidget(self.label_46, 1, 0, 1, 3)
+
+
+        self.gridLayout_96.addWidget(self.widget_74, 0, 7, 1, 1)
+
+        self.widget_77 = QWidget(self.categoryWrap)
+        self.widget_77.setObjectName(u"widget_77")
+        self.gridLayout_95 = QGridLayout(self.widget_77)
+        self.gridLayout_95.setObjectName(u"gridLayout_95")
+        self.label_52 = QLabel(self.widget_77)
+        self.label_52.setObjectName(u"label_52")
+        self.label_52.setPixmap(QPixmap(u":/icon/pics/officesupplies.png"))
+        self.label_52.setScaledContents(True)
+
+        self.gridLayout_95.addWidget(self.label_52, 0, 0, 1, 1)
+
+        self.label_51 = QLabel(self.widget_77)
+        self.label_51.setObjectName(u"label_51")
+        self.label_51.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_51.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_95.addWidget(self.label_51, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_77, 1, 1, 1, 1)
+
+        self.widget_70 = QWidget(self.categoryWrap)
+        self.widget_70.setObjectName(u"widget_70")
+        self.gridLayout_89 = QGridLayout(self.widget_70)
+        self.gridLayout_89.setObjectName(u"gridLayout_89")
+        self.label_38 = QLabel(self.widget_70)
+        self.label_38.setObjectName(u"label_38")
+        self.label_38.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_38.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_89.addWidget(self.label_38, 2, 0, 1, 1)
+
+        self.label_37 = QLabel(self.widget_70)
+        self.label_37.setObjectName(u"label_37")
+        self.label_37.setPixmap(QPixmap(u":/icon/pics/house.png"))
+        self.label_37.setScaledContents(True)
+
+        self.gridLayout_89.addWidget(self.label_37, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_70, 0, 2, 1, 1)
+
+        self.widget_81 = QWidget(self.categoryWrap)
+        self.widget_81.setObjectName(u"widget_81")
+        self.gridLayout_101 = QGridLayout(self.widget_81)
+        self.gridLayout_101.setObjectName(u"gridLayout_101")
+        self.label_60 = QLabel(self.widget_81)
+        self.label_60.setObjectName(u"label_60")
+        self.label_60.setPixmap(QPixmap(u":/icon/pics/travel.png"))
+        self.label_60.setScaledContents(True)
+
+        self.gridLayout_101.addWidget(self.label_60, 0, 0, 1, 1)
+
+        self.label_59 = QLabel(self.widget_81)
+        self.label_59.setObjectName(u"label_59")
+        self.label_59.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_59.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_101.addWidget(self.label_59, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_81, 1, 5, 1, 1)
+
+        self.widget_73 = QWidget(self.categoryWrap)
+        self.widget_73.setObjectName(u"widget_73")
+        self.gridLayout_92 = QGridLayout(self.widget_73)
+        self.gridLayout_92.setObjectName(u"gridLayout_92")
+        self.label_43 = QLabel(self.widget_73)
+        self.label_43.setObjectName(u"label_43")
+        self.label_43.setPixmap(QPixmap(u":/icon/pics/toys.png"))
+        self.label_43.setScaledContents(True)
+
+        self.gridLayout_92.addWidget(self.label_43, 0, 0, 1, 1)
+
+        self.label_44 = QLabel(self.widget_73)
+        self.label_44.setObjectName(u"label_44")
+        self.label_44.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_44.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_92.addWidget(self.label_44, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_73, 0, 5, 1, 1)
+
+        self.widget_82 = QWidget(self.categoryWrap)
+        self.widget_82.setObjectName(u"widget_82")
+
+        self.gridLayout_96.addWidget(self.widget_82, 1, 6, 1, 1)
+
+        self.widget_76 = QWidget(self.categoryWrap)
+        self.widget_76.setObjectName(u"widget_76")
+        self.gridLayout_97 = QGridLayout(self.widget_76)
+        self.gridLayout_97.setObjectName(u"gridLayout_97")
+        self.label_49 = QLabel(self.widget_76)
+        self.label_49.setObjectName(u"label_49")
+        self.label_49.setPixmap(QPixmap(u":/icon/pics/meo.png"))
+        self.label_49.setScaledContents(True)
+
+        self.gridLayout_97.addWidget(self.label_49, 0, 0, 1, 1)
+
+        self.label_50 = QLabel(self.widget_76)
+        self.label_50.setObjectName(u"label_50")
+        self.label_50.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_50.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_97.addWidget(self.label_50, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_76, 1, 0, 1, 1)
+
+        self.electronics = QWidget(self.categoryWrap)
+        self.electronics.setObjectName(u"electronics")
+        self.gridLayout_10 = QGridLayout(self.electronics)
+        self.gridLayout_10.setObjectName(u"gridLayout_10")
+        self.label_2 = QLabel(self.electronics)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setPixmap(QPixmap(u":/icon/pics/electronics.png"))
+        self.label_2.setScaledContents(True)
+
+        self.gridLayout_10.addWidget(self.label_2, 0, 0, 1, 1)
+
+        self.label_9 = QLabel(self.electronics)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_9.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_10.addWidget(self.label_9, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.electronics, 0, 0, 1, 1)
+
+        self.widget_80 = QWidget(self.categoryWrap)
+        self.widget_80.setObjectName(u"widget_80")
+        self.gridLayout_100 = QGridLayout(self.widget_80)
+        self.gridLayout_100.setObjectName(u"gridLayout_100")
+        self.label_58 = QLabel(self.widget_80)
+        self.label_58.setObjectName(u"label_58")
+        self.label_58.setPixmap(QPixmap(u":/icon/pics/brush.png"))
+        self.label_58.setScaledContents(True)
+
+        self.gridLayout_100.addWidget(self.label_58, 0, 0, 1, 1)
+
+        self.label_57 = QLabel(self.widget_80)
+        self.label_57.setObjectName(u"label_57")
+        self.label_57.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_100.addWidget(self.label_57, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_80, 1, 4, 1, 1)
+
+        self.widget_72 = QWidget(self.categoryWrap)
+        self.widget_72.setObjectName(u"widget_72")
+        self.gridLayout_91 = QGridLayout(self.widget_72)
+        self.gridLayout_91.setObjectName(u"gridLayout_91")
+        self.horizontalSpacer_12 = QSpacerItem(15, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_91.addItem(self.horizontalSpacer_12, 1, 3, 1, 1)
+
+        self.label_42 = QLabel(self.widget_72)
+        self.label_42.setObjectName(u"label_42")
+        self.label_42.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_42.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_91.addWidget(self.label_42, 2, 0, 1, 4)
+
+        self.label_41 = QLabel(self.widget_72)
+        self.label_41.setObjectName(u"label_41")
+        self.label_41.setMaximumSize(QSize(59, 16777215))
+        self.label_41.setPixmap(QPixmap(u":/icon/pics/football.png"))
+        self.label_41.setScaledContents(True)
+
+        self.gridLayout_91.addWidget(self.label_41, 1, 2, 1, 1)
+
+        self.horizontalSpacer_11 = QSpacerItem(8, 50, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_91.addItem(self.horizontalSpacer_11, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_72, 0, 4, 1, 1)
+
+        self.widget_67 = QWidget(self.categoryWrap)
+        self.widget_67.setObjectName(u"widget_67")
+        self.gridLayout_88 = QGridLayout(self.widget_67)
+        self.gridLayout_88.setObjectName(u"gridLayout_88")
+        self.label_36 = QLabel(self.widget_67)
+        self.label_36.setObjectName(u"label_36")
+        self.label_36.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_36.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_88.addWidget(self.label_36, 1, 0, 1, 1)
+
+        self.label_35 = QLabel(self.widget_67)
+        self.label_35.setObjectName(u"label_35")
+        self.label_35.setPixmap(QPixmap(u":/icon/pics/fashions.png"))
+        self.label_35.setScaledContents(True)
+
+        self.gridLayout_88.addWidget(self.label_35, 0, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_67, 0, 1, 1, 1)
+
+        self.widget_71 = QWidget(self.categoryWrap)
+        self.widget_71.setObjectName(u"widget_71")
+        self.gridLayout_90 = QGridLayout(self.widget_71)
+        self.gridLayout_90.setObjectName(u"gridLayout_90")
+        self.label_40 = QLabel(self.widget_71)
+        self.label_40.setObjectName(u"label_40")
+        self.label_40.setPixmap(QPixmap(u":/icon/pics/beauty2.png"))
+        self.label_40.setScaledContents(True)
+
+        self.gridLayout_90.addWidget(self.label_40, 0, 0, 1, 1)
+
+        self.label_39 = QLabel(self.widget_71)
+        self.label_39.setObjectName(u"label_39")
+        self.label_39.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_39.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_90.addWidget(self.label_39, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_71, 0, 3, 1, 1)
+
+        self.widget_79 = QWidget(self.categoryWrap)
+        self.widget_79.setObjectName(u"widget_79")
+        self.gridLayout_99 = QGridLayout(self.widget_79)
+        self.gridLayout_99.setObjectName(u"gridLayout_99")
+        self.label_56 = QLabel(self.widget_79)
+        self.label_56.setObjectName(u"label_56")
+        self.label_56.setPixmap(QPixmap(u":/icon/pics/baby.png"))
+        self.label_56.setScaledContents(True)
+
+        self.gridLayout_99.addWidget(self.label_56, 0, 0, 1, 1)
+
+        self.label_55 = QLabel(self.widget_79)
+        self.label_55.setObjectName(u"label_55")
+        self.label_55.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_55.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_99.addWidget(self.label_55, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_79, 1, 3, 1, 1)
+
+        self.widget_75 = QWidget(self.categoryWrap)
+        self.widget_75.setObjectName(u"widget_75")
+        self.gridLayout_94 = QGridLayout(self.widget_75)
+        self.gridLayout_94.setObjectName(u"gridLayout_94")
+        self.label_48 = QLabel(self.widget_75)
+        self.label_48.setObjectName(u"label_48")
+        self.label_48.setMaximumSize(QSize(103, 16777215))
+        self.label_48.setPixmap(QPixmap(u":/icon/pics/car.png"))
+        self.label_48.setScaledContents(True)
+
+        self.gridLayout_94.addWidget(self.label_48, 0, 0, 1, 1)
+
+        self.label_47 = QLabel(self.widget_75)
+        self.label_47.setObjectName(u"label_47")
+        self.label_47.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_47.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_94.addWidget(self.label_47, 1, 0, 1, 1)
+
+
+        self.gridLayout_96.addWidget(self.widget_75, 0, 8, 1, 1)
+
+        self.widget_83 = QWidget(self.categoryWrap)
+        self.widget_83.setObjectName(u"widget_83")
+        self.gridLayout_102 = QGridLayout(self.widget_83)
+        self.gridLayout_102.setObjectName(u"gridLayout_102")
+        self.horizontalSpacer_13 = QSpacerItem(7, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_102.addItem(self.horizontalSpacer_13, 0, 0, 1, 1)
+
+        self.label_62 = QLabel(self.widget_83)
+        self.label_62.setObjectName(u"label_62")
+        self.label_62.setMaximumSize(QSize(57, 16777215))
+        self.label_62.setPixmap(QPixmap(u":/icon/pics/gift.png"))
+        self.label_62.setScaledContents(True)
+        self.label_62.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_102.addWidget(self.label_62, 0, 1, 1, 1)
+
+        self.horizontalSpacer_14 = QSpacerItem(17, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_102.addItem(self.horizontalSpacer_14, 0, 2, 1, 1)
+
+        self.label_61 = QLabel(self.widget_83)
+        self.label_61.setObjectName(u"label_61")
+        self.label_61.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_102.addWidget(self.label_61, 1, 0, 1, 3)
+
+
+        self.gridLayout_96.addWidget(self.widget_83, 1, 7, 1, 1)
 
 
         self.gridLayout_14.addWidget(self.categoryWrap, 1, 0, 1, 1)
-
-        self.productlist = QWidget(self.widget_3)
-        self.productlist.setObjectName(u"productlist")
-
-        self.gridLayout_14.addWidget(self.productlist, 2, 0, 1, 1)
 
 
         self.gridLayout_2.addWidget(self.widget_3, 0, 0, 1, 1)
@@ -1111,7 +1467,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 100, 30))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 886, 710))
         self.gridLayout_55 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_55.setObjectName(u"gridLayout_55")
         self.favoriteList = QWidget(self.scrollAreaWidgetContents)
@@ -1802,7 +2158,36 @@ class Ui_MainWindow(object):
         self.productDescLabel.setText(QCoreApplication.translate("MainWindow", u"details", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Search Page", None))
         self.banner.setText("")
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Caregory", None))
+        self.label_54.setText("")
+        self.label_53.setText(QCoreApplication.translate("MainWindow", u"Groceries", None))
+        self.label_45.setText("")
+        self.label_46.setText(QCoreApplication.translate("MainWindow", u"Entertainment", None))
+        self.label_52.setText("")
+        self.label_51.setText(QCoreApplication.translate("MainWindow", u"Office Supplies", None))
+        self.label_38.setText(QCoreApplication.translate("MainWindow", u"Home and Garden", None))
+        self.label_37.setText("")
+        self.label_60.setText("")
+        self.label_59.setText(QCoreApplication.translate("MainWindow", u"Travel", None))
+        self.label_43.setText("")
+        self.label_44.setText(QCoreApplication.translate("MainWindow", u"Toys and Games", None))
+        self.label_49.setText("")
+        self.label_50.setText(QCoreApplication.translate("MainWindow", u"Pet Supplies", None))
+        self.label_2.setText("")
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Electronics", None))
+        self.label_58.setText("")
+        self.label_57.setText(QCoreApplication.translate("MainWindow", u"Art and Collectibles", None))
+        self.label_42.setText(QCoreApplication.translate("MainWindow", u"Sports and Outdoors", None))
+        self.label_41.setText("")
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"Fashions", None))
+        self.label_35.setText("")
+        self.label_40.setText("")
+        self.label_39.setText(QCoreApplication.translate("MainWindow", u"Beauty and Health", None))
+        self.label_56.setText("")
+        self.label_55.setText(QCoreApplication.translate("MainWindow", u"Baby Products", None))
+        self.label_48.setText("")
+        self.label_47.setText(QCoreApplication.translate("MainWindow", u"Automotive", None))
+        self.label_62.setText("")
+        self.label_61.setText(QCoreApplication.translate("MainWindow", u"Personalizaed Gifts", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"My Favorites", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Profile pic", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"Account Name", None))
