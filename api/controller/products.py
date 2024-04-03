@@ -7,7 +7,7 @@ from model.user import User
 import os
 import uuid
 
-UPLOAD_DIRECTORY = r"C:\Users\Tonkla\Desktop\The-Market-Nest\api\db\images"
+UPLOAD_DIRECTORY = r"C:\Users\peera\Desktop\newww\The-Market-Nest\api\db\images"
 class ProductController:
     def __init__(self):
         self.__products_db = Warehouse(('127.0.0.1', 8100))

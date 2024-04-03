@@ -13,7 +13,7 @@ from PySide6.QtWidgets import QLineEdit
 
 
 from pathlib import Path
-module_dir = Path(r"c:/Users/Tonkla/Desktop/The-Market-Nest/utils/")
+module_dir = Path(r"C:\Users\peera\Desktop\newww\The-Market-Nest\utils")
 import sys
 sys.path.append(str(module_dir))
 from utils.token_retrieve import *
