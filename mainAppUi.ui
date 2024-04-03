@@ -102,7 +102,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../project/new/The-Market-Nest/resource.qrc">:/icon/icon/logo.ico</pixmap>
+            <pixmap resource="resource.qrc">:/icon/icon/logo.ico</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -122,7 +122,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+            <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/home.ico</normaloff>:/icon/icon/home.ico</iconset>
            </property>
            <property name="checkable">
@@ -142,7 +142,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+            <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/heart3.ico</normaloff>:/icon/icon/heart3.ico</iconset>
            </property>
            <property name="checkable">
@@ -162,7 +162,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+            <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/store.ico</normaloff>:/icon/icon/store.ico</iconset>
            </property>
            <property name="checkable">
@@ -182,7 +182,7 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+            <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/profile.ico</normaloff>:/icon/icon/profile.ico</iconset>
            </property>
            <property name="checkable">
@@ -217,7 +217,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+          <iconset resource="resource.qrc">
            <normaloff>:/icon/icon/logout.ico</normaloff>:/icon/icon/logout.ico</iconset>
          </property>
          <property name="flat">
@@ -294,7 +294,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../project/new/The-Market-Nest/resource.qrc">:/icon/icon/logo.ico</pixmap>
+            <pixmap resource="resource.qrc">:/icon/icon/logo.ico</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -354,7 +354,7 @@ color: #51526C;</string>
             <string>Home</string>
            </property>
            <property name="icon">
-            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+            <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/home.ico</normaloff>:/icon/icon/home.ico</iconset>
            </property>
            <property name="checkable">
@@ -385,7 +385,7 @@ color: #51526C;</string>
             <string>Favorite</string>
            </property>
            <property name="icon">
-            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+            <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/heart3.ico</normaloff>:/icon/icon/heart3.ico</iconset>
            </property>
            <property name="checkable">
@@ -410,7 +410,7 @@ color: #51526C;</string>
             <string>My Profile</string>
            </property>
            <property name="icon">
-            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+            <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/store.ico</normaloff>:/icon/icon/store.ico</iconset>
            </property>
            <property name="checkable">
@@ -435,7 +435,7 @@ color: #51526C;</string>
             <string>Edit Account</string>
            </property>
            <property name="icon">
-            <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+            <iconset resource="resource.qrc">
              <normaloff>:/icon/icon/profile.ico</normaloff>:/icon/icon/profile.ico</iconset>
            </property>
            <property name="checkable">
@@ -481,7 +481,7 @@ color: #51526C;</string>
           <string>Log Out</string>
          </property>
          <property name="icon">
-          <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+          <iconset resource="resource.qrc">
            <normaloff>:/icon/icon/logout.ico</normaloff>:/icon/icon/logout.ico</iconset>
          </property>
          <property name="flat">
@@ -554,7 +554,7 @@ color: #51526C;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+             <iconset resource="resource.qrc">
               <normaloff>:/icon/icon/menu.ico</normaloff>:/icon/icon/menu.ico</iconset>
             </property>
             <property name="checkable">
@@ -592,7 +592,7 @@ color: #51526C;</string>
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+               <iconset resource="resource.qrc">
                 <normaloff>:/icon/icon/search.ico</normaloff>:/icon/icon/search.ico</iconset>
               </property>
               <property name="flat">
@@ -660,7 +660,7 @@ border-radius: 5;</string>
           <string notr="true">border: 0px</string>
          </property>
          <property name="currentIndex">
-          <number>6</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="sell">
           <layout class="QGridLayout" name="gridLayout_22">
@@ -1509,7 +1509,7 @@ border-radius: 5px;</string>
                        <string>Chat</string>
                       </property>
                       <property name="icon">
-                       <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+                       <iconset resource="resource.qrc">
                         <normaloff>:/icon/icon/messages.ico</normaloff>:/icon/icon/messages.ico</iconset>
                       </property>
                       <property name="iconSize">
@@ -1648,7 +1648,7 @@ color: rgb(0,0,0);</string>
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="../../project/new/The-Market-Nest/resource.qrc">
+                          <iconset resource="resource.qrc">
                            <normaloff>:/icon/icon/heart2.ico</normaloff>:/icon/icon/heart2.ico</iconset>
                          </property>
                          <property name="autoDefault">
@@ -2075,6 +2075,12 @@ color: rgb(0,0,0);</string>
                      </property>
                      <item row="0" column="0">
                       <widget class="QWidget" name="widget_3" native="true">
+                       <property name="maximumSize">
+                        <size>
+                         <width>900</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
                        <layout class="QGridLayout" name="gridLayout_14">
                         <property name="leftMargin">
                          <number>0</number>
@@ -2128,7 +2134,7 @@ color: rgb(0,0,0);</string>
                                <number>0</number>
                               </property>
                               <item row="0" column="0">
-                               <widget class="QLabel" name="label_2">
+                               <widget class="QLabel" name="banner">
                                 <property name="font">
                                  <font>
                                   <family>Aksaramatee</family>
@@ -2137,7 +2143,13 @@ color: rgb(0,0,0);</string>
                                  </font>
                                 </property>
                                 <property name="text">
-                                 <string>a banner</string>
+                                 <string/>
+                                </property>
+                                <property name="pixmap">
+                                 <pixmap resource="resource.qrc">:/icon/pics/banner.png</pixmap>
+                                </property>
+                                <property name="scaledContents">
+                                 <bool>true</bool>
                                 </property>
                                </widget>
                               </item>
@@ -2254,8 +2266,8 @@ color: rgb(0,0,0);</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>886</width>
-                      <height>710</height>
+                      <width>100</width>
+                      <height>30</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_55">
@@ -2711,7 +2723,7 @@ color: rgb(0,0,0);</string>
                  <item row="0" column="0">
                   <widget class="QStackedWidget" name="stackedWidget_2">
                    <property name="currentIndex">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                    <widget class="QWidget" name="myProfile">
                     <layout class="QGridLayout" name="gridLayout_83">
@@ -3108,7 +3120,7 @@ border-radius: 5px;</string>
                         <item row="5" column="0">
                          <widget class="QWidget" name="widget_55" native="true">
                           <property name="styleSheet">
-                           <string notr="true">justify-content: right;</string>
+                           <string notr="true"/>
                           </property>
                           <layout class="QGridLayout" name="gridLayout_74">
                            <item row="0" column="0">
@@ -3476,7 +3488,7 @@ color: rgb(0,0,0);</string>
   </widget>
  </widget>
  <resources>
-  <include location="../../project/new/The-Market-Nest/resource.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections>
   <connection>

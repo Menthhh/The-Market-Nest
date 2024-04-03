@@ -1010,6 +1010,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.widget_3 = QWidget(self.scrollHome)
         self.widget_3.setObjectName(u"widget_3")
+        self.widget_3.setMaximumSize(QSize(900, 16777215))
         self.gridLayout_14 = QGridLayout(self.widget_3)
         self.gridLayout_14.setSpacing(0)
         self.gridLayout_14.setObjectName(u"gridLayout_14")
@@ -1026,15 +1027,17 @@ class Ui_MainWindow(object):
         self.gridLayout_12.setSpacing(0)
         self.gridLayout_12.setObjectName(u"gridLayout_12")
         self.gridLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.widget_2)
-        self.label_2.setObjectName(u"label_2")
+        self.banner = QLabel(self.widget_2)
+        self.banner.setObjectName(u"banner")
         font2 = QFont()
         font2.setFamilies([u"Aksaramatee"])
         font2.setPointSize(24)
         font2.setBold(True)
-        self.label_2.setFont(font2)
+        self.banner.setFont(font2)
+        self.banner.setPixmap(QPixmap(u":/icon/pics/banner.png"))
+        self.banner.setScaledContents(True)
 
-        self.gridLayout_12.addWidget(self.label_2, 0, 0, 1, 1)
+        self.gridLayout_12.addWidget(self.banner, 0, 0, 1, 1)
 
 
         self.gridLayout_11.addWidget(self.widget_2, 0, 0, 1, 1)
@@ -1108,7 +1111,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 886, 710))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 100, 30))
         self.gridLayout_55 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_55.setObjectName(u"gridLayout_55")
         self.favoriteList = QWidget(self.scrollAreaWidgetContents)
@@ -1530,7 +1533,7 @@ class Ui_MainWindow(object):
 
         self.widget_55 = QWidget(self.widget_63)
         self.widget_55.setObjectName(u"widget_55")
-        self.widget_55.setStyleSheet(u"justify-content: right;")
+        self.widget_55.setStyleSheet(u"")
         self.gridLayout_74 = QGridLayout(self.widget_55)
         self.gridLayout_74.setObjectName(u"gridLayout_74")
         self.horizontalSpacer_9 = QSpacerItem(685, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
@@ -1748,9 +1751,9 @@ class Ui_MainWindow(object):
         self.profileBtn_2.toggled.connect(self.profileBtn_1.setChecked)
         self.accountBtn_2.toggled.connect(self.accountBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(3)
         self.pushButton_3.setDefault(False)
-        self.stackedWidget_2.setCurrentIndex(1)
+        self.stackedWidget_2.setCurrentIndex(0)
         self.stackedWidget_3.setCurrentIndex(0)
 
 
@@ -1798,7 +1801,7 @@ class Ui_MainWindow(object):
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"Description", None))
         self.productDescLabel.setText(QCoreApplication.translate("MainWindow", u"details", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Search Page", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"a banner", None))
+        self.banner.setText("")
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Caregory", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"My Favorites", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Profile pic", None))

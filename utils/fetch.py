@@ -73,7 +73,7 @@ class APIClient:
 
 if __name__ == "__main__":
     from pathlib import Path
-    module_dir = Path(r"c:/Users/Tonkla/Desktop/The-Market-Nest/utils/")
+    module_dir = Path(r"C:\Users\peera\Desktop\newww\The-Market-Nest\utils\fetch.py")
     import sys
     sys.path.append(str(module_dir))
 
@@ -82,9 +82,9 @@ if __name__ == "__main__":
     token = get_token()
     print(token)
 
-    api = APIClient("http://localhost:9000/api")
-    response = api.create_product_with_image("products", "title", "category", "description", 12, 1, "address","0563d99e-bb8a-4117-a171-d6a57bf1d0ef", r"C:\Users\Tonkla\Downloads/1.png")
+    # api = APIClient("http://localhost:9000/api")
+    # response = api.create_product_with_image("products", "title", "category", "description", 12, 1, "address","0563d99e-bb8a-4117-a171-d6a57bf1d0ef", r"C:\Users\Tonkla\Downloads/1.png")
 
-    print(response)
+    # print(response)
             
  
