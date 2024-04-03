@@ -6,8 +6,10 @@ from fastapi.responses import FileResponse
 from model.user import User
 import os
 import uuid
-
-UPLOAD_DIRECTORY = r"C:\Users\peera\Desktop\newww\The-Market-Nest\api\db\images"
+import os
+from dotenv import load_dotenv
+load_dotenv()
+UPLOAD_DIRECTORY = os.getenv("UPLOAD_DIRECTORY")
 class ProductController:
     def __init__(self):
         self.__products_db = Warehouse(('127.0.0.1', 8100))
@@ -81,13 +83,9 @@ class ProductController:
                     "price": product.price,
                     "amount": product.amount,
                     "address": product.address,
-                    "photos": ""
                 }
-                if len(product.photos) != 0:
-                    product_return["photos"] = product.photos[0]
-                    
-                    
-                
+                return (product_return)
+
             else:
                 raise HTTPException(status_code=404, detail="Product not found")
         except Exception as e:
@@ -134,6 +132,7 @@ class ProductController:
             if isinstance(current_product, Product):
                 for photo in current_product.photos:
                     return FileResponse(photo)
+                return {"message": "Product has no photo"}
             else:
                 return {"message": "Product not found"}
         except Exception as e:

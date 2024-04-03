@@ -12,6 +12,25 @@ from utils.token_retrieve import *
 from PySide6.QtWidgets import QLineEdit
 
 
+# from pathlib import Path
+# module_dir = Path(r"C:\\Users\\peera\Desktop\\newww\\The-Market-Nest\\utils")
+# import sys
+# sys.path.append(str(module_dir))
+# from utils.token_retrieve import *
+# from utils.fetch import APIClient
+
+from dotenv import load_dotenv
+import os
+load_dotenv()
+UTILS = os.getenv("utils")
+from pathlib import Path
+module_dir = Path(UTILS)
+import sys
+sys.path.append(str(module_dir))
+
+from token_retrieve import *
+from fetch import APIClient
+
 TOKEN = get_token()
 
 class MainWindow(QMainWindow):
