@@ -11,6 +11,16 @@ from utils.fetch import APIClient
 from utils.token_retrieve import *
 from PySide6.QtWidgets import QLineEdit
 
+
+from pathlib import Path
+module_dir = Path(r"c:/Users/Tonkla/Desktop/The-Market-Nest/utils/")
+import sys
+sys.path.append(str(module_dir))
+from utils.token_retrieve import *
+from utils.fetch import APIClient
+
+TOKEN = get_token()
+
 class MainWindow(QMainWindow):
     logout_requested = Signal()  # Add a logout signal
 
@@ -54,19 +64,100 @@ class MainWindow(QMainWindow):
         self.ui.uploadPhotoBtn.clicked.connect(self.uploadPhoto)
         self.ui.productCategory.addItems(item_categories.keys())
 
+
+        # set the user info
         self.ui.showUsername.setText(get_username())
         self.ui.showID.setText(get_user_id())
         self.ui.showName.setText(get_user_name())
         self.ui.showEmail.setText(get_user_email())
         self.ui.showBirth.setText(get_user_birthdate())
         self.ui.showPhone.setText(str(get_user_phone()))
-   
         self.ui.showPassword.setText(len(get_user_password()) * "*")
 
+        #my profile utils
+        self.ui.changePassBtn.clicked.connect(self.changingPasswordPage)
+        self.ui.cancelChangePass.clicked.connect(self.cancelChangePass)
+        self.ui.confirmChangePass.clicked.connect(self.changePassword)
+        self.ui.profileEditBtn.clicked.connect(self.editInfo)
+        self.ui.cancelEdit.clicked.connect(self.cancelEdit)
+        self.ui.confirmEdit.clicked.connect(self.confirmEdit)
+
+    # ------------------ Handle editing user info // details ------------------
+    def editInfo(self):
+        self.ui.stackedWidget_2.setCurrentIndex(1)
+        self.ui.nameEdit.setText(get_user_name())
+        self.ui.emailEdit.setText(get_user_email())
+        self.ui.phoneEdit.setText(str(get_user_phone()))
+        self.ui.birthEdit.setText(get_user_birthdate())
+
+    def confirmEdit(self):
+        # get the text from the input field
+        self.editName = self.ui.nameEdit.text()
+        self.editEmail = self.ui.emailEdit.text()
+        self.editPhone = self.ui.phoneEdit.text()
+        self.editBirth = self.ui.birthEdit.text()
 
 
+        # create a dictionary of the input
+        user = {
+            "name": self.editName,
+            "email": self.editEmail,
+            "phoneNumber": int(self.editPhone),
+            "birthDate": self.editBirth
+        }
+
+        # access the data and change the user info
+        user_id = get_user_id()
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.put_request(f"users/{user_id}", user)
+        self.update_user_info()
+        self.ui.stackedWidget_2.setCurrentIndex(0)
+        # pop up message
+        QMessageBox.information(self, "Success", "User info changed successfully")
+        print(response)
+
+    def cancelEdit(self):
+        self.ui.stackedWidget_2.setCurrentIndex(0)
+        
 
 
+    # ------------------ Handle editing user info // changing password ------------------
+
+    def cancelChangePass(self):
+        self.ui.stackedWidget_3.setCurrentIndex(0)
+
+
+    def changingPasswordPage(self):
+        self.ui.stackedWidget_3.setCurrentIndex(1)
+        self.ui.passLineEdit.clear()
+
+    def changePassword(self):
+        self.changedPass = self.ui.passLineEdit.text()
+
+        # access the user id and change the password
+        user_id = get_user_id()
+        body = {
+            "password": self.changedPass
+        }
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.put_request(f"users/{user_id}", body)
+        self.update_user_info()
+        self.ui.stackedWidget_3.setCurrentIndex(0)
+        # pop up message
+        QMessageBox.information(self, "Success", "Password changed successfully")
+        print(response)
+
+    
+
+    def update_user_info(self):
+        # set the user info
+        self.ui.showUsername.setText(get_username())
+        self.ui.showID.setText(get_user_id())
+        self.ui.showName.setText(get_user_name())
+        self.ui.showEmail.setText(get_user_email())
+        self.ui.showBirth.setText(get_user_birthdate())
+        self.ui.showPhone.setText(str(get_user_phone()))
+        self.ui.showPassword.setText(len(get_user_password()) * "*")
         # set none
         self.tempImage = None 
 
@@ -208,16 +299,21 @@ class MainWindow(QMainWindow):
 
         # create a dictionary of the input
         product = {
-            "name": self.productTitle,
-            "price": self.productPrice,
-            "image_path": self.tempImage,
+            "title": self.productTitle,
             "category": self.productCategory,
             "description": self.productDesc,
-            "amount": self.productAmount,
-            "location": self.productLocation
+            "price": int(self.productPrice),
+            "amount": 1, 
+            "address": self.productLocation,
+            "user_id": TOKEN,
+            "image_path": self.tempImage
         }
 
+        for value in product.values():
+            print(value)
+
         # add to db
+        self.post_new_product(product)
 
         #clear the input fields
         self.ui.productTitle.clear()
@@ -227,9 +323,12 @@ class MainWindow(QMainWindow):
         self.ui.productLocation.clear()
         self.ui.productAmount.setValue(0)
 
-        print(product)
-        # pop up a message box added successfully
         QMessageBox.information(self, "Success", "Product added successfully")
+
+    def post_new_product(self, product):
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.create_product_with_image("products", product["title"], product["category"], product["description"], product["price"], product["amount"], product["address"], product["user_id"], product["image_path"])
+        print(response)
 
     def showRemoveButton(self, event):
         self.removeButton.move(self.imageLabel.width() - self.removeButton.width(), 0)  # Position button at the top-right
