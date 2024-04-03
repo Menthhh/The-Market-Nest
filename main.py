@@ -29,14 +29,23 @@ def show_login():
     else:
         app.quit()
 
+import sys
+import traceback
+
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
+    try:
+        app = QApplication(sys.argv)
 
-    # Font and stylesheet setup
-    font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
-    QFontDatabase.addApplicationFont(font_path)
-    stylesheet = open("styles.qss").read()
-    app.setStyleSheet(stylesheet)
+        # Font and stylesheet setup
+        font_path = Path.joinpath(Path(__file__).parent, "fonts/JosefinSans-VariableFont_wght.ttf").as_posix()
+        QFontDatabase.addApplicationFont(font_path)
+        stylesheet = open("styles.qss").read()
+        app.setStyleSheet(stylesheet)
 
-    show_login()  # This initiates the login process.
-    sys.exit(app.exec_())  # This starts the application's event loop.
+        print("Showing login dialog...")
+        show_login()  # This initiates the login process.
+        sys.exit(app.exec_())  # This starts the application's event loop.
+
+    except Exception as e:
+        print(f"An exception occurred: {e}")
+        traceback.print_exc()

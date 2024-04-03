@@ -13,11 +13,11 @@ from PySide6.QtWidgets import QLineEdit
 
 
 from pathlib import Path
-module_dir = Path(r"c:/Users/Tonkla/Desktop/The-Market-Nest/utils/")
+module_dir = Path(r"C:\Users\peera\Desktop\newww\The-Market-Nest\utils")
 import sys
 sys.path.append(str(module_dir))
-from token_retrieve import *
-from fetch import APIClient
+from utils.token_retrieve import *
+from utils.fetch import APIClient
 
 TOKEN = get_token()
 
@@ -39,8 +39,8 @@ class MainWindow(QMainWindow):
         self.products = products
 
         # Initial setup
-        self.last_column_count = self.calculate_columns()
-        self.adjust_columns()
+        # self.last_column_count = self.calculate_columns()
+        # self.adjust_columns()
 
                 # Favourite list sample
         self.favourites = favourites
@@ -64,19 +64,101 @@ class MainWindow(QMainWindow):
         self.ui.uploadPhotoBtn.clicked.connect(self.uploadPhoto)
         self.ui.productCategory.addItems(item_categories.keys())
 
+        #set banner
+
+        # set the user info
         self.ui.showUsername.setText(get_username())
         self.ui.showID.setText(get_user_id())
         self.ui.showName.setText(get_user_name())
         self.ui.showEmail.setText(get_user_email())
         self.ui.showBirth.setText(get_user_birthdate())
         self.ui.showPhone.setText(str(get_user_phone()))
-   
         self.ui.showPassword.setText(len(get_user_password()) * "*")
 
+        #my profile utils
+        self.ui.changePassBtn.clicked.connect(self.changingPasswordPage)
+        self.ui.cancelChangePass.clicked.connect(self.cancelChangePass)
+        self.ui.confirmChangePass.clicked.connect(self.changePassword)
+        self.ui.profileEditBtn.clicked.connect(self.editInfo)
+        self.ui.cancelEdit.clicked.connect(self.cancelEdit)
+        self.ui.confirmEdit.clicked.connect(self.confirmEdit)
+
+    # ------------------ Handle editing user info // details ------------------
+    def editInfo(self):
+        self.ui.stackedWidget_2.setCurrentIndex(1)
+        self.ui.nameEdit.setText(get_user_name())
+        self.ui.emailEdit.setText(get_user_email())
+        self.ui.phoneEdit.setText(str(get_user_phone()))
+        self.ui.birthEdit.setText(get_user_birthdate())
+
+    def confirmEdit(self):
+        # get the text from the input field
+        self.editName = self.ui.nameEdit.text()
+        self.editEmail = self.ui.emailEdit.text()
+        self.editPhone = self.ui.phoneEdit.text()
+        self.editBirth = self.ui.birthEdit.text()
 
 
+        # create a dictionary of the input
+        user = {
+            "name": self.editName,
+            "email": self.editEmail,
+            "phoneNumber": int(self.editPhone),
+            "birthDate": self.editBirth
+        }
+
+        # access the data and change the user info
+        user_id = get_user_id()
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.put_request(f"users/{user_id}", user)
+        self.update_user_info()
+        self.ui.stackedWidget_2.setCurrentIndex(0)
+        # pop up message
+        QMessageBox.information(self, "Success", "User info changed successfully")
+        print(response)
+
+    def cancelEdit(self):
+        self.ui.stackedWidget_2.setCurrentIndex(0)
+        
 
 
+    # ------------------ Handle editing user info // changing password ------------------
+
+    def cancelChangePass(self):
+        self.ui.stackedWidget_3.setCurrentIndex(0)
+
+
+    def changingPasswordPage(self):
+        self.ui.stackedWidget_3.setCurrentIndex(1)
+        self.ui.passLineEdit.clear()
+
+    def changePassword(self):
+        self.changedPass = self.ui.passLineEdit.text()
+
+        # access the user id and change the password
+        user_id = get_user_id()
+        body = {
+            "password": self.changedPass
+        }
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.put_request(f"users/{user_id}", body)
+        self.update_user_info()
+        self.ui.stackedWidget_3.setCurrentIndex(0)
+        # pop up message
+        QMessageBox.information(self, "Success", "Password changed successfully")
+        print(response)
+
+    
+
+    def update_user_info(self):
+        # set the user info
+        self.ui.showUsername.setText(get_username())
+        self.ui.showID.setText(get_user_id())
+        self.ui.showName.setText(get_user_name())
+        self.ui.showEmail.setText(get_user_email())
+        self.ui.showBirth.setText(get_user_birthdate())
+        self.ui.showPhone.setText(str(get_user_phone()))
+        self.ui.showPassword.setText(len(get_user_password()) * "*")
         # set none
         self.tempImage = None 
 
@@ -143,46 +225,46 @@ class MainWindow(QMainWindow):
             self.productlist_layout.itemAt(i).widget().setParent(None)
 
         # Add products to the product list grid with the updated number of columns
-        self.insert_product(self.products)
+        # self.insert_product(self.products)
 
-    def resizeEvent(self, event):
-        current_column_count = self.calculate_columns()
+    # def resizeEvent(self, event):
+    #     current_column_count = self.calculate_columns()
 
-        # Check if the number of columns has changed
-        if current_column_count != self.last_column_count:
-            self.adjust_columns()
-            self.last_column_count = current_column_count
+    #     # Check if the number of columns has changed
+    #     if current_column_count != self.last_column_count:
+    #         self.adjust_columns()
+    #         self.last_column_count = current_column_count
 
-        event.accept()
+    #     event.accept()
 
-    def calculate_columns(self):
-        window_width = self.ui.stackedWidget.width()
+    # def calculate_columns(self):
+    #     window_width = self.ui.stackedWidget.width()
 
-        # Define the number of columns based on window size
-        if window_width > 1500:
-            return 6
-        elif 1000 < window_width <= 1500:
-            return 5
-        else:
-            return 4
+    #     # Define the number of columns based on window size
+    #     if window_width > 1500:
+    #         return 6
+    #     elif 1000 < window_width <= 1500:
+    #         return 5
+    #     else:
+    #         return 4
 
-    def adjust_columns(self):
-        current_column_count = self.calculate_columns()
+    # def adjust_columns(self):
+    #     current_column_count = self.calculate_columns()
 
-        # Clear existing widgets in the layout
-        self.clear_layout(self.productlist_layout)
+    #     # Clear existing widgets in the layout
+    #     self.clear_layout(self.productlist_layout)
 
-        # Add products to the product list grid with the updated number of columns
-        row = col = 0
-        for i, product_data in enumerate(self.products):
-            product_widget = ProductWidget(product_data["name"], product_data["price"],
-                                           product_data["image_path"], index_to_show=1, main_window=self)
-            self.productlist_layout.addWidget(product_widget, row, col)
+    #     # Add products to the product list grid with the updated number of columns
+    #     row = col = 0
+    #     for i, product_data in enumerate(self.products):
+    #         product_widget = ProductWidget(product_data["name"], product_data["price"],
+    #                                        product_data["image_path"], index_to_show=1, main_window=self)
+    #         self.productlist_layout.addWidget(product_widget, row, col)
 
-            col += 1
-            if col == current_column_count:
-                col = 0
-                row += 1
+    #         col += 1
+    #         if col == current_column_count:
+    #             col = 0
+    #             row += 1
 
     def sell_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(0)
@@ -222,7 +304,8 @@ class MainWindow(QMainWindow):
             "category": self.productCategory,
             "price": self.productPrice,
             "description": self.productDesc,
-            "amount": self.productAmount,
+            "price": int(self.productPrice),
+            "amount": 1, 
             "address": self.productLocation,
             "user_id": TOKEN,
             "image_path": self.tempImage
