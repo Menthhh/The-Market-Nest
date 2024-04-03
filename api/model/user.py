@@ -3,6 +3,7 @@ import persistent
 class User(persistent.Persistent):
     def __init__(self, name: str, birthDate: str, citizenID: int, phoneNumber: int, email: str, username: str, password: str):
         self.name = name
+        self.isAdmin = False
         self.birthDate = birthDate
         self.citizenID = citizenID
         self.phoneNumber = phoneNumber
@@ -18,4 +19,8 @@ class User(persistent.Persistent):
 
     def addProduct(self, productId: str):
         self.products.append(productId)
+
+    def makeAdmin(self):
+        self.isAdmin = True
+
 
