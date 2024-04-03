@@ -69,6 +69,15 @@ class APIClient:
             return response.json()
         except requests.exceptions.RequestException as e:
             return self._handle_request_error(e, response=e.response)
+        
+    def get_products_images(self, endpoint, product_id):
+        url = f"{self.base_url}/{endpoint}/{product_id}"
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            return response
+        except requests.exceptions.RequestException as e:
+            return self._handle_request_error(e, response=e.response)
 
 
 if __name__ == "__main__":

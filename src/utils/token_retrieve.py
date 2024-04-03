@@ -1,5 +1,5 @@
 from PySide6.QtCore import QSettings
-from utils.fetch import APIClient
+from fetch import APIClient
 
 def get_token():
     settings = QSettings("se_project", "the_market_nest")
@@ -52,3 +52,5 @@ def post_user(body):# set username based on the token
     api_client = APIClient("http://localhost:9000/api")
     response = api_client.post_request(f"users", body)
     return response
+
+print(get_token())
