@@ -13,7 +13,6 @@ class User(persistent.Persistent):
         self.profilePicture = None
         self.products = []
 
-
     def addPicture(self, pictureURL: str):
         self.profilePicture = pictureURL
 

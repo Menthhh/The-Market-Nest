@@ -68,28 +68,6 @@ class Warehouse:
             raise HTTPException(status_code=500, detail=error_msg)
 
     def findOneAndUpdate(self, obj_id, new_obj):
-        # try:
-        #     if obj_id not in self.root:
-        #         error_msg = f"Object not found with id: {obj_id}"
-        #         self.logger.error(error_msg)
-        #         raise KeyError("Object not found")
-
-        #     existing_obj = self.root[obj_id]
-        #     for attr_name, attr_value in new_obj.items():
-        #         setattr(existing_obj, attr_name, attr_value)
-            
-        #     transaction.commit()
-        #     return existing_obj
-        # except KeyError as e:
-        #     error_msg = f"Object not found with id: {obj_id}"
-        #     self.logger.error(error_msg)
-        #     transaction.abort()
-        #     raise HTTPException(status_code=404, detail=error_msg)
-        # except Exception as e:
-        #     error_msg = f"An error occurred: {str(e)}"
-        #     self.logger.error(error_msg)
-        #     transaction.abort()
-        #     raise HTTPException(status_code=500, detail=error_msg)
         try:
             #replace the object with the new object
             new_obj._id = obj_id
@@ -121,4 +99,3 @@ class Warehouse:
             self.logger.error(error_msg)
             transaction.abort()
             raise HTTPException(status_code=500, detail=error_msg)
-

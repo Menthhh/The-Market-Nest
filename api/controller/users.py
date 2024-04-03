@@ -6,10 +6,8 @@ from db.Warehouse import Warehouse
 
 class UserController:
     def __init__(self):
-        # Specify the 'users' storage when creating the Warehouse instance
         self.__users_db = Warehouse(('127.0.0.1', 8100))
         self.__users_db.connect()
-
     
     async def create_user(self,request, body):
         try:
@@ -81,7 +79,6 @@ class UserController:
                 raise HTTPException(status_code=404, detail="User not found")
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
-
 
     def validate_user(self, body):
         try:

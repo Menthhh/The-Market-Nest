@@ -74,7 +74,20 @@ class ProductController:
             """
             product = self.__products_db.findOne(product_id)
             if isinstance(product, Product):
-                return product
+                product_return = {
+                    "title": product.title,
+                    "category": product.category,
+                    "description": product.description,
+                    "price": product.price,
+                    "amount": product.amount,
+                    "address": product.address,
+                    "photos": ""
+                }
+                if len(product.photos) != 0:
+                    product_return["photos"] = product.photos[0]
+                    
+                    
+                
             else:
                 raise HTTPException(status_code=404, detail="Product not found")
         except Exception as e:
@@ -113,9 +126,6 @@ class ProductController:
                 raise HTTPException(status_code=404, detail="Product not found")
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
-
-
-
 
     async def get_product_photo(self,request, product_id: str):
         try:
