@@ -371,8 +371,8 @@ background-color: transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>367</width>
-             <height>346</height>
+             <width>984</width>
+             <height>682</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_20">
@@ -464,6 +464,12 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                   </property>
                   <item row="0" column="0">
                    <widget class="QWidget" name="widget_15" native="true">
+                    <property name="maximumSize">
+                     <size>
+                      <width>131</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
                     <layout class="QGridLayout" name="gridLayout_8">
                      <property name="leftMargin">
                       <number>0</number>
@@ -482,6 +488,10 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                      </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_5">
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(81, 82, 108);
+font: 600 13pt &quot;Josefin Sans SemiBold&quot;;</string>
+                       </property>
                        <property name="text">
                         <string>Total Account:</string>
                        </property>
@@ -509,7 +519,11 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                       <number>0</number>
                      </property>
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_7">
+                      <widget class="QLabel" name="showTotalAcc">
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(81, 82, 108);
+font: 600 9pt &quot;Josefin Sans SemiBold&quot;;</string>
+                       </property>
                        <property name="text">
                         <string>Amount Placeholder</string>
                        </property>
@@ -545,9 +559,9 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                   <property name="spacing">
                    <number>0</number>
                   </property>
-                  <item row="0" column="1">
-                   <widget class="QWidget" name="widget_13" native="true">
-                    <layout class="QGridLayout" name="gridLayout_14">
+                  <item row="0" column="0">
+                   <widget class="QWidget" name="widget_12" native="true">
+                    <layout class="QGridLayout" name="gridLayout_13">
                      <property name="leftMargin">
                       <number>0</number>
                      </property>
@@ -564,31 +578,34 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                       <number>0</number>
                      </property>
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_9">
+                      <widget class="QLabel" name="label_8">
                        <property name="maximumSize">
                         <size>
                          <width>16777215</width>
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(81, 82, 108);
+font: 600 13pt &quot;Josefin Sans SemiBold&quot;;</string>
+                       </property>
                        <property name="text">
-                        <string>Sell Only %</string>
+                        <string>Account with product posted</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLabel" name="label_12">
-                       <property name="text">
-                        <string>percentage</string>
-                       </property>
-                      </widget>
+                      <widget class="QFrame" name="showBuySell"/>
                      </item>
                     </layout>
                    </widget>
                   </item>
-                  <item row="0" column="2">
+                  <item row="0" column="1">
                    <widget class="QWidget" name="widget_14" native="true">
-                    <layout class="QGridLayout" name="gridLayout_15">
+                    <layout class="QGridLayout" name="gridLayout_14">
                      <property name="leftMargin">
                       <number>0</number>
                      </property>
@@ -612,56 +629,25 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(81, 82, 108);
+font: 600 13pt &quot;Josefin Sans SemiBold&quot;;</string>
+                       </property>
                        <property name="text">
-                        <string>Buy + Sell</string>
+                        <string>Average item selling per account</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLabel" name="label_13">
-                       <property name="text">
-                        <string>percentage</string>
+                      <widget class="QFrame" name="showAvgProduct">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <widget class="QWidget" name="widget_12" native="true">
-                    <layout class="QGridLayout" name="gridLayout_13" rowstretch="0">
-                     <property name="leftMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="spacing">
-                      <number>0</number>
-                     </property>
-                     <item row="0" column="2">
-                      <widget class="QLabel" name="label_8">
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string>Buy Only %</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="3">
-                      <widget class="QLabel" name="label_6">
-                       <property name="text">
-                        <string>Percentage</string>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
                        </property>
                       </widget>
                      </item>
@@ -694,6 +680,12 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                </property>
                <item row="0" column="0">
                 <widget class="QWidget" name="widget_18" native="true">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
                  <layout class="QGridLayout" name="gridLayout_16">
                   <property name="leftMargin">
                    <number>0</number>
@@ -718,6 +710,10 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                       <height>30</height>
                      </size>
                     </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: rgb(81, 82, 108);
+font: 600 13pt &quot;Josefin Sans SemiBold&quot;;</string>
+                    </property>
                     <property name="text">
                      <string>Category</string>
                     </property>
@@ -728,13 +724,7 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                </item>
                <item row="1" column="0">
                 <widget class="QWidget" name="widget_19" native="true">
-                 <layout class="QFormLayout" name="formLayout">
-                  <property name="horizontalSpacing">
-                   <number>0</number>
-                  </property>
-                  <property name="verticalSpacing">
-                   <number>0</number>
-                  </property>
+                 <layout class="QGridLayout" name="gridLayout_15">
                   <property name="leftMargin">
                    <number>0</number>
                   </property>
@@ -747,10 +737,25 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
                   <property name="bottomMargin">
                    <number>0</number>
                   </property>
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
                   <item row="0" column="0">
-                   <widget class="QLabel" name="label_14">
-                    <property name="text">
-                     <string>Category %</string>
+                   <widget class="QFrame" name="categoryBar">
+                    <property name="maximumSize">
+                     <size>
+                      <width>600</width>
+                      <height>600</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">item-align: center;</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
                     </property>
                    </widget>
                   </item>
@@ -793,8 +798,8 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>146</width>
-             <height>138</height>
+             <width>984</width>
+             <height>682</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_24">

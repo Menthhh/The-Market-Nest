@@ -28,10 +28,18 @@ module_dir = Path(UTILS)
 import sys
 sys.path.append(str(module_dir))
 
-from token_retrieve import *
-from fetch import APIClient
+# from token_retrieve import *
+# from fetch import APIClient
+# from PySide6.QtCore import QSettings
+# from utils.fetch import APIClient
 
-TOKEN = get_token()
+
+
+# Get the token
+user_manager = UserManager()
+TOKEN = user_manager.get_token()
+
+
 
 class MainWindow(QMainWindow):
     logout_requested = Signal()  # Add a logout signal
@@ -79,13 +87,7 @@ class MainWindow(QMainWindow):
         #set banner
 
         # set the user info
-        self.ui.showUsername.setText(get_username())
-        self.ui.showID.setText(get_user_id())
-        self.ui.showName.setText(get_user_name())
-        self.ui.showEmail.setText(get_user_email())
-        self.ui.showBirth.setText(get_user_birthdate())
-        self.ui.showPhone.setText(str(get_user_phone()))
-        self.ui.showPassword.setText(len(get_user_password()) * "*")
+        self.update_user_info()
 
         #my profile utils
         self.ui.changePassBtn.clicked.connect(self.changingPasswordPage)
@@ -98,10 +100,10 @@ class MainWindow(QMainWindow):
     # ------------------ Handle editing user info // details ------------------
     def editInfo(self):
         self.ui.stackedWidget_2.setCurrentIndex(1)
-        self.ui.nameEdit.setText(get_user_name())
-        self.ui.emailEdit.setText(get_user_email())
-        self.ui.phoneEdit.setText(str(get_user_phone()))
-        self.ui.birthEdit.setText(get_user_birthdate())
+        self.ui.nameEdit.setText(user_manager.get_name())
+        self.ui.emailEdit.setText(user_manager.get_email())
+        self.ui.phoneEdit.setText(str(user_manager.get_phone_number()))
+        self.ui.birthEdit.setText(user_manager.get_birthdate())
 
     def confirmEdit(self):
         # get the text from the input field
@@ -120,7 +122,7 @@ class MainWindow(QMainWindow):
         }
 
         # access the data and change the user info
-        user_id = get_user_id()
+        user_id = user_manager.get_user_id()
         api_client = APIClient("http://localhost:9000/api")
         response = api_client.put_request(f"users/{user_id}", user)
         self.update_user_info()
@@ -148,7 +150,7 @@ class MainWindow(QMainWindow):
         self.changedPass = self.ui.passLineEdit.text()
 
         # access the user id and change the password
-        user_id = get_user_id()
+        user_id = user_manager.get_user_id()
         body = {
             "password": self.changedPass
         }
@@ -164,13 +166,13 @@ class MainWindow(QMainWindow):
 
     def update_user_info(self):
         # set the user info
-        self.ui.showUsername.setText(get_username())
-        self.ui.showID.setText(get_user_id())
-        self.ui.showName.setText(get_user_name())
-        self.ui.showEmail.setText(get_user_email())
-        self.ui.showBirth.setText(get_user_birthdate())
-        self.ui.showPhone.setText(str(get_user_phone()))
-        self.ui.showPassword.setText(len(get_user_password()) * "*")
+        self.ui.showUsername.setText(user_manager.get_username())
+        self.ui.showID.setText(user_manager.get_user_id())
+        self.ui.showName.setText(user_manager.get_name())
+        self.ui.showEmail.setText(user_manager.get_email())
+        self.ui.showBirth.setText(user_manager.get_birthdate())
+        self.ui.showPhone.setText(str(user_manager.get_phone_number()))
+        self.ui.showPassword.setText(len(user_manager.get_password()) * "*")
         # set none
         self.tempImage = None 
 

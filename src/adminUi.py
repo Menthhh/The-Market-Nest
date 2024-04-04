@@ -15,12 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QLabel,
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
     QMainWindow, QPushButton, QScrollArea, QSizePolicy,
     QSpacerItem, QStackedWidget, QWidget)
 import resource_rc
-
-
 
 class Ui_AdminWindow(object):
     def setupUi(self, AdminWindow):
@@ -200,7 +198,7 @@ class Ui_AdminWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 367, 346))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 984, 682))
         self.gridLayout_20 = QGridLayout(self.scrollAreaWidgetContents_2)
         self.gridLayout_20.setObjectName(u"gridLayout_20")
         self.widget_20 = QWidget(self.scrollAreaWidgetContents_2)
@@ -236,12 +234,15 @@ class Ui_AdminWindow(object):
         self.gridLayout_12.setContentsMargins(0, 0, 0, 0)
         self.widget_15 = QWidget(self.widget_10)
         self.widget_15.setObjectName(u"widget_15")
+        self.widget_15.setMaximumSize(QSize(131, 16777215))
         self.gridLayout_8 = QGridLayout(self.widget_15)
         self.gridLayout_8.setSpacing(0)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.gridLayout_8.setContentsMargins(0, 0, 0, 0)
         self.label_5 = QLabel(self.widget_15)
         self.label_5.setObjectName(u"label_5")
+        self.label_5.setStyleSheet(u"color: rgb(81, 82, 108);\n"
+"font: 600 13pt \"Josefin Sans SemiBold\";")
 
         self.gridLayout_8.addWidget(self.label_5, 0, 0, 1, 1)
 
@@ -254,10 +255,12 @@ class Ui_AdminWindow(object):
         self.gridLayout_11.setSpacing(0)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
         self.gridLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.label_7 = QLabel(self.widget_16)
-        self.label_7.setObjectName(u"label_7")
+        self.showTotalAcc = QLabel(self.widget_16)
+        self.showTotalAcc.setObjectName(u"showTotalAcc")
+        self.showTotalAcc.setStyleSheet(u"color: rgb(81, 82, 108);\n"
+"font: 600 9pt \"Josefin Sans SemiBold\";")
 
-        self.gridLayout_11.addWidget(self.label_7, 0, 0, 1, 1)
+        self.gridLayout_11.addWidget(self.showTotalAcc, 0, 0, 1, 1)
 
 
         self.gridLayout_12.addWidget(self.widget_16, 0, 1, 1, 1)
@@ -272,46 +275,6 @@ class Ui_AdminWindow(object):
         self.gridLayout_9.setSpacing(0)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.gridLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.widget_13 = QWidget(self.widget_11)
-        self.widget_13.setObjectName(u"widget_13")
-        self.gridLayout_14 = QGridLayout(self.widget_13)
-        self.gridLayout_14.setSpacing(0)
-        self.gridLayout_14.setObjectName(u"gridLayout_14")
-        self.gridLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.label_9 = QLabel(self.widget_13)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setMaximumSize(QSize(16777215, 16777215))
-
-        self.gridLayout_14.addWidget(self.label_9, 0, 0, 1, 1)
-
-        self.label_12 = QLabel(self.widget_13)
-        self.label_12.setObjectName(u"label_12")
-
-        self.gridLayout_14.addWidget(self.label_12, 0, 1, 1, 1)
-
-
-        self.gridLayout_9.addWidget(self.widget_13, 0, 1, 1, 1)
-
-        self.widget_14 = QWidget(self.widget_11)
-        self.widget_14.setObjectName(u"widget_14")
-        self.gridLayout_15 = QGridLayout(self.widget_14)
-        self.gridLayout_15.setSpacing(0)
-        self.gridLayout_15.setObjectName(u"gridLayout_15")
-        self.gridLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.label_10 = QLabel(self.widget_14)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMaximumSize(QSize(16777215, 16777215))
-
-        self.gridLayout_15.addWidget(self.label_10, 0, 0, 1, 1)
-
-        self.label_13 = QLabel(self.widget_14)
-        self.label_13.setObjectName(u"label_13")
-
-        self.gridLayout_15.addWidget(self.label_13, 0, 1, 1, 1)
-
-
-        self.gridLayout_9.addWidget(self.widget_14, 0, 2, 1, 1)
-
         self.widget_12 = QWidget(self.widget_11)
         self.widget_12.setObjectName(u"widget_12")
         self.gridLayout_13 = QGridLayout(self.widget_12)
@@ -321,16 +284,44 @@ class Ui_AdminWindow(object):
         self.label_8 = QLabel(self.widget_12)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setMaximumSize(QSize(16777215, 16777215))
+        self.label_8.setStyleSheet(u"color: rgb(81, 82, 108);\n"
+"font: 600 13pt \"Josefin Sans SemiBold\";")
+        self.label_8.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
 
-        self.gridLayout_13.addWidget(self.label_8, 0, 2, 1, 1)
+        self.gridLayout_13.addWidget(self.label_8, 0, 0, 1, 1)
 
-        self.label_6 = QLabel(self.widget_12)
-        self.label_6.setObjectName(u"label_6")
+        self.showBuySell = QFrame(self.widget_12)
+        self.showBuySell.setObjectName(u"showBuySell")
 
-        self.gridLayout_13.addWidget(self.label_6, 0, 3, 1, 1)
+        self.gridLayout_13.addWidget(self.showBuySell, 0, 1, 1, 1)
 
 
         self.gridLayout_9.addWidget(self.widget_12, 0, 0, 1, 1)
+
+        self.widget_14 = QWidget(self.widget_11)
+        self.widget_14.setObjectName(u"widget_14")
+        self.gridLayout_14 = QGridLayout(self.widget_14)
+        self.gridLayout_14.setSpacing(0)
+        self.gridLayout_14.setObjectName(u"gridLayout_14")
+        self.gridLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.label_10 = QLabel(self.widget_14)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setMaximumSize(QSize(16777215, 16777215))
+        self.label_10.setStyleSheet(u"color: rgb(81, 82, 108);\n"
+"font: 600 13pt \"Josefin Sans SemiBold\";")
+        self.label_10.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.gridLayout_14.addWidget(self.label_10, 0, 0, 1, 1)
+
+        self.showAvgProduct = QFrame(self.widget_14)
+        self.showAvgProduct.setObjectName(u"showAvgProduct")
+        self.showAvgProduct.setFrameShape(QFrame.StyledPanel)
+        self.showAvgProduct.setFrameShadow(QFrame.Raised)
+
+        self.gridLayout_14.addWidget(self.showAvgProduct, 0, 1, 1, 1)
+
+
+        self.gridLayout_9.addWidget(self.widget_14, 0, 1, 1, 1)
 
 
         self.gridLayout_10.addWidget(self.widget_11, 1, 0, 1, 1)
@@ -346,6 +337,7 @@ class Ui_AdminWindow(object):
         self.gridLayout_17.setContentsMargins(0, 0, 0, 0)
         self.widget_18 = QWidget(self.widget_17)
         self.widget_18.setObjectName(u"widget_18")
+        self.widget_18.setMaximumSize(QSize(16777215, 40))
         self.gridLayout_16 = QGridLayout(self.widget_18)
         self.gridLayout_16.setSpacing(0)
         self.gridLayout_16.setObjectName(u"gridLayout_16")
@@ -353,6 +345,8 @@ class Ui_AdminWindow(object):
         self.label_11 = QLabel(self.widget_18)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setMinimumSize(QSize(0, 30))
+        self.label_11.setStyleSheet(u"color: rgb(81, 82, 108);\n"
+"font: 600 13pt \"Josefin Sans SemiBold\";")
 
         self.gridLayout_16.addWidget(self.label_11, 0, 0, 1, 1)
 
@@ -361,15 +355,18 @@ class Ui_AdminWindow(object):
 
         self.widget_19 = QWidget(self.widget_17)
         self.widget_19.setObjectName(u"widget_19")
-        self.formLayout = QFormLayout(self.widget_19)
-        self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setHorizontalSpacing(0)
-        self.formLayout.setVerticalSpacing(0)
-        self.formLayout.setContentsMargins(0, 0, 0, 0)
-        self.label_14 = QLabel(self.widget_19)
-        self.label_14.setObjectName(u"label_14")
+        self.gridLayout_15 = QGridLayout(self.widget_19)
+        self.gridLayout_15.setSpacing(0)
+        self.gridLayout_15.setObjectName(u"gridLayout_15")
+        self.gridLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.categoryBar = QFrame(self.widget_19)
+        self.categoryBar.setObjectName(u"categoryBar")
+        self.categoryBar.setMaximumSize(QSize(600, 600))
+        self.categoryBar.setStyleSheet(u"item-align: center;")
+        self.categoryBar.setFrameShape(QFrame.StyledPanel)
+        self.categoryBar.setFrameShadow(QFrame.Raised)
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.label_14)
+        self.gridLayout_15.addWidget(self.categoryBar, 0, 0, 1, 1)
 
 
         self.gridLayout_17.addWidget(self.widget_19, 1, 0, 1, 1)
@@ -393,7 +390,7 @@ class Ui_AdminWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 146, 138))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 984, 682))
         self.gridLayout_24 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_24.setSpacing(0)
         self.gridLayout_24.setObjectName(u"gridLayout_24")
@@ -591,7 +588,7 @@ class Ui_AdminWindow(object):
         self.mtnBtn_2.toggled.connect(self.mtnBtn_1.setChecked)
         self.admiBtn_2.toggled.connect(self.admiBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(AdminWindow)
@@ -609,15 +606,10 @@ class Ui_AdminWindow(object):
         self.label_3.setText(QCoreApplication.translate("AdminWindow", u"Admin", None))
         self.label_15.setText(QCoreApplication.translate("AdminWindow", u"Dashboard", None))
         self.label_5.setText(QCoreApplication.translate("AdminWindow", u"Total Account:", None))
-        self.label_7.setText(QCoreApplication.translate("AdminWindow", u"Amount Placeholder", None))
-        self.label_9.setText(QCoreApplication.translate("AdminWindow", u"Sell Only %", None))
-        self.label_12.setText(QCoreApplication.translate("AdminWindow", u"percentage", None))
-        self.label_10.setText(QCoreApplication.translate("AdminWindow", u"Buy + Sell", None))
-        self.label_13.setText(QCoreApplication.translate("AdminWindow", u"percentage", None))
-        self.label_8.setText(QCoreApplication.translate("AdminWindow", u"Buy Only %", None))
-        self.label_6.setText(QCoreApplication.translate("AdminWindow", u"Percentage", None))
+        self.showTotalAcc.setText(QCoreApplication.translate("AdminWindow", u"Amount Placeholder", None))
+        self.label_8.setText(QCoreApplication.translate("AdminWindow", u"Account with product posted", None))
+        self.label_10.setText(QCoreApplication.translate("AdminWindow", u"Average item selling per account", None))
         self.label_11.setText(QCoreApplication.translate("AdminWindow", u"Category", None))
-        self.label_14.setText(QCoreApplication.translate("AdminWindow", u"Category %", None))
         self.label_16.setText(QCoreApplication.translate("AdminWindow", u"Maintenance", None))
         self.label_17.setText(QCoreApplication.translate("AdminWindow", u"Banner", None))
         self.label_18.setText(QCoreApplication.translate("AdminWindow", u"Show banner", None))

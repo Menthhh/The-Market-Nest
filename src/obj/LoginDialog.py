@@ -15,7 +15,8 @@ class LoginDialog(QDialog):
         self.ui.cancelBtn.clicked.connect(self.setLogin)  # Connect the cancel button
         self.ui.signupConfirmBtn.clicked.connect(self.signupConfirm_clicked)  # Connect the signup confirm button
         self.ui.checkBoxOpt.clicked.connect(self.switchToPassport)
-        self.user_role = None  # This will hold the user's role
+        # self.user_role = None  # This will hold the user's role
+        self.username = None
 
     def switchToPassport(self):
         if self.ui.checkBoxOpt.isChecked():
@@ -109,6 +110,7 @@ class LoginDialog(QDialog):
             settings.sync()  
 
             print("Token from q setting",self.get_token())
+            self.username = body["username"]
             self.accept()
         
         else:
