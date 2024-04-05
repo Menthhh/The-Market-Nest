@@ -1018,13 +1018,6 @@ class Ui_MainWindow(object):
         self.gridLayout_14.setContentsMargins(0, 0, 0, 0)
         self.productlist = QWidget(self.widget_3)
         self.productlist.setObjectName(u"productlist")
-        self.gridLayout_118 = QGridLayout(self.productlist)
-        self.gridLayout_118.setObjectName(u"gridLayout_118")
-        self.productTable = QTableWidget(self.productlist)
-        self.productTable.setObjectName(u"productTable")
-
-        self.gridLayout_118.addWidget(self.productTable, 0, 0, 1, 1)
-
 
         self.gridLayout_14.addWidget(self.productlist, 2, 0, 1, 1)
 

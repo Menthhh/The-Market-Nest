@@ -2098,13 +2098,7 @@ color: rgb(0,0,0);</string>
                          <number>0</number>
                         </property>
                         <item row="2" column="0">
-                         <widget class="QWidget" name="productlist" native="true">
-                          <layout class="QGridLayout" name="gridLayout_118">
-                           <item row="0" column="0">
-                            <widget class="QTableWidget" name="productTable"/>
-                           </item>
-                          </layout>
-                         </widget>
+                         <widget class="QWidget" name="productlist" native="true"/>
                         </item>
                         <item row="0" column="0">
                          <widget class="QWidget" name="Banner" native="true">

@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QMainWindow, QGridLayout, QWidget, QVBoxLayout, QL
 from PySide6.QtCore import Signal, QSize, Qt
 from PySide6.QtGui import QPixmap
 from obj.FavouriteWidget import FavouriteWidget
-from obj.productWidget import ProductWidget
+from obj.ProductWidget import ProductWidget
 from config import products, favourites, item_categories
 from mainAppUi import Ui_MainWindow
 from utils.fetch import APIClient
@@ -50,18 +50,20 @@ class MainWindow(QMainWindow):
         self.ui.icon_only_widget.hide()
         self.ui.stackedWidget.setCurrentIndex(3)
 
-        # self.productlist_layout = QGridLayout(self.ui.productlist)
+        self.productlist_layout = QGridLayout(self.ui.productlist)
         # self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
         # self.ui.stackedWidget.resizeEvent = self.resizeEvent
 
         # Example product data (replace with your actual product data)
         self.products = products
 
+        self.insert_product(self.products)
+
         # Initial setup
         # self.last_column_count = self.calculate_columns()
         # self.adjust_columns()
 
-                # Favourite list sample
+        #Favourite list sample
         self.favourites = favourites
 
         self.ui.homeBtn_1.setChecked(True)
@@ -106,7 +108,7 @@ class MainWindow(QMainWindow):
         self.ui.accountUsername.setText(user_manager.get_username())
 
         #init show all products
-        self.init_show_all_products()
+        # self.init_show_all_products()
         
         # widget table productEditTable
         self.init_table()
@@ -431,11 +433,11 @@ class MainWindow(QMainWindow):
     def on_home_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(3)
         # clear all the widgets in the productlist layout without deleting the layout
-        # for i in reversed(range(self.productlist_layout.count())):
-        #     self.productlist_layout.itemAt(i).widget().setParent(None)
+        for i in reversed(range(self.productlist_layout.count())):
+            self.productlist_layout.itemAt(i).widget().setParent(None)
 
         # Add products to the product list grid with the updated number of columns
-        # self.insert_product(self.products)
+        self.insert_product(self.products)
 
     # def resizeEvent(self, event):
     #     current_column_count = self.calculate_columns()
