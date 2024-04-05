@@ -25,9 +25,9 @@ async def create_product(request: Request, title: str, category: str, descriptio
 async def update_product(request: Request, product_id: str, body: dict = Body(...)):
     return await productController.update_product(request, product_id, body)
 
-@router.delete("/{product_id}")
-async def delete_product(request: Request, product_id: str):
-    return await productController.delete_product(request, product_id)
+@router.delete("/{product_id}/{user_id}")
+async def delete_product(request: Request, product_id: str, user_id: str):
+    return await productController.delete_product(request, product_id, user_id)
 
 @router.get("/images/{product_id}")
 async def get_product_images(request: Request, product_id: str):

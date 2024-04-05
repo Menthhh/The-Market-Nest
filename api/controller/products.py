@@ -77,12 +77,14 @@ class ProductController:
             product = self.__products_db.findOne(product_id)
             if isinstance(product, Product):
                 product_return = {
+                    "_id": product._id,
                     "title": product.title,
                     "category": product.category,
                     "description": product.description,
                     "price": product.price,
                     "amount": product.amount,
                     "address": product.address,
+                    "photos": product.photos
                 }
                 return (product_return)
 
@@ -112,16 +114,30 @@ class ProductController:
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
     
-    async def delete_product(self, request, product_id):
+    async def delete_product(self, request, product_id, user_id):
         try:
             """
             Delete a product by its product_id
             """
-            deleted_product = self.__products_db.findOneAndDelete(product_id)
-            if deleted_product:
-                return {"message": "Product deleted successfully"}
-            else:
-                raise HTTPException(status_code=404, detail="Product not found")
+            user = self.__products_db.findOne(user_id)
+            user.products.remove(product_id)   
+            updated_user = User(
+                user.name,
+                user.birthDate,
+                user.citizenID,
+                user.phoneNumber,
+                user.email,
+                user.username,
+                user.password
+            )
+
+            self.__products_db.findOneAndDelete(product_id)
+       
+            updated_user.products = user.products
+            updated_user = self.__products_db.findOneAndUpdate(user_id, updated_user)
+           
+            return {"message": "Product deleted successfully", "user": updated_user}
+        
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
