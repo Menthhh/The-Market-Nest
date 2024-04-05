@@ -20,7 +20,7 @@ class ProductController:
             os.makedirs(UPLOAD_DIRECTORY)
 
         try:
-            image.filename = uuid.uuid4().hex + "_" + image.filename
+            image.filename = uuid.uuid4().hex + "_" + (image.filename).replace(" ", "")
             image_path = os.path.join(UPLOAD_DIRECTORY, image.filename)
             with open(image_path, "wb") as file_object:
                 file_object.write(await image.read())
@@ -77,12 +77,14 @@ class ProductController:
             product = self.__products_db.findOne(product_id)
             if isinstance(product, Product):
                 product_return = {
+                    "_id": product._id,
                     "title": product.title,
                     "category": product.category,
                     "description": product.description,
                     "price": product.price,
                     "amount": product.amount,
                     "address": product.address,
+                    "photos": product.photos
                 }
                 return (product_return)
 
@@ -112,16 +114,30 @@ class ProductController:
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
     
-    async def delete_product(self, request, product_id):
+    async def delete_product(self, request, product_id, user_id):
         try:
             """
             Delete a product by its product_id
             """
-            deleted_product = self.__products_db.findOneAndDelete(product_id)
-            if deleted_product:
-                return {"message": "Product deleted successfully"}
-            else:
-                raise HTTPException(status_code=404, detail="Product not found")
+            user = self.__products_db.findOne(user_id)
+            user.products.remove(product_id)   
+            updated_user = User(
+                user.name,
+                user.birthDate,
+                user.citizenID,
+                user.phoneNumber,
+                user.email,
+                user.username,
+                user.password
+            )
+
+            self.__products_db.findOneAndDelete(product_id)
+       
+            updated_user.products = user.products
+            updated_user = self.__products_db.findOneAndUpdate(user_id, updated_user)
+           
+            return {"message": "Product deleted successfully", "user": updated_user}
+        
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
@@ -137,6 +153,52 @@ class ProductController:
                 return {"message": "Product not found"}
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
-            
+        
+    async def update_product_photo(self, request, product_id, user_id, image):
+        user_products = self.__products_db.findOne(user_id)
+        if isinstance(user_products, User):
+            user_products = user_products.products
 
+        if product_id in user_products:
+            product = self.__products_db.findOne(product_id)
+            if isinstance(product, Product) and len(product.photos) > 0:
+                os.remove(product.photos[0])
+                product.photos = []
+                image.filename = uuid.uuid4().hex + "_" + (image.filename).replace(" ", "")
+                image_path = os.path.join(UPLOAD_DIRECTORY, image.filename)
+                with open(image_path, "wb") as file_object:
+                    file_object.write(await image.read())
+                    product.photos.append(image_path)
+                updated_product = Product(
+                    product.title,
+                    product.category,
+                    product.description,
+                    product.price,
+                    product.amount,
+                    product.address,
+                )
+                updated_product.photos = product.photos
+                updated_product = self.__products_db.findOneAndUpdate(product_id, product)
+                return {"message": "Product photos updated", "product": updated_product}
+            else:
+                raise HTTPException(status_code=404, detail="Product not found")
+        else:
+            raise HTTPException(status_code=403, detail="You are not allowed to update this product")
             
+    async def get_product_by_category(self, request, category: str):
+        try:
+            products = self.__products_db.findAll()
+            products = [product for product in products if isinstance(product, Product)]
+            products = [product for product in products if product.category == category]
+            return products
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))
+        
+    async def search_product(self, request, query: str):
+            try:
+                products = self.__products_db.findAll()
+                products = [product for product in products if isinstance(product, Product)]
+                products = [product for product in products if query.lower() in product.title.lower()]
+                return products
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=str(e))

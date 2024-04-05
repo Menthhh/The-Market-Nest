@@ -30,8 +30,8 @@ class AdminPage(QMainWindow):
 
         self.ui.dashBtn_1.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0))
         self.ui.dashBtn_2.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0))
-        self.ui.mtnBtn_1.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(1))
-        self.ui.mtnBtn_2.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(1))
+        # self.ui.mtnBtn_1.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(1))
+        # self.ui.mtnBtn_2.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(1))
         self.ui.admiBtn_1.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(2))
         self.ui.admiBtn_2.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(2))
         self.ui.logoutBtn_1.clicked.connect(self.logout)

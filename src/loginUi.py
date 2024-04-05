@@ -108,7 +108,7 @@ class Ui_Dialog(object):
         self.label.setEnabled(True)
         self.label.setLayoutDirection(Qt.LeftToRight)
         self.label.setAutoFillBackground(False)
-        self.label.setPixmap(QPixmap(u":/icon/icon/logo.ico"))
+        self.label.setPixmap(QPixmap(u":/ico/icon/logo.ico"))
         self.label.setScaledContents(False)
         self.label.setAlignment(Qt.AlignCenter)
         self.label.setWordWrap(False)
@@ -375,7 +375,7 @@ class Ui_Dialog(object):
         self.gridLayout_19.setContentsMargins(0, 0, 0, 0)
         self.label_8 = QLabel(self.widget_17)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setPixmap(QPixmap(u":/icon/icon/logo.ico"))
+        self.label_8.setPixmap(QPixmap(u":/ico/icon/logo.ico"))
         self.label_8.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_19.addWidget(self.label_8, 0, 0, 1, 1)
@@ -556,7 +556,7 @@ class Ui_Dialog(object):
 "color: rgb(255, 255, 255);")
         self.birthInput.setWrapping(False)
         self.birthInput.setFrame(False)
-        self.birthInput.setDateTime(QDateTime(QDate(2000, 1, 1), QTime(0, 0, 0)))
+        self.birthInput.setDateTime(QDateTime(QDate(1999, 12, 31), QTime(0, 0, 0)))
         self.birthInput.setCalendarPopup(True)
 
         self.gridLayout_36.addWidget(self.birthInput, 1, 0, 1, 1)
@@ -704,7 +704,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -739,3 +739,4 @@ class Ui_Dialog(object):
         self.cancelBtn.setText(QCoreApplication.translate("Dialog", u"Cancel", None))
         self.signupConfirmBtn.setText(QCoreApplication.translate("Dialog", u"Signup", None))
     # retranslateUi
+

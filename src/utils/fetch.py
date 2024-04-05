@@ -28,6 +28,7 @@ class APIClient:
 
     def get_request(self, endpoint):
         url = f"{self.base_url}/{endpoint}"
+        print(url)
         try:
             response = requests.get(url)
             response.raise_for_status()
@@ -38,6 +39,7 @@ class APIClient:
 
     def put_request(self, endpoint, data):
         url = f"{self.base_url}/{endpoint}"
+        print(f"url{url}")
         try:
             response = requests.put(url, json=data)
             response.raise_for_status()
@@ -77,6 +79,14 @@ class APIClient:
             response = requests.get(url)
             response.raise_for_status()
             return response
+        except requests.exceptions.RequestException as e:
+            return self._handle_request_error(e, response=e.response)
+        
+    def update_product_photo(self, endpoint, product_id, user_id, image_path):
+        url = f"{self.base_url}/{endpoint}/{product_id}"
+        try:
+            response = requests.put(url, params={"user_id": user_id}, files={"image": open(image_path, "rb")})
+            return response.json()
         except requests.exceptions.RequestException as e:
             return self._handle_request_error(e, response=e.response)
 

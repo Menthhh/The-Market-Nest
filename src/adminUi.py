@@ -39,69 +39,9 @@ class Ui_AdminWindow(object):
         self.gridLayout_4.setHorizontalSpacing(0)
         self.gridLayout_4.setVerticalSpacing(10)
         self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.widget_6 = QWidget(self.fullWid)
-        self.widget_6.setObjectName(u"widget_6")
-        self.gridLayout_2 = QGridLayout(self.widget_6)
-        self.gridLayout_2.setSpacing(0)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 20)
-        self.label_2 = QLabel(self.widget_6)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setPixmap(QPixmap(u":/icon/icon/logo.ico"))
-        self.label_2.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
-
-
-        self.gridLayout_4.addWidget(self.widget_6, 0, 0, 1, 1)
-
-        self.admiBtn_2 = QPushButton(self.fullWid)
-        self.admiBtn_2.setObjectName(u"admiBtn_2")
-        self.admiBtn_2.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
-"color: rgb(0,0,0);\n"
-"text-align: left;\n"
-"background-color: transparent;")
-        icon = QIcon()
-        icon.addFile(u":/icon/icon/profile.ico", QSize(), QIcon.Normal, QIcon.Off)
-        self.admiBtn_2.setIcon(icon)
-        self.admiBtn_2.setCheckable(True)
-        self.admiBtn_2.setAutoExclusive(True)
-        self.admiBtn_2.setFlat(True)
-
-        self.gridLayout_4.addWidget(self.admiBtn_2, 3, 0, 1, 1)
-
         self.verticalSpacer_2 = QSpacerItem(20, 365, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.gridLayout_4.addItem(self.verticalSpacer_2, 4, 0, 1, 1)
-
-        self.logoutBtn_2 = QPushButton(self.fullWid)
-        self.logoutBtn_2.setObjectName(u"logoutBtn_2")
-        self.logoutBtn_2.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
-"color: rgb(0,0,0);\n"
-"text-align: left;\n"
-"background-color: transparent;")
-        icon1 = QIcon()
-        icon1.addFile(u":/icon/icon/logout.ico", QSize(), QIcon.Normal, QIcon.Off)
-        self.logoutBtn_2.setIcon(icon1)
-        self.logoutBtn_2.setFlat(True)
-
-        self.gridLayout_4.addWidget(self.logoutBtn_2, 5, 0, 1, 1)
-
-        self.mtnBtn_2 = QPushButton(self.fullWid)
-        self.mtnBtn_2.setObjectName(u"mtnBtn_2")
-        self.mtnBtn_2.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
-"color: rgb(0,0,0);\n"
-"text-align: left;\n"
-"background-color: transparent;\n"
-"")
-        icon2 = QIcon()
-        icon2.addFile(u":/icon/icon/maintenace.ico", QSize(), QIcon.Normal, QIcon.Off)
-        self.mtnBtn_2.setIcon(icon2)
-        self.mtnBtn_2.setCheckable(True)
-        self.mtnBtn_2.setAutoExclusive(True)
-        self.mtnBtn_2.setFlat(True)
-
-        self.gridLayout_4.addWidget(self.mtnBtn_2, 2, 0, 1, 1)
+        self.gridLayout_4.addItem(self.verticalSpacer_2, 3, 0, 1, 1)
 
         self.dashBtn_2 = QPushButton(self.fullWid)
         self.dashBtn_2.setObjectName(u"dashBtn_2")
@@ -111,14 +51,58 @@ class Ui_AdminWindow(object):
 "text-align: left;\n"
 "background-color: transparent;\n"
 "")
-        icon3 = QIcon()
-        icon3.addFile(u":/icon/icon/dashboard.ico", QSize(), QIcon.Normal, QIcon.Off)
-        self.dashBtn_2.setIcon(icon3)
+        icon = QIcon()
+        icon.addFile(u":/ico/icon/dashboard.ico", QSize(), QIcon.Normal, QIcon.Off)
+        self.dashBtn_2.setIcon(icon)
         self.dashBtn_2.setCheckable(True)
         self.dashBtn_2.setAutoExclusive(True)
         self.dashBtn_2.setFlat(True)
 
         self.gridLayout_4.addWidget(self.dashBtn_2, 1, 0, 1, 1)
+
+        self.widget_6 = QWidget(self.fullWid)
+        self.widget_6.setObjectName(u"widget_6")
+        self.gridLayout_2 = QGridLayout(self.widget_6)
+        self.gridLayout_2.setSpacing(0)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 20)
+        self.label_2 = QLabel(self.widget_6)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setPixmap(QPixmap(u":/ico/icon/logo.ico"))
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_2.addWidget(self.label_2, 0, 0, 1, 1)
+
+
+        self.gridLayout_4.addWidget(self.widget_6, 0, 0, 1, 1)
+
+        self.logoutBtn_2 = QPushButton(self.fullWid)
+        self.logoutBtn_2.setObjectName(u"logoutBtn_2")
+        self.logoutBtn_2.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);\n"
+"text-align: left;\n"
+"background-color: transparent;")
+        icon1 = QIcon()
+        icon1.addFile(u":/ico/icon/logout.ico", QSize(), QIcon.Normal, QIcon.Off)
+        self.logoutBtn_2.setIcon(icon1)
+        self.logoutBtn_2.setFlat(True)
+
+        self.gridLayout_4.addWidget(self.logoutBtn_2, 4, 0, 1, 1)
+
+        self.admiBtn_2 = QPushButton(self.fullWid)
+        self.admiBtn_2.setObjectName(u"admiBtn_2")
+        self.admiBtn_2.setStyleSheet(u"font: 500 8pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);\n"
+"text-align: left;\n"
+"background-color: transparent;")
+        icon2 = QIcon()
+        icon2.addFile(u":/ico/icon/maintenace.ico", QSize(), QIcon.Normal, QIcon.Off)
+        self.admiBtn_2.setIcon(icon2)
+        self.admiBtn_2.setCheckable(True)
+        self.admiBtn_2.setAutoExclusive(True)
+        self.admiBtn_2.setFlat(True)
+
+        self.gridLayout_4.addWidget(self.admiBtn_2, 2, 0, 1, 1)
 
 
         self.gridLayout_23.addWidget(self.fullWid, 0, 1, 2, 1)
@@ -145,9 +129,9 @@ class Ui_AdminWindow(object):
         self.toggleBtn.setObjectName(u"toggleBtn")
         self.toggleBtn.setStyleSheet(u"background-color: transparent;\n"
 "")
-        icon4 = QIcon()
-        icon4.addFile(u":/icon/icon/menu.ico", QSize(), QIcon.Normal, QIcon.Off)
-        self.toggleBtn.setIcon(icon4)
+        icon3 = QIcon()
+        icon3.addFile(u":/ico/icon/menu.ico", QSize(), QIcon.Normal, QIcon.Off)
+        self.toggleBtn.setIcon(icon3)
         self.toggleBtn.setCheckable(True)
         self.toggleBtn.setFlat(True)
 
@@ -168,13 +152,14 @@ class Ui_AdminWindow(object):
         self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
         self.label_4 = QLabel(self.widget_8)
         self.label_4.setObjectName(u"label_4")
+        self.label_4.setPixmap(QPixmap(u":/ico/icon/profile.ico"))
 
         self.gridLayout_6.addWidget(self.label_4, 0, 0, 1, 1)
 
-        self.label_3 = QLabel(self.widget_8)
-        self.label_3.setObjectName(u"label_3")
+        self.adminLabel = QLabel(self.widget_8)
+        self.adminLabel.setObjectName(u"adminLabel")
 
-        self.gridLayout_6.addWidget(self.label_3, 0, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.adminLabel, 0, 1, 1, 1)
 
 
         self.gridLayout_7.addWidget(self.widget_8, 0, 2, 1, 1)
@@ -199,7 +184,7 @@ class Ui_AdminWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 984, 682))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 984, 662))
         self.gridLayout_20 = QGridLayout(self.scrollAreaWidgetContents_2)
         self.gridLayout_20.setObjectName(u"gridLayout_20")
         self.widget_20 = QWidget(self.scrollAreaWidgetContents_2)
@@ -391,7 +376,7 @@ class Ui_AdminWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 984, 682))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 146, 138))
         self.gridLayout_24 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_24.setSpacing(0)
         self.gridLayout_24.setObjectName(u"gridLayout_24")
@@ -468,7 +453,7 @@ class Ui_AdminWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 966, 664))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 966, 644))
         self.gridLayout_32 = QGridLayout(self.scrollAreaWidgetContents_3)
         self.gridLayout_32.setSpacing(0)
         self.gridLayout_32.setObjectName(u"gridLayout_32")
@@ -521,6 +506,10 @@ class Ui_AdminWindow(object):
         self.gridLayout.setHorizontalSpacing(0)
         self.gridLayout.setVerticalSpacing(10)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer = QSpacerItem(20, 365, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+
+        self.gridLayout.addItem(self.verticalSpacer, 3, 0, 1, 1)
+
         self.widget_3 = QWidget(self.iconOnly)
         self.widget_3.setObjectName(u"widget_3")
         self.gridLayout_3 = QGridLayout(self.widget_3)
@@ -529,50 +518,13 @@ class Ui_AdminWindow(object):
         self.gridLayout_3.setContentsMargins(0, 0, 0, 20)
         self.label = QLabel(self.widget_3)
         self.label.setObjectName(u"label")
-        self.label.setPixmap(QPixmap(u":/icon/icon/logo.ico"))
+        self.label.setPixmap(QPixmap(u":/ico/icon/logo.ico"))
         self.label.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_3.addWidget(self.label, 0, 0, 1, 1)
 
 
         self.gridLayout.addWidget(self.widget_3, 0, 0, 1, 1)
-
-        self.dashBtn_1 = QPushButton(self.iconOnly)
-        self.dashBtn_1.setObjectName(u"dashBtn_1")
-        self.dashBtn_1.setStyleSheet(u"background-color: transparent;\n"
-"")
-        self.dashBtn_1.setIcon(icon3)
-        self.dashBtn_1.setCheckable(True)
-        self.dashBtn_1.setAutoExclusive(True)
-        self.dashBtn_1.setFlat(True)
-
-        self.gridLayout.addWidget(self.dashBtn_1, 1, 0, 1, 1)
-
-        self.mtnBtn_1 = QPushButton(self.iconOnly)
-        self.mtnBtn_1.setObjectName(u"mtnBtn_1")
-        self.mtnBtn_1.setStyleSheet(u"background-color: transparent;\n"
-"")
-        self.mtnBtn_1.setIcon(icon2)
-        self.mtnBtn_1.setCheckable(True)
-        self.mtnBtn_1.setAutoExclusive(True)
-        self.mtnBtn_1.setFlat(True)
-
-        self.gridLayout.addWidget(self.mtnBtn_1, 2, 0, 1, 1)
-
-        self.admiBtn_1 = QPushButton(self.iconOnly)
-        self.admiBtn_1.setObjectName(u"admiBtn_1")
-        self.admiBtn_1.setStyleSheet(u"background-color: transparent;\n"
-"")
-        self.admiBtn_1.setIcon(icon)
-        self.admiBtn_1.setCheckable(True)
-        self.admiBtn_1.setAutoExclusive(True)
-        self.admiBtn_1.setFlat(True)
-
-        self.gridLayout.addWidget(self.admiBtn_1, 3, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 365, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-
-        self.gridLayout.addItem(self.verticalSpacer, 4, 0, 1, 1)
 
         self.logoutBtn_1 = QPushButton(self.iconOnly)
         self.logoutBtn_1.setObjectName(u"logoutBtn_1")
@@ -583,7 +535,29 @@ class Ui_AdminWindow(object):
         self.logoutBtn_1.setIcon(icon1)
         self.logoutBtn_1.setFlat(True)
 
-        self.gridLayout.addWidget(self.logoutBtn_1, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.logoutBtn_1, 4, 0, 1, 1)
+
+        self.dashBtn_1 = QPushButton(self.iconOnly)
+        self.dashBtn_1.setObjectName(u"dashBtn_1")
+        self.dashBtn_1.setStyleSheet(u"background-color: transparent;\n"
+"")
+        self.dashBtn_1.setIcon(icon)
+        self.dashBtn_1.setCheckable(True)
+        self.dashBtn_1.setAutoExclusive(True)
+        self.dashBtn_1.setFlat(True)
+
+        self.gridLayout.addWidget(self.dashBtn_1, 1, 0, 1, 1)
+
+        self.admiBtn_1 = QPushButton(self.iconOnly)
+        self.admiBtn_1.setObjectName(u"admiBtn_1")
+        self.admiBtn_1.setStyleSheet(u"background-color: transparent;\n"
+"")
+        self.admiBtn_1.setIcon(icon2)
+        self.admiBtn_1.setCheckable(True)
+        self.admiBtn_1.setAutoExclusive(True)
+        self.admiBtn_1.setFlat(True)
+
+        self.gridLayout.addWidget(self.admiBtn_1, 2, 0, 1, 1)
 
 
         self.gridLayout_23.addWidget(self.iconOnly, 0, 0, 2, 1)
@@ -594,13 +568,11 @@ class Ui_AdminWindow(object):
         self.toggleBtn.toggled.connect(self.iconOnly.setVisible)
         self.toggleBtn.toggled.connect(self.fullWid.setHidden)
         self.dashBtn_1.toggled.connect(self.dashBtn_2.setChecked)
-        self.mtnBtn_1.toggled.connect(self.mtnBtn_2.setChecked)
         self.admiBtn_1.toggled.connect(self.admiBtn_2.setChecked)
         self.dashBtn_2.toggled.connect(self.dashBtn_1.setChecked)
-        self.mtnBtn_2.toggled.connect(self.mtnBtn_1.setChecked)
         self.admiBtn_2.toggled.connect(self.admiBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(AdminWindow)
@@ -608,14 +580,13 @@ class Ui_AdminWindow(object):
 
     def retranslateUi(self, AdminWindow):
         AdminWindow.setWindowTitle(QCoreApplication.translate("AdminWindow", u"MainWindow", None))
-        self.label_2.setText("")
-        self.admiBtn_2.setText(QCoreApplication.translate("AdminWindow", u"Administration", None))
-        self.logoutBtn_2.setText(QCoreApplication.translate("AdminWindow", u"Logout", None))
-        self.mtnBtn_2.setText(QCoreApplication.translate("AdminWindow", u"Maintenance", None))
         self.dashBtn_2.setText(QCoreApplication.translate("AdminWindow", u"Dashboard", None))
+        self.label_2.setText("")
+        self.logoutBtn_2.setText(QCoreApplication.translate("AdminWindow", u"Logout", None))
+        self.admiBtn_2.setText(QCoreApplication.translate("AdminWindow", u"Administration", None))
         self.toggleBtn.setText("")
-        self.label_4.setText(QCoreApplication.translate("AdminWindow", u"Logo", None))
-        self.label_3.setText(QCoreApplication.translate("AdminWindow", u"Admin", None))
+        self.label_4.setText("")
+        self.adminLabel.setText(QCoreApplication.translate("AdminWindow", u"Admin", None))
         self.label_15.setText(QCoreApplication.translate("AdminWindow", u"Dashboard", None))
         self.label_5.setText(QCoreApplication.translate("AdminWindow", u"Total Account:", None))
         self.showTotalAcc.setText(QCoreApplication.translate("AdminWindow", u"Amount Placeholder", None))
@@ -627,9 +598,8 @@ class Ui_AdminWindow(object):
         self.label_18.setText(QCoreApplication.translate("AdminWindow", u"Show banner", None))
         self.label_19.setText(QCoreApplication.translate("AdminWindow", u"Administration", None))
         self.label.setText("")
-        self.dashBtn_1.setText("")
-        self.mtnBtn_1.setText("")
-        self.admiBtn_1.setText("")
         self.logoutBtn_1.setText("")
+        self.dashBtn_1.setText("")
+        self.admiBtn_1.setText("")
     # retranslateUi
 

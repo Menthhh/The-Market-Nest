@@ -1,24 +1,5 @@
 <RCC>
-  <qresource prefix="icon">
-    <file>pics/baby.png</file>
-    <file>pics/beauty.png</file>
-    <file>pics/beauty2.png</file>
-    <file>pics/brush.png</file>
-    <file>pics/car.png</file>
-    <file>pics/electronics.png</file>
-    <file>pics/entertainment.png</file>
-    <file>pics/gift.png</file>
-    <file>pics/groceries.png</file>
-    <file>pics/meo.png</file>
-    <file>pics/officesupplies.png</file>
-    <file>pics/toys.png</file>
-    <file>pics/travel.png</file>
-    <file>pics/football.png</file>
-    <file>pics/beauty2.png</file>
-    <file>pics/beauty.png</file>
-    <file>pics/house.png</file>
-    <file>pics/fashions.png</file>
-    <file>pics/electronics.png</file>
+  <qresource prefix="ico">
     <file>icon/cart.png</file>
     <file>icon/dashboard.ico</file>
     <file>icon/heart.ico</file>
@@ -35,6 +16,26 @@
     <file>icon/profile.ico</file>
     <file>icon/search.ico</file>
     <file>icon/store.ico</file>
-    <file>pics/banner.png</file>
+  </qresource>
+  <qresource prefix="pic">
+    <file>pics/baby.ico</file>
+    <file>pics/banner.ico</file>
+    <file>pics/beauty.ico</file>
+    <file>pics/beauty2.ico</file>
+    <file>pics/brush.ico</file>
+    <file>pics/car.ico</file>
+    <file>pics/electronics.ico</file>
+    <file>pics/entertainment.ico</file>
+    <file>pics/fashions.ico</file>
+    <file>pics/football.ico</file>
+    <file>pics/gift.ico</file>
+    <file>pics/groceries.ico</file>
+    <file>pics/house.ico</file>
+    <file>pics/meo.ico</file>
+    <file>pics/officesupplies.ico</file>
+    <file>pics/product1.ico</file>
+    <file>pics/spagetti.ico</file>
+    <file>pics/toys.ico</file>
+    <file>pics/travel.ico</file>
   </qresource>
 </RCC>

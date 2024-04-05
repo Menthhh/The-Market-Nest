@@ -160,3 +160,10 @@ class UserController:
         if len(password) < 8:
             raise HTTPException(status_code=400, detail="Password must be at least 8 characters long")
         return password.strip()
+    
+    async def get_user_by_product_id(self, request, product_id):
+        users = [user for user in self.__users_db.findAll() if isinstance(user, User)]
+        for user in users:
+            if product_id in user.products:
+                return user
+        return None

@@ -32,7 +32,7 @@
    <item row="0" column="0">
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="loginPage">
       <layout class="QGridLayout" name="gridLayout_16">
@@ -226,7 +226,7 @@ font: 600 18pt &quot;Josefin Sans SemiBold&quot;;</string>
                          <string/>
                         </property>
                         <property name="pixmap">
-                         <pixmap resource="resource.qrc">:/icon/icon/logo.ico</pixmap>
+                         <pixmap resource="resource.qrc">:/ico/icon/logo.ico</pixmap>
                         </property>
                         <property name="scaledContents">
                          <bool>false</bool>
@@ -829,7 +829,7 @@ color: rgb(255, 255, 255);</string>
                       <string/>
                      </property>
                      <property name="pixmap">
-                      <pixmap resource="resource.qrc">:/icon/icon/logo.ico</pixmap>
+                      <pixmap resource="resource.qrc">:/ico/icon/logo.ico</pixmap>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1130,9 +1130,9 @@ color: rgb(255, 255, 255);</string>
                        <hour>0</hour>
                        <minute>0</minute>
                        <second>0</second>
-                       <year>2000</year>
-                       <month>1</month>
-                       <day>1</day>
+                       <year>1999</year>
+                       <month>12</month>
+                       <day>31</day>
                       </datetime>
                      </property>
                      <property name="displayFormat">

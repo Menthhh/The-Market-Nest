@@ -29,3 +29,7 @@ async def update_user(request: Request, user_id: str, body: dict = Body(...)):
 @router.delete("/{user_id}")
 async def delete_user(request: Request, user_id: str):
     return await userController.delete_user(request, user_id)
+
+@router.get("/getUserFromProduct/{product_id}")
+async def getUserFromProduct(request: Request, product_id: str):
+    return await userController.get_user_by_product_id(request, product_id)
