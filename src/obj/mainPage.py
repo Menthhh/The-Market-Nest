@@ -2,7 +2,7 @@ from PySide6.QtWidgets import QMainWindow, QGridLayout, QWidget, QVBoxLayout, QL
 from PySide6.QtCore import Signal, QSize, Qt
 from PySide6.QtGui import QPixmap
 from obj.FavouriteWidget import FavouriteWidget
-from obj.ProductWidget import ProductWidget
+from obj.productWidget import ProductWidget
 from config import products, favourites, item_categories
 from mainAppUi import Ui_MainWindow
 from utils.fetch import APIClient
@@ -104,9 +104,50 @@ class MainWindow(QMainWindow):
 
         #update my profile(product edit)
         self.ui.accountUsername.setText(user_manager.get_username())
+
+        #init show all products
+        self.init_show_all_products()
         
         # widget table productEditTable
         self.init_table()
+
+
+    def init_show_all_products(self):
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.get_request("products")
+        print(response)
+        products = response  # Assuming this is a list of products
+
+        self.ui.productTable.setRowCount(len(products))
+        self.ui.productTable.setColumnCount(3)  # Adjust based on the data you want to display
+        self.ui.productTable.setHorizontalHeaderLabels(["Image", "Title", "Price"])
+
+        for row, product in enumerate(products):
+            # Image
+            cell_widget = QWidget()
+            layout = QHBoxLayout(cell_widget)
+            img_label = QLabel()
+            pixmap = QPixmap(product['photos'][0] if product['photos'] else 'path/to/default/image')
+            img_label.setPixmap(pixmap.scaled(100, 100, Qt.KeepAspectRatio))
+            img_label.setAlignment(Qt.AlignCenter)
+            layout.addWidget(img_label)
+            layout.setAlignment(Qt.AlignCenter)
+            layout.setContentsMargins(0, 0, 0, 0)
+            cell_widget.setLayout(layout)
+            self.ui.productTable.setCellWidget(row, 0, cell_widget)
+
+            # Title
+            self.ui.productTable.setItem(row, 1, QTableWidgetItem(product['title']))
+
+            # Price
+            self.ui.productTable.setItem(row, 2, QTableWidgetItem(f"${product['price']}"))
+
+        self.ui.productTable.resizeColumnsToContents()
+        self.ui.productTable.resizeRowsToContents()
+
+
+
+
 
 
     def init_table(self):
@@ -242,6 +283,8 @@ class MainWindow(QMainWindow):
     def refresh_table(self):
         account = user_manager.get_user_id()
         self.populate_table(account)
+
+    
 
 
 

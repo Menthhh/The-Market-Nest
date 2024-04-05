@@ -1004,7 +1004,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 1050, 410))
+        self.scrollHome.setGeometry(QRect(0, 0, 1134, 767))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -1018,6 +1018,13 @@ class Ui_MainWindow(object):
         self.gridLayout_14.setContentsMargins(0, 0, 0, 0)
         self.productlist = QWidget(self.widget_3)
         self.productlist.setObjectName(u"productlist")
+        self.gridLayout_118 = QGridLayout(self.productlist)
+        self.gridLayout_118.setObjectName(u"gridLayout_118")
+        self.productTable = QTableWidget(self.productlist)
+        self.productTable.setObjectName(u"productTable")
+
+        self.gridLayout_118.addWidget(self.productTable, 0, 0, 1, 1)
+
 
         self.gridLayout_14.addWidget(self.productlist, 2, 0, 1, 1)
 
@@ -1468,7 +1475,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 82, 28))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1116, 710))
         self.gridLayout_55 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_55.setObjectName(u"gridLayout_55")
         self.favoriteList = QWidget(self.scrollAreaWidgetContents)
@@ -2392,7 +2399,7 @@ class Ui_MainWindow(object):
         self.profileBtn_2.toggled.connect(self.profileBtn_1.setChecked)
         self.accountBtn_2.toggled.connect(self.accountBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(3)
         self.pushButton_3.setDefault(False)
         self.stackedWidget_4.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(1)

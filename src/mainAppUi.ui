@@ -660,7 +660,7 @@ border-radius: 5;</string>
           <string notr="true">border: 0px</string>
          </property>
          <property name="currentIndex">
-          <number>5</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="sell">
           <layout class="QGridLayout" name="gridLayout_22">
@@ -2053,8 +2053,8 @@ color: rgb(0,0,0);</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>1050</width>
-                      <height>410</height>
+                      <width>1134</width>
+                      <height>767</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_2">
@@ -2098,7 +2098,13 @@ color: rgb(0,0,0);</string>
                          <number>0</number>
                         </property>
                         <item row="2" column="0">
-                         <widget class="QWidget" name="productlist" native="true"/>
+                         <widget class="QWidget" name="productlist" native="true">
+                          <layout class="QGridLayout" name="gridLayout_118">
+                           <item row="0" column="0">
+                            <widget class="QTableWidget" name="productTable"/>
+                           </item>
+                          </layout>
+                         </widget>
                         </item>
                         <item row="0" column="0">
                          <widget class="QWidget" name="Banner" native="true">
@@ -2850,8 +2856,8 @@ color: rgb(0,0,0);</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>82</width>
-                      <height>28</height>
+                      <width>1116</width>
+                      <height>710</height>
                      </rect>
                     </property>
                     <layout class="QGridLayout" name="gridLayout_55">
