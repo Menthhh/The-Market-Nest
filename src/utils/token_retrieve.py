@@ -2,6 +2,7 @@ from PySide6.QtCore import QSettings
 from utils.fetch import APIClient
 from math import floor
 
+
 class UserManager:
     def __init__(self, base_url="http://localhost:9000/api"):
         self.api_client = APIClient(base_url)
@@ -47,7 +48,8 @@ class UserManager:
     def get_all_users(self):
         response = self.api_client.get_request("users")
         # count all users
-        return len(response)
+        return (response)
+    
     
     # get user with product
     def get_user_with_product(self):
@@ -63,10 +65,15 @@ class UserManager:
         response = self.api_client.get_request("users")
         get_user_with_product = self.get_user_with_product()
         total_product = 0
+
+        # also prevent division by zero
+        if get_user_with_product == 0:
+            return 0
+        
         for user in response:
-            if user["products"]:
-                total_product += len(user["products"])
+            total_product += len(user["products"])
         return floor(total_product / get_user_with_product)
+    
     
     # get product category percentage of each propotion
     def get_product_category_percentage(self):
@@ -81,5 +88,24 @@ class UserManager:
         for key in category:
             category[key] = (category[key] / total_product) * 100
         return category
+    
+    def delete_user(self, user_id):
+        response = self.api_client.delete_request(f"users/{user_id}")
+        return response
+    
+    # delete product according to user id (get product id from user id first) 
+    def delete_user_product(self, user_id):
+        response = self.api_client.get_request(f"users/find/{user_id}")
+        print(response)
+        for product in response["products"]:
+            print(product)
+            self.api_client.delete_request(f"products/{product}")
+        return response
+    
+    # clear cookies
+    def clear_cookies(self):
+        self.settings.clear()
+        return True
+
 
     

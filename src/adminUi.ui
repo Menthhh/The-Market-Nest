@@ -981,7 +981,38 @@ font: 600 16pt &quot;Josefin Sans SemiBold&quot;;</string>
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QWidget" name="widget_27" native="true"/>
+             <widget class="QWidget" name="widget_27" native="true">
+              <layout class="QGridLayout" name="gridLayout_33">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>30</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QTableWidget" name="accTableWid">
+                 <property name="maximumSize">
+                  <size>
+                   <width>900</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: transparent;</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
             </item>
            </layout>
           </widget>

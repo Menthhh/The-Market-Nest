@@ -106,7 +106,6 @@ class LoginDialog(QDialog):
         if "token" in response:
             settings = QSettings("se_project", "the_market_nest")  
             settings.setValue("auth/token", response["token"])
-            
             settings.sync()  
 
             print("Token from q setting",self.get_token())

@@ -1,15 +1,14 @@
-from PySide6.QtWidgets import QMainWindow, QGridLayout, QWidget, QVBoxLayout, QLabel, QSizePolicy, QHBoxLayout, QApplication, QDialog, QPushButton, QMessageBox
+from PySide6.QtWidgets import QMainWindow, QGridLayout, QWidget, QVBoxLayout, QLabel, QSizePolicy, QHBoxLayout, QApplication, QDialog, QPushButton, QMessageBox, QFileDialog, QTableWidgetItem
 from PySide6.QtCore import Signal, QSize, Qt
 from PySide6.QtGui import QPixmap
 from obj.FavouriteWidget import FavouriteWidget
 from obj.ProductWidget import ProductWidget
 from config import products, favourites, item_categories
 from mainAppUi import Ui_MainWindow
-import tkinter as tk
-from tkinter import filedialog
 from utils.fetch import APIClient
 from utils.token_retrieve import *
 from PySide6.QtWidgets import QLineEdit
+from functools import partial
 
 
 # from pathlib import Path
@@ -37,7 +36,7 @@ sys.path.append(str(module_dir))
 
 # Get the token
 user_manager = UserManager()
-TOKEN = user_manager.get_token()
+# TOKEN = user_manager.get_token()
 
 
 
@@ -51,9 +50,9 @@ class MainWindow(QMainWindow):
         self.ui.icon_only_widget.hide()
         self.ui.stackedWidget.setCurrentIndex(3)
 
-        self.productlist_layout = QGridLayout(self.ui.productlist)
-        self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
-        self.ui.stackedWidget.resizeEvent = self.resizeEvent
+        # self.productlist_layout = QGridLayout(self.ui.productlist)
+        # self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
+        # self.ui.stackedWidget.resizeEvent = self.resizeEvent
 
         # Example product data (replace with your actual product data)
         self.products = products
@@ -83,6 +82,12 @@ class MainWindow(QMainWindow):
         self.ui.doneAddBtn_1.clicked.connect(self.addItem)
         self.ui.uploadPhotoBtn.clicked.connect(self.uploadPhoto)
         self.ui.productCategory.addItems(item_categories.keys())
+        self.ui.cateProEdit.addItems(item_categories.keys())
+        self.ui.cancelProEdit.clicked.connect(self.cancelEditProduct)
+        self.ui.doneProEdit.clicked.connect(self.doneEditProduct)
+        # self.ui.uploadEditImg.clicked.connect(self.uploadEditProduct)
+
+        self.tempImageEdit = None
 
         #set banner
 
@@ -96,6 +101,149 @@ class MainWindow(QMainWindow):
         self.ui.profileEditBtn.clicked.connect(self.editInfo)
         self.ui.cancelEdit.clicked.connect(self.cancelEdit)
         self.ui.confirmEdit.clicked.connect(self.confirmEdit)
+
+        #update my profile(product edit)
+        self.ui.accountUsername.setText(user_manager.get_username())
+        
+        # widget table productEditTable
+        self.init_table()
+
+
+    def init_table(self):
+        # Increase column count by one to accommodate the "Edit" button
+        self.ui.productEditTable.setColumnCount(9)
+        self.ui.productEditTable.setHorizontalHeaderLabels(["Img","Title", "Category", "Price", "Description", "Location", "Amount","ID", "Action"])
+        self.ui.productEditTable.horizontalHeader().setStretchLastSection(True)
+        account = user_manager.get_user_id()
+        self.populate_table(account)
+
+    def populate_table(self, account):
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.get_request(f"users/find/{account}")
+        products_id_list = response["products"]
+        product_list = []
+
+        for product_id in products_id_list:
+            product = api_client.get_request(f"products/find/{product_id}")
+            product_list.append(product)
+
+        self.ui.productEditTable.setRowCount(len(product_list))
+
+        for i, product in enumerate(product_list):
+            img_label = QLabel()
+
+            pixmap = QPixmap()
+            # Check if 'photos' is a list and has at least one image
+            if isinstance(product["photos"], list) and product["photos"]:
+                # Attempt to load the first image in the list
+                if pixmap.load(product["photos"][0]):
+                    pixmap = pixmap.scaled(50, 50, Qt.KeepAspectRatio)
+                else:
+                    print(f"Failed to load image: {product['photos'][0]}")
+                    pixmap.load("src/assets/no_image.png")
+                    pixmap = pixmap.scaled(50, 50, Qt.KeepAspectRatio)
+            else:
+                # Load a default image if no images are provided
+                pixmap.load("src/assets/no_image.png")
+                pixmap = pixmap.scaled(50, 50, Qt.KeepAspectRatio)
+
+            img_label.setPixmap(pixmap)
+            img_label.setAlignment(Qt.AlignCenter)
+            self.ui.productEditTable.setCellWidget(i, 0, img_label)
+
+            # Set other product details in the table
+            self.ui.productEditTable.setItem(i, 1, QTableWidgetItem(product["title"]))
+            self.ui.productEditTable.setItem(i, 2, QTableWidgetItem(product["category"]))
+            self.ui.productEditTable.setItem(i, 3, QTableWidgetItem(str(product["price"])))
+            self.ui.productEditTable.setItem(i, 4, QTableWidgetItem(product["description"]))
+            self.ui.productEditTable.setItem(i, 5, QTableWidgetItem(product["address"]))
+            self.ui.productEditTable.setItem(i, 6, QTableWidgetItem(str(product["amount"])))
+            self.ui.productEditTable.setItem(i, 7, QTableWidgetItem(product["_id"]))
+
+
+            # Add "Edit" button with click event
+            btn_edit = QPushButton('Edit', self.ui.productEditTable)
+            btn_edit.clicked.connect(partial(self.edit_product, i))
+            self.ui.productEditTable.setCellWidget(i, 8, btn_edit)
+
+
+    def edit_product(self, product):
+        self.ui.stackedWidget_4.setCurrentIndex(1)
+        self.ui.proTitleEdit.setText(self.ui.productEditTable.item(product, 1).text())
+        self.ui.cateProEdit.setCurrentText(self.ui.productEditTable.item(product, 2).text())
+        self.ui.priceProEdit.setText(self.ui.productEditTable.item(product, 3).text())
+        self.ui.descProEdit.setPlainText(self.ui.productEditTable.item(product, 4).text())
+        self.ui.locaProEdit.setText(self.ui.productEditTable.item(product, 5).text())
+        self.ui.amountProEdit.setValue(int(self.ui.productEditTable.item(product, 6).text()))
+
+        # Get the image path from the table
+        product_id = self.ui.productEditTable.item(product, 7).text()
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.get_request(f"products/find/{product_id}")
+        image_path = response["photos"][0]
+
+        # Display the product image create label
+        self.tempImageEdit = image_path
+        self.imageLabelEdit = QLabel(self.ui.photoHolder)
+        self.imageLabelEdit.setFixedSize(100, 100)
+        pixmap = QPixmap(image_path)
+        resized_pixmap = pixmap.scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+        self.imageLabelEdit.setPixmap(resized_pixmap)
+        self.imageLabelEdit.setAlignment(Qt.AlignCenter)
+        self.imageLabelEdit.show()
+
+
+    def cancelEditProduct(self):
+        self.ui.stackedWidget_4.setCurrentIndex(0)
+
+    # update product
+    def doneEditProduct(self):
+        # get the text from the input field
+        self.productTitle = self.ui.proTitleEdit.text()
+        # combo box
+        self.productCategory = self.ui.cateProEdit.currentText()
+        self.productPrice = self.ui.priceProEdit.text()
+        self.productDesc = self.ui.descProEdit.toPlainText()
+        self.productLocation = self.ui.locaProEdit.text()
+        self.productAmount = self.ui.amountProEdit.value()
+        self.productImage = self.tempImageEdit
+        
+
+        # create a dictionary of the input
+        product = {
+            "title": self.productTitle,
+            "category": self.productCategory,
+            "price": self.productPrice,
+            "description": self.productDesc,
+            "price": int(self.productPrice),
+            "amount": int(self.productAmount),
+            "address": self.productLocation,
+            "user_id": user_manager.get_user_id(),
+            "photos": [self.productImage]
+        }
+
+        for value in product.values():
+            print(value)
+
+        # update product not create a new one
+        product_id = self.ui.productEditTable.item(self.ui.productEditTable.currentRow(), 7).text()
+        api_client = APIClient("http://localhost:9000/api")
+        response = api_client.put_request(f"products/{product_id}", product)
+        print(f"response: {response}")
+
+        self.ui.stackedWidget_4.setCurrentIndex(0)
+
+        #refresh the table
+        self.refresh_table()
+
+        QMessageBox.information(self, "Success", "Product edited successfully")
+        
+
+    def refresh_table(self):
+        account = user_manager.get_user_id()
+        self.populate_table(account)
+
+
 
     # ------------------ Handle editing user info // details ------------------
     def editInfo(self):
@@ -134,7 +282,6 @@ class MainWindow(QMainWindow):
     def cancelEdit(self):
         self.ui.stackedWidget_2.setCurrentIndex(0)
         
-
 
     # ------------------ Handle editing user info // changing password ------------------
 
@@ -214,11 +361,14 @@ class MainWindow(QMainWindow):
 
     def logout(self):
         # Perform necessary cleanup
-        self.clear_layout(self.productlist_layout)
-        self.clear_layout(self.favourite_list_layout)
-        # Other cleanup operations...
-        self.hide()  # Hide the main window
-        self.logout_requested.emit()  # Emit the logout signal
+        # self.clear_layout(self.productlist_layout)
+        # self.clear_layout(self.favourite_list_layout)
+        # clear cookies
+        user_manager.clear_cookies()
+        self.close()  # Close the main window 
+        # Emit the logout signal
+        self.logout_requested.emit()
+
     
     #function for searching
     def on_search_btn_clicked(self):
@@ -230,13 +380,16 @@ class MainWindow(QMainWindow):
     #function for changing page to user page
     def on_profile_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(5)
+        # refresh the table
+        self.refresh_table()
+        
         
 
     def on_home_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(3)
         # clear all the widgets in the productlist layout without deleting the layout
-        for i in reversed(range(self.productlist_layout.count())):
-            self.productlist_layout.itemAt(i).widget().setParent(None)
+        # for i in reversed(range(self.productlist_layout.count())):
+        #     self.productlist_layout.itemAt(i).widget().setParent(None)
 
         # Add products to the product list grid with the updated number of columns
         # self.insert_product(self.products)
@@ -295,6 +448,7 @@ class MainWindow(QMainWindow):
     def on_myProfile_btn_clicked(self):
         self.ui.stackedWidget_2.setCurrentIndex(0)
 
+
     def on_manageAcc_btn_clicked(self):
         self.ui.stackedWidget_2.setCurrentIndex(1)
 
@@ -319,9 +473,9 @@ class MainWindow(QMainWindow):
             "price": self.productPrice,
             "description": self.productDesc,
             "price": int(self.productPrice),
-            "amount": 1, 
+            "amount": int(self.productAmount), 
             "address": self.productLocation,
-            "user_id": TOKEN,
+            "user_id": user_manager.get_user_id(),
             "image_path": self.tempImage
         }
 
@@ -330,6 +484,9 @@ class MainWindow(QMainWindow):
 
         # add to db
         self.post_new_product(product)
+
+        #refresh the table
+        self.refresh_table()
 
         #clear the input fields
         self.ui.productTitle.clear()
@@ -344,7 +501,7 @@ class MainWindow(QMainWindow):
     def post_new_product(self, product):
         api_client = APIClient("http://localhost:9000/api")
         response = api_client.create_product_with_image("products", product["title"], product["category"], product["description"], product["price"], product["amount"], product["address"], product["user_id"], product["image_path"])
-        print(response)
+        print(f"response: {response}")
 
     def showRemoveButton(self, event):
         self.removeButton.move(self.imageLabel.width() - self.removeButton.width(), 0)  # Position button at the top-right
@@ -374,11 +531,9 @@ class MainWindow(QMainWindow):
 
 
     def uploadPhoto(self):
-        root = tk.Tk()
-        root.withdraw()  # Hide the main window
-
         # Open a file dialog to select an image file
-        image_path = filedialog.askopenfilename(title="Select Image File", filetypes=[("Image files", "*.jpg;*.jpeg;*.png;*.gif")])
+        image_path, _ = QFileDialog.getOpenFileName(self, "Select Image File", "",
+                                                    "Image Files (*.jpg *.jpeg *.png *.gif)")
 
         if image_path:  # Check if a file was selected
             self.tempImage = image_path  # Store the image path if you need to use it later
@@ -399,11 +554,10 @@ class MainWindow(QMainWindow):
             resized_pixmap = pixmap.scaled(100, 100, Qt.KeepAspectRatio, Qt.SmoothTransformation)
             self.imageLabel.setPixmap(resized_pixmap)
             self.imageLabel.setAlignment(Qt.AlignCenter)
-            
+
             # Show the remove button when the label is clicked
             self.imageLabel.mousePressEvent = self.showRemoveButton
             self.imageLabel.show()
- 
 
 
 

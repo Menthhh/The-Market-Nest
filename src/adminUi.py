@@ -15,9 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QLabel,
-    QMainWindow, QPushButton, QScrollArea, QSizePolicy,
-    QSpacerItem, QStackedWidget, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHeaderView,
+    QLabel, QMainWindow, QPushButton, QScrollArea,
+    QSizePolicy, QSpacerItem, QStackedWidget, QTableWidget,
+    QTableWidgetItem, QWidget)
 import resource_rc
 
 class Ui_AdminWindow(object):
@@ -491,6 +492,17 @@ class Ui_AdminWindow(object):
 
         self.widget_27 = QWidget(self.scrollAreaWidgetContents_3)
         self.widget_27.setObjectName(u"widget_27")
+        self.gridLayout_33 = QGridLayout(self.widget_27)
+        self.gridLayout_33.setSpacing(0)
+        self.gridLayout_33.setObjectName(u"gridLayout_33")
+        self.gridLayout_33.setContentsMargins(0, 30, 0, 0)
+        self.accTableWid = QTableWidget(self.widget_27)
+        self.accTableWid.setObjectName(u"accTableWid")
+        self.accTableWid.setMaximumSize(QSize(900, 16777215))
+        self.accTableWid.setStyleSheet(u"background-color: transparent;")
+
+        self.gridLayout_33.addWidget(self.accTableWid, 0, 0, 1, 1)
+
 
         self.gridLayout_32.addWidget(self.widget_27, 1, 0, 1, 1)
 
@@ -588,7 +600,7 @@ class Ui_AdminWindow(object):
         self.mtnBtn_2.toggled.connect(self.mtnBtn_1.setChecked)
         self.admiBtn_2.toggled.connect(self.admiBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(AdminWindow)

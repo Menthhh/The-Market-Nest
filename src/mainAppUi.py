@@ -16,9 +16,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QHBoxLayout,
-    QLabel, QLineEdit, QMainWindow, QPlainTextEdit,
-    QPushButton, QScrollArea, QSizePolicy, QSpacerItem,
-    QSpinBox, QStackedWidget, QVBoxLayout, QWidget)
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPlainTextEdit, QPushButton, QScrollArea, QSizePolicy,
+    QSpacerItem, QSpinBox, QStackedWidget, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
 import resource_rc
 
 class Ui_MainWindow(object):
@@ -1003,7 +1004,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 1134, 767))
+        self.scrollHome.setGeometry(QRect(0, 0, 1050, 410))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -1467,7 +1468,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 886, 710))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 82, 28))
         self.gridLayout_55 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_55.setObjectName(u"gridLayout_55")
         self.favoriteList = QWidget(self.scrollAreaWidgetContents)
@@ -1488,19 +1489,35 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.favourite)
         self.profile = QWidget()
         self.profile.setObjectName(u"profile")
+        self.profile.setMinimumSize(QSize(0, 0))
         self.gridLayout_6 = QGridLayout(self.profile)
         self.gridLayout_6.setSpacing(0)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.gridLayout_6.setContentsMargins(0, 0, 0, 0)
         self.widget_41 = QWidget(self.profile)
         self.widget_41.setObjectName(u"widget_41")
-        self.gridLayout_62 = QGridLayout(self.widget_41)
+        self.gridLayout_104 = QGridLayout(self.widget_41)
+        self.gridLayout_104.setObjectName(u"gridLayout_104")
+        self.widget_84 = QWidget(self.widget_41)
+        self.widget_84.setObjectName(u"widget_84")
+        self.widget_84.setMaximumSize(QSize(800, 16777215))
+        self.gridLayout_62 = QGridLayout(self.widget_84)
         self.gridLayout_62.setSpacing(0)
         self.gridLayout_62.setObjectName(u"gridLayout_62")
         self.gridLayout_62.setContentsMargins(0, 0, 0, 0)
-        self.widget_42 = QWidget(self.widget_41)
+        self.stackedWidget_4 = QStackedWidget(self.widget_84)
+        self.stackedWidget_4.setObjectName(u"stackedWidget_4")
+        self.page = QWidget()
+        self.page.setObjectName(u"page")
+        self.gridLayout_105 = QGridLayout(self.page)
+        self.gridLayout_105.setSpacing(0)
+        self.gridLayout_105.setObjectName(u"gridLayout_105")
+        self.gridLayout_105.setContentsMargins(0, 0, 0, 0)
+        self.widget_42 = QWidget(self.page)
         self.widget_42.setObjectName(u"widget_42")
+        self.widget_42.setMinimumSize(QSize(0, 70))
         self.widget_42.setMaximumSize(QSize(16777215, 100))
+        self.widget_42.setBaseSize(QSize(0, 0))
         self.gridLayout_58 = QGridLayout(self.widget_42)
         self.gridLayout_58.setSpacing(0)
         self.gridLayout_58.setObjectName(u"gridLayout_58")
@@ -1525,23 +1542,18 @@ class Ui_MainWindow(object):
         self.gridLayout_57.setSpacing(0)
         self.gridLayout_57.setObjectName(u"gridLayout_57")
         self.gridLayout_57.setContentsMargins(0, 0, 0, 0)
-        self.label_23 = QLabel(self.widget_44)
-        self.label_23.setObjectName(u"label_23")
+        self.accountUsername = QLabel(self.widget_44)
+        self.accountUsername.setObjectName(u"accountUsername")
 
-        self.gridLayout_57.addWidget(self.label_23, 0, 0, 1, 1)
-
-        self.label_24 = QLabel(self.widget_44)
-        self.label_24.setObjectName(u"label_24")
-
-        self.gridLayout_57.addWidget(self.label_24, 1, 0, 1, 1)
+        self.gridLayout_57.addWidget(self.accountUsername, 0, 0, 1, 1)
 
 
         self.gridLayout_58.addWidget(self.widget_44, 0, 1, 1, 1)
 
 
-        self.gridLayout_62.addWidget(self.widget_42, 0, 0, 1, 1)
+        self.gridLayout_105.addWidget(self.widget_42, 0, 0, 1, 1)
 
-        self.widget_45 = QWidget(self.widget_41)
+        self.widget_45 = QWidget(self.page)
         self.widget_45.setObjectName(u"widget_45")
         self.gridLayout_61 = QGridLayout(self.widget_45)
         self.gridLayout_61.setSpacing(0)
@@ -1556,6 +1568,9 @@ class Ui_MainWindow(object):
         self.gridLayout_59.setContentsMargins(0, 0, 0, 0)
         self.label_25 = QLabel(self.widget_46)
         self.label_25.setObjectName(u"label_25")
+        self.label_25.setMinimumSize(QSize(0, 40))
+        self.label_25.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_59.addWidget(self.label_25, 0, 0, 1, 1)
 
@@ -1570,6 +1585,15 @@ class Ui_MainWindow(object):
         self.gridLayout_60.setContentsMargins(0, 0, 0, 0)
         self.sellingList = QWidget(self.widget_47)
         self.sellingList.setObjectName(u"sellingList")
+        self.gridLayout_103 = QGridLayout(self.sellingList)
+        self.gridLayout_103.setSpacing(0)
+        self.gridLayout_103.setObjectName(u"gridLayout_103")
+        self.gridLayout_103.setContentsMargins(0, 0, 0, 0)
+        self.productEditTable = QTableWidget(self.sellingList)
+        self.productEditTable.setObjectName(u"productEditTable")
+
+        self.gridLayout_103.addWidget(self.productEditTable, 0, 0, 1, 1)
+
 
         self.gridLayout_60.addWidget(self.sellingList, 0, 0, 1, 1)
 
@@ -1577,7 +1601,268 @@ class Ui_MainWindow(object):
         self.gridLayout_61.addWidget(self.widget_47, 1, 0, 1, 1)
 
 
-        self.gridLayout_62.addWidget(self.widget_45, 1, 0, 1, 1)
+        self.gridLayout_105.addWidget(self.widget_45, 1, 0, 1, 1)
+
+        self.stackedWidget_4.addWidget(self.page)
+        self.editPro = QWidget()
+        self.editPro.setObjectName(u"editPro")
+        self.gridLayout_115 = QGridLayout(self.editPro)
+        self.gridLayout_115.setObjectName(u"gridLayout_115")
+        self.label_23 = QLabel(self.editPro)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setStyleSheet(u"color: rgb(81, 82, 108);\n"
+"font: 600 16pt \"Josefin Sans SemiBold\";")
+
+        self.gridLayout_115.addWidget(self.label_23, 0, 0, 1, 1)
+
+        self.widget_85 = QWidget(self.editPro)
+        self.widget_85.setObjectName(u"widget_85")
+        self.gridLayout_106 = QGridLayout(self.widget_85)
+        self.gridLayout_106.setObjectName(u"gridLayout_106")
+        self.label_24 = QLabel(self.widget_85)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_106.addWidget(self.label_24, 0, 0, 1, 1)
+
+        self.proTitleEdit = QLineEdit(self.widget_85)
+        self.proTitleEdit.setObjectName(u"proTitleEdit")
+        self.proTitleEdit.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_106.addWidget(self.proTitleEdit, 0, 1, 1, 1)
+
+
+        self.gridLayout_115.addWidget(self.widget_85, 1, 0, 1, 1)
+
+        self.widget_86 = QWidget(self.editPro)
+        self.widget_86.setObjectName(u"widget_86")
+        self.gridLayout_107 = QGridLayout(self.widget_86)
+        self.gridLayout_107.setObjectName(u"gridLayout_107")
+        self.label_63 = QLabel(self.widget_86)
+        self.label_63.setObjectName(u"label_63")
+        self.label_63.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_107.addWidget(self.label_63, 0, 0, 1, 1)
+
+        self.cateProEdit = QComboBox(self.widget_86)
+        self.cateProEdit.setObjectName(u"cateProEdit")
+        self.cateProEdit.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_107.addWidget(self.cateProEdit, 0, 1, 1, 1)
+
+
+        self.gridLayout_115.addWidget(self.widget_86, 2, 0, 1, 1)
+
+        self.widget_87 = QWidget(self.editPro)
+        self.widget_87.setObjectName(u"widget_87")
+        self.gridLayout_108 = QGridLayout(self.widget_87)
+        self.gridLayout_108.setObjectName(u"gridLayout_108")
+        self.label_64 = QLabel(self.widget_87)
+        self.label_64.setObjectName(u"label_64")
+        self.label_64.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_108.addWidget(self.label_64, 0, 0, 1, 1)
+
+        self.priceProEdit = QLineEdit(self.widget_87)
+        self.priceProEdit.setObjectName(u"priceProEdit")
+        self.priceProEdit.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_108.addWidget(self.priceProEdit, 0, 1, 1, 1)
+
+
+        self.gridLayout_115.addWidget(self.widget_87, 3, 0, 1, 1)
+
+        self.widget_90 = QWidget(self.editPro)
+        self.widget_90.setObjectName(u"widget_90")
+        self.widget_90.setMaximumSize(QSize(16777215, 100))
+        self.gridLayout_110 = QGridLayout(self.widget_90)
+        self.gridLayout_110.setObjectName(u"gridLayout_110")
+        self.label_66 = QLabel(self.widget_90)
+        self.label_66.setObjectName(u"label_66")
+        self.label_66.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+        self.label_66.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+
+        self.gridLayout_110.addWidget(self.label_66, 0, 0, 1, 1)
+
+        self.descProEdit = QPlainTextEdit(self.widget_90)
+        self.descProEdit.setObjectName(u"descProEdit")
+        self.descProEdit.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_110.addWidget(self.descProEdit, 0, 1, 1, 1)
+
+
+        self.gridLayout_115.addWidget(self.widget_90, 5, 0, 1, 1)
+
+        self.widget_91 = QWidget(self.editPro)
+        self.widget_91.setObjectName(u"widget_91")
+        self.gridLayout_111 = QGridLayout(self.widget_91)
+        self.gridLayout_111.setObjectName(u"gridLayout_111")
+        self.label_67 = QLabel(self.widget_91)
+        self.label_67.setObjectName(u"label_67")
+        self.label_67.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_111.addWidget(self.label_67, 0, 0, 1, 1)
+
+        self.locaProEdit = QLineEdit(self.widget_91)
+        self.locaProEdit.setObjectName(u"locaProEdit")
+        self.locaProEdit.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_111.addWidget(self.locaProEdit, 0, 1, 1, 1)
+
+
+        self.gridLayout_115.addWidget(self.widget_91, 6, 0, 1, 1)
+
+        self.widget_92 = QWidget(self.editPro)
+        self.widget_92.setObjectName(u"widget_92")
+        self.gridLayout_112 = QGridLayout(self.widget_92)
+        self.gridLayout_112.setObjectName(u"gridLayout_112")
+        self.label_68 = QLabel(self.widget_92)
+        self.label_68.setObjectName(u"label_68")
+        self.label_68.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_112.addWidget(self.label_68, 0, 0, 1, 1)
+
+        self.amountProEdit = QSpinBox(self.widget_92)
+        self.amountProEdit.setObjectName(u"amountProEdit")
+        self.amountProEdit.setStyleSheet(u"background-color: #e8e8e8;\n"
+"color: rgb(232, 232, 232);\n"
+"border-radius: 5px;\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_112.addWidget(self.amountProEdit, 0, 1, 1, 1)
+
+
+        self.gridLayout_115.addWidget(self.widget_92, 7, 0, 1, 1)
+
+        self.widget_93 = QWidget(self.editPro)
+        self.widget_93.setObjectName(u"widget_93")
+        self.gridLayout_117 = QGridLayout(self.widget_93)
+        self.gridLayout_117.setObjectName(u"gridLayout_117")
+        self.gridLayout_117.setVerticalSpacing(7)
+        self.widget_95 = QWidget(self.widget_93)
+        self.widget_95.setObjectName(u"widget_95")
+        self.gridLayout_114 = QGridLayout(self.widget_95)
+        self.gridLayout_114.setSpacing(0)
+        self.gridLayout_114.setObjectName(u"gridLayout_114")
+        self.gridLayout_114.setContentsMargins(0, 0, 0, 0)
+        self.deleteProduct = QPushButton(self.widget_95)
+        self.deleteProduct.setObjectName(u"deleteProduct")
+        self.deleteProduct.setMinimumSize(QSize(70, 30))
+        self.deleteProduct.setStyleSheet(u"background-color: rgb(249, 97, 125);\n"
+"font: 500 9pt \"Josefin Sans Medium\";\n"
+"color: white;\n"
+"border-radius: 5px;")
+
+        self.gridLayout_114.addWidget(self.deleteProduct, 0, 0, 1, 1)
+
+
+        self.gridLayout_117.addWidget(self.widget_95, 0, 0, 1, 1)
+
+        self.horizontalSpacer_17 = QSpacerItem(581, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_117.addItem(self.horizontalSpacer_17, 0, 1, 1, 1)
+
+        self.widget_94 = QWidget(self.widget_93)
+        self.widget_94.setObjectName(u"widget_94")
+        self.gridLayout_113 = QGridLayout(self.widget_94)
+        self.gridLayout_113.setObjectName(u"gridLayout_113")
+        self.gridLayout_113.setHorizontalSpacing(40)
+        self.cancelProEdit = QPushButton(self.widget_94)
+        self.cancelProEdit.setObjectName(u"cancelProEdit")
+        self.cancelProEdit.setMinimumSize(QSize(70, 30))
+        self.cancelProEdit.setStyleSheet(u"background-color: rgb(249, 97, 125);\n"
+"font: 500 9pt \"Josefin Sans Medium\";\n"
+"color: white;\n"
+"border-radius: 5px;")
+
+        self.gridLayout_113.addWidget(self.cancelProEdit, 0, 0, 1, 1)
+
+        self.doneProEdit = QPushButton(self.widget_94)
+        self.doneProEdit.setObjectName(u"doneProEdit")
+        self.doneProEdit.setMinimumSize(QSize(70, 30))
+        self.doneProEdit.setStyleSheet(u"background-color: rgb(249, 97, 125);\n"
+"font: 500 9pt \"Josefin Sans Medium\";\n"
+"color: white;\n"
+"border-radius: 5px;")
+
+        self.gridLayout_113.addWidget(self.doneProEdit, 0, 1, 1, 1)
+
+
+        self.gridLayout_117.addWidget(self.widget_94, 0, 2, 1, 1)
+
+
+        self.gridLayout_115.addWidget(self.widget_93, 8, 0, 1, 1)
+
+        self.widget_88 = QWidget(self.editPro)
+        self.widget_88.setObjectName(u"widget_88")
+        self.gridLayout_116 = QGridLayout(self.widget_88)
+        self.gridLayout_116.setObjectName(u"gridLayout_116")
+        self.widget_89 = QWidget(self.widget_88)
+        self.widget_89.setObjectName(u"widget_89")
+        self.gridLayout_109 = QGridLayout(self.widget_89)
+        self.gridLayout_109.setObjectName(u"gridLayout_109")
+        self.label_65 = QLabel(self.widget_89)
+        self.label_65.setObjectName(u"label_65")
+        self.label_65.setMaximumSize(QSize(16777215, 16777215))
+        self.label_65.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
+
+        self.gridLayout_109.addWidget(self.label_65, 0, 0, 1, 1)
+
+
+        self.gridLayout_116.addWidget(self.widget_89, 0, 0, 1, 1)
+
+        self.photoHolder = QWidget(self.widget_88)
+        self.photoHolder.setObjectName(u"photoHolder")
+        self.photoHolder.setMinimumSize(QSize(100, 100))
+        self.photoHolder.setMaximumSize(QSize(120, 16777215))
+
+        self.gridLayout_116.addWidget(self.photoHolder, 0, 1, 1, 1)
+
+        self.uploadEditImg = QPushButton(self.widget_88)
+        self.uploadEditImg.setObjectName(u"uploadEditImg")
+        self.uploadEditImg.setMinimumSize(QSize(0, 30))
+        self.uploadEditImg.setMaximumSize(QSize(116, 16777215))
+        self.uploadEditImg.setSizeIncrement(QSize(0, 0))
+        self.uploadEditImg.setStyleSheet(u"background-color: #e8e8e8;\n"
+"border-radius: 5px;\n"
+"color: #51526C;\n"
+"font: 500 9pt \"Josefin Sans Medium\";\n"
+"\n"
+"")
+
+        self.gridLayout_116.addWidget(self.uploadEditImg, 0, 2, 1, 1)
+
+
+        self.gridLayout_115.addWidget(self.widget_88, 4, 0, 1, 1)
+
+        self.stackedWidget_4.addWidget(self.editPro)
+
+        self.gridLayout_62.addWidget(self.stackedWidget_4, 0, 0, 1, 1)
+
+
+        self.gridLayout_104.addWidget(self.widget_84, 0, 0, 1, 1)
 
 
         self.gridLayout_6.addWidget(self.widget_41, 0, 1, 1, 1)
@@ -2107,9 +2392,10 @@ class Ui_MainWindow(object):
         self.profileBtn_2.toggled.connect(self.profileBtn_1.setChecked)
         self.accountBtn_2.toggled.connect(self.accountBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(5)
         self.pushButton_3.setDefault(False)
-        self.stackedWidget_2.setCurrentIndex(0)
+        self.stackedWidget_4.setCurrentIndex(0)
+        self.stackedWidget_2.setCurrentIndex(1)
         self.stackedWidget_3.setCurrentIndex(0)
 
 
@@ -2190,9 +2476,20 @@ class Ui_MainWindow(object):
         self.label_61.setText(QCoreApplication.translate("MainWindow", u"Personalizaed Gifts", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"My Favorites", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Profile pic", None))
-        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Account Name", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Account ID", None))
+        self.accountUsername.setText(QCoreApplication.translate("MainWindow", u"Account Name", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Marketplace", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Edit Product", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Product Title", None))
+        self.label_63.setText(QCoreApplication.translate("MainWindow", u"Category", None))
+        self.label_64.setText(QCoreApplication.translate("MainWindow", u"Price", None))
+        self.label_66.setText(QCoreApplication.translate("MainWindow", u"Description", None))
+        self.label_67.setText(QCoreApplication.translate("MainWindow", u"Location", None))
+        self.label_68.setText(QCoreApplication.translate("MainWindow", u"Amount", None))
+        self.deleteProduct.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
+        self.cancelProEdit.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.doneProEdit.setText(QCoreApplication.translate("MainWindow", u"Done", None))
+        self.label_65.setText(QCoreApplication.translate("MainWindow", u"Photo", None))
+        self.uploadEditImg.setText(QCoreApplication.translate("MainWindow", u"+ Upload Photo", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Edit Account", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"Username", None))
         self.showUsername.setText(QCoreApplication.translate("MainWindow", u"John Doe", None))
