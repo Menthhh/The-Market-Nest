@@ -259,6 +259,7 @@ class MainWindow(QMainWindow):
 
         for product_id in products_id_list:
             product = api_client.get_request(f"products/find/{product_id}")
+
             product_list.append(product)
 
         self.ui.productEditTable.setRowCount(len(product_list))
@@ -267,8 +268,8 @@ class MainWindow(QMainWindow):
             img_label = QLabel()
 
             pixmap = QPixmap()
-            # Check if 'photos' is a list and has at least one image
-            if isinstance(product["photos"], list) and product["photos"]:
+            print(product)
+            if product["photos"]:
                 # Attempt to load the first image in the list
                 if pixmap.load(product["photos"][0]):
                     pixmap = pixmap.scaled(50, 50, Qt.KeepAspectRatio)
