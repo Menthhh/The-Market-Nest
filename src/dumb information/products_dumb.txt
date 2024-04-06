@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Smartphone",
+    "category": "Electronics",
+    "description": "Latest Smartphone with Advanced Features",
+    "price": 800,
+    "amount": 30
+  },
+  {
+    "title": "Headphones",
+    "category": "Electronics",
+    "description": "Wireless Headphones with Noise Cancellation",
+    "price": 150,
+    "amount": 50
+  },
+  {
+    "title": "Smart TV",
+    "category": "Electronics",
+    "description": "Ultra HD Smart TV with Streaming Apps",
+    "price": 1200,
+    "amount": 15
+  },
+  {
+    "title": "Coffee Maker",
+    "category": "Appliances",
+    "description": "Automatic Coffee Maker with Espresso Options",
+    "price": 200,
+    "amount": 25
+  },
+  {
+    "title": "Gaming Console",
+    "category": "Electronics",
+    "description": "Next-Gen Gaming Console with 4K Support",
+    "price": 500,
+    "amount": 10
+  },
+  {
+    "title": "Wireless Mouse",
+    "category": "Computer Accessories",
+    "description": "Ergonomic Wireless Mouse for Comfortable Use",
+    "price": 30,
+    "amount": 100
+  },
+  {
+    "title": "Fitness Tracker",
+    "category": "Wearable Technology",
+    "description": "Fitness Tracker with Heart Rate Monitoring",
+    "price": 80,
+    "amount": 40
+  },
+  {
+    "title": "External Hard Drive",
+    "category": "Computer Accessories",
+    "description": "High-Capacity External Hard Drive for Data Storage",
+    "price": 120,
+    "amount": 20
+  },
+  {
+    "title": "Electric Toothbrush",
+    "category": "Personal Care",
+    "description": "Electric Toothbrush with Multiple Cleaning Modes",
+    "price": 50,
+    "amount": 60
+  },
+  {
+    "title": "Home Security Camera",
+    "category": "Smart Home",
+    "description": "Wireless Home Security Camera with Motion Detection",
+    "price": 100,
+    "amount": 35
+  }
+]

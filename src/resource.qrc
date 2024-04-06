@@ -1,0 +1,41 @@
+<RCC>
+  <qresource prefix="ico">
+    <file>icon/cart.png</file>
+    <file>icon/dashboard.ico</file>
+    <file>icon/heart.ico</file>
+    <file>icon/heart2.ico</file>
+    <file>icon/heart3.ico</file>
+    <file>icon/home.ico</file>
+    <file>icon/logo.ico</file>
+    <file>icon/logout.ico</file>
+    <file>icon/maintenace.ico</file>
+    <file>icon/menu.ico</file>
+    <file>icon/messages.ico</file>
+    <file>icon/messages-2.ico</file>
+    <file>icon/order.ico</file>
+    <file>icon/profile.ico</file>
+    <file>icon/search.ico</file>
+    <file>icon/store.ico</file>
+  </qresource>
+  <qresource prefix="pic">
+    <file>pics/baby.ico</file>
+    <file>pics/banner.ico</file>
+    <file>pics/beauty.ico</file>
+    <file>pics/beauty2.ico</file>
+    <file>pics/brush.ico</file>
+    <file>pics/car.ico</file>
+    <file>pics/electronics.ico</file>
+    <file>pics/entertainment.ico</file>
+    <file>pics/fashions.ico</file>
+    <file>pics/football.ico</file>
+    <file>pics/gift.ico</file>
+    <file>pics/groceries.ico</file>
+    <file>pics/house.ico</file>
+    <file>pics/meo.ico</file>
+    <file>pics/officesupplies.ico</file>
+    <file>pics/product1.ico</file>
+    <file>pics/spagetti.ico</file>
+    <file>pics/toys.ico</file>
+    <file>pics/travel.ico</file>
+  </qresource>
+</RCC>

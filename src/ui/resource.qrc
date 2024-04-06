@@ -1,0 +1,19 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icon/dashboard.ico</file>
+    <file>icon/maintenace.ico</file>
+    <file>icon/heart3.ico</file>
+    <file>icon/heart2.ico</file>
+    <file>icon/heart.ico</file>
+    <file>icon/logout.ico</file>
+    <file>icon/cart.png</file>
+    <file>icon/messages.ico</file>
+    <file>icon/home.ico</file>
+    <file>icon/logo.ico</file>
+    <file>icon/menu.ico</file>
+    <file>icon/order.ico</file>
+    <file>icon/profile.ico</file>
+    <file>icon/search.ico</file>
+    <file>icon/store.ico</file>
+  </qresource>
+</RCC>

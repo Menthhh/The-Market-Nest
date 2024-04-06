@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Jane Doe",
+    "birthDate": "1991-04-22",
+    "citizenID": "9876543210001",
+    "phoneNumber": "9876543210",
+    "email": "jane.doe@example.com",
+    "username": "janedoe",
+    "password": "securePassword1"
+  },
+  {
+    "name": "Alex Smith",
+    "birthDate": "1988-12-09",
+    "citizenID": "9876523410002",
+    "phoneNumber": "9876543220",
+    "email": "alex.smith@example.com",
+    "username": "alexsmith",
+    "password": "securePassword2"
+  },
+  {
+    "name": "Sam Taylor",
+    "birthDate": "1993-07-15",
+    "citizenID": "9876534410003",
+    "phoneNumber": "9876543230",
+    "email": "sam.taylor@example.com",
+    "username": "samtaylor",
+    "password": "securePassword3"
+  },
+  {
+    "name": "Chris Jordan",
+    "birthDate": "1992-11-30",
+    "citizenID": "9876544510004",
+    "phoneNumber": "9876543240",
+    "email": "chris.jordan@example.com",
+    "username": "chrisjordan",
+    "password": "securePassword4"
+  },
+  {
+    "name": "Pat Riley",
+    "birthDate": "1989-03-05",
+    "citizenID": "9876555610005",
+    "phoneNumber": "9876543250",
+    "email": "pat.riley@example.com",
+    "username": "patriley",
+    "password": "securePassword5"
+  },
+  {
+    "name": "Jamie Lane",
+    "birthDate": "1994-06-18",
+    "citizenID": "9876566710006",
+    "phoneNumber": "9876543260",
+    "email": "jamie.lane@example.com",
+    "username": "jamielane",
+    "password": "securePassword6"
+  },
+  {
+    "name": "Casey Woods",
+    "birthDate": "1987-09-21",
+    "citizenID": "9876577810007",
+    "phoneNumber": "9876543270",
+    "email": "casey.woods@example.com",
+    "username": "caseywoods",
+    "password": "securePassword7"
+  },
+  {
+    "name": "Morgan Page",
+    "birthDate": "1990-02-14",
+    "citizenID": "9876588910008",
+    "phoneNumber": "9876543280",
+    "email": "morgan.page@example.com",
+    "username": "morganpage",
+    "password": "securePassword8"
+  },
+  {
+    "name": "Dana Lee",
+    "birthDate": "1995-08-29",
+    "citizenID": "9876599010009",
+    "phoneNumber": "9876543290",
+    "email": "dana.lee@example.com",
+    "username": "danalee",
+    "password": "securePassword9"
+  },
+  {
+    "name": "Robin Banks",
+    "birthDate": "1996-01-02",
+    "citizenID": "9876500110010",
+    "phoneNumber": "9876543211",
+    "email": "robin.banks@example.com",
+    "username": "robinbanks",
+    "password": "securePassword10"
+  }
+]
