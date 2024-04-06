@@ -128,7 +128,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(7)
 
     def fashion_clicked(self):
-        self.init_show_based_on_category("Fashions")
+        self.init_show_based_on_category("Fashion")
         self.ui.stackedWidget.setCurrentIndex(7)
 
     def homeNgarden_clicked(self):
@@ -144,7 +144,7 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(7)
 
     def toysNgames_clicked(self):
-        self.init_show_based_on_category("Toy and Games")
+        self.init_show_based_on_category("Toys and Games")
         self.ui.stackedWidget.setCurrentIndex(7)
 
     def entertainment_clicked(self):
