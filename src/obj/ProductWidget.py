@@ -16,7 +16,7 @@ class ProductWidget(QWidget):
         self.main_window = main_window
 
         # Set a fixed size for the widget
-        self.setFixedSize(200, 300)
+        self.setFixedSize(240, 310)
 
         # Container widget
         container_widget = QWidget()
@@ -30,7 +30,7 @@ class ProductWidget(QWidget):
         container_widget.setLayout(container_layout)
 
         # set margin for the container layout
-        container_layout.setContentsMargins(0, 0, 10, 10) # (left, top, right, bottom)
+        container_layout.setContentsMargins(20, 0, 0, 0) # (left, top, right, bottom)
         
         # QLabel for product image
         image_label = QLabel()

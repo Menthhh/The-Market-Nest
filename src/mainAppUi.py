@@ -68,7 +68,7 @@ class Ui_MainWindow(object):
         self.label = QLabel(self.icon_only_widget)
         self.label.setObjectName(u"label")
         self.label.setMaximumSize(QSize(35, 35))
-        self.label.setPixmap(QPixmap(u":/ico/icon/logo.ico"))
+        self.label.setPixmap(QPixmap(u":/ico/icon/sms.ico"))
         self.label.setScaledContents(True)
 
         self.horizontalLayout_2.addWidget(self.label)
@@ -729,11 +729,11 @@ class Ui_MainWindow(object):
         self.gridLayout_42.setObjectName(u"gridLayout_42")
         self.pushButton = QPushButton(self.widget_96)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMaximumSize(QSize(16777215, 16777215))
+        self.pushButton.setMaximumSize(QSize(40, 16777215))
         self.pushButton.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
 "color: rgb(13, 28, 99);")
         icon6 = QIcon()
-        icon6.addFile(u":/ico/icon/sms.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/ico/icon/sms.ico", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon6)
         self.pushButton.setIconSize(QSize(25, 25))
         self.pushButton.setFlat(True)
@@ -762,6 +762,8 @@ class Ui_MainWindow(object):
         self.label_69.setMaximumSize(QSize(40, 16777215))
         self.label_69.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
 "color: rgb(13, 28, 99);")
+        self.label_69.setPixmap(QPixmap(u":/ico/icon/phone.ico"))
+        self.label_69.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_118.addWidget(self.label_69, 0, 0, 1, 1)
 
@@ -785,7 +787,7 @@ class Ui_MainWindow(object):
         self.gridLayout_46 = QGridLayout(self.widget_34)
         self.gridLayout_46.setSpacing(0)
         self.gridLayout_46.setObjectName(u"gridLayout_46")
-        self.gridLayout_46.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_46.setContentsMargins(20, 0, 0, 0)
         self.product_price = QLabel(self.widget_34)
         self.product_price.setObjectName(u"product_price")
         self.product_price.setStyleSheet(u"font: 500 20pt \"Josefin Sans Medium\";\n"
@@ -814,7 +816,7 @@ class Ui_MainWindow(object):
         self.gridLayout_50 = QGridLayout(self.widget_36)
         self.gridLayout_50.setSpacing(0)
         self.gridLayout_50.setObjectName(u"gridLayout_50")
-        self.gridLayout_50.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_50.setContentsMargins(20, 0, 0, 0)
         self.product_name = QLabel(self.widget_36)
         self.product_name.setObjectName(u"product_name")
         self.product_name.setStyleSheet(u"font: 500 20pt \"Josefin Sans Medium\";\n"
@@ -858,6 +860,7 @@ class Ui_MainWindow(object):
         self.sellerProfileLabel.setObjectName(u"sellerProfileLabel")
         self.sellerProfileLabel.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
 "color: rgb(0,0,0);")
+        self.sellerProfileLabel.setPixmap(QPixmap(u":/ico/icon/profile.ico"))
 
         self.gridLayout_18.addWidget(self.sellerProfileLabel, 0, 0, 1, 1)
 
@@ -1055,7 +1058,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollHome = QWidget()
         self.scrollHome.setObjectName(u"scrollHome")
-        self.scrollHome.setGeometry(QRect(0, 0, 1115, 763))
+        self.scrollHome.setGeometry(QRect(0, 0, 1050, 410))
         self.gridLayout_2 = QGridLayout(self.scrollHome)
         self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
@@ -1515,7 +1518,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 1097, 706))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 100, 30))
         self.gridLayout_55 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_55.setObjectName(u"gridLayout_55")
         self.favoriteList = QWidget(self.scrollAreaWidgetContents)
@@ -2511,12 +2514,12 @@ class Ui_MainWindow(object):
         self.product_img.setText(QCoreApplication.translate("MainWindow", u"img", None))
         self.pushButton.setText("")
         self.emailLabel.setText(QCoreApplication.translate("MainWindow", u"email", None))
-        self.label_69.setText(QCoreApplication.translate("MainWindow", u"Tel:", None))
+        self.label_69.setText("")
         self.phoneLabel.setText(QCoreApplication.translate("MainWindow", u"phone num", None))
         self.product_price.setText(QCoreApplication.translate("MainWindow", u"price", None))
         self.product_name.setText(QCoreApplication.translate("MainWindow", u"product name", None))
         self.sellerNameLabel.setText(QCoreApplication.translate("MainWindow", u"Seller", None))
-        self.sellerProfileLabel.setText(QCoreApplication.translate("MainWindow", u"Profile", None))
+        self.sellerProfileLabel.setText("")
         self.label_70.setText(QCoreApplication.translate("MainWindow", u"Location", None))
         self.addressLabel.setText(QCoreApplication.translate("MainWindow", u"location", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Product Specification", None))

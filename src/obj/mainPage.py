@@ -623,45 +623,6 @@ class MainWindow(QMainWindow):
         # Add products to the product list grid with the updated number of columns
         self.insert_product(self.products)
 
-    # def resizeEvent(self, event):
-    #     current_column_count = self.calculate_columns()
-
-    #     # Check if the number of columns has changed
-    #     if current_column_count != self.last_column_count:
-    #         self.adjust_columns()
-    #         self.last_column_count = current_column_count
-
-    #     event.accept()
-
-    # def calculate_columns(self):
-    #     window_width = self.ui.stackedWidget.width()
-
-    #     # Define the number of columns based on window size
-    #     if window_width > 1500:
-    #         return 6
-    #     elif 1000 < window_width <= 1500:
-    #         return 5
-    #     else:
-    #         return 4
-
-    # def adjust_columns(self):
-    #     current_column_count = self.calculate_columns()
-
-    #     # Clear existing widgets in the layout
-    #     self.clear_layout(self.productlist_layout)
-
-    #     # Add products to the product list grid with the updated number of columns
-    #     row = col = 0
-    #     for i, product_data in enumerate(self.products):
-    #         product_widget = ProductWidget(product_data["name"], product_data["price"],
-    #                                        product_data["image_path"], index_to_show=1, main_window=self)
-    #         self.productlist_layout.addWidget(product_widget, row, col)
-
-    #         col += 1
-    #         if col == current_column_count:
-    #             col = 0
-    #             row += 1
-
     def sell_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(0)
 
