@@ -17,9 +17,14 @@ class ProductWidget(QWidget):
 
         # Container widget
         container_widget = QWidget(self)
-
         container_widget.setObjectName("ContainerWidget")
         container_widget.setContentsMargins(0, 0, 0, 0)
+        container_widget.setFixedSize(300, 400)
+
+        # add border to the container
+        # container_widget.setStyleSheet("border: 1px solid black;")
+        # container_widget.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed))
+
 
         # Container layout
         container_layout = QVBoxLayout(container_widget)
@@ -35,6 +40,7 @@ class ProductWidget(QWidget):
 
         # QLabel for product image
         image_label = QLabel()
+        image_label.setScaledContents(True)  # Scale the image with the label
         pixmap = QPixmap(image_path)
         pixmap = pixmap.scaledToWidth(200, Qt.SmoothTransformation)
         pixmap = pixmap.scaledToHeight(200, Qt.SmoothTransformation)
@@ -67,8 +73,6 @@ class ProductWidget(QWidget):
         layout = QVBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         layout.addWidget(container_widget)
-
-        container_widget.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred))
 
         # Connect the click event to the function that changes the stackedWidget index
         self.index_to_show = index_to_show

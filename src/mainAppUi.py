@@ -694,6 +694,7 @@ class Ui_MainWindow(object):
         self.gridLayout_21.setContentsMargins(0, 0, 0, 0)
         self.widget_5 = QWidget(self.widget_4)
         self.widget_5.setObjectName(u"widget_5")
+        self.widget_5.setStyleSheet(u"background-color: rgb(247, 249, 252);")
         self.gridLayout_15 = QGridLayout(self.widget_5)
         self.gridLayout_15.setObjectName(u"gridLayout_15")
         self.product_img = QLabel(self.widget_5)
@@ -706,6 +707,7 @@ class Ui_MainWindow(object):
 
         self.widget_6 = QWidget(self.widget_4)
         self.widget_6.setObjectName(u"widget_6")
+        self.widget_6.setStyleSheet(u"background-color: rgb(247, 249, 252);")
         self.gridLayout_16 = QGridLayout(self.widget_6)
         self.gridLayout_16.setSpacing(0)
         self.gridLayout_16.setObjectName(u"gridLayout_16")
@@ -827,6 +829,7 @@ class Ui_MainWindow(object):
 
         self.widget_7 = QWidget(self.widget_4)
         self.widget_7.setObjectName(u"widget_7")
+        self.widget_7.setStyleSheet(u"background-color: rgb(247, 249, 252);")
         self.gridLayout_47 = QGridLayout(self.widget_7)
         self.gridLayout_47.setSpacing(0)
         self.gridLayout_47.setObjectName(u"gridLayout_47")
@@ -2462,7 +2465,7 @@ class Ui_MainWindow(object):
         self.profileBtn_2.toggled.connect(self.profileBtn_1.setChecked)
         self.accountBtn_2.toggled.connect(self.accountBtn_1.setChecked)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(1)
         self.stackedWidget_4.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(0)
         self.stackedWidget_3.setCurrentIndex(0)

@@ -42,7 +42,10 @@ class AdminPage(QMainWindow):
 
         # set up the progress bar into showBuySell frame
         self.progress_bar = RoundProgressBar(self)
-        self.progress_bar.value = self.user_manager.get_user_with_product()
+        self.user_with_product = self.user_manager.get_user_with_product()
+        # 2 decimal places
+        self.get_percentage = round((self.user_with_product / len(self.user_manager.get_all_users())) * 100, 2)
+        self.progress_bar.value = self.get_percentage
         self.progress_bar.text_format = "{value}% of the total account"
         self.progress_bar.progress_color = "#FFA500"
         self.progress_bar.enable_shadow = True
