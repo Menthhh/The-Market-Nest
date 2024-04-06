@@ -6,14 +6,14 @@ from db.Warehouse import Warehouse
 
 class UserController:
     def __init__(self):
-        self.__users_db = Warehouse("c:/Users/Tonkla/Desktop/The-Market-Nest/api/db/Storage/users/users.fs")
+        self.__users_db = Warehouse(('127.0.0.1', 8100))
         self.__users_db.connect()
-
+    
     async def create_user(self,request, body):
         try:
             new_user = self.validate_user(body)
             saved_user = self.__users_db.create(new_user)
-            return saved_user
+            return {"message": "User created successfully", "user": saved_user}
         except HTTPException as http_e:
             raise http_e
         except Exception as e:
@@ -23,6 +23,7 @@ class UserController:
     async def get_users(self,request):
         try:
             users = self.__users_db.findAll()
+            users = [user for user in users if isinstance(user, User)]
             return users
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
@@ -30,48 +31,54 @@ class UserController:
     async def get_user(self,request, user_id):
         try:
             user = self.__users_db.findOne(user_id)
-            return user
+            if isinstance(user, User):
+                return user
+            else:
+                raise HTTPException(status_code=404, detail="User not found")
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
     async def update_user(self,request, user_id, body):
         try:
             user = self.__users_db.findOne(user_id)
-            updated_user = User(
-                body.get("name", user.name),
-                body.get("birthDate", user.birthDate),
-                body.get("citizenID", user.citizenID),
-                body.get("phoneNumber", user.phoneNumber),
-                body.get("email", user.email),
-                body.get("username", user.username),
-                body.get("password", user.password),
-                body.get("address", user.address),
-            )
-            user = self.__users_db.findOneAndUpdate(user_id, updated_user)
-            return user
+            if isinstance(user, User):
+                updated_user = User(
+                    body.get("name", user.name),
+                    body.get("birthDate", user.birthDate),
+                    body.get("citizenID", user.citizenID),
+                    body.get("phoneNumber", user.phoneNumber),
+                    body.get("email", user.email),
+                    body.get("username", user.username),
+                    body.get("password", user.password),
+                )
+                user = self.__users_db.findOneAndUpdate(user_id, updated_user)
+                return user
+            else:
+                raise HTTPException(status_code=404, detail="User not found")
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
     async def delete_user(self, request, user_id):
         try:
             deleted_user = self.__users_db.findOneAndDelete(user_id)
-            return deleted_user
+            if deleted_user:
+                return {"message": "User deleted successfully"}
+            else:
+                raise HTTPException(status_code=404, detail="User not found")
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
 
     async def add_user_photo(self, request, user_id, body):
         try:
             user = self.__users_db.findOne(user_id)
-            # print(dir(user))
-            # print(user.profilePicture)
-            user.addPicture(body["photoURL"])
-            # print(body["photoURL"])
-            # print(user.profilePicture)
-            updated_user = self.__users_db.findOneAndUpdate(user_id, user)
-            return updated_user
+            if isinstance(user, User):
+                user.addPicture(body["photoURL"])
+                updated_user = self.__users_db.findOneAndUpdate(user_id, user)
+                return updated_user
+            else:
+                raise HTTPException(status_code=404, detail="User not found")
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
-
 
     def validate_user(self, body):
         try:
@@ -83,13 +90,15 @@ class UserController:
                 self.validate_email(body.get("email", "")),
                 self.validate_username(body.get("username", "")),
                 self.validate_password(body.get("password", "")),
-                body.get("address", ""),
             )
-            for user in self.__users_db.findAll():
+            
+            users = [user for user in self.__users_db.findAll() if isinstance(user, User)]
+            for user in users:
                 if user.email == new_user.email:
                     raise HTTPException(status_code=400, detail="Email already exists")
                 if user.username == new_user.username:
                     raise HTTPException(status_code=400, detail="Username already exists")
+            print(new_user)
             return new_user
         except HTTPException as http_e:
             raise http_e
@@ -151,3 +160,10 @@ class UserController:
         if len(password) < 8:
             raise HTTPException(status_code=400, detail="Password must be at least 8 characters long")
         return password.strip()
+    
+    async def get_user_by_product_id(self, request, product_id):
+        users = [user for user in self.__users_db.findAll() if isinstance(user, User)]
+        for user in users:
+            if product_id in user.products:
+                return user
+        return None
