@@ -513,6 +513,8 @@ class MainWindow(QMainWindow):
                                            product_data["photos"][0], product_data["address"], product_data["amount"], product_data["_id"], index_to_show=1, main_window=self)
             self.productlist_layout.addWidget(product_widget, row, col)
 
+            #add backgroud color to the widget
+
             col += 1
             if col == 4:
                 col = 0

@@ -699,6 +699,7 @@ class Ui_MainWindow(object):
         self.gridLayout_15.setObjectName(u"gridLayout_15")
         self.product_img = QLabel(self.widget_5)
         self.product_img.setObjectName(u"product_img")
+        self.product_img.setMaximumSize(QSize(200, 200))
 
         self.gridLayout_15.addWidget(self.product_img, 0, 0, 1, 1)
 
@@ -732,7 +733,7 @@ class Ui_MainWindow(object):
         self.pushButton.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
 "color: rgb(13, 28, 99);")
         icon6 = QIcon()
-        icon6.addFile(u":/icon/icon/messages.ico", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/ico/icon/sms.png", QSize(), QIcon.Normal, QIcon.Off)
         self.pushButton.setIcon(icon6)
         self.pushButton.setIconSize(QSize(25, 25))
         self.pushButton.setFlat(True)
@@ -780,6 +781,7 @@ class Ui_MainWindow(object):
 
         self.widget_34 = QWidget(self.widget_6)
         self.widget_34.setObjectName(u"widget_34")
+        self.widget_34.setMaximumSize(QSize(16777215, 100))
         self.gridLayout_46 = QGridLayout(self.widget_34)
         self.gridLayout_46.setSpacing(0)
         self.gridLayout_46.setObjectName(u"gridLayout_46")
@@ -796,6 +798,7 @@ class Ui_MainWindow(object):
 
         self.widget_33 = QWidget(self.widget_6)
         self.widget_33.setObjectName(u"widget_33")
+        self.widget_33.setMaximumSize(QSize(16777215, 100))
         self.gridLayout_45 = QGridLayout(self.widget_33)
         self.gridLayout_45.setSpacing(0)
         self.gridLayout_45.setObjectName(u"gridLayout_45")
@@ -807,6 +810,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.widget_36.sizePolicy().hasHeightForWidth())
         self.widget_36.setSizePolicy(sizePolicy2)
+        self.widget_36.setMaximumSize(QSize(16777215, 16777215))
         self.gridLayout_50 = QGridLayout(self.widget_36)
         self.gridLayout_50.setSpacing(0)
         self.gridLayout_50.setObjectName(u"gridLayout_50")
@@ -1567,12 +1571,15 @@ class Ui_MainWindow(object):
         self.gridLayout_58.setContentsMargins(0, 0, 0, 0)
         self.widget_43 = QWidget(self.widget_42)
         self.widget_43.setObjectName(u"widget_43")
+        self.widget_43.setMaximumSize(QSize(87, 16777215))
         self.gridLayout_56 = QGridLayout(self.widget_43)
         self.gridLayout_56.setSpacing(0)
         self.gridLayout_56.setObjectName(u"gridLayout_56")
         self.gridLayout_56.setContentsMargins(0, 0, 0, 0)
         self.label_8 = QLabel(self.widget_43)
         self.label_8.setObjectName(u"label_8")
+        self.label_8.setMaximumSize(QSize(16777215, 16777215))
+        self.label_8.setPixmap(QPixmap(u":/ico/icon/profile.ico"))
 
         self.gridLayout_56.addWidget(self.label_8, 0, 0, 1, 1)
 
@@ -1587,6 +1594,8 @@ class Ui_MainWindow(object):
         self.gridLayout_57.setContentsMargins(0, 0, 0, 0)
         self.accountUsername = QLabel(self.widget_44)
         self.accountUsername.setObjectName(u"accountUsername")
+        self.accountUsername.setStyleSheet(u"font: 500 11pt \"Josefin Sans Medium\";\n"
+"color: rgb(0,0,0);")
 
         self.gridLayout_57.addWidget(self.accountUsername, 0, 0, 1, 1)
 
@@ -2500,7 +2509,7 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Amount", None))
         self.doneAddBtn_1.setText(QCoreApplication.translate("MainWindow", u"Done", None))
         self.product_img.setText(QCoreApplication.translate("MainWindow", u"img", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Email:", None))
+        self.pushButton.setText("")
         self.emailLabel.setText(QCoreApplication.translate("MainWindow", u"email", None))
         self.label_69.setText(QCoreApplication.translate("MainWindow", u"Tel:", None))
         self.phoneLabel.setText(QCoreApplication.translate("MainWindow", u"phone num", None))
@@ -2550,7 +2559,7 @@ class Ui_MainWindow(object):
         self.label_40.setText("")
         self.label_39.setText(QCoreApplication.translate("MainWindow", u"Beauty and Health", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"My Favorites", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Profile pic", None))
+        self.label_8.setText("")
         self.accountUsername.setText(QCoreApplication.translate("MainWindow", u"Account Name", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Marketplace", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"Edit Product", None))

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="ico">
+    <file>icon/sms.png</file>
     <file>icon/cart.png</file>
     <file>icon/dashboard.ico</file>
     <file>icon/heart.ico</file>

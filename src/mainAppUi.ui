@@ -1390,6 +1390,12 @@ border-radius: 5px;</string>
                 <layout class="QGridLayout" name="gridLayout_15">
                  <item row="0" column="0">
                   <widget class="QLabel" name="product_img">
+                   <property name="maximumSize">
+                    <size>
+                     <width>200</width>
+                     <height>200</height>
+                    </size>
+                   </property>
                    <property name="text">
                     <string>img</string>
                    </property>
@@ -1469,11 +1475,11 @@ border-radius: 10;</string>
 color: rgb(13, 28, 99);</string>
                          </property>
                          <property name="text">
-                          <string>Email:</string>
+                          <string/>
                          </property>
                          <property name="icon">
-                          <iconset>
-                           <normaloff>:/icon/icon/messages.ico</normaloff>:/icon/icon/messages.ico</iconset>
+                          <iconset resource="resource.qrc">
+                           <normaloff>:/ico/icon/sms.png</normaloff>:/ico/icon/sms.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -1555,6 +1561,12 @@ color: rgb(13, 28, 99);</string>
                  </item>
                  <item row="1" column="0">
                   <widget class="QWidget" name="widget_34" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>100</height>
+                    </size>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_46">
                     <property name="leftMargin">
                      <number>0</number>
@@ -1587,6 +1599,12 @@ color: rgb(0,0,0);</string>
                  </item>
                  <item row="0" column="0">
                   <widget class="QWidget" name="widget_33" native="true">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>100</height>
+                    </size>
+                   </property>
                    <layout class="QGridLayout" name="gridLayout_45">
                     <property name="leftMargin">
                      <number>0</number>
@@ -1610,6 +1628,12 @@ color: rgb(0,0,0);</string>
                         <horstretch>0</horstretch>
                         <verstretch>0</verstretch>
                        </sizepolicy>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_50">
                        <property name="leftMargin">
@@ -2996,6 +3020,12 @@ color: rgb(0,0,0);</string>
                         </property>
                         <item row="0" column="0">
                          <widget class="QWidget" name="widget_43" native="true">
+                          <property name="maximumSize">
+                           <size>
+                            <width>87</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
                           <layout class="QGridLayout" name="gridLayout_56">
                            <property name="leftMargin">
                             <number>0</number>
@@ -3014,8 +3044,17 @@ color: rgb(0,0,0);</string>
                            </property>
                            <item row="0" column="0">
                             <widget class="QLabel" name="label_8">
+                             <property name="maximumSize">
+                              <size>
+                               <width>16777215</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
                              <property name="text">
-                              <string>Profile pic</string>
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap resource="resource.qrc">:/ico/icon/profile.ico</pixmap>
                              </property>
                             </widget>
                            </item>
@@ -3042,6 +3081,10 @@ color: rgb(0,0,0);</string>
                            </property>
                            <item row="0" column="0">
                             <widget class="QLabel" name="accountUsername">
+                             <property name="styleSheet">
+                              <string notr="true">font: 500 11pt &quot;Josefin Sans Medium&quot;;
+color: rgb(0,0,0);</string>
+                             </property>
                              <property name="text">
                               <string>Account Name</string>
                              </property>
