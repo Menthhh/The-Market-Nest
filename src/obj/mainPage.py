@@ -3,20 +3,13 @@ from PySide6.QtCore import Signal, QSize, Qt
 from PySide6.QtGui import QPixmap
 from obj.FavouriteWidget import FavouriteWidget
 from obj.ProductWidget import ProductWidget
-from config import products, favourites, item_categories
+from config import item_categories
 from mainAppUi import Ui_MainWindow
 from utils.fetch import APIClient
 from utils.token_retrieve import *
 from PySide6.QtWidgets import QLineEdit
 from functools import partial
 from obj.clickablewidget import ClickableWidget
-
-# from pathlib import Path
-# module_dir = Path(r"C:\\Users\\peera\Desktop\\newww\\The-Market-Nest\\utils")
-# import sys
-# sys.path.append(str(module_dir))
-# from utils.token_retrieve import *
-# from utils.fetch import APIClient
 
 from dotenv import load_dotenv
 import os
@@ -27,18 +20,10 @@ module_dir = Path(UTILS)
 import sys
 sys.path.append(str(module_dir))
 
-# from token_retrieve import *
-# from fetch import APIClient
-# from PySide6.QtCore import QSettings
-# from utils.fetch import APIClient
-
-
-
 # Get the token
 user_manager = UserManager()
+api_client = APIClient("http://localhost:9000/api")
 # TOKEN = user_manager.get_token()
-
-
 
 class MainWindow(QMainWindow):
     logout_requested = Signal()  # Add a logout signal
@@ -54,20 +39,8 @@ class MainWindow(QMainWindow):
         self.productlist_layout = QGridLayout(self.ui.productlist)
         self.searchitemlist_layout = QGridLayout(self.ui.searchItemList)
         self.categoryproductlist_layout = QGridLayout(self.ui.categoryProductList)
-        # self.favourite_list_layout = QGridLayout(self.ui.favoriteList)
-        # self.ui.stackedWidget.resizeEvent = self.resizeEvent
 
-        # Example product data (replace with your actual product data)
-        self.products = products
-
-        self.insert_product(self.products)
-
-        # Initial setup
-        # self.last_column_count = self.calculate_columns()
-        # self.adjust_columns()
-
-        #Favourite list sample
-        self.favourites = favourites
+        self.insert_product()
 
         self.ui.homeBtn_1.setChecked(True)
         self.ui.searchBtn_1.clicked.connect(self.on_search_btn_clicked)
@@ -211,7 +184,6 @@ class MainWindow(QMainWindow):
         self.ui.stackedWidget.setCurrentIndex(7)
 
     def init_show_all_products(self):
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.get_request("products")
         print(response)
         products = response  # Assuming this is a list of products
@@ -252,7 +224,6 @@ class MainWindow(QMainWindow):
         self.populate_table(account)
 
     def populate_table(self, account):
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.get_request(f"users/find/{account}")
         products_id_list = response["products"]
         product_list = []
@@ -314,7 +285,7 @@ class MainWindow(QMainWindow):
 
         # Get the image path from the table
         product_id = self.ui.productEditTable.item(product, 7).text()
-        api_client = APIClient("http://localhost:9000/api")
+        
         response = api_client.get_request(f"products/find/{product_id}")
         image_path = response["photos"][0]
 
@@ -385,14 +356,12 @@ class MainWindow(QMainWindow):
 
         # update product not create a new one
         product_id = self.ui.productEditTable.item(self.ui.productEditTable.currentRow(), 7).text()
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.put_request(f"products/{product_id}", product)
         print(f"response: {response}")
 
         # update the image
         if self.tempImageEdit:
             print(self.tempImageEdit)
-            api_client = APIClient("http://localhost:9000/api")
             # 2 params product_id and user_id and body is image
             response = api_client.update_product_photo("products/images", product_id, user_manager.get_user_id(), self.tempImageEdit)
 
@@ -408,7 +377,6 @@ class MainWindow(QMainWindow):
         QMessageBox.information(self, "Success", "Product edited successfully")
 
     def delete_product(self, product_id, user_id):
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.delete_request(f"products/{product_id}/{user_id}")
         print(response)
         self.refresh_table()
@@ -447,7 +415,6 @@ class MainWindow(QMainWindow):
 
         # access the data and change the user info
         user_id = user_manager.get_user_id()
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.put_request(f"users/{user_id}", user)
         self.update_user_info()
         self.ui.stackedWidget_2.setCurrentIndex(0)
@@ -477,7 +444,6 @@ class MainWindow(QMainWindow):
         body = {
             "password": self.changedPass
         }
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.put_request(f"users/{user_id}", body)
         self.update_user_info()
         self.ui.stackedWidget_3.setCurrentIndex(0)
@@ -501,9 +467,8 @@ class MainWindow(QMainWindow):
 
 
     # ------------------ Handle adding item in the db products
-    def insert_product(self, products):
+    def insert_product(self):
         # reqest product data from the server
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.get_request("products")
         products = response
 
@@ -531,9 +496,6 @@ class MainWindow(QMainWindow):
             self.favourite_list_layout.addWidget(product_widget)
 
     def logout(self):
-        # Perform necessary cleanup
-        # self.clear_layout(self.productlist_layout)
-        # self.clear_layout(self.favourite_list_layout)
         # clear cookies
         user_manager.clear_cookies()
         self.close()  # Close the main window 
@@ -554,8 +516,6 @@ class MainWindow(QMainWindow):
 
     def init_search(self):
         search_text = self.ui.searchInput_1.text().strip()
-        
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.get_request(f"products/search/{search_text}")
         print(response)
         products = response  # Assuming this is a list of products
@@ -580,7 +540,6 @@ class MainWindow(QMainWindow):
         # clear the layout
         self.clear_layout(self.categoryproductlist_layout)
 
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.get_request(f"products/getProductFromCategory/{category}")
         print(response)
         products = response
@@ -603,16 +562,11 @@ class MainWindow(QMainWindow):
                 row += 1
         
 
-
-
-
     #function for changing page to user page
     def on_profile_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(5)
         # refresh the table
         self.refresh_table()
-        
-        
 
     def on_home_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(3)
@@ -621,7 +575,7 @@ class MainWindow(QMainWindow):
             self.productlist_layout.itemAt(i).widget().setParent(None)
 
         # Add products to the product list grid with the updated number of columns
-        self.insert_product(self.products)
+        self.insert_product()
 
     def sell_btn_clicked(self):
         self.ui.stackedWidget.setCurrentIndex(0)
@@ -689,7 +643,6 @@ class MainWindow(QMainWindow):
         QMessageBox.information(self, "Success", "Product added successfully")
 
     def post_new_product(self, product):
-        api_client = APIClient("http://localhost:9000/api")
         response = api_client.create_product_with_image("products", product["title"], product["category"], product["description"], product["price"], product["amount"], product["address"], product["user_id"], product["image_path"])
         print(f"response: {response}")
 

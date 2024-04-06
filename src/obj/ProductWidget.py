@@ -46,13 +46,13 @@ class ProductWidget(QWidget):
         # QLabel for product name
         name_label = QLabel(f"{name}")
         # set font size
-        name_label.setStyleSheet("font: 500 10pt 'Josefin Sans Medium';")
+        name_label.setStyleSheet("font: 500 12pt 'Josefin Sans Medium';")
         
         name_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         container_layout.addWidget(name_label, 1, 0, 1, 1)  # Row 1, Column 0
 
         # QLabel for product price
-        price_label = QLabel(f"{price}")
+        price_label = QLabel(f"{price} THB")
         price_label.setStyleSheet("font: 500 10pt 'Josefin Sans Medium';")
         price_label.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         container_layout.addWidget(price_label, 2, 0, 1, 1)  # Row 2, Column 0
