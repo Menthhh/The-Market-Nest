@@ -99,7 +99,7 @@ class UserManager:
         print(response)
         for product in response["products"]:
             print(product)
-            self.api_client.delete_request(f"products/{product}")
+            self.api_client.delete_request(f"products/{product}/{user_id}")
         return response
     
     # clear cookies

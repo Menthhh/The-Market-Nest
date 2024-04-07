@@ -30,8 +30,6 @@ class AdminPage(QMainWindow):
 
         self.ui.dashBtn_1.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0))
         self.ui.dashBtn_2.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0))
-        # self.ui.mtnBtn_1.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(1))
-        # self.ui.mtnBtn_2.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(1))
         self.ui.admiBtn_1.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(2))
         self.ui.admiBtn_2.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(2))
         self.ui.logoutBtn_1.clicked.connect(self.logout)
@@ -43,7 +41,6 @@ class AdminPage(QMainWindow):
         # set up the progress bar into showBuySell frame
         self.progress_bar = RoundProgressBar(self)
         self.user_with_product = self.user_manager.get_user_with_product()
-        # 2 decimal places
         self.get_percentage = round((self.user_with_product / len(self.user_manager.get_all_users())) * 100, 2)
         self.progress_bar.value = self.get_percentage
         self.progress_bar.text_format = "{value}% of the total account"
@@ -68,7 +65,6 @@ class AdminPage(QMainWindow):
         self.category_progress_bar_percentage = self.user_manager.get_product_category_percentage()
         self.category_progress_bar.set_categories(self.category_progress_bar_percentage)
         self.category_progress_bar.show()
-
         self.ui.categoryBar.setLayout(QVBoxLayout())
         self.ui.categoryBar.layout().addWidget(self.category_progress_bar)
         
@@ -105,6 +101,51 @@ class AdminPage(QMainWindow):
             delete_btn.clicked.connect(partial(self.delete_account, account['_id']))
             self.ui.accTableWid.setCellWidget(i, 3, delete_btn)
 
+    def clear_layout(self, layout):
+        while layout.count():
+            item = layout.takeAt(0)
+            widget = item.widget()
+            if widget is not None:
+                widget.hide()
+                widget.deleteLater()
+
+    def redraw_bar(self):
+        # Clear existing layouts
+        self.clear_layout(self.ui.showBuySell.layout())
+        self.clear_layout(self.ui.showAvgProduct.layout())
+        self.clear_layout(self.ui.categoryBar.layout())
+
+        # Set up the progress bar into showBuySell frame
+        self.progress_bar = RoundProgressBar(self)
+        self.user_with_product = self.user_manager.get_user_with_product()
+        self.get_percentage = round((self.user_with_product / len(self.user_manager.get_all_users())) * 100, 2)
+        self.progress_bar.value = self.get_percentage
+        self.progress_bar.text_format = "{value}% of the total account"
+        self.progress_bar.progress_color = "#FFA500"
+        self.progress_bar.enable_shadow = True
+        self.progress_bar.show()
+        self.ui.showBuySell.setLayout(QVBoxLayout())
+        self.ui.showBuySell.layout().addWidget(self.progress_bar)
+
+        # Set up the progress bar into showAvg frame
+        self.progress_bar = RoundProgressBar(self)
+        self.progress_bar.value = self.user_manager.avg_product_per_user()
+        self.progress_bar.text_format = "{value} products per user"
+        self.progress_bar.progress_color = "#FFA500"
+        self.progress_bar.enable_shadow = True
+        self.progress_bar.show()
+        self.ui.showAvgProduct.setLayout(QVBoxLayout())
+        self.ui.showAvgProduct.layout().addWidget(self.progress_bar)
+
+        # Set up the progress bar into showCategory frame
+        self.category_progress_bar = CategoryProgressBar(self)
+        self.category_progress_bar_percentage = self.user_manager.get_product_category_percentage()
+        self.category_progress_bar.set_categories(self.category_progress_bar_percentage)
+        self.category_progress_bar.show()
+        self.ui.categoryBar.setLayout(QVBoxLayout())
+        self.ui.categoryBar.layout().addWidget(self.category_progress_bar)
+
+
     def delete_account(self, account_id, checked=False):  # checked is not used but necessary for signal
         print(f"Deleting account {account_id}")
         #delet product first
@@ -112,6 +153,9 @@ class AdminPage(QMainWindow):
         self.user_manager.delete_user(account_id)
         # Refresh or update the table as needed
         self.refresh_table()
+        self.redraw_bar()
+
+
 
     def refresh_table(self):
         # Re-fetch the accounts and repopulate the table
